@@ -8,6 +8,10 @@ The Report class.
 
 class Report {
 
+    function __construct() {
+        // do something
+    }
+
     // blah
 
 }
