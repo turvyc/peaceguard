@@ -10,7 +10,7 @@ Contributors(s): Colin Strong
 
 require_once('user.model.php');
 
-class AdminModel extends UserModel {
+class Admin extends User {
 
     // There is actually not much to do here!
 

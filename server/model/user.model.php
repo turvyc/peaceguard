@@ -8,7 +8,7 @@ Contributor(s): Colin Strong
 
 */
 
-abstract class UserModel {
+abstract class User {
 
     private $id;            // The user's unique id number
     private $firstName;

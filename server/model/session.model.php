@@ -10,7 +10,7 @@ Contributor(s): Colin Strong
 
 */
 
-class SessionModel {
+class Session {
 
     // The salt is concatenated to a plain-text password before it is hashed
     const SALT = 'k39zkd(jk12@#2mdk*_)_kdjs [3o212==k~~kd';

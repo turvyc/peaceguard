@@ -10,7 +10,7 @@ Contributors(s): Colin Strong
 
 require_once('user.model.php');
 
-class VolunteerModel extends UserModel {
+class Volunteer extends User {
 
     private $joinDate;
     private $numberOfReports;
