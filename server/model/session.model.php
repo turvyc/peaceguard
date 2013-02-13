@@ -19,7 +19,8 @@ class Session {
     const SALT = 'k39zkd(jk12@#2mdk*_)_kdjs [3o212==k~~kd';
 
     // These constants are for $_SESSION array keys
-    const USERNAME = 0;
+    const USERNAME = 'username';
+    const DATA = 'data';
 
     // Starts a new session, if one hasn't been started already
     public function __construct() {

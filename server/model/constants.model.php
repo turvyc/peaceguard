@@ -21,4 +21,11 @@ define('_DEBUG', true);
 define('_SUCCESSFUL', 0);
 define('_MESSAGE', 1);
 
+// The following constants are for $_POST array keys. Integers are used for simplicity.
+define('_AGENT', 0);
+
+// The following constants are for $_POST array values.
+define('_IPHONE', 0);   // For use with _AGENT key
+define('_WEBSITE', 1);  // For use with _AGENT key
+
 ?>
