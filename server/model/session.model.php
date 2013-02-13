@@ -4,11 +4,14 @@
 
 The Session class handles everything to do with user sessions, including logging
 in, logging out, and cookies. This class will be used instead of directly
-manipulating the $_SESSION variable.
+manipulating the $_SESSION variable: the key/value pairs of $_SESSION will be
+used as the class's private attributes.
 
 Contributor(s): Colin Strong
 
 */
+
+require_once('constants.model.php');
 
 class Session {
 
@@ -24,6 +27,15 @@ class Session {
         if (!isset($_SESSION)) {
             session_start();
         }
+
+        if (!isset($_SESSION[Session::USERNAME])) {
+            $_SESSION[Session::USERNAME] = null;
+        }
+    }
+
+    // Returns the username of the logged-in user, or null if nobody is logged in.
+    public function getUsername() {
+        return $_SESSION[Session::USERNAME];
     }
 
     // Attempts to authenticate a username/password pair. Note that this function
@@ -34,6 +46,7 @@ class Session {
 
         // Look for a match in the database
         try {
+            require('database.model.php');
             $STH = $DBH->prepare('SELECT a_id FROM Admins WHERE a_id=? AND pw_hash=?');
             $STH->execute(array($username, $hash));
         }
@@ -69,7 +82,7 @@ class Session {
 
     // Concatenates the password with a salt, then returns the resulting SHA1 hash.
     private function getPasswordHash($password) {
-        return sha1($password . SessionModel::SALT);
+        return sha1($password . Session::SALT);
     }
 
     // Sets the username of the session
@@ -79,3 +92,4 @@ class Session {
 
 }
 
+?>
