@@ -53,10 +53,11 @@ class Session {
         // If there is a database error . . .
         catch (PDOException $e) {
             if (_DEBUG) {
-                echo $e->getMessage();
+                echo $e;
                 exit(1);
             }
-            throw new Exception($e->getMessage);
+            // . . . send it upstairs
+            throw new PDOException($e->getMessage);
         }
 
         // If there is a match, log the user in
@@ -66,7 +67,7 @@ class Session {
             $DBH = null;
         }
 
-        // If there is no match, throw an exception
+        // If there is no match, throw an exception for the controller to take care of
         else {
             $this->setUsername(null);
             $DBH = null;

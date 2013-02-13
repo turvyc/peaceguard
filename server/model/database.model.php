@@ -15,7 +15,7 @@ Contributor(s): Colin Strong
 // Database constants. 
 $HOST = 'localhost';
 $DB_NAME = 'peaceguard';
-$USERNAME = 'server';
+$USERNAME = 'peaceguard';
 $PASSWORD = 'ice cream you scream';
 
 try {
