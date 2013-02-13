@@ -18,6 +18,7 @@ class Volunteer extends User {
     private $totalTime;
     private $totalDistance;
     // private $score;  Commented because we have no score algorithm as of yet
+	// private $badges; should we have an array to store badges that the volunteer has collected.
 
     public function getJoinDate() {
         return $this->joinDate;
