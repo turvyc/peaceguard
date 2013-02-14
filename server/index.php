@@ -16,6 +16,6 @@ if (! $session->getUsername()) {
 
 <?php
 
-include('footer.html);
+include('footer.html');
 
 ?>

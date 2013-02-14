@@ -1,20 +1,14 @@
 <?php include('header.html'); ?>
 
-<h2>			
-	<form>
-		USERNAME: <input type="text" name="username" >
-		</br>
-		PASSWORD: <input type="password" name="password" >
-		</br>
-		<input type="button" value="Login" onClick="Login(this.form);" >
-	</form>
-</h2>
+<form name="login" action="control/login.control.php" method="POST">
+    USERNAME: <input type="text" name="<?php echo _USERNAME; ?>" /> <br />
+    PASSWORD: <input type="password" name="<?php echo _PASSWORD; ?>" /> <br />
+    <input type="hidden" name="<?php echo _AGENT; ?>" />
+    <input type="submit" value="Login" />
+</form>
 
 <?php
 
 include('footer.html');
 
 ?>
-
-<?php include('footer.html'); ?>
-
