@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C390E8D216CCBA7C00867273 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390E8D116CCBA7C00867273 /* UIKit.framework */; };
+		C390E8D416CCBA7C00867273 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390E8D316CCBA7C00867273 /* Foundation.framework */; };
+		C390E8D616CCBA7C00867273 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390E8D516CCBA7C00867273 /* CoreGraphics.framework */; };
+		C390E8DC16CCBA7C00867273 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C390E8DA16CCBA7C00867273 /* InfoPlist.strings */; };
+		C390E8DE16CCBA7C00867273 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C390E8DD16CCBA7C00867273 /* main.m */; };
+		C390E8E216CCBA7C00867273 /* voltuneersAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C390E8E116CCBA7C00867273 /* voltuneersAppDelegate.m */; };
+		C390E8E516CCBA7C00867273 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C390E8E316CCBA7C00867273 /* MainStoryboard_iPhone.storyboard */; };
+		C390E8E816CCBA7D00867273 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C390E8E616CCBA7D00867273 /* MainStoryboard_iPad.storyboard */; };
+		C390E8EB16CCBA7D00867273 /* voltuneersMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C390E8EA16CCBA7D00867273 /* voltuneersMasterViewController.m */; };
+		C390E8EE16CCBA7D00867273 /* voltuneersDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C390E8ED16CCBA7D00867273 /* voltuneersDetailViewController.m */; };
+		C390E8F616CCBA7D00867273 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390E8F516CCBA7D00867273 /* SenTestingKit.framework */; };
+		C390E8F716CCBA7D00867273 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390E8D116CCBA7C00867273 /* UIKit.framework */; };
+		C390E8F816CCBA7D00867273 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C390E8D316CCBA7C00867273 /* Foundation.framework */; };
+		C390E90016CCBA7D00867273 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C390E8FE16CCBA7D00867273 /* InfoPlist.strings */; };
+		C390E90316CCBA7D00867273 /* PeaceGuardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C390E90216CCBA7D00867273 /* PeaceGuardTests.m */; };
+		C390E90E16CCBAC900867273 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = C390E90D16CCBAC900867273 /* Report.m */; };
+		C390E91116CCBB0700867273 /* ReportDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C390E91016CCBB0700867273 /* ReportDataController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C390E8F916CCBA7D00867273 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C390E8C416CCBA7C00867273 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C390E8CC16CCBA7C00867273;
+			remoteInfo = PeaceGuard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C390E8CD16CCBA7C00867273 /* PeaceGuard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeaceGuard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C390E8D116CCBA7C00867273 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C390E8D316CCBA7C00867273 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C390E8D516CCBA7C00867273 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C390E8D916CCBA7C00867273 /* PeaceGuard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PeaceGuard-Info.plist"; sourceTree = "<group>"; };
+		C390E8DB16CCBA7C00867273 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C390E8DD16CCBA7C00867273 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C390E8DF16CCBA7C00867273 /* PeaceGuard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PeaceGuard-Prefix.pch"; sourceTree = "<group>"; };
+		C390E8E016CCBA7C00867273 /* voltuneersAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = voltuneersAppDelegate.h; sourceTree = "<group>"; };
+		C390E8E116CCBA7C00867273 /* voltuneersAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = voltuneersAppDelegate.m; sourceTree = "<group>"; };
+		C390E8E416CCBA7C00867273 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C390E8E716CCBA7D00867273 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		C390E8E916CCBA7D00867273 /* voltuneersMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = voltuneersMasterViewController.h; sourceTree = "<group>"; };
+		C390E8EA16CCBA7D00867273 /* voltuneersMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = voltuneersMasterViewController.m; sourceTree = "<group>"; };
+		C390E8EC16CCBA7D00867273 /* voltuneersDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = voltuneersDetailViewController.h; sourceTree = "<group>"; };
+		C390E8ED16CCBA7D00867273 /* voltuneersDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = voltuneersDetailViewController.m; sourceTree = "<group>"; };
+		C390E8F416CCBA7D00867273 /* PeaceGuardTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeaceGuardTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C390E8F516CCBA7D00867273 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C390E8FD16CCBA7D00867273 /* PeaceGuardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PeaceGuardTests-Info.plist"; sourceTree = "<group>"; };
+		C390E8FF16CCBA7D00867273 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C390E90116CCBA7D00867273 /* PeaceGuardTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeaceGuardTests.h; sourceTree = "<group>"; };
+		C390E90216CCBA7D00867273 /* PeaceGuardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeaceGuardTests.m; sourceTree = "<group>"; };
+		C390E90C16CCBAC900867273 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		C390E90D16CCBAC900867273 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		C390E90F16CCBB0700867273 /* ReportDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDataController.h; sourceTree = "<group>"; };
+		C390E91016CCBB0700867273 /* ReportDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDataController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C390E8CA16CCBA7C00867273 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C390E8D216CCBA7C00867273 /* UIKit.framework in Frameworks */,
+				C390E8D416CCBA7C00867273 /* Foundation.framework in Frameworks */,
+				C390E8D616CCBA7C00867273 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C390E8F016CCBA7D00867273 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C390E8F616CCBA7D00867273 /* SenTestingKit.framework in Frameworks */,
+				C390E8F716CCBA7D00867273 /* UIKit.framework in Frameworks */,
+				C390E8F816CCBA7D00867273 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C390E8C216CCBA7C00867273 = {
+			isa = PBXGroup;
+			children = (
+				C390E8D716CCBA7C00867273 /* PeaceGuard */,
+				C390E8FB16CCBA7D00867273 /* PeaceGuardTests */,
+				C390E8D016CCBA7C00867273 /* Frameworks */,
+				C390E8CE16CCBA7C00867273 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C390E8CE16CCBA7C00867273 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C390E8CD16CCBA7C00867273 /* PeaceGuard.app */,
+				C390E8F416CCBA7D00867273 /* PeaceGuardTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C390E8D016CCBA7C00867273 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C390E8D116CCBA7C00867273 /* UIKit.framework */,
+				C390E8D316CCBA7C00867273 /* Foundation.framework */,
+				C390E8D516CCBA7C00867273 /* CoreGraphics.framework */,
+				C390E8F516CCBA7D00867273 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C390E8D716CCBA7C00867273 /* PeaceGuard */ = {
+			isa = PBXGroup;
+			children = (
+				C390E8E016CCBA7C00867273 /* voltuneersAppDelegate.h */,
+				C390E8E116CCBA7C00867273 /* voltuneersAppDelegate.m */,
+				C390E8E316CCBA7C00867273 /* MainStoryboard_iPhone.storyboard */,
+				C390E8E616CCBA7D00867273 /* MainStoryboard_iPad.storyboard */,
+				C390E8E916CCBA7D00867273 /* voltuneersMasterViewController.h */,
+				C390E8EA16CCBA7D00867273 /* voltuneersMasterViewController.m */,
+				C390E8EC16CCBA7D00867273 /* voltuneersDetailViewController.h */,
+				C390E8ED16CCBA7D00867273 /* voltuneersDetailViewController.m */,
+				C390E8D816CCBA7C00867273 /* Supporting Files */,
+				C390E90C16CCBAC900867273 /* Report.h */,
+				C390E90D16CCBAC900867273 /* Report.m */,
+				C390E90F16CCBB0700867273 /* ReportDataController.h */,
+				C390E91016CCBB0700867273 /* ReportDataController.m */,
+			);
+			path = PeaceGuard;
+			sourceTree = "<group>";
+		};
+		C390E8D816CCBA7C00867273 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C390E8D916CCBA7C00867273 /* PeaceGuard-Info.plist */,
+				C390E8DA16CCBA7C00867273 /* InfoPlist.strings */,
+				C390E8DD16CCBA7C00867273 /* main.m */,
+				C390E8DF16CCBA7C00867273 /* PeaceGuard-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C390E8FB16CCBA7D00867273 /* PeaceGuardTests */ = {
+			isa = PBXGroup;
+			children = (
+				C390E90116CCBA7D00867273 /* PeaceGuardTests.h */,
+				C390E90216CCBA7D00867273 /* PeaceGuardTests.m */,
+				C390E8FC16CCBA7D00867273 /* Supporting Files */,
+			);
+			path = PeaceGuardTests;
+			sourceTree = "<group>";
+		};
+		C390E8FC16CCBA7D00867273 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C390E8FD16CCBA7D00867273 /* PeaceGuardTests-Info.plist */,
+				C390E8FE16CCBA7D00867273 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C390E8CC16CCBA7C00867273 /* PeaceGuard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C390E90616CCBA7D00867273 /* Build configuration list for PBXNativeTarget "PeaceGuard" */;
+			buildPhases = (
+				C390E8C916CCBA7C00867273 /* Sources */,
+				C390E8CA16CCBA7C00867273 /* Frameworks */,
+				C390E8CB16CCBA7C00867273 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeaceGuard;
+			productName = PeaceGuard;
+			productReference = C390E8CD16CCBA7C00867273 /* PeaceGuard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C390E8F316CCBA7D00867273 /* PeaceGuardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C390E90916CCBA7D00867273 /* Build configuration list for PBXNativeTarget "PeaceGuardTests" */;
+			buildPhases = (
+				C390E8EF16CCBA7D00867273 /* Sources */,
+				C390E8F016CCBA7D00867273 /* Frameworks */,
+				C390E8F116CCBA7D00867273 /* Resources */,
+				C390E8F216CCBA7D00867273 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C390E8FA16CCBA7D00867273 /* PBXTargetDependency */,
+			);
+			name = PeaceGuardTests;
+			productName = PeaceGuardTests;
+			productReference = C390E8F416CCBA7D00867273 /* PeaceGuardTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C390E8C416CCBA7C00867273 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = voltuneers;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = JonasYao;
+			};
+			buildConfigurationList = C390E8C716CCBA7C00867273 /* Build configuration list for PBXProject "PeaceGuard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C390E8C216CCBA7C00867273;
+			productRefGroup = C390E8CE16CCBA7C00867273 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C390E8CC16CCBA7C00867273 /* PeaceGuard */,
+				C390E8F316CCBA7D00867273 /* PeaceGuardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C390E8CB16CCBA7C00867273 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C390E8DC16CCBA7C00867273 /* InfoPlist.strings in Resources */,
+				C390E8E516CCBA7C00867273 /* MainStoryboard_iPhone.storyboard in Resources */,
+				C390E8E816CCBA7D00867273 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C390E8F116CCBA7D00867273 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C390E90016CCBA7D00867273 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C390E8F216CCBA7D00867273 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C390E8C916CCBA7C00867273 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C390E8DE16CCBA7C00867273 /* main.m in Sources */,
+				C390E8E216CCBA7C00867273 /* voltuneersAppDelegate.m in Sources */,
+				C390E8EB16CCBA7D00867273 /* voltuneersMasterViewController.m in Sources */,
+				C390E8EE16CCBA7D00867273 /* voltuneersDetailViewController.m in Sources */,
+				C390E90E16CCBAC900867273 /* Report.m in Sources */,
+				C390E91116CCBB0700867273 /* ReportDataController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C390E8EF16CCBA7D00867273 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C390E90316CCBA7D00867273 /* PeaceGuardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C390E8FA16CCBA7D00867273 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C390E8CC16CCBA7C00867273 /* PeaceGuard */;
+			targetProxy = C390E8F916CCBA7D00867273 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C390E8DA16CCBA7C00867273 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C390E8DB16CCBA7C00867273 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C390E8E316CCBA7C00867273 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C390E8E416CCBA7C00867273 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C390E8E616CCBA7D00867273 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C390E8E716CCBA7D00867273 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C390E8FE16CCBA7D00867273 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C390E8FF16CCBA7D00867273 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C390E90416CCBA7D00867273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C390E90516CCBA7D00867273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C390E90716CCBA7D00867273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PeaceGuard/PeaceGuard-Prefix.pch";
+				INFOPLIST_FILE = "PeaceGuard/PeaceGuard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C390E90816CCBA7D00867273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PeaceGuard/PeaceGuard-Prefix.pch";
+				INFOPLIST_FILE = "PeaceGuard/PeaceGuard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C390E90A16CCBA7D00867273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PeaceGuard.app/PeaceGuard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PeaceGuard/PeaceGuard-Prefix.pch";
+				INFOPLIST_FILE = "PeaceGuardTests/PeaceGuardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C390E90B16CCBA7D00867273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PeaceGuard.app/PeaceGuard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PeaceGuard/PeaceGuard-Prefix.pch";
+				INFOPLIST_FILE = "PeaceGuardTests/PeaceGuardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C390E8C716CCBA7C00867273 /* Build configuration list for PBXProject "PeaceGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C390E90416CCBA7D00867273 /* Debug */,
+				C390E90516CCBA7D00867273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C390E90616CCBA7D00867273 /* Build configuration list for PBXNativeTarget "PeaceGuard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C390E90716CCBA7D00867273 /* Debug */,
+				C390E90816CCBA7D00867273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C390E90916CCBA7D00867273 /* Build configuration list for PBXNativeTarget "PeaceGuardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C390E90A16CCBA7D00867273 /* Debug */,
+				C390E90B16CCBA7D00867273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C390E8C416CCBA7C00867273 /* Project object */;
+}
