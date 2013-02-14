@@ -20,11 +20,6 @@ img {
 	border:none;
 }
 
-table
-{
-
-}
-
 /* layout container / wrapper */
 div#container {
 	margin:0px auto;
@@ -43,24 +38,20 @@ div#wrapper {
 }
 
 #headerGreenBG {
-	background-image:url(../img/bg-header-green.png);
+	background-image:url(bg-header-green.png);
 	background-repeat:repeat-x;
 	background-position:center;
 }
 
 #tableLayoutMain {
-width:980px;
-border:0;
-align:center;
-cellpadding:0
-cellspacing:0;
+	/* background-color:#ffffff; */
 }
 
 /* photo header for home page
 overwrite the image, or change the href below to change graphic
 */
 #headerBGHome {
-	background-image:url(../img/home-top-banner-1.jpg);
+	background-image:url(home-top-banner-1.jpg);
 	background-repeat:no-repeat;
 	background-position:bottom;
 }
@@ -522,170 +513,4 @@ a.toggleLink {
 	vertical-align: middle;
 }
 			
-.tweet_list .tweet_time {}
-
-/***p1***/
-/*** adding sf-vertical in addition to sf-menu creates a vertical menu ***/
-/*** html & css are referensed from https://vancouver.ca/police/***/
-.sf-vertical, .sf-vertical li {
-	width:	194px;
-}
-/* this lacks ul at the start of the selector, so the styles from the main CSS file override it where needed */
-.sf-vertical li:hover ul,
-.sf-vertical li.sfHover ul {
-	left:	194px; /* match ul width */
-	top:	0;
-}
-
-/*** alter arrow directions ***/
-.sf-vertical .sf-sub-indicator { background-position: -10px 0; } /* IE6 gets solid image only */
-.sf-vertical a > .sf-sub-indicator { background-position: 0 0; } /* use translucent arrow for modern browsers*/
-
-/* hover arrow direction for modern browsers*/
-.sf-vertical a:focus > .sf-sub-indicator,
-.sf-vertical a:hover > .sf-sub-indicator,
-.sf-vertical a:active > .sf-sub-indicator,
-.sf-vertical li:hover > a > .sf-sub-indicator,
-.sf-vertical li.sfHover > a > .sf-sub-indicator {
-	background-position: -10px 0; /* arrow hovers for modern browsers*/
-}
-
-/*** p2.css/
-/*
-img is 570px x 250px, title and text is 110px, total height is 360px
-*/
-/*** html & css are referensed from https://vancouver.ca/police/***/
-
-div.slide-wrapper {
-	width: 570px;
-	margin: 0 auto;
-	text-align: left;
-}
-
-/* hmmmm, what's this do? */
-div#slide-container {
-	margin: -1px 0 0;
-}
-
-/* overall slider wrapper */
-div#slide-container div.slide-wrapper {
-	border:0px solid #FF0000;
-	height: 349px;
-	/* background: url(/assets/images/spotlight/header-bg.png) no-repeat 50% 0; */
-}
-
-div#slide-container div#slide-holder {
-	z-index: 40;
-	width: 570px;
-	height: 349px;
-	position: absolute;
-}
-
-/* runner for the slider */
-div#slide-container div#slide-holder div#slide-runner {
-	border:0px solid #FFFF00; /* yellow */
-	/* top: -12px; 9px FIXED? 10-Dec-2010 */
-	left: 2px; /* 9px */
-	width: 568px; /* 561px */
-	height: 350px; /* 278px */
-	overflow:hidden;
-	position: absolute;
-}
-
-/* hide all img */
-div#slide-container div#slide-holder img {
-	margin: 0;
-	display: none;
-	position: absolute;
-}
-
-/* slider controls bar */
-div#slide-container div#slide-holder div#slide-controls {
-	border:0px solid #FF0066;
-	left: 0;
-	bottom: 0px; /* 228px */
-	width: 570px;
-	height: 110px;
-	display: none;
-	position: absolute;
-	background: url(/police/assets/images/spotlight/slide-bg-blue.png) 0 0;
-}
-
-/* h2 within slider controls bar */
-div#slide-container div#slide-holder div#slide-controls h2.text {
-	/* float: left; */
-	color: #fff;
-	/* display: inline; */
-	font-size:100%; /* 10px */
-	/* line-height: 16px; */
-	margin: 8px 0 0 8px; /* 15px 0 0 20px */
-	text-transform:uppercase;
-}
-
-/* text within slider controls bar */
-div#slide-container div#slide-holder div#slide-controls p.text {
-	height:36px;
-	/* float: left; */
-	color: #fff;
-	/* display: inline; */
-	font-size: 80%; /* 10px */
-	/* line-height: 16px; */
-	margin: 8px 8px 0 8px; /* 15px 0 0 20px */
-	text-transform:none;
-}
-
-/* links on text within slider controls bar */
-div#slide-container div#slide-holder div#slide-controls a.slider-text-link {
-	color: #fff;
-	text-decoration:none;
-}
-
-div#slide-container div#slide-holder div#slide-controls a:hover.slider-text-link {
-	color: #fff;
-	text-decoration:underline;
-}
-
-/* nav block within slider controls bar */
-div#slide-container div#slide-holder div#slide-controls p#slide-nav {
-	height:30px;
-	float: right;
-	/* height: 24px; */
-	/* display: inline; */
-	margin: 8px 8px 0 0; /* 11px 15px 0 0 */
-	font-family:Arial, Helvetica, sans-serif;
-}
-
-/* nav image links within slider controls bar */
-div#slide-container div#slide-holder div#slide-controls p#slide-nav a {
-	/* float: right; */
-	/* width: 34px; */
-	padding:3px;
-	/* height: 24px; */
-	/* display: inline; */
-	font-size:120%; /*  11px */
-	margin: 0 5px 0 0;
-	/* line-height: 24px; */
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-	background-position: 0 0;
-	background-repeat: no-repeat;
-	color:#FFFFFF;
-}
-
-/* nav image within slider controls bar */
-/* hide the on state */
-div#slide-container div#slide-holder div#slide-controls p#slide-nav a.on {
-	/* background-position: 0 -24px; */
-	border:1px solid #fff;
-}
-
-div#slide-container div#slide-holder div#slide-controls p#slide-nav a {
-	/* background-image: url(/assets/images/spotlight/slide-nav.png); */
-}
-
-/* ??? not used ??? */
-div#nav ul li a {
-	/* background: url(/assets/images/spotlight/nav.png) no-repeat; */
-}
-
+.tweet_list .tweet_time {
