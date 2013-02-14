@@ -18,14 +18,14 @@ define('_DEBUG', true);
 
 // The following constants are for JSON keys. These must be in agreement
 // with both the website and the iPhone app. Integers are used for simplicity.
-define('_SUCCESSFUL', 0);
-define('_MESSAGE', 1);
+define('_SUCCESSFUL', 'successful');
+define('_MESSAGE', 'message');
 
 // The following constants are for $_POST array keys. Integers are used for simplicity.
-define('_AGENT', 0);
+define('_AGENT', 'agent');
 
 // The following constants are for $_POST array values.
-define('_IPHONE', 0);   // For use with _AGENT key
-define('_WEBSITE', 1);  // For use with _AGENT key
+define('_IPHONE', 'iphone');   // For use with _AGENT key
+define('_WEBSITE', 'website');  // For use with _AGENT key
 
 ?>
