@@ -47,5 +47,9 @@ class Volunteer extends User {
     public function getAverageDistance() {
         return $this->totalDistance / $this->numberOfPatrols;
     }
+	
+	public function madeReport() {
+		$this->numberofReports+=1;
+	}
 
 }
