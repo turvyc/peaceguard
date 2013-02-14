@@ -2,8 +2,8 @@
 
 /* login.php
 
-This script is the target of a HTTP POST request, and returns a JSON array, 
-with the structure { _SUCCESSFUL: boolean, _MESSAGE: string }.
+This script is the target of a HTTP POST request, and outputs a JSON array, 
+or sets the $_SESSION variable, with the structure { _SUCCESSFUL: boolean, _MESSAGE: string }.
 
 Contributor(s): Colin Strong
 
