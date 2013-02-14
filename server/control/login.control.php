@@ -24,12 +24,14 @@ try {
 catch (PDOException $e) {
     $interface->add(_SUCCESSFUL, false);
     $interface->add(_MESSAGE, 'Database error!');
+    exit(0);
 }
 
 // If there was no match . . . 
 catch (Exception $e) {
     $interface->add(_SUCCESSFUL, false);
     $interface->add(_MESSAGE, $e->getMessage());
+    exit(0);
 }
 
 // If we made it this far, we should be logged in. This is getting tossed in 
