@@ -48,7 +48,7 @@ class Session {
         // Look for a match in the database
         try {
             require('database.model.php');
-            $STH = $DBH->prepare('SELECT a_id FROM Admins WHERE a_id=? AND pw_hash=?');
+            $STH = $DBH->prepare('SELECT Admins.a_id FROM Admins, Users WHERE Admins.a_id=? AND Users.pw_hash=?');
             $STH->execute(array($username, $hash));
         }
         // If there is a database error . . .

@@ -53,11 +53,11 @@ class DataInterface {
 
     // Outputs the contents of $data, depending on the agent
     public function output() {
-        if ($agent == _IPHONE) {
-            echo json_encode($data);
+        if ($this->agent == _IPHONE) {
+            echo json_encode($this->data);
         }
         else {
-            $_SESSION[Session::DATA] = $data;
+            $_SESSION[Session::DATA] = $this->data;
         }
     }
 }

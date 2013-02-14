@@ -23,6 +23,8 @@ define('_MESSAGE', 'message');
 
 // The following constants are for $_POST array keys. Integers are used for simplicity.
 define('_AGENT', 'agent');
+define('_USERNAME', 'username');
+define('_PASSWORD', 'password');
 
 // The following constants are for $_POST array values.
 define('_IPHONE', 'iphone');   // For use with _AGENT key
