@@ -8,8 +8,10 @@ The home page of the Website.
 
 include('header.html');
 include('model/session.model.php');
+include('model/volunteer.model.php');
 
 $session = new Session();
+$volunteer = new Volunteer();
 
 if (! $session->getName()) {
     if (_DEBUG) {
@@ -22,11 +24,9 @@ if (! $session->getName()) {
 
 ?>
 
-<h2>TODO: Add the following features:</h2>
-<ul>
-    <li>Feature 4.2.3.1: System status (online/offline)</li>
-    <li>Feature 4.2.3.2: Number of registered volunteers</li>
-    <li>Feature 4.2.3.3: Number of currently patrolling volunteers</li>
-</ul>
+<h2>System status: OFFLINE</h2>
+<h2>Number of registered volunteers: <?php echo $volunteer->getTotalNumber(); ?></h2>
+<h2>Number of currently patrolling volunteers: <?php echo $volunteer->getTotalNumber(true); ?></h2>
+
 
 <?php include('footer.html'); ?>

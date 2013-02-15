@@ -9,6 +9,7 @@ Contributors(s): Colin Strong
 */
 
 require_once('user.model.php');
+require_once('constants.model.php');
 
 class Volunteer extends User {
 
@@ -19,6 +20,19 @@ class Volunteer extends User {
     private $totalDistance;
     // private $score;  Commented because we have no score algorithm as of yet
 	// private $badges; should we have an array to store badges that the volunteer has collected.
+
+    // Returns the total number of registered volunteers, or the total number
+    // patrolling if the parameter is true.
+    public function getTotalNumber($patrolling = false) {
+        require('database.model.php');
+        $table = ($patrolling) ? 'IsPatrolling' : 'Volunteers';
+        $query = "SELECT v_id FROM $table";
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $rows = $STH->fetchAll();
+        $DBH = null;
+        return count($rows);
+    }
 
     public function getJoinDate() {
         return $this->joinDate;
