@@ -11,7 +11,7 @@ include('model/session.model.php');
 
 $session = new Session();
 
-if (! $session->getUsername()) {
+if (! $session->getName()) {
     if (_DEBUG) {
         echo 'NOT LOGGED IN!';
     }

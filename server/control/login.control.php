@@ -17,7 +17,7 @@ $session = new Session();
 $interface = new DataInterface();
 
 try {
-    $session->login($_POST[_USERNAME], $_POST[_PASSWORD]);
+    $session->login($_POST[_EMAIL], $_POST[_PASSWORD]);
 }
 
 // If there was no match . . . 
@@ -25,13 +25,13 @@ catch (Exception $e) {
     $interface->addData(_SUCCESSFUL, false);
     $interface->addData(_MESSAGE, $e->getMessage());
     $interface->setHeader('login.php');
-    exit(0);
+    $interface->output();
 }
 
 // If we made it this far, we should be logged in. This is getting tossed in 
 // until I can write some unit tests.
 if (_DEBUG) {
-    assert($session->getUsername() != null);
+    assert($session->getName() != null);
 }
 
 $interface->addData(_SUCCESSFUL, true);
@@ -40,6 +40,5 @@ $interface->setHeader('index.php');
 
 // Output the data and we're done!
 $interface->output();
-exit(0);
 
 ?>

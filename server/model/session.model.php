@@ -16,10 +16,10 @@ require_once('constants.model.php');
 class Session {
 
     // The salt is concatenated to a plain-text password before it is hashed
-    const SALT = 'k39zkd(jk12@#2mdk*_)_kdjs [3o212==k~~kd';
+    const SALT = 'kd83md723fgfic03mkg9sdy34nds7x5r2bnd78x';
 
     // These constants are for $_SESSION array keys
-    const USERNAME = 'username';
+    const NAME = 'name';
     const DATA = 'data';
 
     // Starts a new session, if one hasn't been started already
@@ -29,24 +29,24 @@ class Session {
             session_start();
         }
 
-        if (!isset($_SESSION[Session::USERNAME])) {
-            $_SESSION[Session::USERNAME] = null;
+        if (!isset($_SESSION[Session::NAME])) {
+            $_SESSION[Session::NAME] = null;
         }
     }
 
-    // Returns the username of the logged-in user, or null if nobody is logged in.
-    public function getUsername() {
-        return $_SESSION[Session::USERNAME];
+    // Returns the name of the logged-in user, or null if nobody is logged in.
+    public function getName() {
+        return $_SESSION[Session::NAME];
     }
 
     // Returns an associative array populated with the JSON data in the _SESSION 
     // array, or throws an exception if either _SESSION or the data are empty or unset.
     public function getData() {
-        if (! isset($_SESSION[Session::DATA]) || isempty($_SESSION[Session::DATA])) {
+        if (! isset($_SESSION[Session::DATA]) || empty($_SESSION[Session::DATA])) {
             throw new Exception('No data found.');
         }
 
-        return json_decode($_SESSION[Session::DATA]);
+        return json_decode($_SESSION[Session::DATA], true);
     }
 
     // Deletes the encoded JSON string stored in _SESSION[DATA]
@@ -58,15 +58,16 @@ class Session {
 
     // Attempts to authenticate a username/password pair. Note that this function
     // is ONLY for the police administrator login, not for iPhone login!
-    public function login($username, $password) {
+    public function login($email, $password) {
 
         $hash = $this->getPasswordHash($password);
 
         // Look for a match in the database
         try {
             require('database.model.php');
-            $STH = $DBH->prepare('SELECT Admins.a_id FROM Admins, Users WHERE Admins.a_id=? AND Users.pw_hash=?');
-            $STH->execute(array($username, $hash));
+            $STH = $DBH->prepare('SELECT U.firstName FROM Admins A, Users U 
+            WHERE U.email = ? AND U.pw_hash = ? AND A.a_id = U.u_id');
+            $STH->execute(array($email, $hash));
         }
         // If there is a database error . . .
         catch (PDOException $e) {
@@ -79,17 +80,17 @@ class Session {
         }
 
         // If there is a match, log the user in
-        if ($STH->fetch()) {
+        if ($row = $STH->fetch()) {
             session_regenerate_id();
-            $this->setUsername($username);
+            $this->setName($row['firstName']);
             $DBH = null;
         }
 
         // If there is no match, throw an exception for the controller to take care of
         else {
-            $this->setUsername(null);
+            $this->setName(null);
             $DBH = null;
-            throw new Exception('The username/password pair was not found!');
+            throw new Exception('The email/password pair was not found!');
         }
     }
 
@@ -105,8 +106,8 @@ class Session {
     }
 
     // Sets the username of the session
-    private function setUsername($username) {
-        $_SESSION[Session::USERNAME] = $username;
+    private function setName($name) {
+        $_SESSION[Session::NAME] = $name;
     }
 
 }

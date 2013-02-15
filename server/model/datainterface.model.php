@@ -70,7 +70,7 @@ class DataInterface {
 
         else {
             $_SESSION[Session::DATA] = $json;
-            header("location: $this->header");
+            header("location: ../$this->header");
         }
         exit(0);
     }

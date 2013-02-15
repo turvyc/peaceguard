@@ -16,7 +16,6 @@ $session = new Session();
 // Look for an error message from a previous login attempt
 try {
     $data = $session->getData();
-    if (_DEBUG) { assert(! $data[_SUCCESSFUL]); } // We should never get here with _SUCCESSFUL == true
     $errorMessage = $data[_MESSAGE];
     $session->clearData();
 }
@@ -31,10 +30,10 @@ catch (Exception $e) {
 </div>
 
 <form name="login" action="control/login.control.php" method="POST">
-    Username: <input type="text" name="<?php echo _USERNAME; ?>" /> <br />
-    Password: <input type="password" name="<?php echo _PASSWORD; ?>" /> <br />
+    E-mail: <input type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br />
+    Password: <input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br />
     <input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
-    <input type="submit" value="Login" />
+    <input type="submit" value="Login" tabindex="3" />
 </form>
 
 <?php include('footer.html'); ?>
