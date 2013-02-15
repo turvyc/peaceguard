@@ -1,21 +1,32 @@
 <?php
 
+/* index.php
+
+The home page of the Website.
+
+*/
+
 include('header.html');
 include('model/session.model.php');
 
-// This should be in header.html, which would be changed to header.php
 $session = new Session();
 
 if (! $session->getUsername()) {
-    header('location:login.php');
+    if (_DEBUG) {
+        echo 'NOT LOGGED IN!';
+    }
+    else {
+        header('location:login.php');
+    }
 }
 
 ?>
 
-<h2>Main page stuff goes here</h2>
+<h2>TODO: Add the following features:</h2>
+<ul>
+    <li>Feature 4.2.3.1: System status (online/offline)</li>
+    <li>Feature 4.2.3.2: Number of registered volunteers</li>
+    <li>Feature 4.2.3.3: Number of currently patrolling volunteers</li>
+</ul>
 
-<?php
-
-include('footer.html');
-
-?>
+<?php include('footer.html'); ?>
