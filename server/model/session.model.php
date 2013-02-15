@@ -20,7 +20,7 @@ class Session {
 
     // These constants are for $_SESSION array keys
     const USERNAME = 'username';
-    const DATA = 'data';
+    const JSON = 'json';
 
     // Starts a new session, if one hasn't been started already
     public function __construct() {

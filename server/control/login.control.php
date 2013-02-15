@@ -20,17 +20,11 @@ try {
     $session->login($_POST[_USERNAME], $_POST[_PASSWORD]);
 }
 
-// If there is a database error . . .
-catch (PDOException $e) {
-    $interface->add(_SUCCESSFUL, false);
-    $interface->add(_MESSAGE, 'Database error!');
-    exit(0);
-}
-
 // If there was no match . . . 
 catch (Exception $e) {
-    $interface->add(_SUCCESSFUL, false);
-    $interface->add(_MESSAGE, $e->getMessage());
+    $interface->addData(_SUCCESSFUL, false);
+    $interface->addData(_MESSAGE, $e->getMessage());
+    $interface->setHeader('login.php');
     exit(0);
 }
 
@@ -40,8 +34,9 @@ if (_DEBUG) {
     assert($session->getUsername() != null);
 }
 
-$interface->add(_SUCCESSFUL, true);
-$interface->add(_MESSAGE, "Thanks for logging in, $session->getUsername()!");
+$interface->addData(_SUCCESSFUL, true);
+$interface->addData(_MESSAGE, "Thanks for logging in, $session->getUsername()!");
+$interface->setHeader('index.php');
 
 // Output the data and we're done!
 $interface->output();

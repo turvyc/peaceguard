@@ -26,6 +26,10 @@ class DataInterface {
     // either a $_SESSION or JSON array, depending on the agent.
     private $data;
 
+    // The header stores the page the client should be redirected to after outputting
+    // the data, should they be using the website.
+    private $header;
+
     public function __construct() {
         // There must be a POST array to work with
         if (! isset($_POST)) {
@@ -47,18 +51,28 @@ class DataInterface {
     }
 
     // Appends the specified key/value pair to $data
-    public function add($key, $value) {
+    public function addData($key, $value) {
         $this->data[$key] = $value;
     }
 
-    // Outputs the contents of $data, depending on the agent
+    // Sets the location header 
+    public function setHeader($page) {
+        $this->header = $page;
+    }
+
+    // Converts $data to JSON and outputs it depending on the agent
     public function output() {
+        $json = json_encode($this->data);
+
         if ($this->agent == _IPHONE) {
-            echo json_encode($this->data);
+            echo $json;
         }
+
         else {
-            $_SESSION[Session::DATA] = $this->data;
+            $_SESSION[Session::JSON] = $json;
+            header("location: $this->header");
         }
+        exit(0);
     }
 }
 
