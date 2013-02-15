@@ -20,7 +20,7 @@ class Session {
 
     // These constants are for $_SESSION array keys
     const USERNAME = 'username';
-    const JSON = 'json';
+    const DATA = 'data';
 
     // Starts a new session, if one hasn't been started already
     public function __construct() {
@@ -37,6 +37,23 @@ class Session {
     // Returns the username of the logged-in user, or null if nobody is logged in.
     public function getUsername() {
         return $_SESSION[Session::USERNAME];
+    }
+
+    // Returns an associative array populated with the JSON data in the _SESSION 
+    // array, or throws an exception if either _SESSION or the data are empty or unset.
+    public function getData() {
+        if (! isset($_SESSION[Session::DATA]) || isempty($_SESSION[Session::DATA])) {
+            throw new Exception('No data found.');
+        }
+
+        return json_decode($_SESSION[Session::DATA]);
+    }
+
+    // Deletes the encoded JSON string stored in _SESSION[DATA]
+    public function clearData() {
+        if (isset($_SESSION[Session::DATA])) {
+            unset($_SESSION[Session::DATA]);
+        }
     }
 
     // Attempts to authenticate a username/password pair. Note that this function
