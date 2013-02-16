@@ -5,19 +5,16 @@ body
 
 #main
 {
-    width: 1000px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
-    background: blue;
 }
 
 #header
 {
     height="333";
     width="1195";
-    padding: 0px 330px;
-    background: red;
 }
 
 #footer
@@ -53,6 +50,16 @@ li #navbar
 {
     padding: 10px;
     color: #828391;
+}
+
+.defaultForm
+{
+    position: relative;
+}
+
+.defaultForm input, label, select, textarea
+{
+    margin: 5px 0px 15px 0px;
 }
 
 #login
