@@ -19,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-839" y="193"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - PeaceGuard-->
         <scene sceneID="phK-O5-jvK">
             <objects>
                 <viewController id="ZQk-Oc-3CE" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                             <constraint firstItem="fic-Hs-TIz" firstAttribute="top" secondItem="obr-6W-7d2" secondAttribute="top" constant="195" id="uWU-6F-M2Q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Phv-L5-nRb">
+                    <navigationItem key="navigationItem" title="PeaceGuard" id="Phv-L5-nRb">
                         <barButtonItem key="backBarButtonItem" title="Logout" id="OsI-PQ-8ha"/>
                     </navigationItem>
                 </viewController>
@@ -160,7 +160,7 @@
             </objects>
             <point key="canvasLocation" x="9" y="194"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Help-->
         <scene sceneID="g5u-jl-XPy">
             <objects>
                 <viewController id="8SN-Ca-LlD" sceneMemberID="viewController">
@@ -180,13 +180,13 @@
                             <constraint firstItem="djH-bM-AP3" firstAttribute="top" secondItem="Ac9-KU-w3g" secondAttribute="top" constant="182" id="qhW-X8-2Va"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xXe-U9-42j"/>
+                    <navigationItem key="navigationItem" title="Help" id="xXe-U9-42j"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oje-E6-tEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6" y="919"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Report-->
         <scene sceneID="bWo-rE-05o">
             <objects>
                 <viewController id="oPN-sY-whv" sceneMemberID="viewController">
@@ -206,13 +206,13 @@
                             <constraint firstItem="byB-DL-IUI" firstAttribute="centerX" secondItem="Bmk-e2-JVe" secondAttribute="centerX" type="default" id="uHw-6d-g09"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bhP-g5-8sB"/>
+                    <navigationItem key="navigationItem" title="Report" id="bhP-g5-8sB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izN-ri-bUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="637" y="872"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Patrol-->
         <scene sceneID="zdJ-X0-nX1">
             <objects>
                 <viewController id="YiY-r9-CCp" sceneMemberID="viewController">
@@ -232,13 +232,13 @@
                             <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="wPO-zO-USi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DZw-QL-Cdx"/>
+                    <navigationItem key="navigationItem" title="Patrol" id="DZw-QL-Cdx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="513" y="-283"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Statistics-->
         <scene sceneID="TKs-4u-uYS">
             <objects>
                 <viewController id="gX9-hk-2uQ" sceneMemberID="viewController">
@@ -258,7 +258,7 @@
                             <constraint firstItem="q7B-Lz-PnI" firstAttribute="centerX" secondItem="1tw-Rx-Ish" secondAttribute="centerX" type="default" id="fZf-9T-fj1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bFR-Re-UWF"/>
+                    <navigationItem key="navigationItem" title="Statistics" id="bFR-Re-UWF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuq-qa-82s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,9 +266,6 @@
         </scene>
     </scenes>
     <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
         <class className="PeaceGuardViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
         </class>
