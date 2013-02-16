@@ -18,6 +18,8 @@
 		C4150BB816CCA93C00876850 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB716CCA93C00876850 /* Default-568h@2x.png */; };
 		C4150BBB16CCA93C00876850 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */; };
 		C4150BBE16CCA93C00876850 /* PeaceGuardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */; };
+		C4D244D016CEBA800017098A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244CF16CEBA800017098A /* User.m */; };
+		C4D244D316CEC5210017098A /* UserDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244D216CEC5210017098A /* UserDataController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		C4150BBA16CCA93C00876850 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeaceGuardViewController.h; sourceTree = "<group>"; };
 		C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeaceGuardViewController.m; sourceTree = "<group>"; };
+		C4D244CE16CEBA800017098A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		C4D244CF16CEBA800017098A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		C4D244D116CEC5210017098A /* UserDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataController.h; sourceTree = "<group>"; };
+		C4D244D216CEC5210017098A /* UserDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,10 @@
 				C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */,
 				C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */,
 				C4150BA816CCA93C00876850 /* Supporting Files */,
+				C4D244CE16CEBA800017098A /* User.h */,
+				C4D244D116CEC5210017098A /* UserDataController.h */,
+				C4D244D216CEC5210017098A /* UserDataController.m */,
+				C4D244CF16CEBA800017098A /* User.m */,
 			);
 			path = peaceguard;
 			sourceTree = "<group>";
@@ -177,6 +187,8 @@
 				C4150BAE16CCA93C00876850 /* main.m in Sources */,
 				C4150BB216CCA93C00876850 /* PeaceGuardAppDelegate.m in Sources */,
 				C4150BBE16CCA93C00876850 /* PeaceGuardViewController.m in Sources */,
+				C4D244D016CEBA800017098A /* User.m in Sources */,
+				C4D244D316CEC5210017098A /* UserDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +311,7 @@
 				C4150BC316CCA93C00876850 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
