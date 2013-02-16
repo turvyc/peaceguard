@@ -98,7 +98,7 @@
             <objects>
                 <viewController id="2" customClass="ReportViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvQ-u7-xUg">
@@ -182,14 +182,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9" y="194"/>
+            <point key="canvasLocation" x="2" y="181"/>
         </scene>
         <!--View Controller - Help-->
         <scene sceneID="g5u-jl-XPy">
             <objects>
                 <viewController id="8SN-Ca-LlD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ac9-KU-w3g">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Help to be implemented" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djH-bM-AP3">
@@ -208,66 +208,185 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oje-E6-tEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6" y="919"/>
+            <point key="canvasLocation" x="-22" y="1047"/>
         </scene>
         <!--Report View Controller - Report-->
         <scene sceneID="bWo-rE-05o">
             <objects>
                 <viewController id="oPN-sY-whv" customClass="ReportViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bmk-e2-JVe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Report to be implemented" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byB-DL-IUI">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wiz-Bs-Kxw">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="View Incident Report">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="b8P-kt-qoU" kind="push" id="BEf-SP-8gF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hi-uv-f1H">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="push" id="Edf-Cu-cYP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyU-UG-4m7">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Overview">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="byB-DL-IUI" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="237" id="FqJ-ip-ndi"/>
-                            <constraint firstItem="byB-DL-IUI" firstAttribute="centerX" secondItem="Bmk-e2-JVe" secondAttribute="centerX" type="default" id="uHw-6d-g09"/>
+                            <constraint firstAttribute="bottom" secondItem="2Hi-uv-f1H" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Bav-Ff-Kl9"/>
+                            <constraint firstItem="Wiz-Bs-Kxw" firstAttribute="centerX" secondItem="Bmk-e2-JVe" secondAttribute="centerX" type="default" id="TTb-dl-8HU"/>
+                            <constraint firstAttribute="bottom" secondItem="Wiz-Bs-Kxw" secondAttribute="bottom" constant="143" id="chc-ky-LLZ"/>
+                            <constraint firstItem="yyU-UG-4m7" firstAttribute="centerX" secondItem="Wiz-Bs-Kxw" secondAttribute="centerX" type="default" id="tMm-w9-kFr"/>
+                            <constraint firstAttribute="trailing" secondItem="2Hi-uv-f1H" secondAttribute="trailing" constant="8" id="xer-BZ-6B2"/>
+                            <constraint firstAttribute="bottom" secondItem="yyU-UG-4m7" secondAttribute="bottom" constant="208" id="yl0-rQ-CXn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Report" id="bhP-g5-8sB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izN-ri-bUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637" y="872"/>
+            <point key="canvasLocation" x="601" y="315"/>
         </scene>
         <!--View Controller - Patrol-->
         <scene sceneID="zdJ-X0-nX1">
             <objects>
                 <viewController id="YiY-r9-CCp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hj2-y8-Dce">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Patrol to be implemented" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFo-DW-Hec">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFo-DW-Hec">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbf-TJ-TZz">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="MAP  ">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmB-cb-ndz">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Route">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tct-Xk-QVb">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="push" id="gIa-89-To3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6t-RW-tH8">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Report">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oPN-sY-whv" kind="push" id="pLh-KJ-Q8U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GFo-DW-Hec" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="5dV-XL-m3w"/>
-                            <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="wPO-zO-USi"/>
+                            <constraint firstAttribute="bottom" secondItem="Tct-Xk-QVb" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6ow-21-ath"/>
+                            <constraint firstItem="GFo-DW-Hec" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="145" id="DJh-Ih-OEt"/>
+                            <constraint firstAttribute="bottom" secondItem="fmB-cb-ndz" secondAttribute="bottom" constant="163" id="HmJ-WE-zGS"/>
+                            <constraint firstItem="fmB-cb-ndz" firstAttribute="trailing" secondItem="dbf-TJ-TZz" secondAttribute="trailing" type="default" id="IJU-is-OGG"/>
+                            <constraint firstAttribute="trailing" secondItem="Tct-Xk-QVb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="K65-IV-9SH"/>
+                            <constraint firstItem="dbf-TJ-TZz" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="kDW-b7-JHx"/>
+                            <constraint firstAttribute="bottom" secondItem="W6t-RW-tH8" secondAttribute="bottom" constant="97" id="l1q-3O-Z1R"/>
+                            <constraint firstAttribute="bottom" secondItem="dbf-TJ-TZz" secondAttribute="bottom" constant="224" id="q5Y-nq-Ret"/>
+                            <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="u8M-92-db4"/>
+                            <constraint firstItem="W6t-RW-tH8" firstAttribute="leading" secondItem="dbf-TJ-TZz" secondAttribute="leading" type="default" id="wgu-Fc-aEe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Patrol" id="DZw-QL-Cdx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="-283"/>
+            <point key="canvasLocation" x="698" y="-419"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Z8i-II-Cm1">
+            <objects>
+                <tableViewController id="b8P-kt-qoU" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Dsu-cf-18w">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ylb-1n-PSi">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="b8P-kt-qoU" id="lhS-UE-Prm"/>
+                            <outlet property="delegate" destination="b8P-kt-qoU" id="TgC-aV-t9g"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jCm-85-8B1"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pD-MI-YaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1027" y="-119"/>
         </scene>
         <!--View Controller - Statistics-->
         <scene sceneID="TKs-4u-uYS">
             <objects>
                 <viewController id="gX9-hk-2uQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1tw-Rx-Ish">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Statistics to be implemented" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7B-Lz-PnI">
@@ -286,26 +405,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuq-qa-82s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="194"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="lb2-0L-eIh">
-            <objects>
-                <viewController id="VTa-R5-BDj" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="EMV-Gl-hTr">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pfU-aI-lhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="1009" y="228"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PeaceGuardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="pLh-KJ-Q8U"/>
+        <segue reference="gIa-89-To3"/>
+    </inferredMetricsTieBreakers>
 </document>

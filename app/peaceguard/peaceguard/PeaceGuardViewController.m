@@ -25,7 +25,7 @@
 
 //- (BOOL)textFieldShouldReturn:(UITextField *)theTextField{
 //    if (theTextField == self.username) {
-//        [theTextField resignFirstResponder];
+//        [theTextField resignFirstResoponder];
 //    }
 //    if( theTextField == self.password){
 //        [theTextField resignFirstResponder];
