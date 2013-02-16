@@ -1,11 +1,11 @@
 body
 {
-    background-color: #A9A9A9;	
+    background-color: #1b2855;	
 }
 
 #main
 {
-    width: 1200px;
+    width: 1195px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 10px;
@@ -20,12 +20,11 @@ body
 #footer
 {
     text-align: center;
-    background: green;
 }
 
 #body
 {
-    background: black;
+    background-color: #c2c2c2;
 }
 
 #navbar
@@ -33,12 +32,10 @@ body
     float:left;
     width:210px;
     padding: 10px;
-    background: yellow;
 }
 
 #content
 {
-    background: white; 
 }
 
 ul #navbar
@@ -69,6 +66,5 @@ li #navbar
     align: center;
     color:#333333;
     text-decoration:none;
-    background:white;
 }
 
