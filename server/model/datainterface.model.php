@@ -76,7 +76,7 @@ class DataInterface {
         else {
             $session = new Session();
             $session->setJsonData($this->data);
-            if (! _DEBUG) { header("location: ../$this->header"); }
+            header("location: ../$this->header");
         }
         exit(0);
     }
