@@ -41,6 +41,9 @@ class DataInterface {
             throw new exception('$_AGENT is not set!');
         }
 
+        // Initialize the data array
+        $this->array = array();
+
         // Set the agent
         $this->agent = ($_POST[_AGENT] == _IPHONE) ? _IPHONE : _WEBSITE;
     }
@@ -65,6 +68,7 @@ class DataInterface {
         $json = json_encode($this->data);
 
         if ($this->agent == _IPHONE) {
+            if (_DEBUG) { return $json; }
             echo $json;
         }
 

@@ -22,7 +22,7 @@ class Session {
     const NAME = 'name';
     const DATA = 'data';
 
-    // Starts a new session, if one hasn't been started already
+    // Constructor. Starts a new session, if one hasn't been started already
     public function __construct() {
 
         if (!isset($_SESSION)) {
@@ -32,6 +32,11 @@ class Session {
         if (!isset($_SESSION[Session::NAME])) {
             $_SESSION[Session::NAME] = null;
         }
+    }
+
+    // Destructor. Calls logout().
+    public function __destroy() {
+        $this->logout();
     }
 
     // Returns the name of the logged-in user, or null if nobody is logged in.
