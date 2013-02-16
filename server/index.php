@@ -24,9 +24,9 @@ if (! $session->getName()) {
 
 ?>
 
-<h2>System status: OFFLINE</h2>
-<h2>Number of registered volunteers: <?php echo $volunteer->getTotalNumber(); ?></h2>
-<h2>Number of currently patrolling volunteers: <?php echo $volunteer->getTotalNumber(true); ?></h2>
+<p>System status: OFFLINE</p>
+<p>Number of registered volunteers: <?php echo $volunteer->getTotalNumber(); ?></p>
+<p>Number of currently patrolling volunteers: <?php echo $volunteer->getTotalNumber(true); ?></p>
 
 
 <?php include('footer.html'); ?>

@@ -15,7 +15,7 @@ $session = new Session();
 
 // Look for an error message from a previous login attempt
 try {
-    $data = $session->getData();
+    $data = $session->getJsonData();
     $errorMessage = $data[_MESSAGE];
     $session->clearData();
 }
@@ -25,15 +25,15 @@ catch (Exception $e) {
 
 ?>
 
-<div class="errorMessage">
-    <p class="errorMessage"><?php echo $errorMessage; ?></p>
+<div id="errorMessage">
+    <p id="errorMessage"><?php echo $errorMessage; ?></p>
 </div>
 
-<form name="login" action="control/login.control.php" method="POST">
-    E-mail: <input type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br />
-    Password: <input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br />
-    <input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
-    <input type="submit" value="Login" tabindex="3" />
+<form class="defaultForm" name="login" action="control/login.control.php" method="POST">
+    E-mail: <input class="defaultForm" type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br />
+    Password: <input class="defaultForm" type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br />
+    <input class="defaultForm" type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
+    <input class="defaultForm" type="submit" value="Login" tabindex="3" />
 </form>
 
 <?php include('footer.html'); ?>
