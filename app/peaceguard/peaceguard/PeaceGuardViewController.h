@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReportViewController.h"
+//#import "User.h"
+#import "UserDataController.h"
 
-@interface PeaceGuardViewController : UIViewController
+@class UserDataController;
 
+@interface PeaceGuardViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *username;
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property(strong, nonatomic) UserDataController *userController;
+@property (weak, nonatomic) IBOutlet UIButton *Login;
+
+- (IBAction)Login:(id)sender;
+- (BOOL)logUsername: (NSString *) username andPassword: (NSString *) password;
 @end

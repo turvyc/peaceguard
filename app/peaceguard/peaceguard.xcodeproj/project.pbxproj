@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C39E8B5D16CF370E0087FBDD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5C16CF370E0087FBDD /* Report.m */; };
+		C39E8B6016CF371D0087FBDD /* ReportDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5F16CF371D0087FBDD /* ReportDataController.m */; };
+		C39E8B6316CF37420087FBDD /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B6216CF37420087FBDD /* ReportViewController.m */; };
 		C4150BA216CCA93C00876850 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4150BA116CCA93C00876850 /* UIKit.framework */; };
 		C4150BA416CCA93C00876850 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4150BA316CCA93C00876850 /* Foundation.framework */; };
 		C4150BA616CCA93C00876850 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4150BA516CCA93C00876850 /* CoreGraphics.framework */; };
@@ -23,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C39E8B5B16CF370E0087FBDD /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		C39E8B5C16CF370E0087FBDD /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		C39E8B5E16CF371D0087FBDD /* ReportDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDataController.h; sourceTree = "<group>"; };
+		C39E8B5F16CF371D0087FBDD /* ReportDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDataController.m; sourceTree = "<group>"; };
+		C39E8B6116CF37420087FBDD /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		C39E8B6216CF37420087FBDD /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		C4150B9E16CCA93C00876850 /* peaceguard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = peaceguard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4150BA116CCA93C00876850 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C4150BA316CCA93C00876850 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +108,12 @@
 				C4D244D116CEC5210017098A /* UserDataController.h */,
 				C4D244D216CEC5210017098A /* UserDataController.m */,
 				C4D244CF16CEBA800017098A /* User.m */,
+				C39E8B5B16CF370E0087FBDD /* Report.h */,
+				C39E8B5C16CF370E0087FBDD /* Report.m */,
+				C39E8B5E16CF371D0087FBDD /* ReportDataController.h */,
+				C39E8B5F16CF371D0087FBDD /* ReportDataController.m */,
+				C39E8B6116CF37420087FBDD /* ReportViewController.h */,
+				C39E8B6216CF37420087FBDD /* ReportViewController.m */,
 			);
 			path = peaceguard;
 			sourceTree = "<group>";
@@ -189,6 +204,9 @@
 				C4150BBE16CCA93C00876850 /* PeaceGuardViewController.m in Sources */,
 				C4D244D016CEBA800017098A /* User.m in Sources */,
 				C4D244D316CEC5210017098A /* UserDataController.m in Sources */,
+				C39E8B5D16CF370E0087FBDD /* Report.m in Sources */,
+				C39E8B6016CF371D0087FBDD /* ReportDataController.m in Sources */,
+				C39E8B6316CF37420087FBDD /* ReportViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
