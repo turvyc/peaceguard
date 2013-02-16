@@ -22,7 +22,7 @@ try {
 
 // If there was no match . . . 
 catch (Exception $e) {
-    $interface->addData(_SUCCESSFUL, false);
+    $interface->addData(_SUCCESSFUL, _NO);
     $interface->addData(_MESSAGE, $e->getMessage());
     $interface->setHeader('login.php');
     $interface->output();
@@ -34,7 +34,7 @@ if (_DEBUG) {
     assert($session->getName() != null);
 }
 
-$interface->addData(_SUCCESSFUL, true);
+$interface->addData(_SUCCESSFUL, _YES);
 $interface->addData(_MESSAGE, "Thanks for logging in, $session->getUsername()!");
 $interface->setHeader('index.php');
 

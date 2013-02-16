@@ -17,11 +17,16 @@ Contributor(s): Colin Strong
 define('_DEBUG', true);
 
 // The following constants are for JSON keys. These must be in agreement
-// with both the website and the iPhone app. Integers are used for simplicity.
+// with both the website and the iPhone app.
 define('_SUCCESSFUL', 'successful');
 define('_MESSAGE', 'message');
 
-// The following constants are for $_POST array keys. Integers are used for simplicity.
+// The following constants are for JSON values. These must be in agreement
+// with both the website and the iPhone app. 
+define('_YES', 'yes'); // For use with _SUCCESSFUL key
+define('_NO', 'no'); // For use with _SUCCESSFUL key
+
+// The following constants are for $_POST array keys. 
 define('_AGENT', 'agent');
 define('_EMAIL', 'email');
 define('_PASSWORD', 'password');
