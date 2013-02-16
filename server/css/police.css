@@ -3,37 +3,40 @@ body
     background-color: #1b2855;	
 }
 
-#main
+div#main
 {
     width: 1192px;
     margin-left: auto;
     margin-right: auto;
+}
+
+div#header
+{
     padding-bottom: 10px;
 }
 
-#header
+img#header
 {
     height="273";
     width="1192";
-    padding-bottom: 10px;
 }
 
-#footer
+div#footer
 {
     text-align: center;
 }
 
-#body
+div#body
 {
     background-color: #c2c2c2;
-    padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#navbar
+div#navbar
 {
-    float:left;
-    margin: 10px;
+    position: relative;
+    float: left;
+    width: 200px;
 }
 
 a.plain
@@ -41,8 +44,11 @@ a.plain
     text-decoration: none;
 }
 
-#content
+div#content
 {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #navbar ul
@@ -57,7 +63,7 @@ a.plain
     border: 1px solid black;
 }
 
-.defaultForm
+form.defaultForm
 {
     position: relative;
 }
@@ -75,4 +81,3 @@ a.plain
     color:#333333;
     text-decoration:none;
 }
-
