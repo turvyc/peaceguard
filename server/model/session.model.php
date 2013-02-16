@@ -44,9 +44,14 @@ class Session {
         return $_SESSION[Session::NAME];
     }
 
+    // Sets an associative array to the JSON data SESSION variable.
+    public function setJsonData($data) {
+        $_SESSION[Session::DATA] = json_encode($data);
+    }
+
     // Returns an associative array populated with the JSON data in the _SESSION 
     // array, or throws an exception if either _SESSION or the data are empty or unset.
-    public function getData() {
+    public function getJsonData() {
         if (! isset($_SESSION[Session::DATA]) || empty($_SESSION[Session::DATA])) {
             throw new Exception('No data found.');
         }

@@ -16,6 +16,7 @@ Contributor(s): Colin Strong
 */
 
 require_once('constants.model.php');
+require_once('session.model.php');
 
 class DataInterface {
 
@@ -65,16 +66,17 @@ class DataInterface {
 
     // Converts $data to JSON and outputs it depending on the agent
     public function output() {
-        $json = json_encode($this->data);
 
         if ($this->agent == _IPHONE) {
+            $json = json_encode($this->data);
             if (_DEBUG) { return $json; }
             echo $json;
         }
 
         else {
-            $_SESSION[Session::DATA] = $json;
-            header("location: ../$this->header");
+            $session = new Session();
+            $session->setJsonData($this->data);
+            if (! _DEBUG) { header("location: ../$this->header"); }
         }
         exit(0);
     }
