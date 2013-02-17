@@ -6,6 +6,3 @@
         </div> <!-- Closes main div -->
     </body>
 </html>
-
-
-

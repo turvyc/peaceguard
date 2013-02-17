@@ -7,11 +7,8 @@ redirected to this page if they try to access any other page of the Website.
 
 */
 
-include('header.html');
-include('model/constants.model.php');
-include('model/session.model.php');
-
-$session = new Session();
+include('header.php');
+require_once('model/constants.model.php');
 
 // Look for an error message from a previous login attempt
 try {
@@ -40,4 +37,4 @@ catch (Exception $e) {
     <input type="submit" value="Login" tabindex="3" />
 </form>
 
-<?php include('footer.html'); ?>
+<?php include('footer.php'); ?>

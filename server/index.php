@@ -13,21 +13,11 @@ or `git blame <file>`
 
 */
 
-include('header.html');
-include('model/session.model.php');
-include('model/volunteer.model.php');
+require_once('model/volunteer.model.php');
+include('header.php');
 
-$session = new Session();
+checkLoggedIn($session);
 $volunteer = new Volunteer();
-
-if (! $session->getName()) {
-    if (_DEBUG) {
-//        echo 'NOT LOGGED IN!';
-    }
-    else {
-        header('location:login.php');
-    }
-}
 
 ?>
 
@@ -38,4 +28,4 @@ if (! $session->getName()) {
 <p>Number of currently patrolling volunteers: <?php echo $volunteer->getTotalNumber(true); ?></p>
 
 
-<?php include('footer.html'); ?>
+<?php include('footer.php'); ?>
