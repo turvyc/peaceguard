@@ -9,6 +9,11 @@ convention.
 
 Contributor(s): Colin Strong
 
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 // True if we are in a development environment, false otherwise. It affects

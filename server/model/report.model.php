@@ -2,7 +2,14 @@
 
 /** report.php
 
-The Report class.
+The Report class encapsulates an incident report, or a set of incident reports.
+
+Contributor(s): Robert Sanchez
+
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
 
 */
 

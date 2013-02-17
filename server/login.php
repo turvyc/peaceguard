@@ -5,6 +5,13 @@
 The login page. Unless they are already logged in, users will be automatically
 redirected to this page if they try to access any other page of the Website.
 
+Contributor(s): Colin Strong
+
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 include('header.html');

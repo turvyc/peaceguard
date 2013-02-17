@@ -6,6 +6,11 @@ The model for the User superclass. Subclasses include Admin and Volunteer.
 
 Contributor(s): Colin Strong
 
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 abstract class User {
@@ -41,3 +46,5 @@ abstract class User {
         return $this->loggedIn;
     }
 }
+
+?>

@@ -9,6 +9,11 @@ used as the class's private attributes.
 
 Contributor(s): Colin Strong
 
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 require_once('constants.model.php');
