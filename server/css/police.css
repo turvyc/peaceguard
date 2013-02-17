@@ -8,6 +8,7 @@ div#main
     width: 1192px;
     margin-left: auto;
     margin-right: auto;
+	
 }
 
 div#header
@@ -28,15 +29,23 @@ div#footer
 
 div#body
 {
-    background-color: #c2c2c2;
+    background-color: red;
     padding-bottom: 10px;
+	height: 200px;
+	position: relative;
+
+
 }
 
 div#navbar
 {
-    position: relative;
+    position: absolute;
     float: left;
     width: 200px;
+	height: 200px;
+	text-align: center;
+	left: -40px;
+	top: -16px;
 }
 
 a.plain
@@ -49,6 +58,10 @@ div#content
     width: 900px;
     margin-left: auto;
     margin-right: auto;
+	height: 200px;
+	background-color: white;
+	padding-bottom: 10px;
+	float: right;
 }
 
 #navbar ul
@@ -59,7 +72,7 @@ div#content
 #navbar li
 {
     padding: 10px;
-    background-color: yellow;
+    background-color: #9BB9E0;
     border: 1px solid black;
 }
 
