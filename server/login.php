@@ -15,7 +15,7 @@ $session = new Session();
 
 // Look for an error message from a previous login attempt
 try {
-    $data = $session->getJsonData();
+    $data = $session->getData();
     $errorMessage = $data[_MESSAGE];
     $session->clearData();
 }

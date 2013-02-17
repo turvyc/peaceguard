@@ -64,7 +64,7 @@ class DataInterface {
         $this->header = $page;
     }
 
-    // Converts $data to JSON and outputs it depending on the agent
+    // Outputs the data, depending on the agent
     public function output() {
 
         if ($this->agent == _IPHONE) {
@@ -75,7 +75,7 @@ class DataInterface {
 
         else {
             $session = new Session();
-            $session->setJsonData($this->data);
+            $session->setData($this->data);
             header("location: ../$this->header");
         }
         exit(0);
