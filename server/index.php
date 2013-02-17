@@ -22,7 +22,7 @@ $volunteer = new Volunteer();
 
 if (! $session->getName()) {
     if (_DEBUG) {
-        echo 'NOT LOGGED IN!';
+//        echo 'NOT LOGGED IN!';
     }
     else {
         header('location:login.php');
@@ -30,6 +30,8 @@ if (! $session->getName()) {
 }
 
 ?>
+
+<h1>PeaceGuard Home Page</h1>
 
 <p>System status: OFFLINE</p>
 <p>Number of registered volunteers: <?php echo $volunteer->getTotalNumber(); ?></p>

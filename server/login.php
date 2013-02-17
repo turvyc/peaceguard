@@ -25,15 +25,19 @@ catch (Exception $e) {
 
 ?>
 
+<h1>PeaceGuard Login</h1>
+
 <div id="errorMessage">
-    <p id="errorMessage"><?php echo $errorMessage; ?></p>
+    <h3><?php echo $errorMessage; ?></h3>
 </div>
 
-<form class="defaultForm" name="login" action="control/login.control.php" method="POST">
-    &nbsp&nbsp&nbsp&nbsp&nbspE-mail: <input class="defaultForm" type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br />
-    Password: 	 					 <input class="defaultForm" type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br />
-    <input class="defaultForm" type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
-    <input class="defaultForm" type="submit" value="Login" tabindex="3" />
+<form name="login" action="control/login.control.php" method="POST">
+    <label for="<?php echo _EMAIL; ?>">E-mail</label><br />
+    <input type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br /><br />
+    <label for="<?php echo _PASSWORD; ?>">Password</label><br />
+    <input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
+    <input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
+    <input type="submit" value="Login" tabindex="3" />
 </form>
 
 <?php include('footer.html'); ?>

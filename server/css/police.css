@@ -8,91 +8,88 @@ div#main
     width: 1192px;
     margin-left: auto;
     margin-right: auto;
-	
+    padding: 0px;
 }
 
-div#header
-{
-    padding-bottom: 10px;
-}
-
-img#header
+div#header img
 {
     height="273";
     width="1192";
-}
-
-div#footer
-{
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 div#body
 {
-    background-color: #D0D0D0 ;
-    padding-bottom: 10px;
-	height: 155px;
-	position: relative;
-
-
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
 
 div#navbar
 {
+    height: 100%;
+    width: 250px;
     position: absolute;
-    float: left;
-    width: 200px;
-	height: 200px;
+    top: -19px;
+    left: -41px;
 	text-align: center;
-	left: -40px;
-	top: -16px;
 }
 
-a.plain
+div#navbar ul
+{
+    list-style-type:none;
+}
+
+div#navbar li
+{
+    padding: 10px;
+    margin: 0px;
+    background-color: #9BB9E0;
+    border: 1px solid black;
+}
+
+div#navbar a
 {
     text-decoration: none;
 }
 
 div#content
 {
-    width: 1032px;
-    margin-left: auto;
-    margin-right: auto;
-	height: 157px;
+    float: right;
+    width: 890px;
 	background-color: #D0D0D0 ;
-	padding-bottom: 10px;
-	float: right;
-	position: relative;
-	text-align: center;
+    padding: 0px 40px 40px;
 }
 
-#navbar ul
+div#content h1
 {
-    list-style-type:none;
+    text-align: center;
+    color: #1B2855;
 }
 
-#navbar li
-{
-    padding: 10px;
-    background-color: #9BB9E0;
-    border: 1px solid black;
-}
-
-form.defaultForm
+div#content form
 {
     position: relative;
 }
 
-.defaultForm input, label, select, textarea
+div#content input, label, select, textarea
 {
-    margin: 5px 0px 15px 0px;
+    margin: 5px;
 }
 
-#login
+div#errorMessage h3
 {
-    width: 400px;
-    margin: 0 auto;
-    align: center;
-    color:#333333;
-    text-decoration:none;
+    width: 360px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    color: red;
+    text-align: center;
 }
+
+div#footer
+{
+    clear: both;
+    text-align: center;
+}
+
