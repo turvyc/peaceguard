@@ -57,6 +57,7 @@ div#content
 {
     float: right;
     width: 890px;
+    min-height: 156px;
 	background-color: #D0D0D0 ;
     padding: 0px 40px 40px;
 }
@@ -90,6 +91,12 @@ div#errorMessage h3
 div#footer
 {
     clear: both;
-    text-align: center;
+    margin-left: 220px;
+    margin-top: -10px;
 }
 
+div#footer p
+{
+    font-size: 10pt;
+    color: #B0B0B0;
+}

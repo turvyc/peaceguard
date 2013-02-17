@@ -18,7 +18,7 @@ or `git blame <file>`
                 </div> <!-- Closes content div -->
             </div> <!-- Closes body div -->
             <div id="footer">
-                <p>Copyright @ 2013 PEACE GUARD, All Rights Reserved.</p>
+                <p>&copy 2013 Number 13 Developer's Group</p>
             </div>
         </div> <!-- Closes main div -->
     </body>

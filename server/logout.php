@@ -13,24 +13,13 @@ or `git blame <file>`
 
 */
 
-require_once('model/session.model.php');
-
-$session = new Session();
-
-if (! $session->getName()) {
-    if (_DEBUG) {
-        echo 'NOT LOGGED IN!';
-    }
-    else {
-        header('location:login.php');
-    }
-}
+include('header.php');
 
 $session->logout();
+checkLoggedIn($session);
 
-include ('header.html');
 ?>
 
-<p>You have been successfully logged out. Goodbye!</p>
+<h1>You have been successfully logged out. Goodbye!</h1>
 
-<?php include('footer.html'); ?>
+<?php include('footer.php'); ?>
