@@ -22,7 +22,7 @@ $session = new Session();
 function checkLoggedIn($session) {
     if (! $session->getName()) {
         if (_DEBUG) {
-            echo 'NOT LOGGED IN!';
+            echo 'DEBUG: NOT LOGGED IN!';
         }
     }
     else {
