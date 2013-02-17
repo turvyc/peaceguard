@@ -45,7 +45,7 @@ function checkLoggedIn($session) {
             <div id="header">
                 <img src="img/Banner.png" /> 
             </div>
-
+            <span class="small">Welcome, <?php echo $session->getName(); ?>. | <a href="logout.php">Logout</a></span>
             <div id="body">
                 <div id="navbar">
                     <ul>

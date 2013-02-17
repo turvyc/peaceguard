@@ -18,7 +18,7 @@ or `git blame <file>`
                 </div> <!-- Closes content div -->
             </div> <!-- Closes body div -->
             <div id="footer">
-                <p>&copy 2013 Number 13 Developer's Group</p>
+                <span class="small">&copy 2013 Number 13 Developer's Group</span>
             </div>
         </div> <!-- Closes main div -->
     </body>

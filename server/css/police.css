@@ -15,7 +15,6 @@ div#header img
 {
     height="273";
     width="1192";
-    margin-bottom: 20px;
 }
 
 div#body
@@ -92,11 +91,18 @@ div#footer
 {
     clear: both;
     margin-left: 220px;
-    margin-top: -10px;
 }
 
-div#footer p
+span.small
 {
+    padding: 2px;
+    margin-bottom: 2px;
+    float: right;
     font-size: 10pt;
+    color: #B0B0B0;
+}
+
+span.small a
+{
     color: #B0B0B0;
 }

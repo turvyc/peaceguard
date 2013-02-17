@@ -46,7 +46,7 @@ class Session {
 
     // Returns the name of the logged-in user, or null if nobody is logged in.
     public function getName() {
-        return $_SESSION[Session::NAME];
+        return ucwords($_SESSION[Session::NAME]);
     }
 
     // Sets the DATA key in the SESSION array to the associative array $data.
