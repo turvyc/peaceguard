@@ -36,11 +36,10 @@ catch (Exception $e) {
 // If we made it this far, we should be logged in. This is getting tossed in 
 // until I can write some unit tests.
 if (_DEBUG) {
-    assert($session->getName() != null);
+    assert($session->getFullName() != null);
 }
 
 $interface->addData(_SUCCESSFUL, _YES);
-$interface->addData(_MESSAGE, "Thanks for logging in, $session->getUsername()!");
 $interface->setHeader('index.php');
 
 // Output the data and we're done!

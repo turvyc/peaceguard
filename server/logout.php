@@ -13,10 +13,11 @@ or `git blame <file>`
 
 */
 
-include('header.php');
-
+require_once('model/session.model.php');
+$session = new Session();
 $session->logout();
-checkLoggedIn($session);
+
+include('header.php');
 
 ?>
 

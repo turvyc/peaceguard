@@ -20,15 +20,17 @@ $session = new Session();
 // login page) is logged in. If they are not, they are automatically redirected
 // to the login page.
 function checkLoggedIn($session) {
-    if (! $session->getName()) {
-        if (_DEBUG) {
-            echo 'DEBUG: NOT LOGGED IN!';
-        }
-    }
-    else {
-        header('location:login.php');
+    if (! $session->loggedIn()) {
+        header('location: login.php');
         exit(0);
     }
+}
+
+if ($session->loggedIn()) {
+    $usernameText = "You are logged in as: {$session->getFullName()}. | <a href=\"logout.php\">Logout</a>";
+}
+else { 
+    $usernameText = '';
 }
     
 ?>
@@ -45,7 +47,7 @@ function checkLoggedIn($session) {
             <div id="header">
                 <img src="img/Banner.png" /> 
             </div>
-            <span class="small">Welcome, <?php echo $session->getName(); ?>. | <a href="logout.php">Logout</a></span>
+            <span class="small"><?php echo $usernameText; ?></span>
             <div id="body">
                 <div id="navbar">
                     <ul>
