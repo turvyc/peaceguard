@@ -18,7 +18,7 @@ or `git blame <file>`
                 </div> <!-- Closes content div -->
             </div> <!-- Closes body div -->
             <div id="footer">
-                <span class="small">&copy 2013 Number 13 Developer's Group</span>
+                <span class="small">&copy 2013 Number 13 Developer's Group | <a href="mailto:cmpt275-spring2013-group13@sfu.ca">Contact</a></span>
             </div>
         </div> <!-- Closes main div -->
     </body>
