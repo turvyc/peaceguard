@@ -52,9 +52,14 @@ class Session {
         $this->logout();
     }
 
-    // Returns the name of the logged-in user, or null if nobody is logged in.
+    // Returns the name of the logged-in admin, or null if nobody is logged in.
     public function getFullName() {
         return $this->admin->getFullName();
+    }
+
+    // Returns the email of the logged-in admin, or null if nobody is logged in.
+    public function getEmail() {
+        return $this->admin->getEmail();
     }
 
     // Sets the DATA key in the SESSION array to the associative array $data.
