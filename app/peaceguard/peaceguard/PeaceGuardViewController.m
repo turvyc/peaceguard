@@ -44,20 +44,31 @@
 }
 - (IBAction)Login:(id)sender {
     BOOL authentication =
-    [self logUsername:self.username.text andPassword:self.password.text];
+    [self logUsername:self.username.text password:self.password.text];
+    //self.username.text = @"";
+    self.password.text = @"";
+    
     if( authentication == YES) {
         //the login is correct
         [self performSegueWithIdentifier:@"ToMainMenu" sender:self];
     }else{
-        //stay in the same view
+        //Let the user know the login failed
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                        message:@"The username or password was incorrect."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
-- (BOOL)logUsername: (NSString *) username andPassword: (NSString *) password{
-    
-    if([username isEqualToString:@"admin"]
+- (BOOL)logUsername: (NSString *) username password: (NSString *) password{
+    self.user = [[User alloc]initWithUsername:@"admin" password: @"123"];
+    NSString *tempname = self.user.username;
+    NSString *temppassword = self.user.password;
+    if([username isEqualToString:tempname]
        &&
-       [password isEqualToString:@"123"])
+       [password isEqualToString:temppassword])
     {
         return YES;
     }else{

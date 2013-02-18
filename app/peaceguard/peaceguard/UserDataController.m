@@ -19,7 +19,7 @@
 
 - (void) initializeDefaultUser
 {
-    self.currentUser = [[User alloc]initWithUsername:nil andPassword: nil];
+    self.currentUser = [[User alloc]initWithUsername:nil password: nil];
   
 }
 

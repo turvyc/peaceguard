@@ -16,7 +16,7 @@
 @property (nonatomic) BOOL *authenticated;
 
 //Declare custom initializers
-- (id) initWithUsername:(NSString *)username andPassword:(NSString *)password;
+- (id) initWithUsername:(NSString *)username password:(NSString *)password;
 
 
 @end
