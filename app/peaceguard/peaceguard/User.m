@@ -11,7 +11,7 @@
 @implementation User
 
 //Custon initializer
--(id)initWithUsername:(NSString *)username andPassword:(NSString *)password
+-(id)initWithUsername:(NSString *)username password:(NSString *)password
 {
     self = [super init];
     if (self){

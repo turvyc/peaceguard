@@ -44,7 +44,7 @@
 }
 - (IBAction)Login:(id)sender {
     BOOL authentication =
-    [self logUsername:self.username.text andPassword:self.password.text];
+    [self logUsername:self.username.text password:self.password.text];
     if( authentication == YES) {
         //the login is correct
         [self performSegueWithIdentifier:@"ToMainMenu" sender:self];
@@ -53,11 +53,13 @@
     }
 }
 
-- (BOOL)logUsername: (NSString *) username andPassword: (NSString *) password{
-    
-    if([username isEqualToString:@"admin"]
+- (BOOL)logUsername: (NSString *) username password: (NSString *) password{
+    self.user = [[User alloc]initWithUsername:@"admin" password: @"123"];
+    NSString *tempname = self.user.username;
+    NSString *temppassword = self.user.password;
+    if([username isEqualToString:tempname]
        &&
-       [password isEqualToString:@"123"])
+       [password isEqualToString:temppassword])
     {
         return YES;
     }else{

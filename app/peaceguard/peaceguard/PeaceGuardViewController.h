@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "ReportViewController.h"
-//#import "User.h"
-#import "UserDataController.h"
+#import "User.h"
+//#import "UserDataController.h"
 
 @class UserDataController;
 
@@ -17,9 +17,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-@property(strong, nonatomic) UserDataController *userController;
+//@property(strong, nonatomic) UserDataController *userController;
+@property (strong, nonatomic) User *user;
 @property (weak, nonatomic) IBOutlet UIButton *Login;
 
 - (IBAction)Login:(id)sender;
-- (BOOL)logUsername: (NSString *) username andPassword: (NSString *) password;
+- (BOOL)logUsername: (NSString *) username password: (NSString *) password;
 @end
