@@ -45,6 +45,9 @@
 - (IBAction)Login:(id)sender {
     BOOL authentication =
     [self logUsername:self.username.text password:self.password.text];
+    //self.username.text = @"";
+    self.password.text = @"";
+    
     if( authentication == YES) {
         //the login is correct
         [self performSegueWithIdentifier:@"ToMainMenu" sender:self];
