@@ -5,13 +5,6 @@
 The login page. Unless they are already logged in, users will be automatically
 redirected to this page if they try to access any other page of the Website.
 
-Contributor(s): Colin Strong
-
-For a detailed list of changes to this file, enter the command `git log <file>` 
-or `git blame <file>`
-
-(c) 2013 Number 13 Developer's Group
-
 */
 
 include('header.html');
@@ -37,8 +30,8 @@ catch (Exception $e) {
 </div>
 
 <form class="defaultForm" name="login" action="control/login.control.php" method="POST">
-    E-mail: <input class="defaultForm" type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br />
-    Password: <input class="defaultForm" type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br />
+    &nbsp&nbsp&nbsp&nbsp&nbspE-mail: <input class="defaultForm" type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br />
+    Password: 	 					 <input class="defaultForm" type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br />
     <input class="defaultForm" type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input class="defaultForm" type="submit" value="Login" tabindex="3" />
 </form>
