@@ -6,6 +6,11 @@ The model for the Volunteer class, which is a superclass of User.
 
 Contributors(s): Colin Strong
 
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 require_once('user.model.php');
@@ -20,6 +25,16 @@ class Volunteer extends User {
     private $totalDistance;
     // private $score;  Commented because we have no score algorithm as of yet
 	// private $badges; should we have an array to store badges that the volunteer has collected.
+
+    // Constructs a new Volunteer object. If the id is -1 (the default), the 
+    // object will be considered a "collective" Volunteer object; that is,
+    // it represents a group of volunteers, rather than a single one.
+    public function __construct($id = -1) {
+        // TODO: Write a database query to populate the object's attributes.
+        if ($id != -1) {
+            parent::__construct($id);
+        }
+    }
 
     // Returns the total number of registered volunteers, or the total number
     // patrolling if the parameter is true.
@@ -67,3 +82,5 @@ class Volunteer extends User {
 	}
 
 }
+
+?>

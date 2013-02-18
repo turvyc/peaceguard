@@ -6,6 +6,11 @@ The model for the User superclass. Subclasses include Admin and Volunteer.
 
 Contributor(s): Colin Strong
 
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 abstract class User {
@@ -14,19 +19,46 @@ abstract class User {
     private $firstName;
     private $lastName;
     private $email;
-    private $password;      // The user's password hash (not plaintext)
-    private $loggedIn;      // Boolean. Whether the user is currently logged in
+    private $pw_hash;      // The user's password hash (not plaintext)
+
+    public function __construct($id) {
+        if (! is_int($id)) {
+            throw new exception('Parameter must be an integer!');
+        }
+
+        // Get the information from the database, throwing an exception if
+        // the user isn't found.
+        require('database.model.php');
+        $STH = $DBH->prepare('SELECT * FROM Users WHERE u_id = ?');
+        $STH->execute(array($id));
+        $row = $STH->fetch();
+
+        if (! $row) {
+            throw new exception('User not found in database.');
+        }
+
+        // Populate the object's attributes with the information from the row.
+        $this->id = $id;
+        $this->firstName = $row['firstName'];
+        $this->lastName = $row['lastName'];
+        $this->email = $row['email'];
+        $this->pw_hash = $row['pw_hash'];
+    }
 
     public function getId() {
         return $this->id;
     }
 
     public function getFirstName() {
-        return $this->firstName;
+        return ucwords($this->firstName);
     }
 
     public function getLastName() {
-        return $this->lastName;
+        return ucwords($this->lastName);
+    }
+
+    public function getFullName() {
+        return "{$this->getFirstName()} {$this->getLastName()}";
     }
 
     public function getEmail() {
@@ -41,3 +73,5 @@ abstract class User {
         return $this->loggedIn;
     }
 }
+
+?>

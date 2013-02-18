@@ -10,6 +10,11 @@ read/writable by the owner, but executable by anyone.
 
 Contributor(s): Colin Strong
 
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 // Database constants. 
@@ -37,4 +42,5 @@ catch(PDOException $e) {
     // TODO: If not _DEBUG, the user should be sent to some reassuring landing
     // page, where they can conveniently let the developers about the problem.
 }
+
 ?>

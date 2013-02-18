@@ -13,6 +13,11 @@ the latter case, it will be output (echoed) as a JSON array.
 
 Contributor(s): Colin Strong
 
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 require_once('constants.model.php');
@@ -64,7 +69,7 @@ class DataInterface {
         $this->header = $page;
     }
 
-    // Converts $data to JSON and outputs it depending on the agent
+    // Outputs the data, depending on the agent
     public function output() {
 
         if ($this->agent == _IPHONE) {
@@ -75,8 +80,8 @@ class DataInterface {
 
         else {
             $session = new Session();
-            $session->setJsonData($this->data);
-            if (! _DEBUG) { header("location: ../$this->header"); }
+            $session->setData($this->data);
+            header("location: ../$this->header");
         }
         exit(0);
     }

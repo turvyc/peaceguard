@@ -7,11 +7,8 @@ redirected to this page if they try to access any other page of the Website.
 
 */
 
-include('header.html');
-include('model/constants.model.php');
-include('model/session.model.php');
-
-$session = new Session();
+include('header.php');
+require_once('model/constants.model.php');
 
 // Look for an error message from a previous login attempt
 try {
@@ -25,15 +22,19 @@ catch (Exception $e) {
 
 ?>
 
-<div class="errorMessage">
-    <p class="errorMessage"><?php echo $errorMessage; ?></p>
+<h1>PeaceGuard Login</h1>
+
+<div id="errorMessage">
+    <h3><?php echo $errorMessage; ?></h3>
 </div>
 
 <form name="login" action="control/login.control.php" method="POST">
-    E-mail: <input type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br />
-    Password: <input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br />
+    <label for="<?php echo _EMAIL; ?>">E-mail</label><br />
+    <input type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br /><br />
+    <label for="<?php echo _PASSWORD; ?>">Password</label><br />
+    <input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
     <input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Login" tabindex="3" />
 </form>
 
-<?php include('footer.html'); ?>
+<?php include('footer.php'); ?>

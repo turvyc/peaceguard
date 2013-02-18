@@ -4,29 +4,28 @@
 
 The home page of the Website.
 
+Contributor(s): Colin Strong
+
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
-include('header.html');
-include('model/session.model.php');
-include('model/volunteer.model.php');
+require_once('model/volunteer.model.php');
+include('header.php');
 
-$session = new Session();
+checkLoggedIn($session);
 $volunteer = new Volunteer();
-
-if (! $session->getName()) {
-    if (_DEBUG) {
-        echo 'NOT LOGGED IN!';
-    }
-    else {
-        header('location:login.php');
-    }
-}
 
 ?>
 
-<h2>System status: OFFLINE</h2>
-<h2>Number of registered volunteers: <?php echo $volunteer->getTotalNumber(); ?></h2>
-<h2>Number of currently patrolling volunteers: <?php echo $volunteer->getTotalNumber(true); ?></h2>
+<h1>PeaceGuard Home Page</h1>
+
+<p>System status: OFFLINE</p>
+<p>Number of registered volunteers: <?php echo $volunteer->getTotalNumber(); ?></p>
+<p>Number of currently patrolling volunteers: <?php echo $volunteer->getTotalNumber(true); ?></p>
 
 
-<?php include('footer.html'); ?>
+<?php include('footer.php'); ?>

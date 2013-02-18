@@ -7,6 +7,11 @@ or sets the $_SESSION variable, with the structure { _SUCCESSFUL: boolean, _MESS
 
 Contributor(s): Colin Strong
 
+For a detailed list of changes to this file, enter the command `git log <file>` 
+or `git blame <file>`
+
+(c) 2013 Number 13 Developer's Group
+
 */
 
 require_once('../model/session.model.php');
@@ -31,11 +36,10 @@ catch (Exception $e) {
 // If we made it this far, we should be logged in. This is getting tossed in 
 // until I can write some unit tests.
 if (_DEBUG) {
-    assert($session->getName() != null);
+    assert($session->getFullName() != null);
 }
 
 $interface->addData(_SUCCESSFUL, _YES);
-$interface->addData(_MESSAGE, "Thanks for logging in, $session->getUsername()!");
 $interface->setHeader('index.php');
 
 // Output the data and we're done!
