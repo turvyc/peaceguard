@@ -21,6 +21,11 @@
 		C4150BB816CCA93C00876850 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB716CCA93C00876850 /* Default-568h@2x.png */; };
 		C4150BBB16CCA93C00876850 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */; };
 		C4150BBE16CCA93C00876850 /* PeaceGuardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */; };
+		C48F3A1B16D1F43A0015D678 /* Icon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A1A16D1F43A0015D678 /* Icon57x57.png */; };
+		C48F3A1D16D1F43D0015D678 /* Icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A1C16D1F43D0015D678 /* Icon114x114.png */; };
+		C48F3A1F16D1F4460015D678 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A1E16D1F4460015D678 /* Default.png */; };
+		C48F3A2116D1F4560015D678 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2016D1F4560015D678 /* Default@2x.png */; };
+		C48F3A2316D1F4590015D678 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2216D1F4590015D678 /* Default-568h@2x.png */; };
 		C4D244D016CEBA800017098A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244CF16CEBA800017098A /* User.m */; };
 		C4D244D316CEC5210017098A /* UserDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244D216CEC5210017098A /* UserDataController.m */; };
 /* End PBXBuildFile section */
@@ -48,6 +53,11 @@
 		C4150BBA16CCA93C00876850 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeaceGuardViewController.h; sourceTree = "<group>"; };
 		C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeaceGuardViewController.m; sourceTree = "<group>"; };
+		C48F3A1A16D1F43A0015D678 /* Icon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon57x57.png; sourceTree = "<group>"; };
+		C48F3A1C16D1F43D0015D678 /* Icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114x114.png; sourceTree = "<group>"; };
+		C48F3A1E16D1F4460015D678 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C48F3A2016D1F4560015D678 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C48F3A2216D1F4590015D678 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4D244CE16CEBA800017098A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		C4D244CF16CEBA800017098A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C4D244D116CEC5210017098A /* UserDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataController.h; sourceTree = "<group>"; };
@@ -71,6 +81,11 @@
 		C4150B9516CCA93C00876850 = {
 			isa = PBXGroup;
 			children = (
+				C48F3A2216D1F4590015D678 /* Default-568h@2x.png */,
+				C48F3A2016D1F4560015D678 /* Default@2x.png */,
+				C48F3A1E16D1F4460015D678 /* Default.png */,
+				C48F3A1C16D1F43D0015D678 /* Icon114x114.png */,
+				C48F3A1A16D1F43A0015D678 /* Icon57x57.png */,
 				C4150BA716CCA93C00876850 /* peaceguard */,
 				C4150BA016CCA93C00876850 /* Frameworks */,
 				C4150B9F16CCA93C00876850 /* Products */,
@@ -189,6 +204,11 @@
 				C4150BB616CCA93C00876850 /* Default@2x.png in Resources */,
 				C4150BB816CCA93C00876850 /* Default-568h@2x.png in Resources */,
 				C4150BBB16CCA93C00876850 /* MainStoryboard.storyboard in Resources */,
+				C48F3A1B16D1F43A0015D678 /* Icon57x57.png in Resources */,
+				C48F3A1D16D1F43D0015D678 /* Icon114x114.png in Resources */,
+				C48F3A1F16D1F4460015D678 /* Default.png in Resources */,
+				C48F3A2116D1F4560015D678 /* Default@2x.png in Resources */,
+				C48F3A2316D1F4590015D678 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
