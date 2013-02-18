@@ -34,7 +34,7 @@ class Session {
     // Constructor. Starts a new session, if one hasn't been started already
     public function __construct() {
 
-        if (!isset($_SESSION)) {
+        if (session_id() == '') {
             session_start();
         }
 
@@ -134,7 +134,7 @@ class Session {
     }
 
     // Concatenates the password with a salt, then returns the resulting SHA1 hash.
-    private function getPasswordHash($password) {
+    public function getPasswordHash($password) {
         return sha1($password . Session::SALT);
     }
 
