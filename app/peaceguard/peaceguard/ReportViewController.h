@@ -11,5 +11,9 @@
 @interface ReportViewController : UIViewController
 
 @property(strong, nonatomic) ReportViewController *reportController;
+@property (weak, nonatomic) IBOutlet UIButton *submit;
+- (IBAction) submitAction:(id)sender;
+- (BOOL) verify: (NSString*) description;
+@property (weak, nonatomic) IBOutlet UITextField *description;
 
 @end

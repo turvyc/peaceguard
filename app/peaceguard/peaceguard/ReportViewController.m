@@ -35,4 +35,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)submitAction:(id)sender {
+    BOOL verification = [self verify:self.description.text];
+    if(verification == YES){
+        [self performSegueWithIdentifier:@"ToOverView" sender:self];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Submit failed"
+                                                        message:@"The description is null."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (BOOL) verify:(NSString *)description {
+    if([description isEqualToString:@"Description"]) {
+        return NO;
+    }else{
+        return YES;
+    }
+}
 @end
