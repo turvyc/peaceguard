@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReportViewController : UIViewController <UITextFieldDelegate>
+@interface ReportViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *Image;
+- (IBAction)ImageTaker:(id)sender;
 
 @property(strong, nonatomic) ReportViewController *reportController;
 @property (weak, nonatomic) IBOutlet UIButton *submit;

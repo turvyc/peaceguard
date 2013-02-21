@@ -61,4 +61,11 @@
 {
     [self.view endEditing:YES];
 }
+- (IBAction)ImageTaker:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    [imagePicker setDelegate:self];
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+}
 @end
