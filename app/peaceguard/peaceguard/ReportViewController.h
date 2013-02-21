@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReportViewController : UIViewController
+@interface ReportViewController : UIViewController <UITextFieldDelegate>
 
 @property(strong, nonatomic) ReportViewController *reportController;
 @property (weak, nonatomic) IBOutlet UIButton *submit;

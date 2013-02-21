@@ -234,6 +234,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submitAction:" destination="oPN-sY-whv" eventType="touchUpInside" id="PG1-CS-nda"/>
+                                    <segue destination="oPN-sY-whv" kind="push" id="hmU-ec-zBd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKX-30-OU5">
