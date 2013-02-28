@@ -327,10 +327,10 @@
             </objects>
             <point key="canvasLocation" x="1071" y="315"/>
         </scene>
-        <!--View Controller - Patrol-->
+        <!--Patrol View Controller - Patrol-->
         <scene sceneID="zdJ-X0-nX1">
             <objects>
-                <viewController id="YiY-r9-CCp" sceneMemberID="viewController">
+                <viewController id="YiY-r9-CCp" customClass="PatrolViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hj2-y8-Dce">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -346,27 +346,35 @@
                                     <segment title="Stat View"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="This feature is yet to be implemented" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-Sv-RDz">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-Sv-RDz">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Map will be displayed here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoT-Qs-AIt">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoT-Qs-AIt">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6C-om-qNc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="449" id="jyv-GG-3qg"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xoT-Qs-AIt" firstAttribute="centerX" secondItem="DVo-Sv-RDz" secondAttribute="centerX" type="default" id="16P-UV-rXE"/>
-                            <constraint firstItem="xoT-Qs-AIt" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="8Kc-NS-Wng"/>
-                            <constraint firstItem="GFo-DW-Hec" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="145" id="DJh-Ih-OEt"/>
-                            <constraint firstItem="xoT-Qs-AIt" firstAttribute="centerX" secondItem="JEK-tK-iwr" secondAttribute="centerX" type="default" id="N0G-pB-zfZ"/>
+                            <constraint firstItem="GFo-DW-Hec" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="145" id="1Ho-oF-lIu"/>
+                            <constraint firstItem="JEK-tK-iwr" firstAttribute="centerX" secondItem="D6C-om-qNc" secondAttribute="centerX" type="default" id="1x8-G6-mtk"/>
+                            <constraint firstItem="xoT-Qs-AIt" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="241" id="9YB-GB-1cY"/>
+                            <constraint firstItem="D6C-om-qNc" firstAttribute="trailing" secondItem="Hj2-y8-Dce" secondAttribute="trailing" type="default" id="Lch-xW-S2s"/>
+                            <constraint firstAttribute="bottom" secondItem="JEK-tK-iwr" secondAttribute="bottom" constant="9" id="XzW-Or-ZEy"/>
+                            <constraint firstAttribute="trailing" secondItem="xoT-Qs-AIt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="c7K-C4-18Q"/>
                             <constraint firstItem="DVo-Sv-RDz" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="42" id="g0J-7y-9qc"/>
-                            <constraint firstAttribute="bottom" secondItem="JEK-tK-iwr" secondAttribute="bottom" constant="28" id="ihN-NS-Wny"/>
-                            <constraint firstItem="xoT-Qs-AIt" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="241" id="rfU-Yc-gsy"/>
-                            <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="u8M-92-db4"/>
+                            <constraint firstItem="D6C-om-qNc" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" type="default" id="lpE-D2-nDp"/>
+                            <constraint firstAttribute="trailing" secondItem="DVo-Sv-RDz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qYt-9e-19I"/>
+                            <constraint firstItem="D6C-om-qNc" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" type="default" id="vT1-zt-tci"/>
+                            <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="wCc-rn-Dhd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Patrol" id="DZw-QL-Cdx">

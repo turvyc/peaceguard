@@ -76,9 +76,7 @@
         [altert show];
     }
     [self presentViewController:picker animated:YES completion:nil];
-    _newMedia = YES;
-//        picker.delegate = self;
-   
+    
 }
 #pragma mark -
 #pragma mark UIImagePickerControllerDelegate
