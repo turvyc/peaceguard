@@ -52,6 +52,15 @@ class DataInterface {
 
         // Set the agent
         $this->agent = ($_POST[_AGENT] == _IPHONE) ? _IPHONE : _WEBSITE;
+
+        // Output the POST data to a logfile, if debugging
+        if (_DEBUG) {
+            $logfile = fopen(_POST_LOG, 'a');
+            $format = "%s -- Contents of POST:\n %s\n\n";
+            $entry = sprintf($format, date('j M Y G:i:s'), print_r($_POST, TRUE));
+            fwrite($logfile, $entry);
+            fclose($logfile);
+        }
     }
 
     // When we're done with the interface, we should destroy the $_POST variables
