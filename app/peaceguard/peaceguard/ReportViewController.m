@@ -66,16 +66,17 @@
         UIImagePickerController *picker = [[UIImagePickerController alloc] init];
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         picker.delegate = self;
-        
-        [self presentedViewController];
     }
     @catch (NSException *exception) {
-        UIAlertView *altert = [[UIAlertView alloc] initWithTitle:@"NO Camera" message:@"Camera is not available" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
+        UIAlertView *altert = [[UIAlertView alloc] initWithTitle:@"No Camera" message:@"Camera is not available" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
         [altert show];
     }
 }
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     [picker dismissViewControllerAnimated:YES completion:nil];
+    UIImageView *imgview1 = [[UIImageView alloc]initWithImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
+    imgview1.frame = CGRectMake(0.0, 0.0, 320.0, 460.0);
+    [self.view addSubview:imgview1];
 }
 @end
