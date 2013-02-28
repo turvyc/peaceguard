@@ -29,5 +29,16 @@
          landmarkName = "-Login:"
          landmarkType = "5">
       </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "peaceguard/PatrolViewController.h"
+         timestampString = "383720703.597964"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "11"
+         endingLineNumber = "11">
+      </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
