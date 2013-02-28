@@ -16,9 +16,6 @@ or `git blame <file>`
 
 */
 
-define('_SOURCE_DIR', '/home/colin/src/school/cmpt275/2013-1-g13');
-define('_SERVER_DIR', _SOURCE_DIR . '/server');
-
 // True if we are in a development environment, false otherwise. It affects
 // what happens to caught exceptions, usually causing the program to halt 
 // and echo information.
@@ -44,7 +41,7 @@ define('_IPHONE', 'iphone');   // For use with _AGENT key
 define('_WEBSITE', 'website');  // For use with _AGENT key
 
 // Log file constants.
-define('_LOG_DIR', _SERVER_DIR . '/log');
-define('_POST_LOG', _LOG_DIR . '/post.log');
+define('_LOG_DIR', 'log/');
+define('_POST_LOG', 'post.log');
 
 ?>
