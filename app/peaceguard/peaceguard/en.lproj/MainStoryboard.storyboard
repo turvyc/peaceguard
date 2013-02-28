@@ -282,13 +282,13 @@
                             <constraint firstItem="Dis-Zo-acq" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="118" id="3wZ-iJ-iXm"/>
                             <constraint firstItem="AKX-30-OU5" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="215" id="4xj-3r-WRT"/>
                             <constraint firstItem="ydf-YF-tu0" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="18" id="Fgf-jK-xfI"/>
-                            <constraint firstItem="AKX-30-OU5" firstAttribute="centerX" secondItem="Bmk-e2-JVe" secondAttribute="centerX" type="default" id="LLo-vP-ePq"/>
+                            <constraint firstItem="Sbp-6v-LTL" firstAttribute="centerX" secondItem="Bmk-e2-JVe" secondAttribute="centerX" type="default" id="LX3-89-MI2"/>
                             <constraint firstItem="3D0-0J-djF" firstAttribute="centerX" secondItem="Sbp-6v-LTL" secondAttribute="centerX" type="default" id="Q7z-RU-g8d"/>
                             <constraint firstItem="9lP-rE-FWC" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="161" id="T8h-Zl-zoV"/>
                             <constraint firstItem="AKX-30-OU5" firstAttribute="centerX" secondItem="9lP-rE-FWC" secondAttribute="centerX" type="default" id="TZh-vf-MX8"/>
                             <constraint firstItem="9lP-rE-FWC" firstAttribute="trailing" secondItem="ydf-YF-tu0" secondAttribute="trailing" type="default" id="UYu-OQ-NGa"/>
-                            <constraint firstAttribute="bottom" secondItem="Sbp-6v-LTL" secondAttribute="bottom" constant="78" id="aqU-ZH-BZa"/>
                             <constraint firstItem="9lP-rE-FWC" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dZn-3P-88o"/>
+                            <constraint firstItem="3D0-0J-djF" firstAttribute="top" secondItem="Sbp-6v-LTL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fFQ-JY-azk"/>
                             <constraint firstItem="LEB-UF-ldR" firstAttribute="centerX" secondItem="Dis-Zo-acq" secondAttribute="centerX" type="default" id="fnx-st-81g"/>
                             <constraint firstItem="LEB-UF-ldR" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="71" id="mhW-SB-vxq"/>
                             <constraint firstItem="AKX-30-OU5" firstAttribute="centerX" secondItem="Sbp-6v-LTL" secondAttribute="centerX" type="default" id="rSf-oz-wLE"/>
@@ -303,6 +303,7 @@
                     <connections>
                         <outlet property="Image" destination="AKX-30-OU5" id="KzT-Cd-Qsz"/>
                         <outlet property="description" destination="9lP-rE-FWC" id="k0Z-id-fGW"/>
+                        <outlet property="imageView" destination="Sbp-6v-LTL" id="ARH-NT-rSP"/>
                         <outlet property="submit" destination="3D0-0J-djF" id="9VZ-N4-9Tb"/>
                         <segue destination="1eW-rp-QMW" kind="push" identifier="ToOverView" id="c0r-BP-GHT"/>
                     </connections>
