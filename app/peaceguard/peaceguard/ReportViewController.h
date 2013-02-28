@@ -17,5 +17,5 @@
 - (IBAction) submitAction:(id)sender;
 - (BOOL) verify: (NSString*) description;
 @property (weak, nonatomic) IBOutlet UITextField *description;
-
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 @end
