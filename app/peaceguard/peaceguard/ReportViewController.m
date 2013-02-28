@@ -76,14 +76,18 @@
         [altert show];
     }
     [self presentViewController:picker animated:YES completion:nil];
+    _newMedia = YES;
 //        picker.delegate = self;
    
 }
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate
+
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    UIImageView *imgview1 = [[UIImageView alloc]initWithImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
-    imgview1.frame = CGRectMake(0.0, 0.0, 320.0, 460.0);
-    [self.view addSubview:imgview1];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    _imageView.image = image;
+
 }
 @end
