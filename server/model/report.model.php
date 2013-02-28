@@ -4,7 +4,7 @@
 
 The Report class encapsulates an incident report, or a set of incident reports.
 
-Contributor(s): Robert Sanchez
+Contributor(s): Robert Sanchez, Colin Strong
 
 For a detailed list of changes to this file, enter the command `git log <file>` 
 or `git blame <file>`
@@ -19,36 +19,37 @@ require_once('../model/datainterface.model.php');
 
 class Report {
 			
-	private $resolved;			//bool
-	private $r_id;				//maybe concatenate #ofReports.#ofPatrols.userId
-	private $r_time;			//
-	private $r_type;			//incident type
-	private $r_severity;		//
-	private $r_location;
-	private $r_description;
+    private $resolved;      // Boolean
+    private $time;          // A Unix timestamp
+    private $type;          // Must be one of the defined type constants
+	private $severity;      // Must be one of the defined severity constants
+    private $location;      // Latitude and longitude
+    private $description;   // 512 bytes (characters) max
 	
-	//picture
+    // Type constants:
+    const VANDALISM = 'vandalism';
+    const GRAFFITI = 'graffiti';
+    const BEHAVIOR = 'behavior';
+    const PROPERTY = 'property';
+    const OTHER = 'other';
 
+    // Severity constants:
+    const CRITICAL = 'critical';
+    const SERIOUS = 'serious';
+    const MINOR = 'minor';
+    const TIP = 'tip';
+
+    // The default constructor constructs a new report using POST data.
     function __construct() {
-	
-		$resolved=FALSE;
-		$timeArray=$getdate();
-		$r_time=timeArray[0];
-		
-		$r_type=$_GET["type"];
-		$r_severity=$_GET["serverity"];
-		$r_location=$_GET["location"];
-		$r_description=$_GET["description"];
-		
-		//|resolved tick box|reportId|reportTime|reportType|severity|location|description| - webportal display
-		$reportArray=array($resolved,$r_id,$r_time,$r_type,$r_severity,$r_location,$r_description);
-		
-		echo json_encode($reportArray);
-		// do something
+        // Ensure that the POST variable is set
+        if (! isset($_POST)) {
+            throw new Exception('POST is not set.');
+        }
+
     }
 	
 	function reportResolved(){
-		$this->resolved=true;
+		$this->resolved = true;
 	}
 
     // blah
