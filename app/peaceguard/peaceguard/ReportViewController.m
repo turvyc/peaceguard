@@ -75,6 +75,7 @@
         UIAlertView *altert = [[UIAlertView alloc] initWithTitle:@"No Camera" message:@"Camera is not available" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
         [altert show];
     }
+    [self presentViewController:picker animated:YES completion:nil];
 //        picker.delegate = self;
    
 }
