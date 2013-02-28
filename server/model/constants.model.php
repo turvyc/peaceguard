@@ -36,6 +36,14 @@ define('_AGENT', 'agent');
 define('_EMAIL', 'email');
 define('_PASSWORD', 'password');
 
+// POST array keys for incident reports (values are in the Report class)
+define('_REPORT', 'report');
+define('_TYPE', 'type');
+define('_SEVERITY', 'severity');
+define('_LOCATION', 'location');
+define('_TIME', 'time');
+define('_DESC', 'desc');
+
 // The following constants are for $_POST array values.
 define('_IPHONE', 'iphone');   // For use with _AGENT key
 define('_WEBSITE', 'website');  // For use with _AGENT key
