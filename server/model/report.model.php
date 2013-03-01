@@ -48,11 +48,11 @@ class Report {
         Report::MINOR, Report::TIP);
 
         if (! in_array($data[_TYPE], $allowedTypes)) {
-            throw new Exception('Illegal report type: ' $data[_TYPE]);
+            throw new Exception('Illegal report type: ' . $data[_TYPE]);
         }
 
-        if (! in_array($data[_REPORT][_SEVERITY], $allowedSeverities)) {
-            throw new Exception('Illegal report severity: ' $data[_SEVERITY]);
+        if (! in_array($data[_SEVERITY], $allowedSeverities)) {
+            throw new Exception('Illegal report severity: ' . $data[_SEVERITY]);
         }
 
         // Populate the attributes
@@ -63,11 +63,25 @@ class Report {
         $this->desc = $data[_DESC];
     }
 	
-	function reportResolved(){
-        $this->resolved = TRUE;
-	}
-
-    // blah
+    public function getType() {
+        return $this->type;
+    }
+	
+    public function getSeverity() {
+        return $this->severity;
+    }
+	
+    public function getLocation() {
+        return $this->location;
+    }
+	
+    public function getTime() {
+        return $this->time;
+    }
+	
+    public function getDesc() {
+        return $this->desc;
+    }
 
 }
 
