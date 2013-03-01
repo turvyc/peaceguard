@@ -106,3 +106,23 @@ span.small a
 {
     color: #B0B0B0;
 }
+
+
+div#dropdownMenu
+{
+    text-align: center;
+}
+
+
+table, td, th
+{
+	border: 1px solid black;
+	text-align: center;
+	margin: auto; 
+}
+
+th
+{
+	background-color: red;
+	color: white;
+}
