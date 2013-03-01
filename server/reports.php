@@ -35,4 +35,21 @@ checkLoggedIn($session);
 	</select>
 </div>
 
+<table class="reportTable">
+	<tr>
+	<th>User Name</th>
+	<th>Severity</th>
+	<th>Report Time</th>
+	<th>Report Date</th>
+	<th>Report Description</th>
+	</tr>
+	<tr>
+	<td>Bob</td>
+	<td>high</td>
+	<td>4:12pm</td>
+	<td>2013-02-28</td>
+	<td>Someone ate ice creem and screamed.</td>
+	</tr>
+</table> 
+
 <?php include('footer.php'); ?>
