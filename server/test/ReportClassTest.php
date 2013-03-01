@@ -50,6 +50,14 @@ class ReportClassTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($this->report->getDesc(), 'some description');
     }
 
+    public function testGetResolved() {
+        $this->assertEquals($this->report->getResolved(), FALSE);
+    }
+
+    public function testSetResolved() {
+        $this->report->setResolved();
+        $this->assertEquals($this->report->getResolved(), TRUE);
+    }
 }
 
 ?>

@@ -18,6 +18,7 @@ require_once('../model/constants.model.php');
 
 class Report {
 			
+    private $id;            // A positive integer, or -1 if a new review
     private $resolved;      // Boolean
     private $time;          // A Unix timestamp
     private $type;          // Must be one of the defined type constants
@@ -55,12 +56,29 @@ class Report {
             throw new Exception('Illegal report severity: ' . $data[_SEVERITY]);
         }
 
-        // Populate the attributes
+        // If no ID is supplied in the data, it must be a new review, so 
+        // set it to -1. 
+        $this->id = (isset($data[_ID])) ? $data[_ID] : -1;
+
+        // Populate the other attributes
+        $this->resolved = FALSE;
         $this->time = $data[_TIME];
         $this->type = $data[_TYPE];
         $this->severity = $data[_SEVERITY];
         $this->location = $data[_LOCATION];
         $this->desc = $data[_DESC];
+    }
+	
+    public function setResolved() {
+        require('database.model.php');
+        $STH = $DBH->prepare('UPDATE Reports SET resolved = TRUE WHERE r_id = ?');
+        $STH->execute(array($this->id));
+
+        $this->resolved = TRUE;
+    }
+	
+    public function getResolved() {
+        return $this->resolved;
     }
 	
     public function getType() {

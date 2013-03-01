@@ -38,6 +38,8 @@ define('_PASSWORD', 'password');
 
 // POST array keys for incident reports (values are in the Report class)
 define('_REPORT', 'report');
+define('_ID', 'id');
+define('_RESOLVED', 'resolved');
 define('_TYPE', 'type');
 define('_SEVERITY', 'severity');
 define('_LOCATION', 'location');
