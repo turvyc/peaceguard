@@ -36,15 +36,20 @@ class DataInterface {
     // the data, should they be using the website.
     private $header;
 
-    public function __construct() {
+    // The session is constructed in a control script, and then passed here.
+    private $session;
+
+    public function __construct($session) {
+        $this->session = $session;
+
         // There must be a POST array to work with
         if (! isset($_POST)) {
-            throw new exception('$_POST is not set!');
+            throw new Exception('$_POST is not set!');
         }
 
         // Also, the only required key is _AGENT. Make sure it's there.
         if (! isset($_POST[_AGENT])) {
-            throw new exception('$_AGENT is not set!');
+            throw new Exception('$_AGENT is not set!');
         }
 
         // Initialize the data array
@@ -73,24 +78,16 @@ class DataInterface {
         $this->data[$key] = $value;
     }
 
-    // Sets the location header 
-    public function setHeader($page) {
-        $this->header = $page;
-    }
-
     // Outputs the data, depending on the agent
     public function output() {
 
         if ($this->agent == _IPHONE) {
             $json = json_encode($this->data);
-            if (_DEBUG) { return $json; }
             echo $json;
         }
 
         else {
-            $session = new Session();
-            $session->setData($this->data);
-            header("location: ../$this->header");
+            $this->session->setData($this->data);
         }
         exit(0);
     }

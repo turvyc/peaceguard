@@ -24,12 +24,15 @@ or `git blame <file>`
 require_once('../model/session.model.php');
 require_once('../model/constants.model.php');
 require_once('../model/report.model.php');
+require_once('../model/datainterface.model.php');
 
-if (_AGENT == _IPHONE) {
+$session = new Session();
+$interface = new DataInterface($session);
 
-    // Ensure that the POST variable is set
-    if (! isset($_POST)) {
-        throw new Exception('POST is not set.');
+try {
+    // Ensure that the USERNAME variable is set
+    if (! isset($_POST[_USERNAME])) {
+        throw new Exception('_USERNAME is not set.');
     }
 
     // Ensure that there is report data
@@ -37,5 +40,7 @@ if (_AGENT == _IPHONE) {
         throw new Exception('No report data is set in POST.');
     }
 }
+
+
 
 ?>

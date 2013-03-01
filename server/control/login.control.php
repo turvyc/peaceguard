@@ -19,18 +19,20 @@ require_once('../model/constants.model.php');
 require_once('../model/datainterface.model.php');
 
 $session = new Session();
-$interface = new DataInterface();
+$interface = new DataInterface($session);
 
 try {
     $session->login($_POST[_EMAIL], $_POST[_PASSWORD]);
 }
 
-// If there was no match . . . 
+// If there was an error or if there was no match, output 'not successful' and
+// the error message.
 catch (Exception $e) {
     $interface->addData(_SUCCESSFUL, _NO);
     $interface->addData(_MESSAGE, $e->getMessage());
-    $interface->setHeader('login.php');
     $interface->output();
+    header('location: ../login.php');
+    exit(0);
 }
 
 // If we made it this far, we should be logged in. This is getting tossed in 
@@ -40,9 +42,9 @@ if (_DEBUG) {
 }
 
 $interface->addData(_SUCCESSFUL, _YES);
-$interface->setHeader('index.php');
-
-// Output the data and we're done!
 $interface->output();
+
+header('location: ../index.php');
+exit(0)
 
 ?>
