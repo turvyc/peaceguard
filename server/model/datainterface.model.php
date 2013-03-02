@@ -88,7 +88,7 @@ class DataInterface {
 
         if ($this->agent == _IPHONE) {
             $json = json_encode($this->data);
-            // Output the POST data to a logfile, if debugging
+            // Record the output in a logfile, if debugging
             if (_DEBUG) {
                 $logfile = fopen('../' . _OUTPUT_LOG, 'a');
                 $format = "%s -- Output to iPhone:\n %s\n\n";
