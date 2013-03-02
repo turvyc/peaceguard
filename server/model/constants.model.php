@@ -52,7 +52,7 @@ define('_WEBSITE', 'website');  // For use with _AGENT key
 
 // Log file constants.
 define('_LOG_DIR', 'log/');
-define('_POST_LOG', 'post.log');
-define('_OUTPUT_LOG', 'output.log');
+define('_POST_LOG', _LOG_DIR . 'post.log');
+define('_OUTPUT_LOG', _LOG_DIR . 'output.log');
 
 ?>
