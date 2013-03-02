@@ -18,9 +18,18 @@ require_once('../model/session.model.php');
 require_once('../model/constants.model.php');
 require_once('../model/datainterface.model.php');
 
-$session = new Session();
-$interface = new DataInterface($session);
+// If these fail, there is a serious programming error. 
+try {
+    $session = new Session();
+    $interface = new DataInterface($session);
+}
 
+catch (Exception $e) {
+    echo $e;
+    exit(1);
+}
+
+// Try to login
 try {
     $session->login($_POST[_EMAIL], $_POST[_PASSWORD]);
 }

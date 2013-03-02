@@ -73,6 +73,11 @@ class DataInterface {
         unset($_POST);
     }
 
+    // Returns either _IPHONE or _WEBSITE
+    public function getAgent() {
+        return $this->agent;
+    }
+
     // Appends the specified key/value pair to $data
     public function addData($key, $value) {
         $this->data[$key] = $value;

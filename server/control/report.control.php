@@ -26,21 +26,45 @@ require_once('../model/constants.model.php');
 require_once('../model/report.model.php');
 require_once('../model/datainterface.model.php');
 
-$session = new Session();
-$interface = new DataInterface($session);
-
+// If these fail, there is a serious programming error. 
 try {
-    // Ensure that the USERNAME variable is set
-    if (! isset($_POST[_USERNAME])) {
-        throw new Exception('_USERNAME is not set.');
-    }
-
-    // Ensure that there is report data
-    if (! isset($_POST(_REPORT))) {
-        throw new Exception('No report data is set in POST.');
-    }
+    $session = new Session();
+    $interface = new DataInterface($session);
 }
 
+catch (Exception $e) {
+    echo $e;
+    exit(1);
+}
+
+if ($interface->getAgent() == _IPHONE) {
+    try {
+        // Ensure that the USERNAME variable is set
+        if (! isset($_POST[_USERNAME])) {
+            throw new Exception('_USERNAME is not set.');
+        }
+
+        // Ensure that there is report data
+        if (! isset($_POST(_REPORT))) {
+            throw new Exception('No report data is set in POST.');
+        }
+
+        // Create a new Report object from the data
+        Report::newReport($_POST[_REPORT], $_POST[_USERNAME]);
+
+        $interface->addData(_SUCCESSFUL, _YES);
+    }
+
+    catch Exception($e) {
+        $interface->addData(_SUCCESSFUL, _NO);
+        $interface->addData(_MESSAGE, $e->getMessage());
+    }
+
+    finally {
+        $interface->output();
+        exit(0);
+    }
+}
 
 
 ?>
