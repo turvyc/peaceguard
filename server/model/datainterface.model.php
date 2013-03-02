@@ -36,15 +36,20 @@ class DataInterface {
     // the data, should they be using the website.
     private $header;
 
-    public function __construct() {
+    // The session is constructed in a control script, and then passed here.
+    private $session;
+
+    public function __construct($session) {
+        $this->session = $session;
+
         // There must be a POST array to work with
         if (! isset($_POST)) {
-            throw new exception('$_POST is not set!');
+            throw new LogicException('$_POST is not set!');
         }
 
         // Also, the only required key is _AGENT. Make sure it's there.
         if (! isset($_POST[_AGENT])) {
-            throw new exception('$_AGENT is not set!');
+            throw new LogicException('$_AGENT is not set!');
         }
 
         // Initialize the data array
@@ -52,6 +57,15 @@ class DataInterface {
 
         // Set the agent
         $this->agent = ($_POST[_AGENT] == _IPHONE) ? _IPHONE : _WEBSITE;
+
+        // Output the POST data to a logfile, if debugging
+        if (_DEBUG) {
+            $logfile = fopen(_POST_LOG, 'a');
+            $format = "%s -- Contents of POST:\n %s\n\n";
+            $entry = sprintf($format, date('j M Y G:i:s'), print_r($_POST, TRUE));
+            fwrite($logfile, $entry);
+            fclose($logfile);
+        }
     }
 
     // When we're done with the interface, we should destroy the $_POST variables
@@ -59,14 +73,14 @@ class DataInterface {
         unset($_POST);
     }
 
+    // Returns either _IPHONE or _WEBSITE
+    public function getAgent() {
+        return $this->agent;
+    }
+
     // Appends the specified key/value pair to $data
     public function addData($key, $value) {
         $this->data[$key] = $value;
-    }
-
-    // Sets the location header 
-    public function setHeader($page) {
-        $this->header = $page;
     }
 
     // Outputs the data, depending on the agent
@@ -74,14 +88,11 @@ class DataInterface {
 
         if ($this->agent == _IPHONE) {
             $json = json_encode($this->data);
-            if (_DEBUG) { return $json; }
             echo $json;
         }
 
         else {
-            $session = new Session();
-            $session->setData($this->data);
-            header("location: ../$this->header");
+            $this->session->setData($this->data);
         }
         exit(0);
     }

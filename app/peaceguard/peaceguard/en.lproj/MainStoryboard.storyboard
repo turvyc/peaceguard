@@ -345,6 +345,9 @@
                                     <segment title="Map View"/>
                                     <segment title="Stat View"/>
                                 </segments>
+                                <connections>
+                                    <segue destination="ZNw-A8-Ehs" kind="push" id="FCd-LP-cvr"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVo-Sv-RDz">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -356,24 +359,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6C-om-qNc">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="449" id="jyv-GG-3qg"/>
-                                </constraints>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GFo-DW-Hec" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="145" id="1Ho-oF-lIu"/>
-                            <constraint firstItem="JEK-tK-iwr" firstAttribute="centerX" secondItem="D6C-om-qNc" secondAttribute="centerX" type="default" id="1x8-G6-mtk"/>
                             <constraint firstItem="xoT-Qs-AIt" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="241" id="9YB-GB-1cY"/>
-                            <constraint firstItem="D6C-om-qNc" firstAttribute="trailing" secondItem="Hj2-y8-Dce" secondAttribute="trailing" type="default" id="Lch-xW-S2s"/>
-                            <constraint firstAttribute="bottom" secondItem="JEK-tK-iwr" secondAttribute="bottom" constant="9" id="XzW-Or-ZEy"/>
+                            <constraint firstItem="JEK-tK-iwr" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="KIs-LT-P6D"/>
                             <constraint firstAttribute="trailing" secondItem="xoT-Qs-AIt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="c7K-C4-18Q"/>
                             <constraint firstItem="DVo-Sv-RDz" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="42" id="g0J-7y-9qc"/>
-                            <constraint firstItem="D6C-om-qNc" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" type="default" id="lpE-D2-nDp"/>
+                            <constraint firstAttribute="bottom" secondItem="JEK-tK-iwr" secondAttribute="bottom" constant="9" id="pQI-nw-EaJ"/>
                             <constraint firstAttribute="trailing" secondItem="DVo-Sv-RDz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qYt-9e-19I"/>
-                            <constraint firstItem="D6C-om-qNc" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" type="default" id="vT1-zt-tci"/>
                             <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="wCc-rn-Dhd"/>
                         </constraints>
                     </view>
@@ -387,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="-419"/>
+            <point key="canvasLocation" x="645" y="-540"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Z8i-II-Cm1">
@@ -418,6 +413,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5pD-MI-YaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1617" y="918"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DL2-aJ-1k2">
+            <objects>
+                <viewController id="ZNw-A8-Ehs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SCN-iU-5g6">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6C-om-qNc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="542" id="4tf-Hl-7vZ"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D6C-om-qNc" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" type="default" id="26v-7K-YD7"/>
+                            <constraint firstItem="D6C-om-qNc" firstAttribute="top" secondItem="SCN-iU-5g6" secondAttribute="top" type="default" id="7uo-p1-HpO"/>
+                            <constraint firstItem="D6C-om-qNc" firstAttribute="trailing" secondItem="SCN-iU-5g6" secondAttribute="trailing" type="default" id="Na1-Or-aTH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MPL-Wl-g52"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7WR-Hi-KXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1142" y="-540"/>
         </scene>
         <!--View Controller - Statistics-->
         <scene sceneID="TKs-4u-uYS">
@@ -453,6 +475,12 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+<<<<<<< HEAD
+=======
+        <class className="PatrolViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
+        </class>
+>>>>>>> 00777c1d3a34a2acc058bf19f8f9d1e6c2ff2d4d
         <class className="PeaceGuardViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
             <relationships>
@@ -469,6 +497,10 @@
                 <relationship kind="action" name="submitAction:"/>
                 <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+<<<<<<< HEAD
+=======
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+>>>>>>> 00777c1d3a34a2acc058bf19f8f9d1e6c2ff2d4d
                 <relationship kind="outlet" name="submit" candidateClass="UIButton"/>
             </relationships>
         </class>
