@@ -23,7 +23,7 @@ abstract class User {
 
     public function __construct($id) {
         if (! is_int($id)) {
-            throw new exception('Parameter must be an integer!');
+            throw new InvalidArgumentException('Parameter must be an integer!');
         }
 
         // Get the information from the database, throwing an exception if
@@ -34,7 +34,7 @@ abstract class User {
         $row = $STH->fetch();
 
         if (! $row) {
-            throw new exception('User not found in database.');
+            throw new DomainException('User not found in database.');
         }
 
         // Populate the object's attributes with the information from the row.

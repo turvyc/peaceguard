@@ -58,7 +58,7 @@ class Report {
         if ((! isset($data[_TIME])) || (! isset($data[_TYPE]))  || 
         (! isset($data[_SEVERITY]))  || (! isset($data[_LOCATION]))  || 
         (! isset($data[_DESC]))) {
-            throw new Exception('Key(s) missing from Report data array');
+            throw new DomainException('Key(s) missing from Report data array');
         }
 
         // Ensure that the type and severity are allowable values
@@ -68,11 +68,11 @@ class Report {
         Report::MINOR, Report::TIP);
 
         if (! in_array($data[_TYPE], $allowedTypes)) {
-            throw new Exception('Illegal report type: ' . $data[_TYPE]);
+            throw new DomainException('Illegal report type: ' . $data[_TYPE]);
         }
 
         if (! in_array($data[_SEVERITY], $allowedSeverities)) {
-            throw new Exception('Illegal report severity: ' . $data[_SEVERITY]);
+            throw new DomainException('Illegal report severity: ' . $data[_SEVERITY]);
         }
 
         // Everything should be good to go now. Write the report to the database

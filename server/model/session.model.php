@@ -71,7 +71,7 @@ class Session {
     // or throws an exception if either _SESSION or the data are empty or unset.
     public function getData() {
         if (! isset($_SESSION[Session::DATA]) || empty($_SESSION[Session::DATA])) {
-            throw new Exception('No data found.');
+            throw new LogicException('No data found.');
         }
 
         return $_SESSION[Session::DATA];
@@ -89,7 +89,7 @@ class Session {
     public function login($email, $password) {
 
         if (isset($_SESSION[Session::ADMIN])) {
-            throw new Exception('Already logged in as ' . $this->admin->getFullName());
+            throw new RuntimeException('Already logged in as ' . $this->admin->getFullName());
         }
 
         $hash = $this->getPasswordHash($password);
@@ -122,7 +122,7 @@ class Session {
         // If there is no match, throw an exception for the controller to take care of
         else {
             $DBH = null;
-            throw new Exception('The email/password pair was not found!');
+            throw new DomainException('The email/password pair was not found!');
         }
     }
 

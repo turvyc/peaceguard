@@ -44,12 +44,12 @@ class DataInterface {
 
         // There must be a POST array to work with
         if (! isset($_POST)) {
-            throw new Exception('$_POST is not set!');
+            throw new LogicException('$_POST is not set!');
         }
 
         // Also, the only required key is _AGENT. Make sure it's there.
         if (! isset($_POST[_AGENT])) {
-            throw new Exception('$_AGENT is not set!');
+            throw new LogicException('$_AGENT is not set!');
         }
 
         // Initialize the data array
