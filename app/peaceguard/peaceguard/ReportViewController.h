@@ -17,8 +17,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(strong, nonatomic) ReportViewController *reportController;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
+
 - (IBAction) submitAction:(id)sender;
 - (BOOL) verify: (NSString*) description;
+
 @property (weak, nonatomic) IBOutlet UITextField *description;
 //put the image in the specific place and show it to the user
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;

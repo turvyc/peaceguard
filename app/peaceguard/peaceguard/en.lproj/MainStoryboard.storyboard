@@ -259,9 +259,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Severity" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dis-Zo-acq">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Ahp-EQ-za0"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -278,21 +275,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="3D0-0J-djF" secondAttribute="bottom" constant="26" id="0dH-vs-WXv"/>
-                            <constraint firstItem="Dis-Zo-acq" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="118" id="3wZ-iJ-iXm"/>
-                            <constraint firstItem="AKX-30-OU5" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="215" id="4xj-3r-WRT"/>
+                            <constraint firstItem="9lP-rE-FWC" firstAttribute="centerX" secondItem="Bmk-e2-JVe" secondAttribute="centerX" type="default" id="3zC-nb-9NE"/>
+                            <constraint firstItem="Dis-Zo-acq" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="100" id="5t4-Ne-xBl"/>
+                            <constraint firstItem="Dis-Zo-acq" firstAttribute="leading" secondItem="LEB-UF-ldR" secondAttribute="leading" type="default" id="DFn-T9-NfK"/>
+                            <constraint firstAttribute="bottom" secondItem="3D0-0J-djF" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="DSf-vu-3hS"/>
                             <constraint firstItem="ydf-YF-tu0" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="18" id="Fgf-jK-xfI"/>
-                            <constraint firstItem="Sbp-6v-LTL" firstAttribute="centerX" secondItem="Bmk-e2-JVe" secondAttribute="centerX" type="default" id="LX3-89-MI2"/>
+                            <constraint firstItem="3D0-0J-djF" firstAttribute="top" secondItem="Sbp-6v-LTL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="K3w-UV-Bid"/>
                             <constraint firstItem="3D0-0J-djF" firstAttribute="centerX" secondItem="Sbp-6v-LTL" secondAttribute="centerX" type="default" id="Q7z-RU-g8d"/>
                             <constraint firstItem="9lP-rE-FWC" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="161" id="T8h-Zl-zoV"/>
                             <constraint firstItem="AKX-30-OU5" firstAttribute="centerX" secondItem="9lP-rE-FWC" secondAttribute="centerX" type="default" id="TZh-vf-MX8"/>
                             <constraint firstItem="9lP-rE-FWC" firstAttribute="trailing" secondItem="ydf-YF-tu0" secondAttribute="trailing" type="default" id="UYu-OQ-NGa"/>
+                            <constraint firstItem="Dis-Zo-acq" firstAttribute="trailing" secondItem="Sbp-6v-LTL" secondAttribute="trailing" type="default" id="XSy-QH-p4B"/>
+                            <constraint firstItem="Sbp-6v-LTL" firstAttribute="top" secondItem="AKX-30-OU5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zbw-2p-326"/>
                             <constraint firstItem="9lP-rE-FWC" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dZn-3P-88o"/>
-                            <constraint firstItem="3D0-0J-djF" firstAttribute="top" secondItem="Sbp-6v-LTL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fFQ-JY-azk"/>
-                            <constraint firstItem="LEB-UF-ldR" firstAttribute="centerX" secondItem="Dis-Zo-acq" secondAttribute="centerX" type="default" id="fnx-st-81g"/>
-                            <constraint firstItem="LEB-UF-ldR" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="71" id="mhW-SB-vxq"/>
+                            <constraint firstItem="LEB-UF-ldR" firstAttribute="trailing" secondItem="Dis-Zo-acq" secondAttribute="trailing" type="default" id="dsV-uN-NkH"/>
                             <constraint firstItem="AKX-30-OU5" firstAttribute="centerX" secondItem="Sbp-6v-LTL" secondAttribute="centerX" type="default" id="rSf-oz-wLE"/>
-                            <constraint firstItem="9lP-rE-FWC" firstAttribute="centerX" secondItem="Dis-Zo-acq" secondAttribute="centerX" type="default" id="rSs-eP-A0Y"/>
+                            <constraint firstItem="LEB-UF-ldR" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="50" id="wV9-5b-vyY"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
