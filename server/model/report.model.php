@@ -25,6 +25,7 @@ class Report {
 	private $severity;      // Must be one of the defined severity constants
     private $location;      // Latitude and longitude
     private $desc;          // 512 bytes (characters) max
+    private $volunteer;     // A Volunteer object of the reporter
 	
     // Type constants:
     const VANDALISM = 'vandalism';
@@ -49,6 +50,7 @@ class Report {
         $this->severity = $data[_SEVERITY];
         $this->location = $data[_LOCATION];
         $this->desc = $data[_DESC];
+        $this->volunteer = $data[_VOLUNTEER];
     }
 	
     // This static function checks a new report's data for errors, then 
@@ -123,6 +125,10 @@ class Report {
 
     public function getDesc() {
         return $this->desc;
+    }
+
+    public function getVolunteer() {
+        return $this->volunteer;
     }
 
 }
