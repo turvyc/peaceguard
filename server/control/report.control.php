@@ -32,8 +32,8 @@ try {
     $interface = new DataInterface($session);
 }
 
-catch (Exception $e) {
-    echo $e;
+catch (LogicException $e) {
+    echo $e->getMessage();
     exit(1);
 }
 
@@ -45,7 +45,7 @@ if ($interface->getAgent() == _IPHONE) {
         }
 
         // Ensure that there is report data
-        if (! isset($_POST(_REPORT))) {
+        if (! isset($_POST[_REPORT])) {
             throw new DomainException('No report data is set in POST.');
         }
 
@@ -55,15 +55,13 @@ if ($interface->getAgent() == _IPHONE) {
         $interface->addData(_SUCCESSFUL, _YES);
     }
 
-    catch Exception($e) {
+    catch (Exception $e) {
         $interface->addData(_SUCCESSFUL, _NO);
         $interface->addData(_MESSAGE, $e->getMessage());
     }
 
-    finally {
-        $interface->output();
-        exit(0);
-    }
+    $interface->output();
+    exit(0);
 }
 
 // Handle website requests -- query the database and create Report
@@ -79,7 +77,7 @@ try {
     }
 
     // Ensure that _TIME_PERIOD and _SORT_BY have sane values
-    $allowedTimePeriods = array(_LAST_DAY, _LAST_MONTH, _YEAR_TO_DATE, _ALL_TIME);
+    $allowedTimePeriods = array(_LAST_DAY, _LAST_MONTH, _LAST_YEAR, _ALL_TIME);
     $allowedSorts = array(_DATE, _TIME, _SEVERITY, _VOLUNTEER);
 
     if (! in_array($_POST[_TIME_PERIOD], $allowedTimePeriods)) {
@@ -90,11 +88,42 @@ try {
         throw new OutOfBoundsException('Illegal value for _SORT_BY');
     }
 
+    // Find the minimum timestamp of reports within the specified time
+    switch ($_POST[_TIME_PERIOD]) {
+        case _LAST_DAY:
+            $since = strtotime('-1 day');
+            break;
+        case _LAST_MONTH:
+            $since = strtotime('-1 month');
+            break;
+        case _LAST_YEAR:
+            $since = strtotime('-1 year');
+            break;
+        case _ALL_TIME:
+            $since = 0;
+            break;
+    }
+
+    // Get the SQL SORT BY string
+    $sortby = 'R.' . $_POST[_SORT_BY];
+    if ($_POST[_SORT_BY] == _VOLUNTEER) {
+        $sortby = 'R.' . _VOLUNTEER;
+    }
+
     // Query the database
     require('../model/database.model.php');
 
-    $query = ('SELECT R.time, R.location, R.severity, R.desc, V.v_id
-    FROM Reports R, Volunteers V WHERE '); // TODO
+    $query = ('SELECT R.time, R.location, R.type, R.severity, R.desc, V.v_id, V.firstName
+    FROM Reports R, Volunteers V WHERE R.time > ? SORT BY ?');
 
     $STH = $DBH->prepare($query);
+    $STH->execute(array($since, $sortby));
+
+    $allReportData = $STH->fetchAll();
+    print_r($allReportData);
+}
+
+catch (Exception $e) {
+    // TODO
+}
 ?>

@@ -15,6 +15,7 @@ or `git blame <file>`
 */
 
 include('header.php');
+include('model/report.model.php');
 checkLoggedIn($session);
 
 ?>

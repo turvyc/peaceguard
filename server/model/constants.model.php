@@ -45,7 +45,7 @@ define('_SEVERITY', 'severity');
 define('_LOCATION', 'location');
 define('_TIME', 'time');
 define('_DESC', 'desc');
-define('_VOLUNTEER', 'volunteer');
+define('_VOLUNTEER', 'v_id');
 
 // POST keys for website incident report request
 define('_TIME_PERIOD', 'timePeriod');
@@ -54,7 +54,7 @@ define('_SORT_BY', 'sortBy');
 // Time period constants
 define('_LAST_DAY', 'lastDay');
 define('_LAST_MONTH', 'lastMonth');
-define('_YEAR_TO_DATE', 'yearToDate');
+define('_LAST_YEAR', 'yearToDate');
 define('_ALL_TIME', 'allTime');
 
 // The following constants are for $_POST array values.
