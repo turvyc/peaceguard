@@ -19,8 +19,6 @@ require_once('constants.model.php');
 class Volunteer extends User {
 
     private $joinDate;
-    private $numberOfReports;
-    private $numberOfPatrols;
     private $totalTime;
     private $totalDistance;
     // private $score;  Commented because we have no score algorithm as of yet

@@ -41,12 +41,12 @@ if ($interface->getAgent() == _IPHONE) {
     try {
         // Ensure that the USERNAME variable is set
         if (! isset($_POST[_USERNAME])) {
-            throw new Exception('_USERNAME is not set.');
+            throw new DomainException('_USERNAME is not set.');
         }
 
         // Ensure that there is report data
         if (! isset($_POST(_REPORT))) {
-            throw new Exception('No report data is set in POST.');
+            throw new DomainException('No report data is set in POST.');
         }
 
         // Create a new Report object from the data
@@ -66,5 +66,35 @@ if ($interface->getAgent() == _IPHONE) {
     }
 }
 
+// Handle website requests -- query the database and create Report
+// objects for the retrieved rows, and store them in an array
+try {
+    // Ensure that _TIME_PERIOD and _SORT_BY are set
+    if (! isset($_POST[_TIME_PERIOD])) {
+        throw new LogicException('_TIME_PERIOD is not set.');
+    }
 
+    if (! isset($_POST[_SORT_BY])) {
+        throw new LogicException('_SORT_BY is not set.');
+    }
+
+    // Ensure that _TIME_PERIOD and _SORT_BY have sane values
+    $allowedTimePeriods = array(_LAST_DAY, _LAST_MONTH, _YEAR_TO_DATE, _ALL_TIME);
+    $allowedSorts = array(_DATE, _TIME, _SEVERITY, _VOLUNTEER);
+
+    if (! in_array($_POST[_TIME_PERIOD], $allowedTimePeriods)) {
+        throw new OutOfBoundsException('Illegal value for _TIME_PERIOD');
+    }
+
+    if (! in_array($_POST[_SORT_BY], $allowedSorts)) {
+        throw new OutOfBoundsException('Illegal value for _SORT_BY');
+    }
+
+    // Query the database
+    require('../model/database.model.php');
+
+    $query = ('SELECT R.time, R.location, R.severity, R.desc, V.v_id
+    FROM Reports R, Volunteers V WHERE '); // TODO
+
+    $STH = $DBH->prepare($query);
 ?>

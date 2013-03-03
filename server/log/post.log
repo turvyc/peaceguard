@@ -1,0 +1,27 @@
+2 Mar 2013 14:31:58 -- Contents of POST:
+ Array
+(
+    [email] => bob
+    [password] => test
+    [agent] => website
+)
+
+
+2 Mar 2013 14:32:03 -- Contents of POST:
+ Array
+(
+    [email] => test
+    [password] => bob
+    [agent] => website
+)
+
+
+2 Mar 2013 14:32:06 -- Contents of POST:
+ Array
+(
+    [email] => test
+    [password] => bob
+    [agent] => website
+)
+
+

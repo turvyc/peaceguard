@@ -59,7 +59,10 @@ if ($interface->getAgent() == _IPHONE) {
     $session->logout();
 }
 
-header('location: ../index.php');
+else {
+    header('location: ../index.php');
+}
+
 exit(0)
 
 ?>

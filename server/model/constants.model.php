@@ -28,8 +28,8 @@ define('_MESSAGE', 'message');
 
 // The following constants are for JSON values. These must be in agreement
 // with both the website and the iPhone app. 
-define('_YES', 'yes'); // For use with _SUCCESSFUL key
-define('_NO', 'no'); // For use with _SUCCESSFUL key
+define('_YES', TRUE); // For use with _SUCCESSFUL key
+define('_NO', FALSE); // For use with _SUCCESSFUL key
 
 // The following constants are for $_POST array keys. 
 define('_AGENT', 'agent');
@@ -45,6 +45,17 @@ define('_SEVERITY', 'severity');
 define('_LOCATION', 'location');
 define('_TIME', 'time');
 define('_DESC', 'desc');
+define('_VOLUNTEER', 'volunteer');
+
+// POST keys for website incident report request
+define('_TIME_PERIOD', 'timePeriod');
+define('_SORT_BY', 'sortBy');
+
+// Time period constants
+define('_LAST_DAY', 'lastDay');
+define('_LAST_MONTH', 'lastMonth');
+define('_YEAR_TO_DATE', 'yearToDate');
+define('_ALL_TIME', 'allTime');
 
 // The following constants are for $_POST array values.
 define('_IPHONE', 'iphone');   // For use with _AGENT key

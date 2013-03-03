@@ -102,7 +102,6 @@ class DataInterface {
         else {
             $this->session->setData($this->data);
         }
-        exit(0);
     }
 }
 
