@@ -14,6 +14,9 @@
 
 @implementation ReportViewController
 
+@synthesize thePickerView;
+@synthesize incidentSelection, severitySelection;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,6 +28,27 @@
 
 - (void)viewDidLoad
 {
+    
+    thePickerView.hidden = YES;
+    
+    thePickerView.showsSelectionIndicator = TRUE;
+    
+    thePickerView.delegate = self;
+    thePickerView.dataSource = self;
+    
+    
+    //initializes text field display
+    self.incidentData = @"Graffiti";
+    self.severityData = @"Information";
+    self.incidentLabel.text = self.incidentData;
+    self.severityLabel.text = self.severityData;
+    //should be initialized when pickerview pops up
+    
+    
+    self.incidentSelection = [[NSArray alloc] initWithObjects: @"Graffiti", @"Vehicle", @"Person", @"Other", nil];
+    self.severitySelection = [[NSArray alloc] initWithObjects: @"Something4", @"Something3", @"Something2",@"Information", nil];
+
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
@@ -34,6 +58,74 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+//*** PickerView Code ***
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    if (component == 0){
+        return [incidentSelection count];
+    }
+    else {
+        return [severitySelection count];
+    }
+    
+}
+
+//number of columns/components of picker
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return 2;
+    
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    if (component == 0){
+        return [incidentSelection objectAtIndex:row];
+        
+    }
+    else {
+        return [severitySelection objectAtIndex:row];
+        
+    }
+}
+
+//returns value from pickerview
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    if (component == 0){
+        self.incidentData = [incidentSelection objectAtIndex:row];
+        self.incidentLabel.text = self.incidentData;
+    }
+    
+    else{
+        self.severityData = [severitySelection objectAtIndex:row];
+        self.severityLabel.text = self.severityData;
+    }
+    
+    return;
+    
+}
+//***
+
+- (IBAction)incidentButtonPress:(id)sender {
+    if (self.thePickerView.hidden == YES){
+        self.thePickerView.hidden = NO;
+    }
+    else{
+        self.thePickerView.hidden = YES;
+    }
+}
+
+- (IBAction)severityButtonPress:(id)sender {
+    if (self.thePickerView.hidden == YES){
+        self.thePickerView.hidden = NO;
+    }
+    else{
+        self.thePickerView.hidden = YES;
+    }
+}
+
 
 - (IBAction)submitAction:(id)sender {
     BOOL verification = [self verify:self.description.text];
