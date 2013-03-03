@@ -24,19 +24,14 @@ class Volunteer extends User {
     // private $score;  Commented because we have no score algorithm as of yet
 	// private $badges; should we have an array to store badges that the volunteer has collected.
 
-    // Constructs a new Volunteer object. If the id is -1 (the default), the 
-    // object will be considered a "collective" Volunteer object; that is,
-    // it represents a group of volunteers, rather than a single one.
-    public function __construct($id = -1) {
-        // TODO: Write a database query to populate the object's attributes.
-        if ($id != -1) {
-            parent::__construct($id);
-        }
+    // Constructs a new Volunteer object using the database ID
+    public function __construct($id) {
+        parent::__construct($id);
     }
 
     // Returns the total number of registered volunteers, or the total number
     // patrolling if the parameter is true.
-    public function getTotalNumber($patrolling = false) {
+    public static function getTotalNumber($patrolling = false) {
         require('database.model.php');
         $table = ($patrolling) ? 'IsPatrolling' : 'Volunteers';
         $query = "SELECT v_id FROM $table";
