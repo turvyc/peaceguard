@@ -67,16 +67,16 @@ if ($interface->getAgent() == _IPHONE) {
 // Handle website requests -- query the database and create Report
 // objects for the retrieved rows, and store them in an array
 try {
-    // Ensure that _TIME_PERIOD and _SORT_BY are set
+    // Ensure that _TIME_PERIOD and _ORDER_BY are set
     if (! isset($_POST[_TIME_PERIOD])) {
         throw new LogicException('_TIME_PERIOD is not set.');
     }
 
-    if (! isset($_POST[_SORT_BY])) {
-        throw new LogicException('_SORT_BY is not set.');
+    if (! isset($_POST[_ORDER_BY])) {
+        throw new LogicException('_ORDER_BY is not set.');
     }
 
-    // Ensure that _TIME_PERIOD and _SORT_BY have sane values
+    // Ensure that _TIME_PERIOD and _ORDER_BY have sane values
     $allowedTimePeriods = array(_LAST_DAY, _LAST_MONTH, _LAST_YEAR, _ALL_TIME);
     $allowedSorts = array(_DATE, _TIME, _SEVERITY, _VOLUNTEER);
 
@@ -84,8 +84,8 @@ try {
         throw new OutOfBoundsException('Illegal value for _TIME_PERIOD');
     }
 
-    if (! in_array($_POST[_SORT_BY], $allowedSorts)) {
-        throw new OutOfBoundsException('Illegal value for _SORT_BY');
+    if (! in_array($_POST[_ORDER_BY], $allowedSorts)) {
+        throw new OutOfBoundsException('Illegal value for _ORDER_BY');
     }
 
     // Find the minimum timestamp of reports within the specified time
@@ -104,20 +104,20 @@ try {
             break;
     }
 
-    // Get the SQL SORT BY string
-    $sortby = 'R.' . $_POST[_SORT_BY];
-    if ($_POST[_SORT_BY] == _VOLUNTEER) {
-        $sortby = 'R.' . _VOLUNTEER;
+    // Get the SQL ORDER BY string
+    $orderby = 'R.' . $_POST[_ORDER_BY];
+    if ($_POST[_ORDER_BY] == _VOLUNTEER) {
+        $orderby = 'R.' . _VOLUNTEER;
     }
 
     // Query the database
     require('../model/database.model.php');
 
     $query = ('SELECT R.time, R.location, R.type, R.severity, R.desc, V.v_id, V.firstName
-    FROM Reports R, Volunteers V WHERE R.time > ? SORT BY ?');
+    FROM Reports R, Volunteers V WHERE R.time > ? ORDER BY ?');
 
     $STH = $DBH->prepare($query);
-    $STH->execute(array($since, $sortby));
+    $STH->execute(array($since, $orderby));
 
     $allReportData = $STH->fetchAll();
     print_r($allReportData);
