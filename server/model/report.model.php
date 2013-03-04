@@ -55,7 +55,7 @@ class Report {
 	
     // This static function checks a new report's data for errors, then 
     // writes it to the database.
-    public static function newReport($data, $username) {
+    public static function newReport($data, $email) {
         // Ensure all keys are set (though they may have null values)
         if ((! isset($data[_TIME])) || (! isset($data[_TYPE]))  || 
         (! isset($data[_SEVERITY]))  || (! isset($data[_LOCATION]))  || 
@@ -79,20 +79,21 @@ class Report {
 
         // Everything should be good to go now. Write the report to the database
         require('database.model.php');
-        $STH = $DBH->prepare('INSERT INTO Reports (resolved, time, type, severity, location, desc)
-        VALUES (?, ?, ?, ?, ?, ?)');
-        $STH->execute(array(FALSE, $data[_TIME], $data[_TYPE], $data[_SEVERITY], $data[_LOCATION], $data[_DESC]));
+        $sql = "INSERT INTO Reports (description, time, location, type, severity) VALUES (?, ?, ?, ?, ?)";
+        $STH = $DBH->prepare($sql);
+        $STH->execute(array($data[_DESC], $data[_TIME], $data[_LOCATION], $data[_TYPE], $data[_SEVERITY]));
 
         // Get the ids of the just-inserted report and the Volunteer who made it
         $r_id = $DBH->lastInsertId();
 
-        $STH = $DBH->prepare('SELECT V.v_id FROM Volunteers V, Users U WHERE V.v_id = U.u_id AND U.email = ?');
-        $STH->execute(array($username));
-        $v_id = $STH->fetch();
+        $STH = $DBH->prepare('SELECT V.v_id FROM Volunteers V NATURAL JOIN Users U WHERE U.email = ?');
+        $STH->execute(array($email));
+        $result = $STH->fetch();
+        $v_id = $result['v_id'];
 
         // Create the relation and we're done
         $STH = $DBH->prepare('INSERT INTO MakesReport (r_id, v_id) VALUES (?, ?)');
-        $STH->execute(array($r_id, $u_id));
+        $STH->execute(array($r_id, $v_id));
     }
 
     public function setResolved() {
