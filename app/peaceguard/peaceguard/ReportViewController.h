@@ -17,24 +17,24 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(strong, nonatomic) ReportViewController *reportController;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
-@property (strong, nonatomic) IBOutlet UIPickerView *thePickerView;
 
 //PickerView
-@property (strong, nonatomic) IBOutlet UIButton *theIncidentButton;
-@property (strong, nonatomic) IBOutlet UIButton *theSeverityButton;
+@property (strong, nonatomic) IBOutlet UIPickerView *thePickerView;
+//used to block other fields when using pickerview
+@property (strong, nonatomic) IBOutlet UIView *pickerViewBlocker;
+//-incident/severity array
 @property (strong, nonatomic) NSArray *incidentSelection;
 @property (strong, nonatomic) NSArray *severitySelection;
 @property (strong, nonatomic) IBOutlet UILabel *incidentLabel;
 @property (strong, nonatomic) IBOutlet UILabel *severityLabel;
-
-
-//Data passed on to the server
-@property (strong, nonatomic) NSString *incidentData;
+//-Data from pickerview
+@property (strong, nonatomic) NSString *incidentData;   //change to be consistent with server - same as severity
 @property (strong, nonatomic) NSString *severityData;
+//-open/close pickerview for incident type/severity
+- (IBAction)incidentButtonPressed:(id)sender;
+- (IBAction)severityButtonPressed:(id)sender;
+- (IBAction)doneSelection:(id)sender;
 
-//open/close pickeview for incident type/severity
-- (IBAction)incidentButtonPress:(id)sender;
-- (IBAction)severityButtonPress:(id)sender;
 
 - (IBAction) submitAction:(id)sender;
 - (BOOL) verify: (NSString*) description;

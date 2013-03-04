@@ -14,7 +14,7 @@
 
 @implementation ReportViewController
 
-@synthesize thePickerView;
+@synthesize thePickerView, pickerViewBlocker;
 @synthesize incidentSelection, severitySelection;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -30,23 +30,22 @@
 {
     
     thePickerView.hidden = YES;
+    pickerViewBlocker.hidden = YES;
     
     thePickerView.showsSelectionIndicator = TRUE;
-    
     thePickerView.delegate = self;
-    thePickerView.dataSource = self;
     
     
     //initializes text field display
-    self.incidentData = @"Graffiti";
+    self.incidentData = @"Vandalism";
     self.severityData = @"Information";
     self.incidentLabel.text = self.incidentData;
     self.severityLabel.text = self.severityData;
     //should be initialized when pickerview pops up
     
     
-    self.incidentSelection = [[NSArray alloc] initWithObjects: @"Graffiti", @"Vehicle", @"Person", @"Other", nil];
-    self.severitySelection = [[NSArray alloc] initWithObjects: @"Something4", @"Something3", @"Something2",@"Information", nil];
+    self.incidentSelection = [[NSArray alloc] initWithObjects: @"Vandalism", @"Graffiti", @"Person", @"Property", @"Other", nil];
+    self.severitySelection = [[NSArray alloc] initWithObjects: @"Information", @"Minor", @"Serious",@"Critical", nil];
 
     
     [super viewDidLoad];
@@ -59,7 +58,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-//*** PickerView Code ***
+//*** PickerView code starts***
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
     if (component == 0){
@@ -106,25 +105,29 @@
     return;
     
 }
-//***
 
-- (IBAction)incidentButtonPress:(id)sender {
-    if (self.thePickerView.hidden == YES){
-        self.thePickerView.hidden = NO;
-    }
-    else{
-        self.thePickerView.hidden = YES;
+
+- (IBAction)incidentButtonPressed:(id)sender {
+    if (thePickerView.hidden == YES){
+        thePickerView.hidden = NO;
+        pickerViewBlocker.hidden = NO;
     }
 }
 
-- (IBAction)severityButtonPress:(id)sender {
-    if (self.thePickerView.hidden == YES){
-        self.thePickerView.hidden = NO;
-    }
-    else{
-        self.thePickerView.hidden = YES;
+- (IBAction)severityButtonPressed:(id)sender {
+    if (thePickerView.hidden == YES){
+        thePickerView.hidden = NO;
+        pickerViewBlocker.hidden = NO;
     }
 }
+
+- (IBAction)doneSelection:(id)sender {
+    if (thePickerView.hidden == NO){
+        thePickerView.hidden = YES;
+        pickerViewBlocker.hidden = YES;
+    }
+}
+//*** PickerView code ends ***
 
 
 - (IBAction)submitAction:(id)sender {
