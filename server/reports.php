@@ -53,8 +53,11 @@ checkLoggedIn($session);
 	</tr>
 <?php
 	$data = $session->getData();
-	for ($i = 0; $i < count($data[$i]); $i++) {
-		$report = $data[$i];
+	for ($i = 0; $i < count($data); $i++) {
+		
+		$report = $data;
+		echo "error starts here";
+		
 		$time = $report->getTime();
 		$location = $report->getLocation();
 		$type = $report->getType();
