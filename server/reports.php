@@ -22,35 +22,56 @@ checkLoggedIn($session);
 
 <h1>Incident Reports</h1>
 
-<div id="dropdownMenu">
-	<select name="timeDropDown">
-	<option value="day">Today's Reports</option>
-	<option value="las30Days">Last Thirty Days' Reports</option>
-	<option value="year">Year To Date' Reports</option>
+
+<form name="<?php echo _REPORT; ?>" action="control/report.control.php" method="POST">
+	<select name="<?php echo _TIME_PERIOD; ?>">
+		<option value="<?php echo _LAST_DAY; ?>">Today's Reports</option>
+		<option value="<?php echo _LAST_MONTH; ?>">Last Thirty Days' Reports</option>
+		<option value="<?php echo _LAST_YEAR; ?>">Last Year's Reports</option>
+		<option value="<?php echo _ALL_TIME; ?>">Year To Date' Reports</option>
 	</select>
-	<select name="sortDropDown">
-	<option value="date">Sort By Date</option>
-	<option value="time">Sort By Time</option>
-	<option value="serverity">Sort By Severity</option>
-	<option value="username">Sort By Username</option>
+	
+	<select name="<?php echo _SORT_BY; ?>">
+		<option value="<?php echo _TIME; ?>">Sort By Time</option>
+		<option value="<?php echo _SEVERITY; ?>">Sort By Severity</option>
+		<option value="<?php echo _VOLUNTEER; ?>">Sort By Volunteer</option>
+		<option value="<?php echo _TYPE; ?>">Sort By TYPE</option>
 	</select>
-</div>
+	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
+    <input type="submit" value="Submit" />
+</form>
 
 <table class="reportTable">
 	<tr>
-	<th>User Name</th>
-	<th>Severity</th>
-	<th>Report Time</th>
-	<th>Report Date</th>
-	<th>Report Description</th>
+		<th>Time</th>
+		<th>Location</th>
+		<th>Type</th>
+		<th>Severity</th>
+		<th>Description</th>
+		<th>Volunteer</th>
+		<th>Resolved</th>
 	</tr>
-	<tr>
-	<td>Bob</td>
-	<td>high</td>
-	<td>4:12pm</td>
-	<td>2013-02-28</td>
-	<td>Someone ate ice creem and screamed.</td>
-	</tr>
-</table> 
-
-<?php include('footer.php'); ?>
+<?php
+	$data = $session->getData();
+	for ($i = 0; $i < count($data); $i++) {
+		$report = $data[$i];
+		$volunteer = $report->getVolunteer();
+		$name = $volunteer->getFullName();
+		$severity = $report->getSeverity();
+		$location = $report->getLocation();
+		$type = $report->getType();
+		$description = $report->getDescription();
+		$resolved = $report->getResolved();
+	
+	echo '<tr>';
+	echo '<td>' . $time . '</td>';
+	echo '<td>' . $location . '</td>';
+	echo '<td>' . $type . '</td>';
+	echo '<td>' . $severity . '</td>';
+	echo '<td>' . $description . '</td>';
+	echo '<td>' . $volunteer . '</td>';
+	echo '<td>' . $resolved . '</td>';
+	echo '</tr>';
+	}		 
+?>
+</table>
