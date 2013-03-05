@@ -13,8 +13,8 @@ or `git blame <file>`
 
 */
 
-require_once('../model/session.model.php');
-require_once('../model/constants.model.php');
+require_once('session.model.php');
+require_once('constants.model.php');
 
 class Report {
 			
