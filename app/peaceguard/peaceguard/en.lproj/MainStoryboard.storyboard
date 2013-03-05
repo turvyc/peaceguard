@@ -586,12 +586,48 @@
     <resources>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PatrolViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
+        </class>
+        <class className="PeaceGuardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ImageTaker:"/>
+                <relationship kind="action" name="doneSelection:"/>
+                <relationship kind="action" name="incidentButtonPressed:"/>
+                <relationship kind="action" name="severityButtonPressed:"/>
+                <relationship kind="action" name="submitAction:"/>
+                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pickerViewBlocker" candidateClass="UIView"/>
+                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="submit" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xNs-2i-NHT"/>
+        <segue reference="ppc-ft-uEq"/>
     </inferredMetricsTieBreakers>
 </document>
