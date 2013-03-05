@@ -21,6 +21,9 @@ or `git blame <file>`
 // and echo information.
 define('_DEBUG', true);
 
+// The salt is concatenated to a plain-text password before it is hashed
+define('_SALT', 'kd83md723fgfic03mkg9sdy34nds7x5r2bnd78x');
+
 // The following constants are for JSON keys. These must be in agreement
 // with both the website and the iPhone app.
 define('_SUCCESSFUL', 'successful');

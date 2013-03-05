@@ -21,9 +21,6 @@ require_once('admin.model.php');
 
 class Session {
 
-    // The salt is concatenated to a plain-text password before it is hashed
-    const SALT = 'kd83md723fgfic03mkg9sdy34nds7x5r2bnd78x';
-
     // These constants are for $_SESSION array keys
     const ADMIN = 'admin';
     const DATA = 'data';
@@ -140,7 +137,7 @@ class Session {
 
     // Concatenates the password with a salt, then returns the resulting SHA1 hash.
     public function getPasswordHash($password) {
-        return sha1($password . Session::SALT);
+        return sha1($password . _SALT);
     }
 
 }
