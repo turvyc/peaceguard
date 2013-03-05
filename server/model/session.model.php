@@ -111,7 +111,7 @@ class Session {
         // If there is a match, log the user in
         if ($row = $STH->fetch()) {
             session_regenerate_id();
-            $this->admin = new Admin((int)$row['a_id']);
+            $this->admin = new Admin((int)$row['u_id']);
             $_SESSION[Session::ADMIN] = $this->admin;
             $DBH = null;
         }

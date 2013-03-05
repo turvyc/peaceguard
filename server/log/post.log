@@ -61,3 +61,30 @@
 )
 
 
+5 Mar 2013 10:55:17 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
+5 Mar 2013 10:56:21 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
+5 Mar 2013 10:56:43 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
