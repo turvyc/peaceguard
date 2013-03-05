@@ -15,6 +15,7 @@
 
 @interface PeaceGuardViewController : UIViewController <UITextFieldDelegate>
 
+@property (weak, nonatomic) IBOutlet UIWebView *help;
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 //@property(strong, nonatomic) UserDataController *userController;

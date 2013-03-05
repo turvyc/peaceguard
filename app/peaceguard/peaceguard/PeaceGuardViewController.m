@@ -79,6 +79,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSURL*url=[NSURL URLWithString:@"https://vancouver.ca/police/"];
+    NSURLRequest*request=[NSURLRequest requestWithURL:url];
+    [_help loadRequest:request];
 	// Do any additional setup after loading the view, typically from a nib.
 
 }
