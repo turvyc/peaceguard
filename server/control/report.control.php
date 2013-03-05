@@ -87,7 +87,7 @@ try {
     if (! in_array($_POST[_ORDER_BY], $allowedSorts)) {
         throw new OutOfBoundsException('Illegal value for _ORDER_BY');
     }
-
+	
     // Find the minimum timestamp of reports within the specified time
     switch ($_POST[_TIME_PERIOD]) {
         case _LAST_DAY:
@@ -109,11 +109,12 @@ try {
     if ($_POST[_ORDER_BY] == _VOLUNTEER) {
         $orderby = 'R.' . _VOLUNTEER;
     }
-
+	
+	
     // Query the database
     require('../model/database.model.php');
-
-    $query = ('SELECT R.time, R.location, R.type, R.severity, R.desc, V.v_id, V.firstName
+	
+    $query = ('SELECT R.time, R.location, R.type, R.severity, R.description, u_id, firstName
     FROM Reports R, Volunteers V WHERE R.time > ? ORDER BY ?');
 
     $STH = $DBH->prepare($query);
@@ -124,6 +125,10 @@ try {
 }
 
 catch (Exception $e) {
-    // TODO
+    if (_DEBUG) {
+		echo $e;
+		exit(1);
+	}
 }
+
 ?>
