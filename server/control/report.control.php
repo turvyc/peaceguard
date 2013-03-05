@@ -78,7 +78,7 @@ try {
 
     // Ensure that _TIME_PERIOD and _ORDER_BY have sane values
     $allowedTimePeriods = array(_LAST_DAY, _LAST_MONTH, _LAST_YEAR, _ALL_TIME);
-    $allowedSorts = array(_DATE, _TIME, _SEVERITY, _VOLUNTEER);
+    $allowedSorts = array(_TIME, _SEVERITY, _VOLUNTEER, _TYPE,);
 
     if (! in_array($_POST[_TIME_PERIOD], $allowedTimePeriods)) {
         throw new OutOfBoundsException('Illegal value for _TIME_PERIOD');
