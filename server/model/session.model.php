@@ -97,8 +97,8 @@ class Session {
         // Look for a match in the database
         try {
             require('database.model.php');
-            $STH = $DBH->prepare('SELECT A.a_id FROM Admins A, Users U 
-            WHERE U.email = ? AND U.pw_hash = ? AND A.a_id = U.u_id');
+            $STH = $DBH->prepare('SELECT u_id FROM Admins NATURAL JOIN Users 
+            WHERE email = ? AND pw_hash = ?');
             $STH->execute(array($email, $hash));
         }
         // If there is a database error . . .

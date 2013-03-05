@@ -34,12 +34,12 @@ class Volunteer extends User {
     public static function getTotalNumber($patrolling = false) {
         require('database.model.php');
         $table = ($patrolling) ? 'IsPatrolling' : 'Volunteers';
-        $query = "SELECT v_id FROM $table";
+        $query = "SELECT COUNT(*) FROM $table";
         $STH = $DBH->prepare($query);
         $STH->execute();
-        $rows = $STH->fetchAll();
+        $count = $STH->fetch();
         $DBH = null;
-        return count($rows);
+        return ;
     }
 
     public function getJoinDate() {

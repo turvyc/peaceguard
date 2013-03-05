@@ -86,19 +86,19 @@ class Report {
         // Get the ids of the just-inserted report and the Volunteer who made it
         $r_id = $DBH->lastInsertId();
 
-        $STH = $DBH->prepare('SELECT V.v_id FROM Volunteers V NATURAL JOIN Users U WHERE U.email = ?');
+        $STH = $DBH->prepare('SELECT u_id FROM Volunteers NATURAL JOIN Users WHERE email = ?');
         $STH->execute(array($email));
         $result = $STH->fetch();
         $v_id = $result['v_id'];
 
         // Create the relation and we're done
-        $STH = $DBH->prepare('INSERT INTO MakesReport (r_id, v_id) VALUES (?, ?)');
+        $STH = $DBH->prepare('INSERT INTO Reported (r_id, u_id) VALUES (?, ?)');
         $STH->execute(array($r_id, $v_id));
     }
 
     public function setResolved() {
         require('database.model.php');
-        $STH = $DBH->prepare('UPDATE Reports SET resolved = TRUE WHERE r_id = ?');
+        $STH = $DBH->prepare('UPDATE Reports SET resolved = 1 WHERE r_id = ?');
         $STH->execute(array($this->id));
 
         $this->resolved = TRUE;
