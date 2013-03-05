@@ -53,25 +53,25 @@ checkLoggedIn($session);
 	</tr>
 <?php
 	$data = $session->getData();
-	for ($i = 0; $i < count($data); $i++) {
+	for ($i = 0; $i < count($data[$i]); $i++) {
 		$report = $data[$i];
-		$volunteer = $report->getVolunteer();
-		$name = $volunteer->getFullName();
-		$severity = $report->getSeverity();
+		$time = $report->getTime();
 		$location = $report->getLocation();
 		$type = $report->getType();
-		$description = $report->getDescription();
+		$severity = $report->getSeverity();
+		$description = $report->getDesc();
+		$volunteer = $report->getVolunteer();
 		$resolved = $report->getResolved();
 	
-	echo '<tr>';
-	echo '<td>' . $time . '</td>';
-	echo '<td>' . $location . '</td>';
-	echo '<td>' . $type . '</td>';
-	echo '<td>' . $severity . '</td>';
-	echo '<td>' . $description . '</td>';
-	echo '<td>' . $volunteer . '</td>';
-	echo '<td>' . $resolved . '</td>';
-	echo '</tr>';
+		echo '<tr>';
+		echo '<td>' . $time . '</td>';
+		echo '<td>' . $location . '</td>';
+		echo '<td>' . $type . '</td>';
+		echo '<td>' . $severity . '</td>';
+		echo '<td>' . $description . '</td>';
+		echo '<td>' . $volunteer . '</td>';
+		echo '<td>' . $resolved . '</td>';
+		echo '</tr>';
 	}		 
 ?>
 </table>
