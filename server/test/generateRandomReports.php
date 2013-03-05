@@ -31,7 +31,7 @@ $descs = array('Break it down nec turpis izzle leo bibendizzle fo shizzle.',
 // Get an array of volunteer emails
 echo 'Getting list of volunteers . . . ';
 require('../model/database.model.php');
-$STH = $DBH->prepare('SELECT U.email FROM Users U, Volunteers V WHERE U.u_id = V.v_id');
+$STH = $DBH->prepare('SELECT email FROM Users NATURAL JOIN Volunteers');
 $STH->execute();
 $emails = $STH->fetchAll();
 echo 'done.<br />';

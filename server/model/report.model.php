@@ -89,11 +89,11 @@ class Report {
         $STH = $DBH->prepare('SELECT u_id FROM Volunteers NATURAL JOIN Users WHERE email = ?');
         $STH->execute(array($email));
         $result = $STH->fetch();
-        $v_id = $result['v_id'];
+        $u_id = $result['u_id'];
 
         // Create the relation and we're done
         $STH = $DBH->prepare('INSERT INTO Reported (r_id, u_id) VALUES (?, ?)');
-        $STH->execute(array($r_id, $v_id));
+        $STH->execute(array($r_id, $u_id));
     }
 
     public function setResolved() {
