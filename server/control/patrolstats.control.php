@@ -2,6 +2,14 @@
 
 /** patrol.control.php
 
+Returns patrol statistics depending on the user agent.
+
+For the iPhone, the Volunteer's email will be supplied in the POST data, and
+that Volunteer's statistics will be returned as a JSON array.
+
+For the Websited, the time period and sorting column will be supplied in the
+POST data, and the corresponding table will be returned in the form of a 
+two-dimensional associative array.
 
 Contributor(s): Colin Strong
 
@@ -36,17 +44,26 @@ if ($interface->getAgent() == _IPHONE) {
 
         require('../model/database.model.php');
 
-        // Handle adding a new patrol (whether just begun or completed)
-        elseif (isset($_POST[_PATROL])) {
-            Patrol::newPatrol($_POST[_PATROL], $_POST[_EMAIL]);
-        }
+        // TODO: SQL query getting appropriate stats
+
+        $interface->addData(_SUCCESSFUL, _YES);
+
+        // TODO: Create appropriate JSON array for output
     }
-    exit(0);
+
+    catch (Exception $e) {
+        $interface->addData(_SUCCESSFUL, _NO);
+        $interface->addData(_MESSAGE, $e->getMessage());
+    }
 }
 
-// It must be the website. Query database and return array of Patrol objects
-// according to POST data
+// It's the website . . .
+else {
 
+    // TODO: All the things
+}
+
+$interface->output();
 exit(0);
 
 ?>
