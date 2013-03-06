@@ -2,8 +2,8 @@
 
 /** startpatrol.control.php
 
-Handles a Volunteer starting a patrol. The p_id of the just-started patrol
-is returned to the iPhone.
+Handles a Volunteer starting a patrol. The patrol start time and the Volunteer's
+email is sent from the iPhone via POST, 
 
 Contributor(s): Colin Strong
 
@@ -34,15 +34,17 @@ try {
     $p_id = Patrol::beginPatrol($_POST[_START_TIME], $_POST[_EMAIL]);
 
     // Output the p_id and we're done!
+    $interface->addData(_SUCCESSFUL, _YES);
     $interface->addData(_PATROL, $p_id);
-    $interface->output();
 }
 
-catch (LogicException $e) {
-    echo $e->getMessage();
-    exit(1);
+catch (Exception $e) {
+    $interface->addData(_SUCCESSFUL, _NO);
+    $interface->addData(_MESSAGE, $e->getMessage());
 }
 
+
+$interface->output();
 exit(0);
 
 ?>

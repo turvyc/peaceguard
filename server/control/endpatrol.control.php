@@ -2,8 +2,8 @@
 
 /** endpatrol.control.php
 
-Handles a Volunteer ending a patrol. The patrol with the p_id supplied by the
-Volunteer is updated with the end time, route, and location of the patrol.
+Handles ending a patrol. The patrol ID, end time, route, and distance are sent
+from the iPhone via POST, and are entered into the database.
 
 Contributor(s): Colin Strong
 
@@ -32,9 +32,16 @@ try {
     // Write the patrol to the database
     Patrol::endPatrol($_POST[_PATROL], $_POST[_END_TIME],
     $_POST[_ROUTE], $_POST[_DISTANCE]);
+
+    $interface->addData(_SUCCESSFUL, _YES);
 }
 
-catch (LogicException $e) {
-    echo $e->getMessage();
-    exit(1);
+catch (Exception $e) {
+    $interface->addData(_SUCCESSFUL, _NO);
+    $interface->addData(_MESSAGE, $e->getMessage());
 }
+
+$interface->output();
+exit(0);
+
+?>
