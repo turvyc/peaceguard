@@ -27,8 +27,7 @@ $lastNames = array('Strong', 'Lesperance', 'Sanchez', 'Yao', 'Lin', 'Kirk', 'Rag
 'Fett', 'Jones', 'Jazz', 'Darko', 'Solo', 'Alonzo', 'Gordito');
 
 for ($i = 0; $i < N_VOLUNTEERS; $i++) {
-    echo 'Generating Volunteer #';
-    echo $i + 1 . ' . . . ';
+    echo 'Generating Volunteer #' . ($i + 1) . ' . . . ';
     $firstName = $firstNames[array_rand($firstNames)];
     $lastName = $lastNames[array_rand($lastNames)];
 

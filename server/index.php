@@ -24,7 +24,6 @@ checkLoggedIn($session);
 
 <p>System status: OFFLINE</p>
 <p>Number of registered volunteers: <?php echo Volunteer::getTotalNumber(); ?></p>
-<p>Number of currently patrolling volunteers: <?php echo Volunteer::getTotalNumber(true); ?></p>
-
+<p>Number of currently patrolling volunteers: <?php echo Volunteer::getTotalNumberPatrolling(); ?></p>
 
 <?php include('footer.php'); ?>

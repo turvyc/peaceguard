@@ -29,17 +29,33 @@ class Volunteer extends User {
         parent::__construct($id);
     }
 
-    // Returns the total number of registered volunteers, or the total number
-    // patrolling if the parameter is true.
-    public static function getTotalNumber($patrolling = false) {
+    // Returns the total number of registered volunteers.
+    public static function getTotalNumber() {
         require('database.model.php');
-        $table = ($patrolling) ? 'IsPatrolling' : 'Volunteers';
-        $query = "SELECT COUNT(*) FROM $table";
+
+        $query = "SELECT COUNT(*) AS count FROM Volunteers";
+
         $STH = $DBH->prepare($query);
         $STH->execute();
+
         $count = $STH->fetch();
         $DBH = null;
-        return ;
+        return $count['count'];
+    }
+
+    // Returns the number of currently patrolling volunteers
+    public static function getTotalNumberPatrolling() {
+        require('database.model.php');
+
+        $query = "SELECT COUNT(*) AS count FROM Patrols WHERE end_time IS NULL";
+
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+
+        $count = $STH->fetch();
+        $DBH = null;
+
+        return $count['count'];
     }
 
     public function getJoinDate() {

@@ -16,8 +16,8 @@ or `git blame <file>`
 require_once('../model/constants.model.php');
 require_once('../model/patrol.model.php');
 
-define('N_PATROLS', 5);
-define('N_STILL_PATROLLING', 1);
+define('N_PATROLS', 12);
+define('STILL_PATROLLING_RATIO', 4);
 
 // Get an array of volunteer emails
 echo 'Getting list of volunteers . . . ';
@@ -30,8 +30,7 @@ echo 'done.<br />';
 $p_ids = array();
 $end_times = array();
 for ($i = 0; $i < N_PATROLS; $i++) {
-    echo 'Starting Patrol #';
-    echo $i + 1 . ' . . . ';
+    echo 'Starting Patrol #' . ($i + 1) . ' . . . ';
 
     $start_time = rand(0, time());
     $email = $emails[array_rand($emails)][_EMAIL];
@@ -42,9 +41,13 @@ for ($i = 0; $i < N_PATROLS; $i++) {
     echo 'done.<br />';
 }
 
-for ($i = 0; $i < N_PATROLS - N_STILL_PATROLLING; $i++) {
-    echo 'Ending Patrol #';
-    echo $i + 1 . ' . . . ';
+for ($i = 0; $i < N_PATROLS; $i++) {
+    if ($i % STILL_PATROLLING_RATIO == 0) {
+        echo 'Skipping Patrol #' . ($i + 1) . '<br />';
+        continue;
+    }
+
+    echo 'Ending Patrol #' . ($i + 1) . ' . . . ';
 
     $distance = rand(100, 5000);
     $route = sha1(time() . rand());

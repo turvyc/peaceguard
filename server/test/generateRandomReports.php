@@ -37,8 +37,7 @@ $emails = $STH->fetchAll();
 echo 'done.<br />';
 
 for ($i = 0; $i < N_REPORTS; $i++) {
-    echo 'Generating Report #';
-    echo $i + 1 . ' . . . ';
+    echo 'Generating Report #' . ($i + 1) . ' . . . ';
     $data = array();
 
     // Randomly choose the data
