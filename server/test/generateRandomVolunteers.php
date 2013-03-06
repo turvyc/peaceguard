@@ -21,8 +21,10 @@ define('N_VOLUNTEERS', 12);
 define('ASCII_a', 97);
 define('ASCII_z', 122);
 
-$firstNames = array('Colin', 'Ashley', 'Robert', 'Jonas', 'Kantar');
-$lastNames = array('Strong', 'Lesperance', 'Sanchez', 'Yao', 'Lin');
+$firstNames = array('Colin', 'Ashley', 'Robert', 'Jonas', 'Kantar', 'Tiberius', 'Molly',
+'Boba', 'Butthead', 'Jimmy', 'Johnny', 'Han', 'Elmo', 'Leia');
+$lastNames = array('Strong', 'Lesperance', 'Sanchez', 'Yao', 'Lin', 'Kirk', 'Ragtag',
+'Fett', 'Jones', 'Jazz', 'Darko', 'Solo', 'Alonzo', 'Gordito');
 
 for ($i = 0; $i < N_VOLUNTEERS; $i++) {
     echo 'Generating Volunteer #';
