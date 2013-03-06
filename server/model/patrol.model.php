@@ -31,7 +31,7 @@ class Patrol {
         require('database.model.php');
         $query = 'INSERT INTO Patrols (start_time) VALUES (?)';
         $STH = $DBH->prepare($query);
-        $STH->execute(array($data[_START_TIME])); 
+        $STH->execute(array($startTime)); 
 
         // Get the p_id
         $p_id = $DBH->lastInsertId();
@@ -43,8 +43,8 @@ class Patrol {
         $u_id = $result['u_id'];
 
         // Create the relation and we're done
-        $STH = $DBH->prepare('INSERT INTO Patrolled(p_id, u_id) VALUES (?, ?)');
-        $STH->execute(array($r_id, $u_id));
+        $STH = $DBH->prepare('INSERT INTO Patrolled (p_id, u_id) VALUES (?, ?)');
+        $STH->execute(array($p_id, $u_id));
 
         $DBH = NULL;
         return $p_id;
