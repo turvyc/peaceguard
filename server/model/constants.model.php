@@ -47,7 +47,7 @@ define('_TYPE', 'type');
 define('_SEVERITY', 'severity');
 define('_LOCATION', 'location');
 define('_TIME', 'time');
-define('_DESC', 'desc');
+define('_DESC', 'description');
 define('_VOLUNTEER', 'v_id');
 
 // POST keys for website incident report request
@@ -59,6 +59,11 @@ define('_LAST_DAY', 'lastDay');
 define('_LAST_MONTH', 'lastMonth');
 define('_LAST_YEAR', 'yearToDate');
 define('_ALL_TIME', 'allTime');
+
+// Patrol POST keys
+define('_PATROL', 'patrol');
+define('_START_TIME', 'startTime');
+define('_END_TIME', 'endTime');
 
 // The following constants are for $_POST array values.
 define('_IPHONE', 'iphone');   // For use with _AGENT key

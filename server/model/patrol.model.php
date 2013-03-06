@@ -25,34 +25,38 @@ class Patrol {
     private $route;
     private $volunteer; // A Volunteer object of the patroller
 
-    public static function newPatrol($data, $email) {
-        // Ensure all keys are set (though they may have null values)
-        if ((! isset($data[_START])) || (! isset($data[_END]))  || 
-        (! isset($data[_ROUTE]))  || (! isset($data[_DISTANCE]))) {
-            throw new DomainException('Key(s) missing from Patrol data array');
-        }
-
-        // Write the new patrol to the database
+    // Writes a new patrol to the database (entering only the start time), and
+    // returns the p_id of the just-created patrol.
+    public static function beginPatrol($startTime, $email) {
         require('database.model.php');
-        $query = 'INSERT INTO Patrols (start_time, end_time, route, distance) VALUES (?, ?, ?, ?)';
+        $query = 'INSERT INTO Patrols (start_time) VALUES (?)';
         $STH = $DBH->prepare($query);
-        $STH->execute(array($data[_START], $data[_END], $data[_ROUTE], $data[_DISTANCE])); 
+        $STH->execute(array($data[_START_TIME])); 
 
-        // Get the IDs of the just-inserted patrol and the Volunteer who made it
+        // Get the p_id
         $p_id = $DBH->lastInsertId();
 
+        // Get the Volunteer's u_id
         $STH = $DBH->prepare('SELECT u_id FROM Volunteers NATURAL JOIN Users WHERE email = ?');
         $STH->execute(array($email));
         $result = $STH->fetch();
         $u_id = $result['u_id'];
 
-        // Remove the user from the IsPatrolling relation
-        $STH = $DBH->prepare('DELETE FROM IsPatrolling WHERE u_id = ?');
-        $STH->execute(array($u_id));
-
         // Create the relation and we're done
-        $STH = $DBH->prepare('INSERT INTO HasPatrolled(p_id, u_id) VALUES (?, ?)');
+        $STH = $DBH->prepare('INSERT INTO Patrolled(p_id, u_id) VALUES (?, ?)');
         $STH->execute(array($r_id, $u_id));
+
+        $DBH = NULL;
+        return $p_id;
+    }
+
+    // Writes the end time, route, and distance to a started patrol
+    public static function endPatrol($p_id, $endTime, $route, $distance) {
+        require('database.model.php');
+        $query = 'UPDATE Patrols SET end_time = ?, route = ?, distance = ? WHERE p_id = ?';
+        $STH = $DBH->prepare($query);
+        $STH->execute(array($endTime, $route, $distance, $p_id));
+        $DBH = NULL;
     }
 }
 

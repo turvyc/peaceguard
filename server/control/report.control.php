@@ -114,8 +114,8 @@ try {
     // Query the database
     require('../model/database.model.php');
 	
-    $query = ('SELECT R.time, R.location, R.type, R.severity, R.description, V.u_id, V.firstName
-    FROM Reports R, Users V WHERE R.time > ? ORDER BY ?');
+    $query = ('SELECT R.time, R.location, R.type, R.severity, R.description, U.u_id, U.firstName
+    FROM Reports R, Users U WHERE R.time > ? ORDER BY ?');
 
     $STH = $DBH->prepare($query);
     $STH->execute(array($since, $orderby));

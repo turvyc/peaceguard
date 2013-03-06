@@ -29,10 +29,18 @@ catch (LogicException $e) {
 }
 
 if ($interface->getAgent() == _IPHONE) {
+    try {
+        if (! isset($_POST[_EMAIL])) {
+            throw new LogicException('Email is not set in POST.');
+        }
 
-    // Check if its (a) starting a patrol, (b) submitting a new, finished
-    // patrol, or (c) requesting patrol stats
+        require('../model/database.model.php');
 
+        // Handle adding a new patrol (whether just begun or completed)
+        elseif (isset($_POST[_PATROL])) {
+            Patrol::newPatrol($_POST[_PATROL], $_POST[_EMAIL]);
+        }
+    }
     exit(0);
 }
 
