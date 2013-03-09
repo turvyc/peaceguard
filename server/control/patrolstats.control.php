@@ -2,14 +2,9 @@
 
 /** patrol.control.php
 
-Returns patrol statistics depending on the user agent.
-
-For the iPhone, the Volunteer's email will be supplied in the POST data, and
-that Volunteer's statistics will be returned as a JSON array.
-
-For the Websited, the time period and sorting column will be supplied in the
-POST data, and the corresponding table will be returned in the form of a 
-two-dimensional associative array.
+This script retrieves patrol statistics according to the POST parameters
+_ORDER_BY and _TIME_PERIOD, stores them in the session DATA variable, and
+directs the user back to the patrol page.
 
 Contributor(s): Colin Strong
 
@@ -23,12 +18,9 @@ or `git blame <file>`
 require_once('../model/session.model.php');
 require_once('../model/constants.model.php');
 require_once('../model/patrol.model.php');
-require_once('../model/datainterface.model.php');
 
-// If these fail, there is a serious programming error. 
 try {
     $session = new Session();
-    $interface = new DataInterface($session);
 }
 
 catch (LogicException $e) {
@@ -36,34 +28,15 @@ catch (LogicException $e) {
     exit(1);
 }
 
-if ($interface->getAgent() == _IPHONE) {
-    try {
-        if (! isset($_POST[_EMAIL])) {
-            throw new LogicException('Email is not set in POST.');
-        }
-
-        require('../model/database.model.php');
-
-        // TODO: SQL query getting appropriate stats
-
-        $interface->addData(_SUCCESSFUL, _YES);
-
-        // TODO: Create appropriate JSON array for output
-    }
-
-    catch (Exception $e) {
-        $interface->addData(_SUCCESSFUL, _NO);
-        $interface->addData(_MESSAGE, $e->getMessage());
-    }
+// Make sure the required POST keys are set
+if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_ORDER_BY])) {
+    throw new LogicException('_TIME_PERIOD or _ORDER_BY not set.');
 }
 
-// It's the website . . .
-else {
+$stats = Patrol::getStatistics($_POST[_TIME_PERIOD]), $_POST[_ORDER_BY]);
+$session->addData($stats);
 
-    // TODO: All the things
-}
-
-$interface->output();
+header('location: ../patrol.php');
 exit(0);
 
 ?>
