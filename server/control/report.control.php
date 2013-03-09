@@ -45,12 +45,20 @@ if ($interface->getAgent() == _IPHONE) {
         }
 
         // Ensure that there is report data
-        if (! isset($_POST[_REPORT])) {
-            throw new DomainException('No report data is set in POST.');
+        if (! isset($_POST[_TYPE]) || ! isset($_POST[_SEVERITY])
+        || ! isset($_POST[_LOCATION]) || ! isset($_POST[_TIME]) 
+        || ! isset($_POST[_DESC])) {
+            throw new DomainException('Missing report data in POST.');
         }
 
+        $report = array(_TYPE => $_POST[_TYPE], 
+        _SEVERITY => $_POST[_SEVERITY],
+        _LOCATION => $_POST[_LOCATION],
+        _TIME => $_POST[_TIME],
+        _DESC => $_POST[_DESC]);
+
         // Create a new Report object from the data
-        Report::newReport($_POST[_REPORT], $_POST[_USERNAME]);
+        Report::newReport($report, $_POST[_USERNAME]);
 
         $interface->addData(_SUCCESSFUL, _YES);
     }
