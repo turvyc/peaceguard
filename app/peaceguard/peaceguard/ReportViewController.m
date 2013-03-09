@@ -133,6 +133,12 @@
 - (IBAction)submitAction:(id)sender {
     BOOL verification = [self verify:self.description.text];
     if(verification == YES){
+        _incidentOverview = self.incidentLabel.text;
+        _severityOverview = self.severityLabel.text;
+        _descriptionOverview = self.description.text;
+        if(_imageView.image!= nil){
+            _imageOverview = _imageView.image;
+        }
         [self performSegueWithIdentifier:@"ToOverView" sender:self];
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Submit failed"
