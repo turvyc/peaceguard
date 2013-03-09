@@ -31,7 +31,7 @@ catch (Exception $e) {
 
 // Try to login
 try {
-    $session->login($_POST[_EMAIL], $_POST[_PASSWORD]);
+    $session->login($_POST[_EMAIL], $_POST[_PASSWORD], $interface->getAgent());
 }
 
 // If there was an error or if there was no match, output 'not successful' and
@@ -40,7 +40,11 @@ catch (Exception $e) {
     $interface->addData(_SUCCESSFUL, _NO);
     $interface->addData(_MESSAGE, $e->getMessage());
     $interface->output();
-    header('location: ../login.php');
+
+    if ($interface->getAgent() == _WEBSITE) {
+        header('location: ../login.php');
+    }
+
     exit(0);
 }
 

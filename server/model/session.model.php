@@ -37,11 +37,11 @@ class Session {
 
         // Make sure the session's name is set
         if (! isset($_SESSION[Session::ADMIN])) {
-            $_SESSION[Session::ADMIN] = null;
+            $_SESSION[Session::ADMIN] = NULL;
         }
 
         // Load the administrator, if one exists
-        $this->admin = (isset($_SESSION[Session::ADMIN])) ? $_SESSION[Session::ADMIN] : null;
+        $this->admin = (isset($_SESSION[Session::ADMIN])) ? $_SESSION[Session::ADMIN] : NULL;
     }
 
     // Destructor. Calls logout().
@@ -81,22 +81,22 @@ class Session {
         }
     }
 
-    // Attempts to authenticate a username/password pair. Note that this function
-    // is ONLY for the police administrator login, not for iPhone login!
-    public function login($email, $password) {
+    // Attempts to authenticate a username/password pair. 
+    public function login($email, $password, $agent) {
 
         if (isset($_SESSION[Session::ADMIN])) {
             throw new RuntimeException('Already logged in as ' . $this->admin->getFullName());
         }
 
         $hash = $this->getPasswordHash($password);
+        $table = ($agent == _IPHONE) ? 'Volunteers' : 'Admins';
 
         // Look for a match in the database
         try {
             require('database.model.php');
-            $STH = $DBH->prepare('SELECT u_id FROM Admins NATURAL JOIN Users 
-            WHERE email = ? AND pw_hash = ?');
-            $STH->execute(array($email, $hash));
+            $STH = $DBH->prepare("SELECT u_id FROM $table NATURAL JOIN Users 
+            WHERE email = ? AND pw_hash = ?");
+            $STH->execute(array($table, $email, $hash));
         }
         // If there is a database error . . .
         catch (PDOException $e) {
@@ -113,12 +113,12 @@ class Session {
             session_regenerate_id();
             $this->admin = new Admin((int)$row['u_id']);
             $_SESSION[Session::ADMIN] = $this->admin;
-            $DBH = null;
+            $DBH = NULL;
         }
 
         // If there is no match, throw an exception for the controller to take care of
         else {
-            $DBH = null;
+            $DBH = NULL;
             throw new DomainException('The email/password pair was not found!');
         }
     }
@@ -126,7 +126,7 @@ class Session {
     // Logs a user out, and destroys all session data.
     public function logout() {
         $_SESSION = array();    // Clear out the session . . .
-        $this->admin = null;
+        $this->admin = NULL;
         session_destroy();      // . . . then destroy it entirely.
     }
 

@@ -58,6 +58,17 @@ class Patrol {
         $STH->execute(array($endTime, $route, $distance, $p_id));
         $DBH = NULL;
     }
+
+    // Returns an associative array of the form (_TOTAL, _MEAN, _MEDIAN), 
+    // where each of those three keys is another associative array of the
+    // form (_N_PATROLS, _DISTANCE, _TIME, _N_REPORTS).
+    public static function getStatistics($timePeriod, $orderBy) {
+        $statistics = array();
+
+        $patrolData = $this->getPatrolData($timePeriod, $orderBy);
+
+        $statistics[_TOTAL] = $this->
+
 }
 
 ?>
