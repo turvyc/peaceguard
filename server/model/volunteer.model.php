@@ -47,7 +47,7 @@ class Volunteer extends User {
     public static function getTotalNumberPatrolling() {
         require('database.model.php');
 
-        $query = "SELECT COUNT(*) AS count FROM Patrols WHERE end_time IS NULL";
+        $query = "SELECT COUNT(*) AS count FROM Patrols WHERE duration IS NULL";
 
         $STH = $DBH->prepare($query);
         $STH->execute();
