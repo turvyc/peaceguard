@@ -55,6 +55,7 @@ checkLoggedIn($session);
 		<th>Volunteer</th>
 		<th>Resolved</th>
 	</tr>
+
 <?php
 try {
 	$data = $session->getData();
@@ -74,6 +75,7 @@ try {
 		echo '</tr>';
 	}		 
 }
+
 catch (LogicException $e) {
     // do nothing
 }

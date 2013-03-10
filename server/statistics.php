@@ -25,34 +25,35 @@ checkLoggedIn($session);
 
 <form name="<?php echo _REPORT; ?>" action="control/patrolstats.control.php" method="POST">
 	<select name="<?php echo _TIME_PERIOD; ?>">
-		<option value="<?php echo _LAST_DAY; ?>">Today's Reports</option>
-		<option value="<?php echo _LAST_MONTH; ?>">Last Thirty Days' Reports</option>
-		<option value="<?php echo _LAST_YEAR; ?>">Last Year's Reports</option>
-		<option value="<?php echo _ALL_TIME; ?>">Year To Date' Reports</option>
+        Time Period:
+		<option value="<?php echo _LAST_DAY; ?>">Today</option>
+        <option value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
+		<option value="<?php echo _LAST_YEAR; ?>">Last Year</option>
+		<option value="<?php echo _ALL_TIME; ?>">All Time</option>
 	</select>
 	
-	<select name="<?php echo _ORDER_BY; ?>">
-		<option value="<?php echo _NUMBER_VOLUNTEERS; ?>">Number of Registered Volunteers</option>
-		<option value="<?php echo _GLOBAL_STATISTICS; ?>">GLOBAL STATISTICS</option>
-		<option value="<?php echo _AVG; ?>">MEAN and MEDIAN</option>
-	</select>
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
 </form>
 
-
-<table class="statTable">
-	<tr>
-		<th>Time</th>
-		<th>Number of Registered Volunteers</th>
-		<th>Number of Patrols</th>
-		<th>Distance Patrolled</th>
-		<th>Time Patrolled</th>
-		<th>Number of Reports</th>
-		<th>Mean and Median</th>
-		<th>Number of Patrols</th>
-		<th>Distance of Per Patrol</th>
-		<th>Time of Per Patrol</th>
-	</tr>
+<ul>
+    <li>Number of registered volunteers: <?php /* TODO */ ?></li>
+    <li>Total:
+        <ul>
+            <li>Number of patrols: <?php /* TODO */ ?></li>
+            <li>Distance patrolled: <?php /* TODO */ ?></li>
+            <li>Time patrolled: <?php /* TODO */ ?></li>
+            <li>Number of incident reports: <?php /* TODO */ ?></li>
+        </ul>
+    </li>
+    <li>Average (per volunteer):
+        <ul>
+            <li>Number of patrols: <?php /* TODO */ ?></li>
+            <li>Distance patrolled: <?php /* TODO */ ?></li>
+            <li>Time patrolled: <?php /* TODO */ ?></li>
+            <li>Number of incident reports: <?php /* TODO */ ?></li>
+        </ul>
+    </li>
+</ul>
 
 <?php include('footer.php'); ?>
