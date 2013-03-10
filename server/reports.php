@@ -31,7 +31,7 @@ checkLoggedIn($session);
 		<option value="<?php echo _ALL_TIME; ?>">Year To Date' Reports</option>
 	</select>
 	
-	<select name="<?php echo _SORT_BY; ?>">
+	<select name="<?php echo _ORDER_BY; ?>">
 		<option value="<?php echo _TIME; ?>">Sort By Time</option>
 		<option value="<?php echo _SEVERITY; ?>">Sort By Severity</option>
 		<option value="<?php echo _VOLUNTEER; ?>">Sort By Volunteer</option>
