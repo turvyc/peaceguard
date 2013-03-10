@@ -96,7 +96,7 @@ class Session {
             require('database.model.php');
             $STH = $DBH->prepare("SELECT u_id FROM $table NATURAL JOIN Users 
             WHERE email = ? AND pw_hash = ?");
-            $STH->execute(array($table, $email, $hash));
+            $STH->execute(array($email, $hash));
         }
         // If there is a database error . . .
         catch (PDOException $e) {
