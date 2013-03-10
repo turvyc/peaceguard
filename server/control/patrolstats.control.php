@@ -33,7 +33,7 @@ if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_ORDER_BY])) {
     throw new LogicException('_TIME_PERIOD or _ORDER_BY not set.');
 }
 
-$stats = Patrol::getStatistics($_POST[_TIME_PERIOD]), $_POST[_ORDER_BY]);
+$stats = Patrol::getStatistics($_POST[_TIME_PERIOD], $_POST[_ORDER_BY]);
 $session->addData($stats);
 
 header('location: ../patrol.php');

@@ -65,9 +65,35 @@ class Patrol {
     public static function getStatistics($timePeriod, $orderBy) {
         $statistics = array();
 
-        $patrolData = $this->getPatrolData($timePeriod, $orderBy);
+        require('database.model.php');
 
-        $statistics[_TOTAL] = $this->
+        // Return the total number of patrols by all volunteers
+        // Return the total distance travelled by all volunteers
+        // Return the total time patrolled by all volunteers
+        $query = 'SELECT COUNT( P.p_id ) AS totalPatrols, 
+        SUM( P.distance ) AS totalDistance, 
+        SUM( P.duration ) AS totalTime,
+        FROM Patrols P';
+
+
+        // Return the total number of reports made by all volunteers
+
+        // Return the mean number of patrols per volunteer
+
+        // Return the mean distance travelled per patrol per volunteer
+
+        // Return the mean time spent per patrol per volunteer
+
+        // Return the mean number of incident reports made per volunteer
+
+        // Return the median number of patrols per volunteer
+
+        // Return the median distance travelled per patrol per volunteer
+
+        // Return the median time spent per patrol per volunteer
+
+        // Return the median number of incident reports made per volunteer
+    }
 
 }
 
