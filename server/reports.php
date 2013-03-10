@@ -55,7 +55,7 @@ checkLoggedIn($session);
 	$data = $session->getData();
 	for ($i = 0; $i < count($data); $i++) {
 		
-		$report = $data[$i];
+		$report = $data;
 		echo "error starts here";
 		
 		$time = $report->getTime();
