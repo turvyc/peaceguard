@@ -16,7 +16,7 @@ or `git blame <file>`
 */
 
 include('header.php');
-include('../control/patrolstats.php');
+include('control/patrolstats.control.php');
 checkLoggedIn($session);
 
 ?>
