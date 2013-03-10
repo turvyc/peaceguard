@@ -29,6 +29,7 @@
 		C48F3A2116D1F4560015D678 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2016D1F4560015D678 /* Default@2x.png */; };
 		C48F3A2316D1F4590015D678 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2216D1F4590015D678 /* Default-568h@2x.png */; };
 		C48F3A2516D211060015D678 /* camera-icon-md.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2416D211060015D678 /* camera-icon-md.png */; };
+		C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C638816ED48B200915D56 /* ConnectionDataController.m */; };
 		C4D244D016CEBA800017098A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244CF16CEBA800017098A /* User.m */; };
 		C4D244D316CEC5210017098A /* UserDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244D216CEC5210017098A /* UserDataController.m */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,8 @@
 		C48F3A2016D1F4560015D678 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C48F3A2216D1F4590015D678 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C48F3A2416D211060015D678 /* camera-icon-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-icon-md.png"; sourceTree = "<group>"; };
+		C49C638716ED48B200915D56 /* ConnectionDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDataController.h; sourceTree = "<group>"; };
+		C49C638816ED48B200915D56 /* ConnectionDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDataController.m; sourceTree = "<group>"; };
 		C4D244CE16CEBA800017098A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		C4D244CF16CEBA800017098A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C4D244D116CEC5210017098A /* UserDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataController.h; sourceTree = "<group>"; };
@@ -127,6 +130,8 @@
 				C4150BB116CCA93C00876850 /* PeaceGuardAppDelegate.m */,
 				C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */,
 				C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */,
+				C49C638716ED48B200915D56 /* ConnectionDataController.h */,
+				C49C638816ED48B200915D56 /* ConnectionDataController.m */,
 				C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */,
 				C4150BA816CCA93C00876850 /* Supporting Files */,
 				C4D244CE16CEBA800017098A /* User.h */,
@@ -241,6 +246,7 @@
 				C39E8B6016CF371D0087FBDD /* ReportDataController.m in Sources */,
 				C39E8B6316CF37420087FBDD /* ReportViewController.m in Sources */,
 				C313066616DF18C3005FB151 /* PatrolViewController.m in Sources */,
+				C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
