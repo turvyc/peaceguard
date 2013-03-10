@@ -2,7 +2,8 @@
 
 /** patrol.model.php
 
-The Patrol class encapsulates the data from a single patrol.
+The Patrol class contains static methods for beginning and ending a patrol, and
+retrieving patrol statistics.
 
 Contributor(s): Colin Strong
 
@@ -15,15 +16,9 @@ or `git blame <file>`
 
 require_once('session.model.php');
 require_once('constants.model.php');
+require_once('volunteer.model.php');
 
 class Patrol {
-
-    private $id;        // A positive integer, matching p_id in the database
-    private $startTime; // A UNIX timestamp
-    private $endTime;   // A UNIX timestamp
-    private $distance; 
-    private $route;
-    private $volunteer; // A Volunteer object of the patroller
 
     // Writes a new patrol to the database (entering only the start time), and
     // returns the p_id of the just-created patrol.
@@ -35,6 +30,8 @@ class Patrol {
 
         // Get the p_id
         $p_id = $DBH->lastInsertId();
+
+
 
         // Get the Volunteer's u_id
         $STH = $DBH->prepare('SELECT u_id FROM Volunteers NATURAL JOIN Users WHERE email = ?');
@@ -61,38 +58,58 @@ class Patrol {
 
     // Returns an associative array of the form (_TOTAL, _MEAN, _MEDIAN), 
     // where each of those three keys is another associative array of the
-    // form (_N_PATROLS, _DISTANCE, _TIME, _N_REPORTS).
+    // form (_PATROL, _DISTANCE, _TIME, _REPORT).
     public static function getStatistics($timePeriod, $orderBy) {
         $statistics = array();
+        $totalVolunteers = Volunteer::getTotalNumber();
 
         require('database.model.php');
 
         // Return the total number of patrols by all volunteers
         // Return the total distance travelled by all volunteers
         // Return the total time patrolled by all volunteers
-        $query = 'SELECT COUNT( P.p_id ) AS totalPatrols, 
-        SUM( P.distance ) AS totalDistance, 
-        SUM( P.duration ) AS totalTime,
-        FROM Patrols P';
+        $query1 = 'SELECT COUNT(p_id) AS totalPatrols, 
+        SUM(distance) AS totalDistance, 
+        SUM(duration) AS totalTime,
+        FROM Patrols';
 
+        $STH = $DBH->prepare($query1);
+        $STH->execute();
+
+        $result = $STH->fetch();
+
+        $totalPatrols = $result['totalPatrols'];
+        $totalDistance = $result['totalDistance'];
+        $totalTime = $result['totalTime'];
 
         // Return the total number of reports made by all volunteers
+        $query2 = 'SELECT COUNT(r_id) AS totalReports FROM Reports';
 
-        // Return the mean number of patrols per volunteer
+        $STH = $DBH->prepare($query2);
+        $STH->execute();
 
-        // Return the mean distance travelled per patrol per volunteer
+        $result = $STH->fetch();
+        $totalReports = $result['totalReports'];
 
-        // Return the mean time spent per patrol per volunteer
+        // Return the average number of patrols per volunteer
+        $averagePatrols = (int)($totalPatrols / $totalVolunteers);
 
-        // Return the mean number of incident reports made per volunteer
+        // Return the average distance travelled per patrol per volunteer
+        $averageDistance = (int)($totalDistance / $totalVolunteers);
 
-        // Return the median number of patrols per volunteer
+        // Return the average time spent per patrol per volunteer
+        $averageTime = (int)($totalTime / $totalVolunteers);
 
-        // Return the median distance travelled per patrol per volunteer
+        // Return the average number of incident reports made per volunteer
+        $averageReports = (int)($totalReports / $totalVolunteers);
 
-        // Return the median time spent per patrol per volunteer
+        $statistics[_TOTAL] = array(_PATROL => $totalPatrols, _DISTANCE => $totalDistance, 
+        _TIME => $totalTime, _REPORT => $totalReports);
 
-        // Return the median number of incident reports made per volunteer
+        $statistics[_AVERAGE] = array(_PATROL => $totalPatrols, _DISTANCE => $totalDistance, 
+        _TIME => $totalTime, _REPORT => $totalReports);
+
+        return $statistics;
     }
 
 }

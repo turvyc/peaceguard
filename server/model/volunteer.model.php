@@ -39,7 +39,7 @@ class Volunteer extends User {
         $STH->execute();
 
         $count = $STH->fetch();
-        $DBH = null;
+        $DBH = NULL;
         return $count['count'];
     }
 
@@ -53,7 +53,7 @@ class Volunteer extends User {
         $STH->execute();
 
         $count = $STH->fetch();
-        $DBH = null;
+        $DBH = NULL;
 
         return $count['count'];
     }
