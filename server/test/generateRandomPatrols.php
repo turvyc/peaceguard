@@ -16,8 +16,8 @@ or `git blame <file>`
 require_once('../model/constants.model.php');
 require_once('../model/patrol.model.php');
 
-define('N_PATROLS', 12);
-define('STILL_PATROLLING_RATIO', 4);
+define('N_PATROLS', 30);
+define('STILL_PATROLLING_RATIO', 10);
 
 // Get an array of volunteer emails
 echo 'Getting list of volunteers . . . ';
@@ -28,14 +28,14 @@ $emails = $STH->fetchAll();
 echo 'done.<br />';
 
 $p_ids = array();
-$end_times = array();
+$durations = array();
 for ($i = 0; $i < N_PATROLS; $i++) {
     echo 'Starting Patrol #' . ($i + 1) . ' . . . ';
 
     $start_time = rand(0, time());
     $email = $emails[array_rand($emails)][_EMAIL];
 
-    $end_times[] = rand($start_time, time());
+    $durations[] = rand(0, time() - $start_time);
     $p_ids[] = Patrol::beginPatrol($start_time, $email);
 
     echo 'done.<br />';
@@ -52,7 +52,7 @@ for ($i = 0; $i < N_PATROLS; $i++) {
     $distance = rand(100, 5000);
     $route = sha1(time() . rand());
 
-    Patrol::endPatrol($p_ids[$i], $end_times[$i], $distance, $route);
+    Patrol::endPatrol($p_ids[$i], $durations[$i], $distance, $route);
 
     echo 'done.<br />';
 }
