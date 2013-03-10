@@ -38,6 +38,7 @@ checkLoggedIn($session);
 		<option value="<?php echo _SEVERITY; ?>">Severity</option>
 		<option value="<?php echo _VOLUNTEER; ?>">Volunteer</option>
 		<option value="<?php echo _TYPE; ?>">Type</option>
+        <option value="<?php echo _LOCATION; ?>">Location</option>
 	</select>
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />

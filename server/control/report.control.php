@@ -86,7 +86,7 @@ try {
 
     // Ensure that _TIME_PERIOD and _ORDER_BY have sane values
     $allowedTimePeriods = array(_LAST_DAY, _LAST_MONTH, _LAST_YEAR, _ALL_TIME);
-    $allowedSorts = array(_TIME, _SEVERITY, _VOLUNTEER, _TYPE,);
+    $allowedSorts = array(_TIME, _SEVERITY, _VOLUNTEER, _TYPE, _LOCATION);
 
     if (! in_array($_POST[_TIME_PERIOD], $allowedTimePeriods)) {
         throw new OutOfBoundsException('Illegal value for _TIME_PERIOD');
@@ -117,16 +117,15 @@ try {
     if ($_POST[_ORDER_BY] == _VOLUNTEER) {
         $orderby = 'R.' . _VOLUNTEER;
     }
-	
-	
+
     // Query the database
     require('../model/database.model.php');
 	
-    $query = ('SELECT R.r_id, R.resolved, R.time, R.location, R.type, R.severity, R.description, U.u_id, U.firstName
-    FROM Reports R, Users U WHERE R.time > ? ORDER BY ?');
+    $query = ("SELECT R.r_id, R.resolved, R.time, R.location, R.type, R.severity, R.description, U.u_id, U.firstName
+    FROM Reports R, Users U WHERE R.time > $since ORDER BY $orderby");
 
     $STH = $DBH->prepare($query);
-    $STH->execute(array($since, $orderby));
+    $STH->execute();
 
     $allReportData = $STH->fetchAll();
     $session->setData($allReportData);
