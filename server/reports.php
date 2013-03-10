@@ -38,6 +38,7 @@ checkLoggedIn($session);
 		<option value="<?php echo _SEVERITY; ?>">Severity</option>
 		<option value="<?php echo _VOLUNTEER; ?>">Volunteer</option>
 		<option value="<?php echo _TYPE; ?>">Type</option>
+        <option value="<?php echo _LOCATION; ?>">Location</option>
 	</select>
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
@@ -45,6 +46,7 @@ checkLoggedIn($session);
 
 <table class="reportTable">
 	<tr>
+		<th>Date</th>
 		<th>Time</th>
 		<th>Location</th>
 		<th>Type</th>
@@ -61,6 +63,7 @@ try {
         $report = new Report($data[$i]);
 	
 		echo '<tr>';
+        echo '<td>' . $report->getDate() . '</td>';
         echo '<td>' . $report->getTime() . '</td>';
         echo '<td>' . $report->getLocation() . '</td>';
         echo '<td>' . $report->getType() . '</td>';

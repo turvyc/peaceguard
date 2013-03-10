@@ -15,6 +15,7 @@ or `git blame <file>`
 
 require_once('session.model.php');
 require_once('constants.model.php');
+require_once('volunteer.model.php');
 
 class Report {
 			
@@ -50,7 +51,7 @@ class Report {
         $this->severity = $data[_SEVERITY];
         $this->location = $data[_LOCATION];
         $this->desc = $data[_DESC];
-        $this->volunteer = $data['u_id'];
+        $this->volunteer = new Volunteer((int)$data['u_id']);
     }
 	
     // This static function checks a new report's data for errors, then 
@@ -64,6 +65,7 @@ class Report {
         }
 
         // Ensure that the type and severity are allowable values
+
         $allowedTypes = array(Report::VANDALISM, Report::GRAFFITI, 
         Report::BEHAVIOR, Report::PROPERTY, Report::OTHER);
         $allowedSeverities = array(Report::CRITICAL, Report::SERIOUS,
@@ -113,7 +115,7 @@ class Report {
     }
 
     public function getSeverity() {
-        return $this->severity;
+        return ucwords($this->severity);
     }
 
     public function getLocation() {
@@ -121,7 +123,11 @@ class Report {
     }
 
     public function getTime() {
-        return $this->time;
+        return date('G:i', $this->time);
+    }
+
+    public function getDate() {
+        return date('M j, Y', $this->time);
     }
 
     public function getDesc() {
@@ -129,7 +135,7 @@ class Report {
     }
 
     public function getVolunteer() {
-        return $this->volunteer;
+        return $this->volunteer->getFullName();
     }
 
 }
