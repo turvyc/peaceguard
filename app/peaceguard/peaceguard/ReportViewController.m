@@ -133,11 +133,14 @@
 - (IBAction)submitAction:(id)sender {
     BOOL verification = [self verify:self.description.text];
     if(verification == YES){
-        _incidentOverview = self.incidentLabel.text;
-        _severityOverview = self.severityLabel.text;
-        _descriptionOverview = self.description.text;
+        self.incidentOverviewDisplay.text = self.incidentLabel.text;
+        self.severityOverviewDisplay.text = self.severityLabel.text;
+        self.descriptionOverviewDisplay.text = self.description.text;
+        
+        
+        
         if(_imageView.image!= nil){
-            _imageOverview = _imageView.image;
+            self.imageOverview = self.imageView.image;
         }
         [self performSegueWithIdentifier:@"ToOverView" sender:self];
     }else{
