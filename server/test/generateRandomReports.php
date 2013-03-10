@@ -16,7 +16,7 @@ or `git blame <file>`
 require_once('../model/constants.model.php');
 require_once('../model/report.model.php');
 
-define('N_REPORTS', 5);
+define('N_REPORTS', 25);
 
 // Define arrays of all the possibilies for each category
 $types = array(Report::VANDALISM, Report::GRAFFITI, Report::BEHAVIOR, Report::PROPERTY, Report::OTHER);

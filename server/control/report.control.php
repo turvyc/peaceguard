@@ -122,7 +122,7 @@ try {
     require('../model/database.model.php');
 	
     $query = ("SELECT R.r_id, R.resolved, R.time, R.location, R.type, R.severity, R.description, U.u_id, U.firstName
-    FROM Reports R, Users U WHERE R.time > $since ORDER BY $orderby");
+    FROM Reports R NATURAL JOIN Reported NATURAL JOIN Users U WHERE R.time > $since ORDER BY $orderby");
 
     $STH = $DBH->prepare($query);
     $STH->execute();
