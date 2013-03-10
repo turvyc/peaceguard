@@ -1,9 +1,9 @@
 //
 //  PeaceGuardAppDelegate.m
-//  peaceguard
 //
-//  Created by Lesperance Ashley on 2013-02-13.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Ashley Lesperance
+//
+//  Copyright (c) 2013 Number 123 Developer's Group
 //
 
 #import "PeaceGuardAppDelegate.h"
