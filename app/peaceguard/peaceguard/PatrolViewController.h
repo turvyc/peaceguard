@@ -1,9 +1,9 @@
 //
 //  PatrolViewController.h
-//  peaceguard
 //
-//  Created by JonasYao on 2013-02-27.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Ashley Lesperance, Jonas Yao
+//
+//  Copyright (c) 2013 Number 123 Developer's Group
 //
 
 #import <UIKit/UIKit.h>
