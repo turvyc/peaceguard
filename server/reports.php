@@ -46,6 +46,7 @@ checkLoggedIn($session);
 
 <table class="reportTable">
 	<tr>
+		<th>Date</th>
 		<th>Time</th>
 		<th>Location</th>
 		<th>Type</th>
@@ -62,6 +63,7 @@ try {
         $report = new Report($data[$i]);
 	
 		echo '<tr>';
+        echo '<td>' . $report->getDate() . '</td>';
         echo '<td>' . $report->getTime() . '</td>';
         echo '<td>' . $report->getLocation() . '</td>';
         echo '<td>' . $report->getType() . '</td>';
