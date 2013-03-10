@@ -16,7 +16,7 @@ or `git blame <file>`
 */
 
 include('header.php');
-include('control/patrolstats.control.php');
+include('model/report.model.php');
 checkLoggedIn($session);
 
 ?>
@@ -39,5 +39,20 @@ checkLoggedIn($session);
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
 </form>
+
+
+<table class="statTable">
+	<tr>
+		<th>Time</th>
+		<th>Number of Registered Volunteers</th>
+		<th>Number of Patrols</th>
+		<th>Distance Patrolled</th>
+		<th>Time Patrolled</th>
+		<th>Number of Reports</th>
+		<th>Mean and Median</th>
+		<th>Number of Patrols</th>
+		<th>Distance of Per Patrol</th>
+		<th>Time of Per Patrol</th>
+	</tr>
 
 <?php include('footer.php'); ?>
