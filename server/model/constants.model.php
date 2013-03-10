@@ -69,7 +69,8 @@ define('_END_TIME', 'endTime');
 define('_TOTAL', 'total');
 define('_AVERAGE', 'average');
 define('_DISTANCE', 'distance');
-define('_TIME', 'time');
+//define('_TIME', 'time');
+//if (!define('_TIME', 'time')) define('_TIME', 'time');
 
 // The following constants are for $_POST array values.
 define('_IPHONE', 'iphone');   // For use with _AGENT key
