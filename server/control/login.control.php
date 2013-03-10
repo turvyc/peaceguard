@@ -54,8 +54,10 @@ if (_DEBUG) {
     assert($session->getFullName() != null);
 }
 
-$interface->addData(_SUCCESSFUL, _YES);
-$interface->output();
+if ($interface->getAgent() == _IPHONE) {
+    $interface->addData(_SUCCESSFUL, _YES);
+    $interface->output();
+}
 
 // Hack alert: the iPhone will never actually be logged in to the website in
 // a session; we simply want to verify their credentials

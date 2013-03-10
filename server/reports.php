@@ -24,18 +24,20 @@ checkLoggedIn($session);
 
 
 <form name="<?php echo _REPORT; ?>" action="control/report.control.php" method="POST">
+    Time Period:
 	<select name="<?php echo _TIME_PERIOD; ?>">
-		<option value="<?php echo _LAST_DAY; ?>">Today's Reports</option>
-		<option value="<?php echo _LAST_MONTH; ?>">Last Thirty Days' Reports</option>
-		<option value="<?php echo _LAST_YEAR; ?>">Last Year's Reports</option>
-		<option value="<?php echo _ALL_TIME; ?>">Year To Date' Reports</option>
+		<option value="<?php echo _LAST_DAY; ?>">Today</option>
+		<option value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
+		<option value="<?php echo _LAST_YEAR; ?>">Last Year</option>
+        <option value="<?php echo _ALL_TIME; ?>">All Time</option>
 	</select>
 	
+    Sort By:
 	<select name="<?php echo _ORDER_BY; ?>">
-		<option value="<?php echo _TIME; ?>">Sort By Time</option>
-		<option value="<?php echo _SEVERITY; ?>">Sort By Severity</option>
-		<option value="<?php echo _VOLUNTEER; ?>">Sort By Volunteer</option>
-		<option value="<?php echo _TYPE; ?>">Sort By TYPE</option>
+		<option value="<?php echo _TIME; ?>">Time</option>
+		<option value="<?php echo _SEVERITY; ?>">Severity</option>
+		<option value="<?php echo _VOLUNTEER; ?>">Volunteer</option>
+		<option value="<?php echo _TYPE; ?>">Type</option>
 	</select>
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
@@ -52,29 +54,26 @@ checkLoggedIn($session);
 		<th>Resolved</th>
 	</tr>
 <?php
+try {
 	$data = $session->getData();
 	for ($i = 0; $i < count($data); $i++) {
 		
-		$report = $data;
-		echo "error starts here";
-		
-		$time = $report->getTime();
-		$location = $report->getLocation();
-		$type = $report->getType();
-		$severity = $report->getSeverity();
-		$description = $report->getDesc();
-		$volunteer = $report->getVolunteer();
-		$resolved = $report->getResolved();
+        $report = new Report($data[$i]);
 	
 		echo '<tr>';
-		echo '<td>' . $time . '</td>';
-		echo '<td>' . $location . '</td>';
-		echo '<td>' . $type . '</td>';
-		echo '<td>' . $severity . '</td>';
-		echo '<td>' . $description . '</td>';
-		echo '<td>' . $volunteer . '</td>';
-		echo '<td>' . $resolved . '</td>';
+        echo '<td>' . $report->getTime() . '</td>';
+        echo '<td>' . $report->getLocation() . '</td>';
+        echo '<td>' . $report->getType() . '</td>';
+        echo '<td>' . $report->getSeverity() . '</td>';
+        echo '<td>' . $report->getDesc() . '</td>';
+        echo '<td>' . $report->getVolunteer() . '</td>';
+        echo '<td>' . $report->getResolved() . '</td>';
 		echo '</tr>';
 	}		 
+}
+catch (LogicException $e) {
+    // do nothing
+}
+
 ?>
 </table>

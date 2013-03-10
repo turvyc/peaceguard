@@ -122,14 +122,18 @@ try {
     // Query the database
     require('../model/database.model.php');
 	
-    $query = ('SELECT R.time, R.location, R.type, R.severity, R.description, U.u_id, U.firstName
+    $query = ('SELECT R.r_id, R.resolved, R.time, R.location, R.type, R.severity, R.description, U.u_id, U.firstName
     FROM Reports R, Users U WHERE R.time > ? ORDER BY ?');
 
     $STH = $DBH->prepare($query);
     $STH->execute(array($since, $orderby));
 
     $allReportData = $STH->fetchAll();
-    print_r($allReportData);
+    $session->setData($allReportData);
+
+    header('location: ../reports.php');
+    exit(0);
+
 }
 
 catch (Exception $e) {

@@ -43,14 +43,14 @@ class Report {
     // Constructs a new Report object. Because the data is coming from the
     // database, it needs no processing.
     function __construct($data) {
-        $this->id = $data[_ID];
+        $this->id = $data['r_id'];
         $this->resolved = $data[_RESOLVED];
         $this->time = $data[_TIME];
         $this->type = $data[_TYPE];
         $this->severity = $data[_SEVERITY];
         $this->location = $data[_LOCATION];
         $this->desc = $data[_DESC];
-        $this->volunteer = $data[_VOLUNTEER];
+        $this->volunteer = $data['u_id'];
     }
 	
     // This static function checks a new report's data for errors, then 
