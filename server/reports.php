@@ -25,14 +25,14 @@ checkLoggedIn($session);
 
 <form name="<?php echo _REPORT; ?>" action="control/report.control.php" method="POST">
     Time Period:
-	<select name="<?php echo _TIME_PERIOD; ?>" id="name">
+	<select name="<?php echo _TIME_PERIOD; ?>" id="<?php echo _TIME_PERIOD; ?>">
 		<option value="<?php echo _LAST_DAY; ?>">Today</option>
 		<option value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
 		<option value="<?php echo _LAST_YEAR; ?>">Last Year</option>
 		<option value="<?php echo _ALL_TIME; ?>">All Time</option>
 	</select>	
 		<script type="text/JavaScript">
-			document.getElementById('_TIME_PERIOD').value ="<?php echo $_GET['_TIME_PERIOD']?>";
+			document.getElementById('_TIME_PERIOD').value ="<?php echo $_POST[_TIME_PERIOD]?>";
 
 		</script>	
 			
