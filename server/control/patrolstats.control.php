@@ -39,12 +39,14 @@ if ($interface->getAgent() == _IPHONE) {
 
         $stats = Patrol::getVolunteerStatistics($_POST[_EMAIL], $_POST[_TIME_PERIOD]);
 
-        $interface->addData
+        $interface->addData(_SUCCESSFUL, _YES);
+        $interface->addData(_TOTAL, $stats[_TOTAL]);
+        $interface->addData(_AVERAGE, $stats[_AVERAGE]);
     }
 
     catch (LogicException $e) {
-        echo $e->getMessage();
-        exit(1);
+        $interface->addData(_SUCCESSFUL, _NO);
+        $interface->addData(_MESSAGE, $e->getMessage());
     }
 }
 
