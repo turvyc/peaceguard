@@ -31,11 +31,21 @@ catch (LogicException $e) {
 }
 
 if ($interface->getAgent() == _IPHONE) {
-    // Ensure that the required POST keys are set
-    if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_EMAIL])) {
-        throw new LogicException('_TIME_PERIOD or _EMAIL not set.');
+    try {
+        // Ensure that the required POST keys are set
+        if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_EMAIL])) {
+            throw new LogicException('_TIME_PERIOD or _EMAIL not set.');
+        }
     }
 
+    catch (LogicException $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
+}
+
+
+    
     
 }
 
