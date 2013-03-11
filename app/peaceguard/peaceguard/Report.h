@@ -11,10 +11,14 @@
 
 @interface Report : NSObject
 
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *severity;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic) NSInteger *time;
 @property (nonatomic, copy) NSString *description;
 
--(id)initWithName:(NSString*)title description:(NSString *) description;
+
+-(id) initWithType: (NSString *) type severity: (NSString *) severity location: (NSString *) location time: (NSInteger *) time andDescription: (NSString *) description;
 
 @end
 

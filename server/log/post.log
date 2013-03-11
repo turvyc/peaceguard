@@ -88,3 +88,462 @@
 )
 
 
+10 Mar 2013 22:24:58 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
+10 Mar 2013 22:25:03 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 22:25:09 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => v_id
+    [agent] => website
+)
+
+
+10 Mar 2013 22:25:12 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 22:25:12 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 22:25:13 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 22:25:14 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 22:25:18 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:05:01 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:05:57 -- Contents of POST:
+ Array
+(
+    [timePeriod] => 
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:07:08 -- Contents of POST:
+ Array
+(
+    [timePeriod] => 
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:07:56 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:07:59 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:08:02 -- Contents of POST:
+ Array
+(
+    [timePeriod] => 
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:08:09 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:10:20 -- Contents of POST:
+ Array
+(
+    [timePeriod] => 
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:53:47 -- Contents of POST:
+ Array
+(
+    [_TIME_PERIOD] => _LAST_DAY
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:57:25 -- Contents of POST:
+ Array
+(
+    [_TIME_PERIOD] => _LAST_MONTH
+    [sortBy] => time
+    [agent] => website
+)
+
+
+10 Mar 2013 23:57:36 -- Contents of POST:
+ Array
+(
+    [_TIME_PERIOD] => _LAST_MONTH
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:05:04 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => location
+    [agent] => website
+)
+
+
+11 Mar 2013 0:05:07 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [sortBy] => severity
+    [agent] => website
+)
+
+
+11 Mar 2013 0:05:09 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:05:11 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:05:32 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:06:25 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => location
+    [agent] => website
+)
+
+
+11 Mar 2013 0:06:31 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => v_id
+    [agent] => website
+)
+
+
+11 Mar 2013 0:06:43 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => v_id
+    [agent] => website
+)
+
+
+11 Mar 2013 0:06:56 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:06:58 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:07:01 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:07:20 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:08:06 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:08:09 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:08:13 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:09:02 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:09:06 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:09:14 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:09:34 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:09:49 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [sortBy] => severity
+    [agent] => website
+)
+
+
+11 Mar 2013 0:09:56 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => severity
+    [agent] => website
+)
+
+
+11 Mar 2013 0:10:06 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => type
+    [agent] => website
+)
+
+
+11 Mar 2013 0:15:20 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:15:24 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:16:08 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:19:34 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [sortBy] => severity
+    [agent] => website
+)
+
+
+11 Mar 2013 0:19:37 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:19:40 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:23:16 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:23:22 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:23:28 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [sortBy] => time
+    [agent] => website
+)
+
+
+11 Mar 2013 0:27:23 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [sortBy] => v_id
+    [agent] => website
+)
+
+
