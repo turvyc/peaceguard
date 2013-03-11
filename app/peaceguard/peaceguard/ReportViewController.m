@@ -7,6 +7,7 @@
 //
 
 #import "ReportViewController.h"
+#import "OverviewController.h"
 
 @interface ReportViewController ()
 
@@ -127,31 +128,15 @@
         pickerViewBlocker.hidden = YES;
     }
 }
+
+- (IBAction)buttonToOverview:(id)sender {
+    
+    [self performSegueWithIdentifier:@"toOverview" sender:self];
+    
+}
+
 //*** PickerView code ends ***
 
-
-- (IBAction)submitAction:(id)sender {
-    BOOL verification = [self verify:self.description.text];
-    if(verification == YES){
-        self.incidentOverviewDisplay.text = self.incidentLabel.text;
-        self.severityOverviewDisplay.text = self.severityLabel.text;
-        self.descriptionOverviewDisplay.text = self.description.text;
-        
-        
-        
-        if(_imageView.image!= nil){
-            self.imageOverview = self.imageView.image;
-        }
-        [self performSegueWithIdentifier:@"ToOverView" sender:self];
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Submit failed"
-                                                        message:@"The description is null."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-}
 
 - (BOOL) verify:(NSString *)description {
     if([description isEqualToString:@"Description"]) {
@@ -165,6 +150,7 @@
 {
     [self.view endEditing:YES];
 }
+
 - (IBAction)ImageTaker:(id)sender {
     
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
@@ -192,4 +178,18 @@
     _imageView.image = image;
 
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    OverviewController *overviewController = (OverviewController *)segue.destinationViewController;
+    //sets value of variables from overview
+    overviewController.incidentData = self.incidentData;
+    overviewController.severityData = self.severityData;
+    overviewController.descriptionData = self.description.text;
+    overviewController.imageData = self.imageView.image;
+    
+}
+
+
 @end

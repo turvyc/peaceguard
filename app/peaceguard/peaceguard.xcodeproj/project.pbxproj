@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7D498E116ED78C7001EA2D9 /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D498E016ED78C6001EA2D9 /* OverviewController.m */; };
 		C313066616DF18C3005FB151 /* PatrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C313066516DF18C3005FB151 /* PatrolViewController.m */; };
 		C313066816DF1CEE005FB151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313066716DF1CEE005FB151 /* MapKit.framework */; };
 		C39E8B5D16CF370E0087FBDD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5C16CF370E0087FBDD /* Report.m */; };
@@ -40,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7D498DF16ED78C6001EA2D9 /* OverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewController.h; sourceTree = "<group>"; };
+		A7D498E016ED78C6001EA2D9 /* OverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewController.m; sourceTree = "<group>"; };
 		C313066416DF18C3005FB151 /* PatrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatrolViewController.h; sourceTree = "<group>"; };
 		C313066516DF18C3005FB151 /* PatrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatrolViewController.m; sourceTree = "<group>"; };
 		C313066716DF1CEE005FB151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				C4150BB016CCA93C00876850 /* PeaceGuardAppDelegate.h */,
+				A7D498DF16ED78C6001EA2D9 /* OverviewController.h */,
+				A7D498E016ED78C6001EA2D9 /* OverviewController.m */,
 				C4150BB116CCA93C00876850 /* PeaceGuardAppDelegate.m */,
 				C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */,
 				C49C639016ED6C0A00915D56 /* PatrolDataController.h */,
@@ -273,8 +278,12 @@
 				C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */,
 				C3AEED6916ED5381002C16EC /* LocationViewController.m in Sources */,
 				C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */,
+<<<<<<< HEAD
+				A7D498E116ED78C7001EA2D9 /* OverviewController.m in Sources */,
+=======
 				C49C638F16ED690200915D56 /* Patrol.m in Sources */,
 				C49C639216ED6C0A00915D56 /* PatrolDataController.m in Sources */,
+>>>>>>> 84eb213cae63eb0c5178dafaef9656b0f28d0097
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

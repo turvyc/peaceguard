@@ -17,7 +17,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(strong, nonatomic) ReportViewController *reportController;
-@property (weak, nonatomic) IBOutlet UIButton *submit;
 
 //PickerView
 @property (strong, nonatomic) IBOutlet UIPickerView *thePickerView;
@@ -43,13 +42,10 @@
 - (IBAction)severityButtonPressed:(id)sender;
 - (IBAction)doneSelection:(id)sender;
 
-//items are held in the overview screen
-@property (strong, nonatomic) IBOutlet UILabel *incidentOverviewDisplay;
-@property (strong, nonatomic) IBOutlet UILabel *severityOverviewDisplay;
-@property (strong, nonatomic) IBOutlet UITextField *descriptionOverviewDisplay;
-@property (strong, nonatomic) IBOutlet UIImageView *imageOverviewDisplay;
 
-- (IBAction) submitAction:(id)sender;
+- (IBAction)buttonToOverview:(id)sender;
+
+
 - (BOOL) verify: (NSString*) description;
 
 @property (weak, nonatomic) IBOutlet UITextField *description;
