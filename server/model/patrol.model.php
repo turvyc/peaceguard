@@ -57,10 +57,36 @@ class Patrol {
     }
 
     // Returns statistics for a specified Volunteer.
-    public static funtion getVolunteerStatistics($email, $timePeriod) {
+    public static function getVolunteerStatistics($email, $timePeriod) {
         $statistics = array();
 
+        $query1 = "SELECT COUNT(*) AS totalPatrols,
+        SUM(distance) AS totalDistance,
+        SUM(duration) AS totalTime,
+        AVG(distance) AS averageDistance,
+        AVG(time) AS averageTime
+        FROM Patrols NATURAL JOIN Patrolled
+        WHERE email = $email";
 
+        $query2 = "SELECT COUNT(*) AS totalReports
+        FROM Reports NATURAL JOIN Reported
+        WHERE email = $email";
+
+        $STH = $DBH->prepare($query1);
+        $STH->execute();
+        $result = $STH->fetch();
+
+        $totalPatrols = $result['totalPatrols'];
+        $totalDistance = $result['totalDistance'];
+        $totalTime = $result['totalTime'];
+        $averageDistance = $result['averageDistance'];
+        $averageTime = $result['averageTime'];
+
+        $STH = $DBH->prepare($query2);
+        $STH->execute();
+
+        $result = $STH->fetch();
+        $totalReports = $result['totalReports'];
     }
 
     // Returns an associative array of the form (_TOTAL, _MEAN, _MEDIAN), 
@@ -78,6 +104,8 @@ class Patrol {
         $query1 = 'SELECT COUNT(p_id) AS totalPatrols, 
         SUM(distance) AS totalDistance, 
         SUM(duration) AS totalTime,
+        AVG(distance) AS averageDistance,
+        AVG(duration) AS averageDuration,
         FROM Patrols';
 
         $STH = $DBH->prepare($query1);
@@ -88,6 +116,8 @@ class Patrol {
         $totalPatrols = $result['totalPatrols'];
         $totalDistance = $result['totalDistance'];
         $totalTime = $result['totalTime'];
+        $averageDistance = $result['averageDistance'];
+        $averageTime = $result['averageTime'];
 
         // Return the total number of reports made by all volunteers
         $query2 = 'SELECT COUNT(r_id) AS totalReports FROM Reports';
@@ -100,12 +130,6 @@ class Patrol {
 
         // Return the average number of patrols per volunteer
         $averagePatrols = (int)($totalPatrols / $totalVolunteers);
-
-        // Return the average distance travelled per patrol per volunteer
-        $averageDistance = (int)($totalDistance / $totalVolunteers);
-
-        // Return the average time spent per patrol per volunteer
-        $averageTime = (int)($totalTime / $totalVolunteers);
 
         // Return the average number of incident reports made per volunteer
         $averageReports = (int)($totalReports / $totalVolunteers);

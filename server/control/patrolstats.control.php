@@ -33,20 +33,19 @@ catch (LogicException $e) {
 if ($interface->getAgent() == _IPHONE) {
     try {
         // Ensure that the required POST keys are set
-        if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_EMAIL])) {
+        if (! isset($_POST[_EMAIL]) || ! isset($_POST[_TIME_PERIOD])) {
             throw new LogicException('_TIME_PERIOD or _EMAIL not set.');
         }
+
+        $stats = Patrol::getVolunteerStatistics($_POST[_EMAIL], $_POST[_TIME_PERIOD]);
+
+        $interface->addData
     }
 
     catch (LogicException $e) {
         echo $e->getMessage();
         exit(1);
     }
-}
-
-
-    
-    
 }
 
 // It's the website!
