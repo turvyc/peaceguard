@@ -12,6 +12,8 @@
 		C39E8B5D16CF370E0087FBDD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5C16CF370E0087FBDD /* Report.m */; };
 		C39E8B6016CF371D0087FBDD /* ReportDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5F16CF371D0087FBDD /* ReportDataController.m */; };
 		C39E8B6316CF37420087FBDD /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B6216CF37420087FBDD /* ReportViewController.m */; };
+		C3AEED6916ED5381002C16EC /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AEED6816ED5381002C16EC /* LocationViewController.m */; };
+		C3AEED6B16ED54AD002C16EC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3AEED6A16ED54AD002C16EC /* CoreLocation.framework */; };
 		C4150BA216CCA93C00876850 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4150BA116CCA93C00876850 /* UIKit.framework */; };
 		C4150BA416CCA93C00876850 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4150BA316CCA93C00876850 /* Foundation.framework */; };
 		C4150BA616CCA93C00876850 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4150BA516CCA93C00876850 /* CoreGraphics.framework */; };
@@ -44,6 +46,9 @@
 		C39E8B5F16CF371D0087FBDD /* ReportDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportDataController.m; sourceTree = "<group>"; };
 		C39E8B6116CF37420087FBDD /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
 		C39E8B6216CF37420087FBDD /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		C3AEED6716ED5380002C16EC /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		C3AEED6816ED5381002C16EC /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		C3AEED6A16ED54AD002C16EC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C4150B9E16CCA93C00876850 /* peaceguard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = peaceguard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4150BA116CCA93C00876850 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C4150BA316CCA93C00876850 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3AEED6B16ED54AD002C16EC /* CoreLocation.framework in Frameworks */,
 				C313066816DF1CEE005FB151 /* MapKit.framework in Frameworks */,
 				C4150BA216CCA93C00876850 /* UIKit.framework in Frameworks */,
 				C4150BA416CCA93C00876850 /* Foundation.framework in Frameworks */,
@@ -92,6 +98,7 @@
 		C4150B9516CCA93C00876850 = {
 			isa = PBXGroup;
 			children = (
+				C3AEED6A16ED54AD002C16EC /* CoreLocation.framework */,
 				C313066716DF1CEE005FB151 /* MapKit.framework */,
 				C48F3A2416D211060015D678 /* camera-icon-md.png */,
 				C48F3A2216D1F4590015D678 /* Default-568h@2x.png */,
@@ -146,6 +153,8 @@
 				C39E8B6216CF37420087FBDD /* ReportViewController.m */,
 				C313066416DF18C3005FB151 /* PatrolViewController.h */,
 				C313066516DF18C3005FB151 /* PatrolViewController.m */,
+				C3AEED6716ED5380002C16EC /* LocationViewController.h */,
+				C3AEED6816ED5381002C16EC /* LocationViewController.m */,
 			);
 			path = peaceguard;
 			sourceTree = "<group>";
@@ -247,6 +256,7 @@
 				C39E8B6316CF37420087FBDD /* ReportViewController.m in Sources */,
 				C313066616DF18C3005FB151 /* PatrolViewController.m in Sources */,
 				C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */,
+				C3AEED6916ED5381002C16EC /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
