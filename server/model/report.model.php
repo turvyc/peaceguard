@@ -124,6 +124,7 @@ class Report {
                 return 'Serious';
             case 3:
                 return 'Critical';
+        }
     }
 
     public function getLocation() {

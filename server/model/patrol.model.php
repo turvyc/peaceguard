@@ -98,7 +98,7 @@ class Patrol {
     // Returns an associative array of the form (_TOTAL, _MEAN, _MEDIAN), 
     // where each of those three keys is another associative array of the
     // form (_PATROL, _DISTANCE, _TIME, _REPORT).
-    public static function getGlobalStatistics($timePeriod, $orderBy) {
+    public static function getGlobalStatistics($timePeriod) {
         $statistics = array();
         $totalVolunteers = Volunteer::getTotalNumber();
         $since = decodeTimePeriod($timePeriod);
@@ -112,10 +112,9 @@ class Patrol {
         SUM(distance) AS totalDistance, 
         SUM(duration) AS totalTime,
         AVG(distance) AS averageDistance,
-        AVG(duration) AS averageDuration,
+        AVG(duration) AS averageDuration
         FROM Patrols
-        WHERE start_time > $since
-        ORDER BY $orderBy";
+        WHERE start_time > $since";
 
         $STH = $DBH->prepare($query1);
         $STH->execute();
@@ -129,7 +128,7 @@ class Patrol {
         $averageTime = $result['averageTime'];
 
         // Return the total number of reports made by all volunteers
-        $query2 = "SELECT COUNT(r_id) AS totalReports FROM Reports WHERE time > $since ORDER BY $orderBy";
+        $query2 = "SELECT COUNT(r_id) AS totalReports FROM Reports WHERE time > $since";
 
         $STH = $DBH->prepare($query2);
         $STH->execute();
