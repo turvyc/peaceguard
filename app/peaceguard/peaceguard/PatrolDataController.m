@@ -10,4 +10,15 @@
 
 @implementation PatrolDataController
 
+-(void) beginPatrol{
+    
+    self.currentPatrol = [[Patrol alloc] initWithTime];
+    //Connect to the server and get patrolID
+}
+
+-(void) endPatrol{
+    
+    //Connect to the server and send information
+}
+
 @end

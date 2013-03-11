@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Patrol.h"
+#import "PatrolDataController.h"
 
 @interface PatrolDataController : NSObject
 
 @property (nonatomic, copy) Patrol *currentPatrol;
+
+-(void)beginPatrol;
 
 @end
