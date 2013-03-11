@@ -42,7 +42,7 @@
 
 
 
-- (IBAction)cancelPressed:(id)sender {
-    
+- (IBAction)cancelPressed:(UIStoryboardSegue *)segue {
+     
 }
 @end
