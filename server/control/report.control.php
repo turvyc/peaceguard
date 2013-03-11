@@ -39,9 +39,9 @@ catch (LogicException $e) {
 
 if ($interface->getAgent() == _IPHONE) {
     try {
-        // Ensure that the USERNAME variable is set
-        if (! isset($_POST[_USERNAME])) {
-            throw new DomainException('_USERNAME is not set.');
+        // Ensure that the EMAIL variable is set
+        if (! isset($_POST[_EMAIL])) {
+            throw new DomainException('_EMAIL is not set.');
         }
 
         // Ensure that there is report data
@@ -58,7 +58,7 @@ if ($interface->getAgent() == _IPHONE) {
         _DESC => $_POST[_DESC]);
 
         // Create a new Report object from the data
-        Report::newReport($report, $_POST[_USERNAME]);
+        Report::newReport($report, $_POST[_EMAIL]);
 
         $interface->addData(_SUCCESSFUL, _YES);
     }
@@ -122,7 +122,7 @@ try {
     require('../model/database.model.php');
 	
     $query = ("SELECT R.r_id, R.resolved, R.time, R.location, R.type, R.severity, R.description, U.u_id, U.firstName
-    FROM Reports R, Users U WHERE R.time > $since ORDER BY $orderby");
+    FROM Reports R NATURAL JOIN Reported NATURAL JOIN Users U WHERE R.time > $since ORDER BY $orderby");
 
     $STH = $DBH->prepare($query);
     $STH->execute();

@@ -17,22 +17,6 @@
 
 @implementation PeaceGuardViewController
 
-/*
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    self.dataController = [[UserDataController alloc] init];
-}*/
-
-//- (BOOL)textFieldShouldReturn:(UITextField *)theTextField{
-//    if (theTextField == self.username) {
-//        [theTextField resignFirstResoponder];
-//    }
-//    if( theTextField == self.password){
-//        [theTextField resignFirstResponder];
-//    }
-//    return YES;
-//}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -44,8 +28,10 @@
     return YES;
 }
 - (IBAction)Login:(id)sender {
-    BOOL authentication =
-    [self logUsername:self.username.text password:self.password.text];
+    //BOOL authentication = [self logUsername:self.username.text password:self.password.text];
+    self.user = [[User alloc] initWithUsername:self.username.text password:self.password.text];
+    self.connectionManager = [[ConnectionDataController alloc] init];
+    BOOL authentication = [self.connectionManager serverLoginWithEmail:self.username.text andPassword:self.password.text];
     //self.username.text = @"";
     self.password.text = @"";
     
@@ -63,19 +49,7 @@
     }
 }
 
-- (BOOL)logUsername: (NSString *) username password: (NSString *) password{
-    self.user = [[User alloc]initWithUsername:@"admin" password: @"123"];
-    NSString *tempname = self.user.username;
-    NSString *temppassword = self.user.password;
-    if([username isEqualToString:tempname]
-       &&
-       [password isEqualToString:temppassword])
-    {
-        return YES;
-    }else{
-        return NO;
-    }
-}
+
 
 - (void)viewDidLoad
 {

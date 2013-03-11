@@ -36,10 +36,10 @@ class Report {
     const OTHER = 'other';
 
     // Severity constants:
-    const CRITICAL = 'critical';
-    const SERIOUS = 'serious';
-    const MINOR = 'minor';
-    const TIP = 'tip';
+    const CRITICAL = 3;
+    const SERIOUS = 2;
+    const MINOR = 1;
+    const TIP = 0;
 
     // Constructs a new Report object. Because the data is coming from the
     // database, it needs no processing.

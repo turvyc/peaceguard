@@ -72,6 +72,7 @@ class Session {
         }
 
         return $_SESSION[Session::DATA];
+        unset($_SESSION[Session::DATA]);
     }
 
     // Deletes the encoded JSON string stored in _SESSION[DATA]
