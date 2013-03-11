@@ -18,7 +18,13 @@ include('header.php');
 include('model/report.model.php');
 checkLoggedIn($session);
 
-$data = $session->getData();
+try {
+    $data = $session->getData();
+}
+catch (Exception $e) {
+    $data[_TIME_PERIOD] = 0;
+    $data[_ORDER_BY] = 0;
+}
 
 ?>
 
