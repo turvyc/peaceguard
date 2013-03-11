@@ -56,10 +56,17 @@ class Patrol {
         $DBH = NULL;
     }
 
+    // Returns statistics for a specified Volunteer.
+    public static funtion getVolunteerStatistics($email, $timePeriod) {
+        $statistics = array();
+
+
+    }
+
     // Returns an associative array of the form (_TOTAL, _MEAN, _MEDIAN), 
     // where each of those three keys is another associative array of the
     // form (_PATROL, _DISTANCE, _TIME, _REPORT).
-    public static function getStatistics($timePeriod, $orderBy) {
+    public static function getGlobalStatistics($timePeriod, $orderBy) {
         $statistics = array();
         $totalVolunteers = Volunteer::getTotalNumber();
 

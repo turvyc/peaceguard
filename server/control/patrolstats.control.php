@@ -16,11 +16,13 @@ or `git blame <file>`
 */
 
 require_once('../model/session.model.php');
+require_once('../model/datainterface.model.php');
 require_once('../model/constants.model.php');
 require_once('../model/patrol.model.php');
 
 try {
     $session = new Session();
+    $interface = new DataInterface();
 }
 
 catch (LogicException $e) {
@@ -28,15 +30,29 @@ catch (LogicException $e) {
     exit(1);
 }
 
-// Make sure the required POST keys are set
-if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_ORDER_BY])) {
-    throw new LogicException('_TIME_PERIOD or _ORDER_BY not set.');
+if ($interface->getAgent() == _IPHONE) {
+    // Ensure that the required POST keys are set
+    if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_EMAIL])) {
+        throw new LogicException('_TIME_PERIOD or _EMAIL not set.');
+    }
+
+    
 }
 
-$stats = Patrol::getStatistics($_POST[_TIME_PERIOD], $_POST[_ORDER_BY]);
-$session->addData($stats);
+// It's the website!
+else {
+    // Make sure the required POST keys are set
+    if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_ORDER_BY])) {
+        throw new LogicException('_TIME_PERIOD or _ORDER_BY not set.');
+    }
 
-header('location: ../patrol.php');
+    $stats = Patrol::getGlobalStatistics($_POST[_TIME_PERIOD], $_POST[_ORDER_BY]);
+    $interface->addData($stats);
+
+    header('location: ../patrol.php');
+}
+
+$interface->output();
 exit(0);
 
 ?>
