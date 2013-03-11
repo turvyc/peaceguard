@@ -12,10 +12,9 @@
 
 @interface ReportDataController : NSObject
 
-@property (nonatomic, copy) NSMutableArray *masterReport;
+@property (nonatomic, copy) Report *theReport;
 
-- (NSUInteger) countOfMasterReport;
-- (Report *)objectInMasterReportAtIndex:(NSUInteger)index;
-- (void)addReport:(Report *)report;
+- (void) makeReportWithType: (NSString *) type severity: (NSString *) severity location: (NSString *) location time: (NSInteger *) time andDescription: (NSString *) description;
+- (NSString *) getPOSTData: (NSString *) email;
 
 @end

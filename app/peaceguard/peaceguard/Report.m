@@ -11,10 +11,13 @@
 
 @implementation Report
 
--(id) initWithName:(NSString *)title description:(NSString *)description{
+-(id) initWithType: (NSString *) type severity: (NSString *) severity location: (NSString *) location time: (NSInteger *) time andDescription: (NSString *) description{
     self = [super init];
     if(self) {
-        _title = title;
+        _type = type;
+        _severity = severity;
+        _location = location;
+        _time = time;
         _description = description;
         return self;
     }

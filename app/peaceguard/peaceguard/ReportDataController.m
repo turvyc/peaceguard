@@ -11,45 +11,34 @@
 #import "Report.h"
 
 @interface ReportDataController ()
-- (void)initializeDefaultDataList;
+
 @end
 
 @implementation ReportDataController
 
-- (void)initializeDefaultDataList {
-    NSMutableArray *report_list = [[NSMutableArray alloc] init];
-    self.masterReport = report_list;
-    Report *report;
-    report = [[Report alloc] initWithName:@"First Incident" description:@"Test only"];
-    [self addReport:report];
-}
-
-- (void)setMasterReport:(NSMutableArray *)newList {
-    if(_masterReport != newList) {
-        _masterReport = [newList mutableCopy];
-    }
-}
-
-- (id)init {
-    if(self = [super init]) {
-        [self initializeDefaultDataList];
-        
-        return self;
-    }
-    
-    return nil;
+- (void) makeReportWithType:(NSString *)type severity:(NSString *)severity location:(NSString *)location time:(NSInteger *)time andDescription:(NSString *)description{
+    self.theReport = [[Report alloc] initWithType:type severity:severity location:location time:time andDescription:description];
     
 }
 
-- (NSUInteger)countOfMasterReport {
-    return [self.masterReport count];
+- (NSString  *) getPOSTData: (NSString *) email{
+    
+    NSString *postData = [NSString stringWithFormat:@"email=%@&type=%@&severity=%@&location=%@&time=%ld&description=%@", email, self.theReport.type, self.theReport.severity,self.theReport.location,(long)self.theReport.time,self.theReport.description];
+    return postData;
 }
 
-- (Report *)objectInMasterReportAtIndex:(NSUInteger)index {
-    return [self.masterReport objectAtIndex:index];
-}
+//- (NSData *) getJSON: (NSString *) email{
+//    //Create the report dictionary
+//    NSArray *subKeys = [NSArray arrayWithObjects:@"type", @"severity", @"location", @"time", @"desc", nil];
+//    NSArray *subObjects = [NSArray arrayWithObjects:self.theReport.type, self.theReport.severity, self.theReport.location, self.theReport.time, self.theReport.description, nil];
+//    //Create the JSON dictionary
+//    NSArray *keys = [NSArray arrayWithObjects:@"email", @"report", nil];
+//    NSArray *objects = [NSArray arrayWithObjects:@"type", @"severity", nil];
+//
+//    NSDictionary *report = [NSDictionary dictionaryWithObjects:subObjects forKeys:subKeys];
+//    NSDictionary *dicToSerialize = [NSDictionary dictionaryWithObjects:<#(NSArray *)#> forKeys:<#(NSArray *)#>]
+//
+//}
 
-- (void)addReport:(Report *)report {
-    [self.masterReport addObject:report];
-}
+
 @end
