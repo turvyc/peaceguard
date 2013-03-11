@@ -67,12 +67,15 @@
     if (currentLocation != nil) {
         _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        _sum += [_longitudeLabel.text intValue] + [_latitudeLabel.text intValue];
+        NSString *sum_temp=[@"sum is" stringByAppendingFormat:@"%d ",_sum];
+        NSLog(sum_temp);
     }
     
     // Reverse Geocoding
-    NSLog(@"Resolving the Address");
+//    NSLog(@"Resolving the Address");
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+//        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
             _Address.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
