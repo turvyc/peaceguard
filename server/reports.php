@@ -18,26 +18,20 @@ include('header.php');
 include('model/report.model.php');
 checkLoggedIn($session);
 
+$data = $session->getData();
+
 ?>
 
 <h1>Incident Reports</h1>
 
-
 <form name="<?php echo _REPORT; ?>" action="control/report.control.php" method="POST">
     Time Period:
 	<select name="<?php echo _TIME_PERIOD; ?>" id="<?php echo _TIME_PERIOD; ?>">
-		<option value="<?php echo _LAST_DAY; ?>">Today</option>
-		<option value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
-		<option value="<?php echo _LAST_YEAR; ?>">Last Year</option>
-		<option value="<?php echo _ALL_TIME; ?>">All Time</option>
+        <option <?php echo ($data[_TIME_PERIOD] == _LAST_DAY) ? 'selected' : ''; ?> value="<?php echo _LAST_DAY; ?>">Today</option>
+        <option <?php echo ($data[_TIME_PERIOD] == _LAST_MONTH) ? 'selected' : ''; ?> value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
+		<option <?php echo ($data[_TIME_PERIOD] == _LAST_YEAR) ? 'selected' : ''; ?> value="<?php echo _LAST_YEAR; ?>">Last Year</option>
+        <option <?php echo ($data[_TIME_PERIOD] == _ALL_TIME) ? 'selected' : ''; ?> value="<?php echo _ALL_TIME; ?>">All Time</option>
 	</select>	
-		<script type="text/JavaScript">
-			document.getElementById('_TIME_PERIOD').value ="<?php echo $_POST[_TIME_PERIOD]?>";
-		</script>	
-			
-			
-			
-
 	
     Sort By:
 	<select name="<?php echo _ORDER_BY; ?>">
@@ -64,28 +58,30 @@ checkLoggedIn($session);
 	</tr>
 
 <?php
-try {
-	$data = $session->getData();
-	for ($i = 0; $i < count($data); $i++) {
-		
+
+if (count($data) > 1) {
+
+    for ($i = 0; $i < count($data) - 1; $i++) {
+
         $report = new Report($data[$i]);
-	
-		echo '<tr>';
-        echo '<td>' . $report->getDate() . '</td>';
-        echo '<td>' . $report->getTime() . '</td>';
-        echo '<td>' . $report->getLocation() . '</td>';
-        echo '<td>' . $report->getType() . '</td>';
-        echo '<td>' . $report->getSeverity() . '</td>';
-        echo '<td>' . $report->getDesc() . '</td>';
-        echo '<td>' . $report->getVolunteer() . '</td>';
-        echo '<td>' . $report->getResolved() . '</td>';
-		echo '</tr>';
-	}		 
-}
 
-catch (LogicException $e) {
-    // do nothing
+        echo '<tr>';
+            echo '<td>' . $report->getDate() . '</td>';
+            echo '<td>' . $report->getTime() . '</td>';
+            echo '<td>' . $report->getLocation() . '</td>';
+            echo '<td>' . $report->getType() . '</td>';
+            echo '<td>' . $report->getSeverity() . '</td>';
+            echo '<td>' . $report->getDesc() . '</td>';
+            echo '<td>' . $report->getVolunteer() . '</td>';
+            echo '<td>' . $report->getResolved() . '</td>';
+            echo '</tr>';
+    }		 
 }
-
 ?>
 </table>
+
+<?php
+
+include('footer.php');
+
+?>

@@ -16,7 +16,8 @@ or `git blame <file>`
 */
 
 include('header.php');
-include('model/report.model.php');
+require_once('model/report.model.php');
+require_once('model/volunteer.model.php');
 checkLoggedIn($session);
 
 ?>
@@ -39,25 +40,24 @@ checkLoggedIn($session);
 <?php
 try {
     $stats = $session->getData();
-    print_r($stats);
 ?>
 
 <ul>
-    <li>Number of registered volunteers: <?php /* TODO */ ?></li>
+    <li>Number of registered volunteers: <?php echo Volunteer::getTotalNumber(); ?></li>
     <li>Total:
         <ul>
-            <li>Number of patrols: <?php /* TODO */ ?></li>
-            <li>Distance patrolled: <?php /* TODO */ ?></li>
-            <li>Time patrolled: <?php /* TODO */ ?></li>
-            <li>Number of incident reports: <?php /* TODO */ ?></li>
+            <li>Number of patrols: <?php echo $stats[_TOTAL][_PATROL] ?></li>
+            <li>Distance patrolled: <?php echo $stats[_TOTAL][_DISTANCE] ?></li>
+            <li>Time patrolled: <?php echo $stats[_TOTAL][_TIME] ?></li>
+            <li>Number of incident reports: <?php echo $stats[_TOTAL][_REPORT] ?></li>
         </ul>
     </li>
     <li>Average (per volunteer):
         <ul>
-            <li>Number of patrols: <?php /* TODO */ ?></li>
-            <li>Distance patrolled: <?php /* TODO */ ?></li>
-            <li>Time patrolled: <?php /* TODO */ ?></li>
-            <li>Number of incident reports: <?php /* TODO */ ?></li>
+            <li>Number of patrols: <?php echo $stats[_AVERAGE][_PATROL] ?></li>
+            <li>Distance patrolled: <?php echo $stats[_AVERAGE][_DISTANCE] ?></li>
+            <li>Time patrolled: <?php echo $stats[_AVERAGE][_TIME] ?></li>
+            <li>Number of incident reports: <?php echo $stats[_AVERAGE][_REPORT] ?></li>
         </ul>
     </li>
 </ul>

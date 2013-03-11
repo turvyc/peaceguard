@@ -108,14 +108,14 @@ class Patrol {
         // Return the total number of patrols by all volunteers
         // Return the total distance travelled by all volunteers
         // Return the total time patrolled by all volunteers
-        $query1 = "SELECT COUNT(p_id) AS totalPatrols, 
+        $query1 = "SELECT COUNT(*) AS totalPatrols, 
         SUM(distance) AS totalDistance, 
         SUM(duration) AS totalTime,
         AVG(distance) AS averageDistance,
         AVG(duration) AS averageDuration
         FROM Patrols
         WHERE start_time > $since";
-
+        
         $STH = $DBH->prepare($query1);
         $STH->execute();
 
@@ -124,8 +124,8 @@ class Patrol {
         $totalPatrols = $result['totalPatrols'];
         $totalDistance = $result['totalDistance'];
         $totalTime = $result['totalTime'];
-        $averageDistance = $result['averageDistance'];
-        $averageTime = $result['averageTime'];
+        $averageDistance = (int)$result['averageDistance'];
+        $averageTime = (int)$result['averageTime'];
 
         // Return the total number of reports made by all volunteers
         $query2 = "SELECT COUNT(r_id) AS totalReports FROM Reports WHERE time > $since";
@@ -137,16 +137,16 @@ class Patrol {
         $totalReports = $result['totalReports'];
 
         // Return the average number of patrols per volunteer
-        $averagePatrols = (int)($totalPatrols / $totalVolunteers);
+        $averagePatrols = (int)floor($totalPatrols / $totalVolunteers);
 
         // Return the average number of incident reports made per volunteer
-        $averageReports = (int)($totalReports / $totalVolunteers);
+        $averageReports = (int)floor($totalReports / $totalVolunteers);
 
         $statistics[_TOTAL] = array(_PATROL => $totalPatrols, _DISTANCE => $totalDistance, 
         _TIME => $totalTime, _REPORT => $totalReports);
 
-        $statistics[_AVERAGE] = array(_PATROL => $totalPatrols, _DISTANCE => $totalDistance, 
-        _TIME => $totalTime, _REPORT => $totalReports);
+        $statistics[_AVERAGE] = array(_PATROL => $averagePatrols, _DISTANCE => $averageDistance, 
+        _TIME => $averageTime, _REPORT => $averageReports);
 
         return $statistics;
     }
