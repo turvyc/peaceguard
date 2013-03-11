@@ -20,4 +20,6 @@
 @property(nonatomic) NSString *descriptionData;
 @property(nonatomic) UIImage *imageData;
 
+- (IBAction)cancelPressed:(id)sender;
+
 @end
