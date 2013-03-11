@@ -17,7 +17,6 @@
 @property (nonatomic, copy) User *currentUser;
 
 //Method declarations
-- (BOOL)authenticateUser:(User *)theUser;
-- (void)logUsername: (NSString *) username andPassword: (NSString *) password;
+
 
 @end
