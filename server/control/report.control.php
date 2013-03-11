@@ -96,21 +96,8 @@ try {
         throw new OutOfBoundsException('Illegal value for _ORDER_BY');
     }
 	
-    // Find the minimum timestamp of reports within the specified time
-    switch ($_POST[_TIME_PERIOD]) {
-        case _LAST_DAY:
-            $since = strtotime('-1 day');
-            break;
-        case _LAST_MONTH:
-            $since = strtotime('-1 month');
-            break;
-        case _LAST_YEAR:
-            $since = strtotime('-1 year');
-            break;
-        case _ALL_TIME:
-            $since = 0;
-            break;
-    }
+    // Defined in constants.model.php
+    $since = decodeTimePeriod($_POST[_TIME_PERIOD]);
 
     // Get the SQL ORDER BY string
     $orderby = 'R.' . $_POST[_ORDER_BY];

@@ -31,8 +31,6 @@ class Patrol {
         // Get the p_id
         $p_id = $DBH->lastInsertId();
 
-
-
         // Get the Volunteer's u_id
         $STH = $DBH->prepare('SELECT u_id FROM Volunteers NATURAL JOIN Users WHERE email = ?');
         $STH->execute(array($email));
@@ -57,28 +55,66 @@ class Patrol {
     }
 
     // Returns statistics for a specified Volunteer.
-    public static funtion getVolunteerStatistics($email, $timePeriod) {
+    public static function getVolunteerStatistics($email, $timePeriod) {
         $statistics = array();
+        $since = decodeTimePeriod($timePeriod);
 
+        $query1 = "SELECT COUNT(*) AS totalPatrols,
+        SUM(distance) AS totalDistance,
+        SUM(duration) AS totalTime,
+        AVG(distance) AS averageDistance,
+        AVG(time) AS averageTime
+        FROM Patrols NATURAL JOIN Patrolled
+        WHERE email = $email AND start_time > $since";
 
+        $query2 = "SELECT COUNT(*) AS totalReports
+        FROM Reports NATURAL JOIN Reported
+        WHERE email = $email AND time > $since";
+
+        $STH = $DBH->prepare($query1);
+        $STH->execute();
+        $result = $STH->fetch();
+
+        $totalPatrols = $result['totalPatrols'];
+        $totalDistance = $result['totalDistance'];
+        $totalTime = $result['totalTime'];
+        $averageDistance = $result['averageDistance'];
+        $averageTime = $result['averageTime'];
+
+        $STH = $DBH->prepare($query2);
+        $STH->execute();
+
+        $result = $STH->fetch();
+        $totalReports = $result['totalReports'];
+
+        $statistics[_TOTAL] = array(_PATROL => $totalPatrols, _DISTANCE => $totalDistance,
+        _TIME => $totalTime, _REPORT => $totalReports);
+
+        $statistics[_AVERAGE] = array(_DISTANCE => $averageDistance, _TIME => $averageTime);
+
+        return $statistics;
     }
 
     // Returns an associative array of the form (_TOTAL, _MEAN, _MEDIAN), 
     // where each of those three keys is another associative array of the
     // form (_PATROL, _DISTANCE, _TIME, _REPORT).
-    public static function getGlobalStatistics($timePeriod, $orderBy) {
+    public static function getGlobalStatistics($timePeriod) {
         $statistics = array();
         $totalVolunteers = Volunteer::getTotalNumber();
+        $since = decodeTimePeriod($timePeriod);
 
         require('database.model.php');
 
         // Return the total number of patrols by all volunteers
         // Return the total distance travelled by all volunteers
         // Return the total time patrolled by all volunteers
-        $query1 = 'SELECT COUNT(p_id) AS totalPatrols, 
+        $query1 = "SELECT COUNT(p_id) AS totalPatrols, 
         SUM(distance) AS totalDistance, 
         SUM(duration) AS totalTime,
-        FROM Patrols';
+        AVG(distance) AS averageDistance,
+        AVG(duration) AS averageDuration
+        FROM Patrols
+        WHERE start_time > $since";
 
         $STH = $DBH->prepare($query1);
         $STH->execute();
@@ -88,9 +124,11 @@ class Patrol {
         $totalPatrols = $result['totalPatrols'];
         $totalDistance = $result['totalDistance'];
         $totalTime = $result['totalTime'];
+        $averageDistance = $result['averageDistance'];
+        $averageTime = $result['averageTime'];
 
         // Return the total number of reports made by all volunteers
-        $query2 = 'SELECT COUNT(r_id) AS totalReports FROM Reports';
+        $query2 = "SELECT COUNT(r_id) AS totalReports FROM Reports WHERE time > $since";
 
         $STH = $DBH->prepare($query2);
         $STH->execute();
@@ -100,12 +138,6 @@ class Patrol {
 
         // Return the average number of patrols per volunteer
         $averagePatrols = (int)($totalPatrols / $totalVolunteers);
-
-        // Return the average distance travelled per patrol per volunteer
-        $averageDistance = (int)($totalDistance / $totalVolunteers);
-
-        // Return the average time spent per patrol per volunteer
-        $averageTime = (int)($totalTime / $totalVolunteers);
 
         // Return the average number of incident reports made per volunteer
         $averageReports = (int)($totalReports / $totalVolunteers);

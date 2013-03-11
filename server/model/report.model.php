@@ -115,7 +115,16 @@ class Report {
     }
 
     public function getSeverity() {
-        return ucwords($this->severity);
+        switch ($this->severity) {
+            case 0:
+                return 'Tip';
+            case 1:
+                return 'Minor';
+            case 2:
+                return 'Serious';
+            case 3:
+                return 'Critical';
+        }
     }
 
     public function getLocation() {

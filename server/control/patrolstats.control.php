@@ -22,7 +22,7 @@ require_once('../model/patrol.model.php');
 
 try {
     $session = new Session();
-    $interface = new DataInterface();
+    $interface = new DataInterface($session);
 }
 
 catch (LogicException $e) {
@@ -33,33 +33,35 @@ catch (LogicException $e) {
 if ($interface->getAgent() == _IPHONE) {
     try {
         // Ensure that the required POST keys are set
-        if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_EMAIL])) {
+        if (! isset($_POST[_EMAIL]) || ! isset($_POST[_TIME_PERIOD])) {
             throw new LogicException('_TIME_PERIOD or _EMAIL not set.');
         }
+
+        $stats = Patrol::getVolunteerStatistics($_POST[_EMAIL], $_POST[_TIME_PERIOD]);
+
+        $interface->addData(_SUCCESSFUL, _YES);
+        $interface->addData(_TOTAL, $stats[_TOTAL]);
+        $interface->addData(_AVERAGE, $stats[_AVERAGE]);
     }
 
     catch (LogicException $e) {
-        echo $e->getMessage();
-        exit(1);
+        $interface->addData(_SUCCESSFUL, _NO);
+        $interface->addData(_MESSAGE, $e->getMessage());
     }
-}
-
-
-    
-    
 }
 
 // It's the website!
 else {
     // Make sure the required POST keys are set
-    if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_ORDER_BY])) {
+    if (! isset($_POST[_TIME_PERIOD])) {
         throw new LogicException('_TIME_PERIOD or _ORDER_BY not set.');
     }
 
-    $stats = Patrol::getGlobalStatistics($_POST[_TIME_PERIOD], $_POST[_ORDER_BY]);
-    $interface->addData($stats);
+    $stats = Patrol::getGlobalStatistics($_POST[_TIME_PERIOD]);
+    $interface->addData(_TOTAL, $stats[_TOTAL]);
+    $interface->addData(_AVERAGE, $stats[_AVERAGE]);
 
-    header('location: ../patrol.php');
+    header('location: ../statistics.php');
 }
 
 $interface->output();

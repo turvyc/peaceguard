@@ -52,7 +52,7 @@ define('_VOLUNTEER', 'v_id');
 
 // POST keys for website incident report request
 define('_TIME_PERIOD', 'timePeriod');
-define('_ORDER_BY', 'sortBy');
+define('_ORDER_BY', 'orderBy');
 
 // Time period constants
 define('_LAST_DAY', 'lastDay');
@@ -78,5 +78,18 @@ define('_WEBSITE', 'website');  // For use with _AGENT key
 define('_LOG_DIR', 'log/');
 define('_POST_LOG', _LOG_DIR . 'post.log');
 define('_OUTPUT_LOG', _LOG_DIR . 'output.log');
+
+function decodeTimePeriod($timePeriod) {
+    switch ($timePeriod) {
+        case _LAST_DAY:
+            return strtotime('-1 day');
+        case _LAST_MONTH:
+            return strtotime('-1 month');
+        case _LAST_YEAR:
+            return strtotime('-1 year');
+        case _ALL_TIME:
+            return 0;
+    }
+}
 
 ?>
