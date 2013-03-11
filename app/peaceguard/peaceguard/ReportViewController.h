@@ -49,6 +49,11 @@
 @property (strong, nonatomic) IBOutlet UITextField *descriptionOverviewDisplay;
 @property (strong, nonatomic) IBOutlet UIImageView *imageOverviewDisplay;
 
+//functional review button to overview
+- (IBAction)reviewReportToOverview:(id)sender;
+
+
+//non-functional submit
 - (IBAction) submitAction:(id)sender;
 - (BOOL) verify: (NSString*) description;
 

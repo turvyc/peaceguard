@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7D498D416ED68DB001EA2D9 /* OverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D498D316ED68DB001EA2D9 /* OverviewViewController.m */; };
 		C313066616DF18C3005FB151 /* PatrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C313066516DF18C3005FB151 /* PatrolViewController.m */; };
 		C313066816DF1CEE005FB151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313066716DF1CEE005FB151 /* MapKit.framework */; };
 		C39E8B5D16CF370E0087FBDD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5C16CF370E0087FBDD /* Report.m */; };
@@ -38,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7D498D216ED68DB001EA2D9 /* OverviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewViewController.h; sourceTree = "<group>"; };
+		A7D498D316ED68DB001EA2D9 /* OverviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewViewController.m; sourceTree = "<group>"; };
 		C313066416DF18C3005FB151 /* PatrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatrolViewController.h; sourceTree = "<group>"; };
 		C313066516DF18C3005FB151 /* PatrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatrolViewController.m; sourceTree = "<group>"; };
 		C313066716DF1CEE005FB151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -101,6 +104,8 @@
 		C4150B9516CCA93C00876850 = {
 			isa = PBXGroup;
 			children = (
+				A7D498D216ED68DB001EA2D9 /* OverviewViewController.h */,
+				A7D498D316ED68DB001EA2D9 /* OverviewViewController.m */,
 				C3AEED6A16ED54AD002C16EC /* CoreLocation.framework */,
 				C313066716DF1CEE005FB151 /* MapKit.framework */,
 				C48F3A2416D211060015D678 /* camera-icon-md.png */,
@@ -263,6 +268,7 @@
 				C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */,
 				C3AEED6916ED5381002C16EC /* LocationViewController.m in Sources */,
 				C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */,
+				A7D498D416ED68DB001EA2D9 /* OverviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
