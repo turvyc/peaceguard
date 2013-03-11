@@ -22,7 +22,7 @@ try {
     $interface = new DataInterface($session);
 
     // Make sure we have the required info
-    $required = array(_PATROL, _END_TIME, _ROUTE, _DISTANCE);
+    $required = array(_PATROL, _DURATION, _ROUTE, _DISTANCE);
     foreach ($required as $key) {
         if (! isset($_POST[$key])) {
             throw new LogicException($key . ' not set in POST.');
@@ -30,7 +30,7 @@ try {
     }
 
     // Write the patrol to the database
-    Patrol::endPatrol($_POST[_PATROL], $_POST[_END_TIME],
+    Patrol::endPatrol($_POST[_PATROL], $_POST[_DURATION],
     $_POST[_ROUTE], $_POST[_DISTANCE]);
 
     $interface->addData(_SUCCESSFUL, _YES);

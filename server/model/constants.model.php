@@ -79,4 +79,17 @@ define('_LOG_DIR', 'log/');
 define('_POST_LOG', _LOG_DIR . 'post.log');
 define('_OUTPUT_LOG', _LOG_DIR . 'output.log');
 
+function decodeTimePeriod($timePeriod) {
+    switch ($timePeriod) {
+        case _LAST_DAY:
+            return strtotime('-1 day');
+        case _LAST_MONTH:
+            return strtotime('-1 month');
+        case _LAST_YEAR:
+            return strtotime('-1 year');
+        case _ALL_TIME:
+            return 0;
+    }
+}
+
 ?>
