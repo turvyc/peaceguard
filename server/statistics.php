@@ -47,7 +47,7 @@ try {
     <li>Total:
         <ul>
             <li>Number of patrols: <?php echo $stats[_TOTAL][_PATROL] ?></li>
-            <li>Distance patrolled: <?php echo $stats[_TOTAL][_DISTANCE] ?></li>
+            <li>Distance patrolled: <?php echo round($stats[_TOTAL][_DISTANCE] / 1000, 1) . ' kilometers' ?></li>
             <li>Time patrolled: <?php echo $stats[_TOTAL][_TIME] ?></li>
             <li>Number of incident reports: <?php echo $stats[_TOTAL][_REPORT] ?></li>
         </ul>
