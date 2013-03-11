@@ -215,7 +215,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bu-XL-jME">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0bu-XL-jME">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -225,18 +225,42 @@
                                     <constraint firstAttribute="width" constant="240" id="j4w-1M-RMp"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAf-tg-5BD">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dY-vz-AdD">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0bu-XL-jME" firstAttribute="top" secondItem="Tgl-lJ-FGF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5WG-wy-BUe"/>
+                            <constraint firstItem="1dY-vz-AdD" firstAttribute="bottom" secondItem="7oO-7a-Vz0" secondAttribute="bottom" type="default" id="686-1k-YFh"/>
                             <constraint firstItem="Fqn-aL-Iq7" firstAttribute="leading" secondItem="7oO-7a-Vz0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="713-9b-4Mb"/>
                             <constraint firstItem="Tgl-lJ-FGF" firstAttribute="top" secondItem="7oO-7a-Vz0" secondAttribute="top" constant="140" id="8XD-dV-fV5"/>
+                            <constraint firstItem="1dY-vz-AdD" firstAttribute="centerX" secondItem="Fqn-aL-Iq7" secondAttribute="centerX" type="default" id="AvZ-l7-Wqx"/>
                             <constraint firstItem="YGF-19-0Vc" firstAttribute="leading" secondItem="hde-S8-5oW" secondAttribute="leading" type="default" id="ICM-Hh-dYu"/>
                             <constraint firstItem="Tgl-lJ-FGF" firstAttribute="leading" secondItem="7oO-7a-Vz0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KMH-UE-IcP"/>
                             <constraint firstAttribute="trailing" secondItem="0bu-XL-jME" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NYt-hK-maM"/>
                             <constraint firstItem="T0e-8l-4kP" firstAttribute="leading" secondItem="7oO-7a-Vz0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NsM-iq-d3Y"/>
+                            <constraint firstItem="mAf-tg-5BD" firstAttribute="bottom" secondItem="7oO-7a-Vz0" secondAttribute="bottom" type="default" id="Res-n2-5LE"/>
                             <constraint firstItem="wUy-Di-RYc" firstAttribute="top" secondItem="7oO-7a-Vz0" secondAttribute="top" constant="219" id="XqI-mc-MEE"/>
                             <constraint firstItem="hde-S8-5oW" firstAttribute="baseline" secondItem="Fqn-aL-Iq7" secondAttribute="baseline" type="default" id="cII-xK-eMV"/>
+                            <constraint firstAttribute="trailing" secondItem="mAf-tg-5BD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fON-8B-SUK"/>
                             <constraint firstItem="YGF-19-0Vc" firstAttribute="baseline" secondItem="T0e-8l-4kP" secondAttribute="baseline" type="default" id="i7k-i5-a29"/>
                             <constraint firstItem="T0e-8l-4kP" firstAttribute="top" secondItem="7oO-7a-Vz0" secondAttribute="top" constant="44" id="jYm-aW-i77"/>
                             <constraint firstItem="2Am-ci-PTR" firstAttribute="leading" secondItem="7oO-7a-Vz0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="nMm-Ui-Fig"/>
@@ -257,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fm-Hs-7Rl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="116"/>
+            <point key="canvasLocation" x="1098" y="534"/>
         </scene>
         <!--Peace Guard View Controller - Main Menu-->
         <scene sceneID="5">
@@ -506,16 +530,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="SnU-4C-w4f" secondAttribute="bottom" constant="13" id="3n5-ar-kLS"/>
                                     <constraint firstItem="Jrw-e3-hCQ" firstAttribute="trailing" secondItem="Ixt-3k-wJ1" secondAttribute="trailing" type="default" id="7Oo-UW-fcx"/>
                                     <constraint firstItem="Jrw-e3-hCQ" firstAttribute="centerX" secondItem="SnU-4C-w4f" secondAttribute="centerX" type="default" id="BTt-VQ-8rd"/>
                                     <constraint firstItem="Jrw-e3-hCQ" firstAttribute="leading" secondItem="Ixt-3k-wJ1" secondAttribute="leading" type="default" id="X79-3C-ycc"/>
+                                    <constraint firstAttribute="bottom" secondItem="SnU-4C-w4f" secondAttribute="bottom" constant="14" id="d7v-CZ-VNd"/>
                                     <constraint firstItem="Jrw-e3-hCQ" firstAttribute="top" secondItem="Ixt-3k-wJ1" secondAttribute="top" constant="29" id="gvP-g0-6Il"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwe-pF-2F1">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Review">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -526,7 +550,7 @@
                                     <action selector="buttonToOverview:" destination="oPN-sY-whv" eventType="touchUpInside" id="FS9-dz-UId"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKZ-yM-wBr">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKZ-yM-wBr">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="test">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -740,9 +764,18 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera-icon-md.png" width="16" height="16"/>
+        <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
     <classes>
+        <class className="LocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="GenerateLocation:"/>
+                <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -754,6 +787,39 @@
                 <relationship kind="outlet" name="incidentDisplay" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="severityDisplay" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="PatrolViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
+        </class>
+        <class className="PeaceGuardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ImageTaker:"/>
+                <relationship kind="action" name="buttonToOverview:"/>
+                <relationship kind="action" name="doneSelection:"/>
+                <relationship kind="action" name="incidentButtonPressed:"/>
+                <relationship kind="action" name="severityButtonPressed:"/>
+                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pickerViewBlocker" candidateClass="UIView"/>
+                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="StatisticsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatisticsViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

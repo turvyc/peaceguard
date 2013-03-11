@@ -34,8 +34,6 @@
 		C48F3A2516D211060015D678 /* camera-icon-md.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2416D211060015D678 /* camera-icon-md.png */; };
 		C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C638816ED48B200915D56 /* ConnectionDataController.m */; };
 		C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C638B16ED660000915D56 /* StatisticsViewController.m */; };
-		C49C638F16ED690200915D56 /* Patrol.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C638E16ED690200915D56 /* Patrol.m */; };
-		C49C639216ED6C0A00915D56 /* PatrolDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C639116ED6C0A00915D56 /* PatrolDataController.m */; };
 		C4D244D016CEBA800017098A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244CF16CEBA800017098A /* User.m */; };
 		C4D244D316CEC5210017098A /* UserDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244D216CEC5210017098A /* UserDataController.m */; };
 /* End PBXBuildFile section */
@@ -81,10 +79,6 @@
 		C49C638816ED48B200915D56 /* ConnectionDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDataController.m; sourceTree = "<group>"; };
 		C49C638A16ED660000915D56 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
 		C49C638B16ED660000915D56 /* StatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatisticsViewController.m; sourceTree = "<group>"; };
-		C49C638D16ED690200915D56 /* Patrol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patrol.h; sourceTree = "<group>"; };
-		C49C638E16ED690200915D56 /* Patrol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patrol.m; sourceTree = "<group>"; };
-		C49C639016ED6C0A00915D56 /* PatrolDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatrolDataController.h; sourceTree = "<group>"; };
-		C49C639116ED6C0A00915D56 /* PatrolDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatrolDataController.m; sourceTree = "<group>"; };
 		C4D244CE16CEBA800017098A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		C4D244CF16CEBA800017098A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C4D244D116CEC5210017098A /* UserDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataController.h; sourceTree = "<group>"; };
@@ -150,10 +144,6 @@
 				A7D498E016ED78C6001EA2D9 /* OverviewController.m */,
 				C4150BB116CCA93C00876850 /* PeaceGuardAppDelegate.m */,
 				C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */,
-				C49C639016ED6C0A00915D56 /* PatrolDataController.h */,
-				C49C639116ED6C0A00915D56 /* PatrolDataController.m */,
-				C49C638D16ED690200915D56 /* Patrol.h */,
-				C49C638E16ED690200915D56 /* Patrol.m */,
 				C49C638A16ED660000915D56 /* StatisticsViewController.h */,
 				C49C638B16ED660000915D56 /* StatisticsViewController.m */,
 				C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */,
@@ -278,12 +268,7 @@
 				C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */,
 				C3AEED6916ED5381002C16EC /* LocationViewController.m in Sources */,
 				C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */,
-<<<<<<< HEAD
 				A7D498E116ED78C7001EA2D9 /* OverviewController.m in Sources */,
-=======
-				C49C638F16ED690200915D56 /* Patrol.m in Sources */,
-				C49C639216ED6C0A00915D56 /* PatrolDataController.m in Sources */,
->>>>>>> 84eb213cae63eb0c5178dafaef9656b0f28d0097
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
