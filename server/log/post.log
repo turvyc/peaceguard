@@ -547,3 +547,75 @@
 )
 
 
+10 Mar 2013 18:59:35 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [agent] => website
+)
+
+
+10 Mar 2013 19:00:08 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [agent] => website
+)
+
+
+10 Mar 2013 19:01:04 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [agent] => website
+)
+
+
+10 Mar 2013 19:02:14 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [agent] => website
+)
+
+
+10 Mar 2013 19:02:46 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [agent] => website
+)
+
+
+10 Mar 2013 19:03:46 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [agent] => website
+)
+
+
+10 Mar 2013 19:03:49 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [agent] => website
+)
+
+
+10 Mar 2013 19:06:28 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [agent] => website
+)
+
+
+10 Mar 2013 19:06:35 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [agent] => website
+)
+
+

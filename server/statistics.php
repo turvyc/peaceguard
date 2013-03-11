@@ -1,4 +1,4 @@
-git<?php
+<?php
 
 /* statistics.php
 
@@ -36,6 +36,12 @@ checkLoggedIn($session);
     <input type="submit" value="Submit" />
 </form>
 
+<?php
+try {
+    $stats = $session->getData();
+    print_r($stats);
+?>
+
 <ul>
     <li>Number of registered volunteers: <?php /* TODO */ ?></li>
     <li>Total:
@@ -55,5 +61,11 @@ checkLoggedIn($session);
         </ul>
     </li>
 </ul>
+<?php
+}
 
-<?php include('footer.php'); ?>
+catch (Exception $e) {
+    echo "Please select a time period.";
+}
+
+include('footer.php'); ?>

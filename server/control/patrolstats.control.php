@@ -22,7 +22,7 @@ require_once('../model/patrol.model.php');
 
 try {
     $session = new Session();
-    $interface = new DataInterface();
+    $interface = new DataInterface($session);
 }
 
 catch (LogicException $e) {
@@ -53,14 +53,15 @@ if ($interface->getAgent() == _IPHONE) {
 // It's the website!
 else {
     // Make sure the required POST keys are set
-    if (! isset($_POST[_TIME_PERIOD]) || ! isset($_POST[_ORDER_BY])) {
+    if (! isset($_POST[_TIME_PERIOD])) {
         throw new LogicException('_TIME_PERIOD or _ORDER_BY not set.');
     }
 
-    $stats = Patrol::getGlobalStatistics($_POST[_TIME_PERIOD], $_POST[_ORDER_BY]);
-    $interface->addData($stats);
+    $stats = Patrol::getGlobalStatistics($_POST[_TIME_PERIOD]);
+    $interface->addData(_TOTAL, $stats[_TOTAL]);
+    $interface->addData(_AVERAGE, $stats[_AVERAGE]);
 
-    header('location: ../patrol.php');
+    header('location: ../statistics.php');
 }
 
 $interface->output();

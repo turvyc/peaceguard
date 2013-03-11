@@ -52,7 +52,7 @@ define('_VOLUNTEER', 'v_id');
 
 // POST keys for website incident report request
 define('_TIME_PERIOD', 'timePeriod');
-define('_ORDER_BY', 'sortBy');
+define('_ORDER_BY', 'orderBy');
 
 // Time period constants
 define('_LAST_DAY', 'lastDay');
