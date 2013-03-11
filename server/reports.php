@@ -35,11 +35,11 @@ $data = $session->getData();
 	
     Sort By:
 	<select name="<?php echo _ORDER_BY; ?>">
-		<option value="<?php echo _TIME; ?>">Time</option>
-		<option value="<?php echo _SEVERITY; ?>">Severity</option>
-		<option value="<?php echo _VOLUNTEER; ?>">Volunteer</option>
-		<option value="<?php echo _TYPE; ?>">Type</option>
-        <option value="<?php echo _LOCATION; ?>">Location</option>
+        <option <?php echo ($data[_ORDER_BY] == _TIME) ? 'selected' : ''; ?> value="<?php echo _TIME; ?>">Time</option>
+        <option <?php echo ($data[_ORDER_BY] == _SEVERITY) ? 'selected' : ''; ?> value="<?php echo _SEVERITY; ?>">Severity</option>
+        <option <?php echo ($data[_ORDER_BY] == _VOLUNTEER) ? 'selected' : ''; ?> value="<?php echo _VOLUNTEER; ?>">Volunteer</option>
+        <option <?php echo ($data[_ORDER_BY] == _TYPE) ? 'selected' : ''; ?> value="<?php echo _TYPE; ?>">Type</option>
+        <option <?php echo ($data[_ORDER_BY] == _LOCATION) ? 'selected' : ''; ?> value="<?php echo _LOCATION; ?>">Location</option>
 	</select>
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
@@ -59,9 +59,9 @@ $data = $session->getData();
 
 <?php
 
-if (count($data) > 1) {
+if (count($data) > 2) {
 
-    for ($i = 0; $i < count($data) - 1; $i++) {
+    for ($i = 0; $i < count($data) - 2; $i++) {
 
         $report = new Report($data[$i]);
 

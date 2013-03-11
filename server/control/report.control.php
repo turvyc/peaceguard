@@ -116,6 +116,7 @@ try {
 
     $allReportData = $STH->fetchAll();
     $allReportData[_TIME_PERIOD] = $_POST[_TIME_PERIOD];
+    $allReportData[_ORDER_BY] = $_POST[_ORDER_BY];
     $session->setData($allReportData);
 
     header('location: ../reports.php');
