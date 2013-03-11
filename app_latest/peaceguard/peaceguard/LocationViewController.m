@@ -45,8 +45,19 @@
 - (IBAction)GenerateLocation:(id)sender {
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    [locationManager startUpdatingLocation];
+    NSThread *thread = [[NSThread alloc] initWithTarget:self
+                                               selector:@selector(route)
+                                                 object:nil];
+    [thread start];
+}
+
+- (void)route
+{
+    while(YES){
+        [NSThread sleepForTimeInterval:1];
+        [locationManager startUpdatingLocation];
+        NSLog(@"test location manager");
+    }
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
