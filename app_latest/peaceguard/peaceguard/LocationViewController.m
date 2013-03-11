@@ -54,19 +54,20 @@
 - (void)route
 {
     while(YES){
-        [NSThread sleepForTimeInterval:1];
+        [NSThread sleepForTimeInterval:5];
         [locationManager startUpdatingLocation];
         NSLog(@"test location manager");
     }
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"didUpdateToLocation: %@", newLocation);
+//    NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     
     if (currentLocation != nil) {
         _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        [NSThread sleepForTimeInterval:5];
         _sum += [_longitudeLabel.text intValue] + [_latitudeLabel.text intValue];
         NSString *sum_temp=[@"sum is" stringByAppendingFormat:@"%d ",_sum];
         NSLog(sum_temp);
