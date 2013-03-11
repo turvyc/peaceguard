@@ -33,7 +33,6 @@ checkLoggedIn($session);
 	</select>	
 		<script type="text/JavaScript">
 			document.getElementById('_TIME_PERIOD').value ="<?php echo $_POST[_TIME_PERIOD]?>";
-
 		</script>	
 			
 			
