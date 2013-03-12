@@ -99,17 +99,13 @@ try {
     // Defined in constants.model.php
     $since = decodeTimePeriod($_POST[_TIME_PERIOD]);
 
-    // Get the SQL ORDER BY string
-    $orderby = 'R.' . $_POST[_ORDER_BY];
-    if ($_POST[_ORDER_BY] == _VOLUNTEER) {
-        $orderby = 'R.' . _VOLUNTEER;
-    }
+
 
     // Query the database
     require('../model/database.model.php');
 	
-    $query = ("SELECT R.r_id, R.resolved, R.time, R.location, R.type, R.severity, R.description, U.u_id, U.firstName
-    FROM Reports R NATURAL JOIN Reported NATURAL JOIN Users U WHERE R.time > $since ORDER BY $orderby");
+    $query = ("SELECT r_id, resolved, time, location, type, severity, description, u_id, firstName
+    FROM Reports NATURAL JOIN Reported NATURAL JOIN Users WHERE time > $since ORDER BY {$_POST[_ORDER_BY]}");
 
     $STH = $DBH->prepare($query);
     $STH->execute();
