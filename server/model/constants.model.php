@@ -79,6 +79,7 @@ define('_LOG_DIR', 'log/');
 define('_POST_LOG', _LOG_DIR . 'post.log');
 define('_OUTPUT_LOG', _LOG_DIR . 'output.log');
 
+// Returns the UNIX timestamp of the beginning of a specified time period.
 function decodeTimePeriod($timePeriod) {
     switch ($timePeriod) {
         case _LAST_DAY:
@@ -90,6 +91,26 @@ function decodeTimePeriod($timePeriod) {
         case _ALL_TIME:
             return 0;
     }
+}
+
+// Constructs a human-readable string of the form (X days, Y hours, Z minutes)
+// from an integer representing a number of seconds.
+function secondsToString($seconds) {
+    $secondsInMinute = 60;
+    $secondsInHour = 60 * $secondsInMinute;
+    $secondsInDay = 24 * $secondsInHour;
+
+    $days = floor($seconds / $secondsInDay);
+    $seconds = $seconds % $secondsInDay;
+
+    $hours = floor($seconds / $secondsInHour);
+    $seconds = $seconds % $secondsInHour;
+
+    $minutes = floor($seconds / $secondsInMinute);
+    $seconds = $seconds % $secondsInHour;
+
+    $format = '%d days, %d hours, %d minutes';
+    return sprintf($format, $days, $hours, $minutes);
 }
 
 ?>
