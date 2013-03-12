@@ -48,10 +48,14 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [_timer startTimer];
-    _thread = [[NSThread alloc] initWithTarget:self
-                                               selector:@selector(route)
-                                                 object:nil];
-    [_thread start];
+    _start = YES;
+    [locationManager startUpdatingLocation];
+    //[locationManager stopUpdatingLocation];
+    NSLog(@"start Patrol");
+//    _thread = [[NSThread alloc] initWithTarget:self
+//                                               selector:@selector(route)
+//                                                 object:nil];
+//    [_thread start];
 }
 
 - (void)route
@@ -66,6 +70,10 @@
 {
 //    NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
+    if(_start == YES){
+        _start_location = newLocation;
+    }else{
+        _final_location = newLocation;    }
 
     if (currentLocation != nil) {
 //        _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
@@ -99,15 +107,25 @@
             NSLog(@"%@", error.debugDescription);
         }
     } ];
+    if(_start == YES){
+        NSLog(@"startLocation is %@",_Address.text);
+    }else{
+        NSLog(@"finalLocation is %@",_Address.text);
+    }
 }
 
 
     - (IBAction)StopPatrol:(id)sender {
 //        [_thread cancel];
 //        [_thread release];
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _start = NO;
+        [locationManager startUpdatingLocation];
+        //[locationManager stopUpdatingLocation];
         [_timer stopTimer];
         NSString *timerString = [NSString stringWithFormat:@"%f",[_timer timeElapsedInSeconds]];
         _timeDisplay.text = timerString;
-        NSLog(@"stop thread");
+        NSLog(@"stop Patrol");
     }
 @end

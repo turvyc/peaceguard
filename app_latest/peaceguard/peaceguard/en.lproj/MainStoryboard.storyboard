@@ -165,23 +165,40 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6vZ-xX-eCk">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="5dL-lH-H6N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Distance (km)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-Tt-IEU">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="LPJ-Tt-IEU" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="196" id="16q-hC-mtc"/>
                             <constraint firstItem="iVo-ho-VJf" firstAttribute="top" secondItem="iio-hn-x9E" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1bU-qt-CtV"/>
-                            <constraint firstItem="INO-Mz-FTO" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="27" id="2dn-IP-IC3"/>
+                            <constraint firstAttribute="bottom" secondItem="k4j-m4-Ysr" secondAttribute="bottom" constant="72" id="4BE-38-MZW"/>
                             <constraint firstItem="iio-hn-x9E" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="123" id="6b4-RQ-8DV"/>
+                            <constraint firstItem="6vZ-xX-eCk" firstAttribute="leading" secondItem="iVo-ho-VJf" secondAttribute="leading" type="default" id="8Cg-Zc-JDO"/>
                             <constraint firstItem="iVo-ho-VJf" firstAttribute="trailing" secondItem="INO-Mz-FTO" secondAttribute="trailing" type="default" id="FHU-Vw-oJ9"/>
-                            <constraint firstItem="iVo-ho-VJf" firstAttribute="leading" secondItem="k4j-m4-Ysr" secondAttribute="leading" type="default" id="Mne-BQ-hgQ"/>
-                            <constraint firstItem="UTS-X8-e5J" firstAttribute="centerX" secondItem="7Ob-ph-ybA" secondAttribute="centerX" type="default" id="U0W-NY-9QK"/>
+                            <constraint firstItem="6vZ-xX-eCk" firstAttribute="leading" secondItem="k4j-m4-Ysr" secondAttribute="leading" type="default" id="TJZ-tF-i5B"/>
                             <constraint firstItem="iVo-ho-VJf" firstAttribute="leading" secondItem="INO-Mz-FTO" secondAttribute="leading" type="default" id="VwF-gj-LXF"/>
                             <constraint firstItem="INO-Mz-FTO" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="64" id="WvX-XT-4LD"/>
                             <constraint firstItem="iio-hn-x9E" firstAttribute="centerX" secondItem="iVo-ho-VJf" secondAttribute="centerX" type="default" id="Wx5-ep-Uo8"/>
+                            <constraint firstItem="LPJ-Tt-IEU" firstAttribute="centerX" secondItem="iVo-ho-VJf" secondAttribute="centerX" type="default" id="Xeb-o3-OBs"/>
                             <constraint firstItem="UTS-X8-e5J" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YS7-CI-JPB"/>
                             <constraint firstAttribute="bottom" secondItem="IDJ-dZ-zqb" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="bJq-0g-hkl"/>
-                            <constraint firstAttribute="trailing" secondItem="G6G-NS-d9a" secondAttribute="trailing" constant="37" id="dDF-4h-02K"/>
-                            <constraint firstAttribute="bottom" secondItem="k4j-m4-Ysr" secondAttribute="bottom" constant="169" id="fq6-Rh-bf0"/>
+                            <constraint firstItem="INO-Mz-FTO" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="27" id="fyr-r9-V8Q"/>
+                            <constraint firstItem="6vZ-xX-eCk" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="232" id="gbg-7B-Sw0"/>
+                            <constraint firstItem="G6G-NS-d9a" firstAttribute="trailing" secondItem="6vZ-xX-eCk" secondAttribute="trailing" type="default" id="kka-7E-K14"/>
+                            <constraint firstItem="UTS-X8-e5J" firstAttribute="centerX" secondItem="7Ob-ph-ybA" secondAttribute="centerX" type="default" id="kp1-n6-ODg"/>
                             <constraint firstItem="G6G-NS-d9a" firstAttribute="baseline" secondItem="k4j-m4-Ysr" secondAttribute="baseline" type="default" id="krA-LY-s8i"/>
+                            <constraint firstItem="IDJ-dZ-zqb" firstAttribute="top" secondItem="G6G-NS-d9a" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nGe-Qa-NdD"/>
                             <constraint firstAttribute="trailing" secondItem="IDJ-dZ-zqb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="oDa-b1-Fke"/>
                         </constraints>
                     </view>
@@ -909,63 +926,6 @@
     <resources>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
-    <classes>
-        <class className="LocationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="GenerateLocation:"/>
-                <relationship kind="action" name="StopPatrol:"/>
-                <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="timeDisplay" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="OverviewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverviewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="outlet" name="descriptionDisplay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="incidentDisplay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="severityDisplay" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PatrolViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
-        </class>
-        <class className="PeaceGuardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Login:"/>
-                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ReportViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ImageTaker:"/>
-                <relationship kind="action" name="buttonToOverview:"/>
-                <relationship kind="action" name="doneSelection:"/>
-                <relationship kind="action" name="incidentButtonPressed:"/>
-                <relationship kind="action" name="severityButtonPressed:"/>
-                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pickerViewBlocker" candidateClass="UIView"/>
-                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="StatisticsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatisticsViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

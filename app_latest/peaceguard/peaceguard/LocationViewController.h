@@ -19,4 +19,8 @@
 //Duration of time for a patrol
 @property (weak, nonatomic) IBOutlet UITextField *timeDisplay;
 @property (nonatomic) Timer *timer;
+//Distance of patrol
+@property (nonatomic) CLLocation *start_location;
+@property (nonatomic) CLLocation *final_location;
+@property (nonatomic) BOOL *start;
 @end
