@@ -619,3 +619,172 @@
 )
 
 
+11 Mar 2013 3:44:26 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
+11 Mar 2013 3:44:31 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [orderBy] => v_id
+    [agent] => website
+)
+
+
+11 Mar 2013 3:44:39 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [agent] => website
+)
+
+
+12 Mar 2013 0:38:26 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
+12 Mar 2013 0:38:36 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => v_id
+    [agent] => website
+)
+
+
+12 Mar 2013 0:51:27 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => v_id
+    [agent] => website
+)
+
+
+12 Mar 2013 0:59:28 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => v_id
+    [agent] => website
+)
+
+
+12 Mar 2013 0:59:57 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => u_id
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:24 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => u_id
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:30 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => time
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:33 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => severity
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:35 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => u_id
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:37 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => type
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:39 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => location
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:42 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastDay
+    [orderBy] => location
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:44 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [orderBy] => location
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:47 -- Contents of POST:
+ Array
+(
+    [timePeriod] => yearToDate
+    [orderBy] => location
+    [agent] => website
+)
+
+
+12 Mar 2013 1:02:52 -- Contents of POST:
+ Array
+(
+    [timePeriod] => allTime
+    [orderBy] => location
+    [agent] => website
+)
+
+
+12 Mar 2013 1:03:09 -- Contents of POST:
+ Array
+(
+    [timePeriod] => lastMonth
+    [agent] => website
+)
+
+
