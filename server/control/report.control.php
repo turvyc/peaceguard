@@ -99,8 +99,6 @@ try {
     // Defined in constants.model.php
     $since = decodeTimePeriod($_POST[_TIME_PERIOD]);
 
-
-
     // Query the database
     require('../model/database.model.php');
 	
