@@ -692,6 +692,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Start:" destination="YiY-r9-CCp" eventType="touchUpInside" id="Mw7-QQ-SW8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvp-3F-LHQ">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -702,6 +705,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Stop:" destination="YiY-r9-CCp" eventType="touchUpInside" id="vRL-HN-LS2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3o2-6C-IGh">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -756,6 +762,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="Time" destination="k0q-cM-TGz" id="TP5-Ap-2qo"/>
+                        <outlet property="startPatrol" destination="1il-GZ-71u" id="Ztd-dZ-AZs"/>
+                        <outlet property="stopPatrol" destination="tvp-3F-LHQ" id="fJK-vP-afg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -910,63 +921,6 @@
     <resources>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
-    <classes>
-        <class className="LocationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="GenerateLocation:"/>
-                <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="OverviewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverviewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancelPressed:"/>
-                <relationship kind="outlet" name="descriptionDisplay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="incidentDisplay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="severityDisplay" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PatrolViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
-        </class>
-        <class className="PeaceGuardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Login:"/>
-                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ReportViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ImageTaker:"/>
-                <relationship kind="action" name="buttonToOverview:"/>
-                <relationship kind="action" name="doneSelection:"/>
-                <relationship kind="action" name="incidentButtonPressed:"/>
-                <relationship kind="action" name="severityButtonPressed:"/>
-                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pickerViewBlocker" candidateClass="UIView"/>
-                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="StatisticsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatisticsViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

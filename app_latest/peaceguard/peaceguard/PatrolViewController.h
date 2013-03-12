@@ -11,5 +11,11 @@
 
 @interface PatrolViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *startPatrol;
+@property (weak, nonatomic) IBOutlet UIButton *stopPatrol;
+- (IBAction)Stop:(id)sender;
+
+- (IBAction)Start:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *Time;
 
 @end
