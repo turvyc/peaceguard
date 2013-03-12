@@ -48,7 +48,7 @@ define('_SEVERITY', 'severity');
 define('_LOCATION', 'location');
 define('_TIME', 'time');
 define('_DESC', 'description');
-define('_VOLUNTEER', 'v_id');
+define('_VOLUNTEER', 'u_id');
 
 // POST keys for website incident report request
 define('_TIME_PERIOD', 'timePeriod');
