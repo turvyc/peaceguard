@@ -36,29 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)Stop:(id)sender {
-    NSLog(@"Stop patrol");
-}
 
-- (IBAction)Start:(id)sender {
-    NSLog(@"Start patrol");
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeStyle: NSDateFormatterShortStyle];
-    
-    [NSTimer scheduledTimerWithTimeInterval:0.1
-                                   target:self
-                                   selector:@selector(targetMethod:)
-                                   userInfo:nil
-                                    repeats:YES];
-    
-}
-
--(void)targetMethod:(id)sender
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeStyle: NSDateFormatterShortStyle];
-    NSString *currentTime = [dateFormatter stringFromDate: [NSDate date]];
-    _Time.text = currentTime;
-}
 @end
 
