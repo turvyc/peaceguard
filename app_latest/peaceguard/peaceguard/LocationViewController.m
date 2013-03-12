@@ -70,7 +70,13 @@
         _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         [NSThread sleepForTimeInterval:5];
-        _sum += [_longitudeLabel.text intValue] + [_latitudeLabel.text intValue];
+        CLLocation *temp_location = [[CLLocation alloc] init];
+        if([_myArray lastObject] != nil){
+             temp_location = [_myArray lastObject];
+        }
+        if(temp_location != nil){
+            _sum += ([_longitudeLabel.text intValue] - temp_location.coordinate.longitude) + ([_latitudeLabel.text intValue] - temp_location.coordinate.latitude);
+        }
         NSString *sum_temp=[@"sum is" stringByAppendingFormat:@"%d ",_sum];
         NSLog(sum_temp);
     }
