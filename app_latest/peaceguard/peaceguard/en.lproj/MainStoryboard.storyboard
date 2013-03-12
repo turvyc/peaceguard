@@ -97,8 +97,8 @@
         <scene sceneID="hif-Za-dLV">
             <objects>
                 <viewController id="NND-0S-Bg4" customClass="LocationViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Ob-ph-ybA">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                    <view key="view" contentMode="scaleToFill" horizontalHuggingPriority="255" id="7Ob-ph-ybA">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4j-m4-Ysr">
@@ -114,7 +114,8 @@
                                     <action selector="GenerateLocation:" destination="NND-0S-Bg4" eventType="touchUpInside" id="swG-cO-dZe"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INO-Mz-FTO">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="746" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INO-Mz-FTO">
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="261" id="vsb-Yg-dVK"/>
                                 </constraints>
@@ -137,7 +138,6 @@
                                 </state>
                                 <connections>
                                     <action selector="StopPatrol:" destination="NND-0S-Bg4" eventType="touchUpInside" id="sZB-oe-Q3V"/>
-                                    <segue destination="YiY-r9-CCp" kind="custom" identifier="StopPatrol" id="8aT-Fy-mmf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iio-hn-x9E">
@@ -145,19 +145,34 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDJ-dZ-zqb">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Map">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ZNw-A8-Ehs" kind="push" id="rEn-yd-dbl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="k4j-m4-Ysr" secondAttribute="bottom" constant="27" id="Cmq-Bm-6IR"/>
-                            <constraint firstItem="INO-Mz-FTO" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="27" id="LSh-Cp-S8R"/>
+                            <constraint firstItem="INO-Mz-FTO" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="27" id="2dn-IP-IC3"/>
+                            <constraint firstItem="k4j-m4-Ysr" firstAttribute="leading" secondItem="INO-Mz-FTO" secondAttribute="leading" type="default" id="S0R-F7-Ryk"/>
                             <constraint firstItem="INO-Mz-FTO" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="64" id="WvX-XT-4LD"/>
                             <constraint firstItem="UTS-X8-e5J" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YS7-CI-JPB"/>
                             <constraint firstItem="iio-hn-x9E" firstAttribute="centerX" secondItem="UTS-X8-e5J" secondAttribute="centerX" type="default" id="ZBt-V4-SE4"/>
+                            <constraint firstAttribute="bottom" secondItem="IDJ-dZ-zqb" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="bJq-0g-hkl"/>
                             <constraint firstItem="iio-hn-x9E" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="150" id="bS1-6V-dfw"/>
-                            <constraint firstAttribute="trailing" secondItem="G6G-NS-d9a" secondAttribute="trailing" constant="44" id="e6O-6g-W99"/>
+                            <constraint firstAttribute="trailing" secondItem="G6G-NS-d9a" secondAttribute="trailing" constant="37" id="dDF-4h-02K"/>
+                            <constraint firstAttribute="bottom" secondItem="k4j-m4-Ysr" secondAttribute="bottom" constant="169" id="fq6-Rh-bf0"/>
                             <constraint firstItem="G6G-NS-d9a" firstAttribute="baseline" secondItem="k4j-m4-Ysr" secondAttribute="baseline" type="default" id="krA-LY-s8i"/>
-                            <constraint firstItem="k4j-m4-Ysr" firstAttribute="leading" secondItem="INO-Mz-FTO" secondAttribute="leading" type="default" id="pRd-KK-wZF"/>
-                            <constraint firstItem="UTS-X8-e5J" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="87" id="wzG-DT-cVQ"/>
+                            <constraint firstAttribute="trailing" secondItem="IDJ-dZ-zqb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="oDa-b1-Fke"/>
+                            <constraint firstItem="UTS-X8-e5J" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="87" id="vZU-cp-zEo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p1c-Ks-FPY"/>
@@ -167,14 +182,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27k-Ep-Wjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="-486"/>
+            <point key="canvasLocation" x="-169" y="-520"/>
         </scene>
         <!--Overview Controller - Overview-->
         <scene sceneID="QNw-Yg-eGC">
             <objects>
                 <viewController id="FZ1-jG-0HO" customClass="OverviewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7oO-7a-Vz0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-aL-Iq7">
@@ -410,7 +425,7 @@
             <objects>
                 <viewController id="oPN-sY-whv" customClass="ReportViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bmk-e2-JVe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydf-YF-tu0">
@@ -629,7 +644,7 @@
             <objects>
                 <viewController id="YiY-r9-CCp" customClass="PatrolViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hj2-y8-Dce">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFo-DW-Hec">
@@ -674,6 +689,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4j-Gi-eAD">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Vs5-f0-JIk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Patrol Control">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -686,22 +704,37 @@
                                     <segue destination="NND-0S-Bg4" kind="push" id="aBH-bu-nn0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iel-A1-x7v">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Report Control">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oPN-sY-whv" kind="push" id="eka-PG-9fW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3o2-6C-IGh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="4Iy-I2-XI3"/>
-                            <constraint firstItem="X4j-Gi-eAD" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="210" id="4yg-RE-j4H"/>
+                            <constraint firstItem="Iel-A1-x7v" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="9d4-sG-2Yg"/>
+                            <constraint firstItem="xoT-Qs-AIt" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="241" id="EDi-CK-D4L"/>
+                            <constraint firstItem="Iel-A1-x7v" firstAttribute="leading" secondItem="X4j-Gi-eAD" secondAttribute="leading" type="default" id="JzJ-dY-aMu"/>
                             <constraint firstItem="X4j-Gi-eAD" firstAttribute="baseline" secondItem="xoT-Qs-AIt" secondAttribute="baseline" type="default" id="NbL-TZ-o2X"/>
                             <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="O4V-0m-WzX"/>
-                            <constraint firstItem="X4j-Gi-eAD" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="Wcb-Qu-wnZ"/>
                             <constraint firstAttribute="bottom" secondItem="se6-0Y-KOK" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wg0-D0-9Cj"/>
+                            <constraint firstItem="X4j-Gi-eAD" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="126" id="Zya-ce-whx"/>
                             <constraint firstItem="GFo-DW-Hec" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="155" id="aPt-RH-R8Y"/>
                             <constraint firstAttribute="trailing" secondItem="xoT-Qs-AIt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="c7K-C4-18Q"/>
+                            <constraint firstAttribute="bottom" secondItem="Iel-A1-x7v" secondAttribute="bottom" constant="182" id="f5T-xa-MgP"/>
                             <constraint firstItem="DVo-Sv-RDz" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="42" id="g0J-7y-9qc"/>
                             <constraint firstAttribute="trailing" secondItem="DVo-Sv-RDz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qYt-9e-19I"/>
                             <constraint firstItem="se6-0Y-KOK" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rqk-WT-qTD"/>
                             <constraint firstAttribute="trailing" secondItem="3o2-6C-IGh" secondAttribute="trailing" constant="9" id="ufy-cm-lg9"/>
-                            <constraint firstItem="xoT-Qs-AIt" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="241" id="wDu-yq-Tcy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Patrol" id="DZw-QL-Cdx">
@@ -714,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="527" y="-471"/>
+            <point key="canvasLocation" x="299" y="-407"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Z8i-II-Cm1">
@@ -751,7 +784,7 @@
             <objects>
                 <viewController id="ZNw-A8-Ehs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SCN-iU-5g6">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6C-om-qNc">
@@ -778,7 +811,7 @@
             <objects>
                 <viewController id="gX9-hk-2uQ" customClass="StatisticsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1tw-Rx-Ish">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7B-Lz-PnI">
@@ -889,9 +922,6 @@
         </class>
         <class className="PatrolViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="Time" candidateClass="UITextField"/>
-            </relationships>
         </class>
         <class className="PeaceGuardViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
@@ -930,8 +960,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8aT-Fy-mmf"/>
-        <segue reference="d9w-r3-FO2"/>
+        <segue reference="9ZO-PH-oR0"/>
         <segue reference="xNs-2i-NHT"/>
+        <segue reference="d9w-r3-FO2"/>
     </inferredMetricsTieBreakers>
 </document>
