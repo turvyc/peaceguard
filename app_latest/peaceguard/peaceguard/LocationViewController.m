@@ -86,7 +86,7 @@
                                  placemark.postalCode, placemark.locality,
                                  placemark.administrativeArea,
                                  placemark.country];
-            [_myArray addObject:_Address.text];
+            [_myArray addObject:newLocation];
         } else {
             NSLog(@"%@", error.debugDescription);
         }
