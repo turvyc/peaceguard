@@ -69,16 +69,17 @@
     if (currentLocation != nil) {
         _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        [NSThread sleepForTimeInterval:5];
+        //[NSThread sleepForTimeInterval:5];
         CLLocation *temp_location = [[CLLocation alloc] init];
         if([_myArray lastObject] != nil){
              temp_location = [_myArray lastObject];
         }
         if(temp_location != nil){
-            _sum += ([_longitudeLabel.text intValue] - temp_location.coordinate.longitude) + ([_latitudeLabel.text intValue] - temp_location.coordinate.latitude);
+            CLLocationDistance meters = [temp_location distanceFromLocation:newLocation];
+            NSLog(@"%4.0f km from current location",meters);
+            _sum += meters;
         }
-        NSString *sum_temp=[@"sum is" stringByAppendingFormat:@"%d ",_sum];
-        NSLog(sum_temp);
+        NSLog(@"%4.0f total distance",_sum);
     }
     
     // Reverse Geocoding

@@ -13,6 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *Address;
 @property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
-@property (nonatomic) integer_t sum;
+@property (nonatomic) CLLocationDistance sum;
 @property (nonatomic) NSMutableArray *myArray;
 @end
