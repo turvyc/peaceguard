@@ -11,8 +11,8 @@
 @interface LocationViewController : UIViewController <CLLocationManagerDelegate>
 - (IBAction)GenerateLocation:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *Address;
-@property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
 @property (nonatomic) CLLocationDistance sum;
 @property (nonatomic) NSMutableArray *myArray;
+@property (nonatomic) NSThread *thread;
+- (IBAction)StopPatrol:(id)sender;
 @end

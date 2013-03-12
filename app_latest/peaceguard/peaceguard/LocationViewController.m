@@ -47,10 +47,10 @@
 - (IBAction)GenerateLocation:(id)sender {
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    NSThread *thread = [[NSThread alloc] initWithTarget:self
+    _thread = [[NSThread alloc] initWithTarget:self
                                                selector:@selector(route)
                                                  object:nil];
-    [thread start];
+    [_thread start];
 }
 
 - (void)route
@@ -67,8 +67,8 @@
     CLLocation *currentLocation = newLocation;
 
     if (currentLocation != nil) {
-        _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-        _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+//        _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+//        _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         //[NSThread sleepForTimeInterval:1];
         CLLocation *temp_location = [[CLLocation alloc] init];
         if([_myArray lastObject] != nil){
@@ -98,5 +98,12 @@
             NSLog(@"%@", error.debugDescription);
         }
     } ];
-    
-}@end
+}
+
+
+    - (IBAction)StopPatrol:(id)sender {
+//        [_thread cancel];
+//        [_thread release];
+        NSLog(@"stop thread");
+    }
+@end

@@ -98,7 +98,7 @@
             <objects>
                 <viewController id="NND-0S-Bg4" customClass="LocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ob-ph-ybA">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4j-m4-Ysr">
@@ -116,22 +116,31 @@
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INO-Mz-FTO">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Ode-0g-7Kg"/>
+                                    <constraint firstAttribute="width" constant="261" id="vsb-Yg-dVK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTS-X8-e5J">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTS-X8-e5J">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ked-dX-zfl">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7J-Mo-jzf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6G-NS-d9a">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Stop Patrol">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="StopPatrol:" destination="NND-0S-Bg4" eventType="touchUpInside" id="sZB-oe-Q3V"/>
+                                    <segue destination="YiY-r9-CCp" kind="custom" identifier="StopPatrol" id="8aT-Fy-mmf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iio-hn-x9E">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,23 +148,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d7J-Mo-jzf" firstAttribute="leading" secondItem="UTS-X8-e5J" secondAttribute="leading" type="default" id="6L0-Tq-yWK"/>
-                            <constraint firstItem="d7J-Mo-jzf" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="87" id="7oS-YL-hV6"/>
                             <constraint firstAttribute="bottom" secondItem="k4j-m4-Ysr" secondAttribute="bottom" constant="27" id="Cmq-Bm-6IR"/>
-                            <constraint firstItem="INO-Mz-FTO" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="166" id="aKt-WC-gi9"/>
-                            <constraint firstItem="ked-dX-zfl" firstAttribute="leading" secondItem="d7J-Mo-jzf" secondAttribute="leading" type="default" id="gcA-nF-DkV"/>
-                            <constraint firstItem="ked-dX-zfl" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="40" id="icY-A8-aEU"/>
+                            <constraint firstItem="INO-Mz-FTO" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="27" id="LSh-Cp-S8R"/>
+                            <constraint firstItem="INO-Mz-FTO" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="64" id="WvX-XT-4LD"/>
+                            <constraint firstItem="UTS-X8-e5J" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YS7-CI-JPB"/>
+                            <constraint firstItem="iio-hn-x9E" firstAttribute="centerX" secondItem="UTS-X8-e5J" secondAttribute="centerX" type="default" id="ZBt-V4-SE4"/>
+                            <constraint firstItem="iio-hn-x9E" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="150" id="bS1-6V-dfw"/>
+                            <constraint firstAttribute="trailing" secondItem="G6G-NS-d9a" secondAttribute="trailing" constant="44" id="e6O-6g-W99"/>
+                            <constraint firstItem="G6G-NS-d9a" firstAttribute="baseline" secondItem="k4j-m4-Ysr" secondAttribute="baseline" type="default" id="krA-LY-s8i"/>
                             <constraint firstItem="k4j-m4-Ysr" firstAttribute="leading" secondItem="INO-Mz-FTO" secondAttribute="leading" type="default" id="pRd-KK-wZF"/>
-                            <constraint firstItem="UTS-X8-e5J" firstAttribute="leading" secondItem="INO-Mz-FTO" secondAttribute="leading" type="default" id="uZF-zR-mUk"/>
-                            <constraint firstItem="k4j-m4-Ysr" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="27" id="xx5-e6-Lfs"/>
-                            <constraint firstItem="UTS-X8-e5J" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="126" id="z8A-i2-Fff"/>
+                            <constraint firstItem="UTS-X8-e5J" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="87" id="wzG-DT-cVQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="p1c-Ks-FPY"/>
                     <connections>
                         <outlet property="Address" destination="INO-Mz-FTO" id="RNm-HW-P58"/>
-                        <outlet property="latitudeLabel" destination="d7J-Mo-jzf" id="qD8-gH-wvi"/>
-                        <outlet property="longitudeLabel" destination="ked-dX-zfl" id="MOp-k9-0jA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27k-Ep-Wjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -167,7 +174,7 @@
             <objects>
                 <viewController id="FZ1-jG-0HO" customClass="OverviewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7oO-7a-Vz0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-aL-Iq7">
@@ -403,7 +410,7 @@
             <objects>
                 <viewController id="oPN-sY-whv" customClass="ReportViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bmk-e2-JVe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydf-YF-tu0">
@@ -622,7 +629,7 @@
             <objects>
                 <viewController id="YiY-r9-CCp" customClass="PatrolViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hj2-y8-Dce">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFo-DW-Hec">
@@ -666,21 +673,9 @@
                                     <segue destination="gX9-hk-2uQ" kind="push" id="d9w-r3-FO2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61d-Fu-LDY">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k0q-cM-TGz">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="218" id="Gxr-32-r0b"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4j-Gi-eAD">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Show Patrol information">
+                                <state key="normal" title="Patrol Control">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -695,21 +690,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3o2-6C-IGh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="4Iy-I2-XI3"/>
-                            <constraint firstItem="GFo-DW-Hec" firstAttribute="centerX" secondItem="61d-Fu-LDY" secondAttribute="centerX" type="default" id="4of-lw-Ve9"/>
-                            <constraint firstItem="X4j-Gi-eAD" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="Bzn-BS-YeE"/>
-                            <constraint firstItem="61d-Fu-LDY" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="136" id="C6H-hT-YnM"/>
-                            <constraint firstItem="k0q-cM-TGz" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="118" id="HUf-t7-bjG"/>
+                            <constraint firstItem="X4j-Gi-eAD" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="210" id="4yg-RE-j4H"/>
+                            <constraint firstItem="X4j-Gi-eAD" firstAttribute="baseline" secondItem="xoT-Qs-AIt" secondAttribute="baseline" type="default" id="NbL-TZ-o2X"/>
                             <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="O4V-0m-WzX"/>
+                            <constraint firstItem="X4j-Gi-eAD" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="Wcb-Qu-wnZ"/>
+                            <constraint firstAttribute="bottom" secondItem="se6-0Y-KOK" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wg0-D0-9Cj"/>
+                            <constraint firstItem="GFo-DW-Hec" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="155" id="aPt-RH-R8Y"/>
                             <constraint firstAttribute="trailing" secondItem="xoT-Qs-AIt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="c7K-C4-18Q"/>
-                            <constraint firstItem="k0q-cM-TGz" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="50" id="cSx-Gf-y6a"/>
                             <constraint firstItem="DVo-Sv-RDz" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="42" id="g0J-7y-9qc"/>
-                            <constraint firstItem="61d-Fu-LDY" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="65" id="ghz-qd-J9k"/>
-                            <constraint firstAttribute="bottom" secondItem="se6-0Y-KOK" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="oss-7t-mcG"/>
                             <constraint firstAttribute="trailing" secondItem="DVo-Sv-RDz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qYt-9e-19I"/>
                             <constraint firstItem="se6-0Y-KOK" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rqk-WT-qTD"/>
                             <constraint firstAttribute="trailing" secondItem="3o2-6C-IGh" secondAttribute="trailing" constant="9" id="ufy-cm-lg9"/>
                             <constraint firstItem="xoT-Qs-AIt" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="241" id="wDu-yq-Tcy"/>
-                            <constraint firstItem="X4j-Gi-eAD" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="187" id="xvT-ar-xRx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Patrol" id="DZw-QL-Cdx">
@@ -719,13 +711,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="Time" destination="k0q-cM-TGz" id="TP5-Ap-2qo"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="-520"/>
+            <point key="canvasLocation" x="527" y="-471"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Z8i-II-Cm1">
@@ -762,7 +751,7 @@
             <objects>
                 <viewController id="ZNw-A8-Ehs" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SCN-iU-5g6">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6C-om-qNc">
@@ -789,7 +778,7 @@
             <objects>
                 <viewController id="gX9-hk-2uQ" customClass="StatisticsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1tw-Rx-Ish">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7B-Lz-PnI">
@@ -881,9 +870,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
             <relationships>
                 <relationship kind="action" name="GenerateLocation:"/>
+                <relationship kind="action" name="StopPatrol:"/>
                 <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -942,7 +930,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xNs-2i-NHT"/>
+        <segue reference="8aT-Fy-mmf"/>
         <segue reference="d9w-r3-FO2"/>
+        <segue reference="xNs-2i-NHT"/>
     </inferredMetricsTieBreakers>
 </document>

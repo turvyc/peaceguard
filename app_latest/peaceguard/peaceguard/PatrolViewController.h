@@ -10,6 +10,5 @@
 #import <MapKit/MapKit.h>
 
 @interface PatrolViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *Time;
 
 @end
