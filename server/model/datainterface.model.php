@@ -47,9 +47,9 @@ class DataInterface {
             throw new LogicException('$_POST is not set!');
         }
 
-        // Also, the only required key is _AGENT. Make sure it's there.
+        // If AGENT is set, it will default to the Website.
         if (! isset($_POST[_AGENT])) {
-            throw new LogicException('$_AGENT is not set!');
+            $_POST[_AGENT] = _WEBSITE;
         }
 
         // Initialize the data array

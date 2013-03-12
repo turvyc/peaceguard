@@ -18,12 +18,18 @@ include('header.php');
 include('model/report.model.php');
 checkLoggedIn($session);
 
+// Try to get the reports retrieved in reports.control.php
 try {
-    $data = $session->getData();
+    $sessionData = $session->getData();
+    $reports = $sessionData[_REPORT];
+    $timePeriod = $sessionData[_TIME_PERIOD];
+    $orderBy = $sessionData[_ORDER_BY];
 }
+
+// No reports are set. Go get some.
 catch (Exception $e) {
-    $data[_TIME_PERIOD] = 0;
-    $data[_ORDER_BY] = 0;
+    header('location: control/report.control.php');
+    exit(0);
 }
 
 ?>
@@ -33,19 +39,19 @@ catch (Exception $e) {
 <form name="<?php echo _REPORT; ?>" action="control/report.control.php" method="POST">
     Time Period:
 	<select name="<?php echo _TIME_PERIOD; ?>" id="<?php echo _TIME_PERIOD; ?>">
-        <option <?php echo ($data[_TIME_PERIOD] == _LAST_DAY) ? 'selected' : ''; ?> value="<?php echo _LAST_DAY; ?>">Today</option>
-        <option <?php echo ($data[_TIME_PERIOD] == _LAST_MONTH) ? 'selected' : ''; ?> value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
-		<option <?php echo ($data[_TIME_PERIOD] == _LAST_YEAR) ? 'selected' : ''; ?> value="<?php echo _LAST_YEAR; ?>">Last Year</option>
-        <option <?php echo ($data[_TIME_PERIOD] == _ALL_TIME) ? 'selected' : ''; ?> value="<?php echo _ALL_TIME; ?>">All Time</option>
+        <option <?php echo ($timePeriod == _LAST_DAY) ? 'selected' : ''; ?> value="<?php echo _LAST_DAY; ?>">Today</option>
+        <option <?php echo ($timePeriod == _LAST_MONTH) ? 'selected' : ''; ?> value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
+		<option <?php echo ($timePeriod == _LAST_YEAR) ? 'selected' : ''; ?> value="<?php echo _LAST_YEAR; ?>">Last Year</option>
+        <option <?php echo ($timePeriod == _ALL_TIME) ? 'selected' : ''; ?> value="<?php echo _ALL_TIME; ?>">All Time</option>
 	</select>	
 	
     Sort By:
 	<select name="<?php echo _ORDER_BY; ?>">
-        <option <?php echo ($data[_ORDER_BY] == _TIME) ? 'selected' : ''; ?> value="<?php echo _TIME; ?>">Time</option>
-        <option <?php echo ($data[_ORDER_BY] == _SEVERITY) ? 'selected' : ''; ?> value="<?php echo _SEVERITY; ?>">Severity</option>
-        <option <?php echo ($data[_ORDER_BY] == _VOLUNTEER) ? 'selected' : ''; ?> value="<?php echo _VOLUNTEER; ?>">Volunteer</option>
-        <option <?php echo ($data[_ORDER_BY] == _TYPE) ? 'selected' : ''; ?> value="<?php echo _TYPE; ?>">Type</option>
-        <option <?php echo ($data[_ORDER_BY] == _LOCATION) ? 'selected' : ''; ?> value="<?php echo _LOCATION; ?>">Location</option>
+        <option <?php echo ($orderBy == _TIME) ? 'selected' : ''; ?> value="<?php echo _TIME; ?>">Time</option>
+        <option <?php echo ($orderBy == _SEVERITY) ? 'selected' : ''; ?> value="<?php echo _SEVERITY; ?>">Severity</option>
+        <option <?php echo ($orderBy == _VOLUNTEER) ? 'selected' : ''; ?> value="<?php echo _VOLUNTEER; ?>">Volunteer</option>
+        <option <?php echo ($orderBy == _TYPE) ? 'selected' : ''; ?> value="<?php echo _TYPE; ?>">Type</option>
+        <option <?php echo ($orderBy == _LOCATION) ? 'selected' : ''; ?> value="<?php echo _LOCATION; ?>">Location</option>
 	</select>
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
@@ -63,13 +69,10 @@ catch (Exception $e) {
 		<th>Resolved</th>
 	</tr>
 
-<?php
+    <?php
+    for ($i = 0; $i < count($reports); $i++) {
 
-if (count($data) > 2) {
-
-    for ($i = 0; $i < count($data) - 2; $i++) {
-
-        $report = new Report($data[$i]);
+        $report = new Report($reports[$i]);
 
         echo '<tr>';
             echo '<td>' . $report->getDate() . '</td>';
@@ -82,8 +85,8 @@ if (count($data) > 2) {
             echo '<td>' . $report->getResolved() . '</td>';
             echo '</tr>';
     }		 
-}
-?>
+    ?>
+
 </table>
 
 <?php
