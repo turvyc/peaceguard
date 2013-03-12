@@ -71,7 +71,7 @@
 //    NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
     if(_start == YES){
-        if(_start_location ==nil){
+        if(_start_location == nil){
             _start_location = newLocation;
         }
     }else{
@@ -88,10 +88,10 @@
         }
         if(temp_location != nil){
             CLLocationDistance meters = [temp_location distanceFromLocation:newLocation];
-            NSLog(@"%4.0f km from current location",meters);
+//            NSLog(@"%4.0f km from current location",meters);
             _sum += meters;
         }
-        NSLog(@"%4.0f total distance",_sum/10000000);
+//        NSLog(@"%4.0f total distance",_sum/10000000);
     }
     
     // Reverse Geocoding
@@ -131,8 +131,9 @@
         NSString *timerString = [NSString stringWithFormat:@"%f",[_timer timeElapsedInSeconds]];
         _timeDisplay.text = timerString;
         NSLog(@"stop Patrol");
+        //distance count here
         CLLocationDistance meters = [_final_location distanceFromLocation:_start_location];
-        NSString *distanceString = [NSString stringWithFormat:@"%f",meters];
+        NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
         _distanceDisplay.text = distanceString;
     }
 
