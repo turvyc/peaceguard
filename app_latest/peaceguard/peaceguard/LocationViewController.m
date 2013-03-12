@@ -33,6 +33,8 @@
     [super viewDidLoad];
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
+    _myArray = [[NSMutableArray alloc] init];
+
 	// Do any additional setup after loading the view.
 }
 
@@ -84,6 +86,7 @@
                                  placemark.postalCode, placemark.locality,
                                  placemark.administrativeArea,
                                  placemark.country];
+            [_myArray addObject:_Address.text];
         } else {
             NSLog(@"%@", error.debugDescription);
         }
