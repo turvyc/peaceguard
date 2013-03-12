@@ -60,11 +60,17 @@ class DataInterface {
 
         // Output the POST data to a logfile, if debugging
         if (_DEBUG) {
-            $logfile = fopen('../' . _POST_LOG, 'a');
-            $format = "%s -- Contents of POST:\n %s\n\n";
-            $entry = sprintf($format, date('j M Y G:i:s'), print_r($_POST, TRUE));
-            fwrite($logfile, $entry);
-            fclose($logfile);
+            try {
+                $logfile = fopen('../' . _POST_LOG, 'a');
+                $format = "%s -- Contents of POST:\n %s\n\n";
+                $entry = sprintf($format, date('j M Y G:i:s'), print_r($_POST, TRUE));
+                fwrite($logfile, $entry);
+                fclose($logfile);
+            }
+
+            catch (Exception $e) {
+                echo 'Error with logfile. Tell Colin to fix the permissions or something.';
+            }
         }
     }
 
@@ -90,11 +96,18 @@ class DataInterface {
             $json = json_encode($this->data);
             // Record the output in a logfile, if debugging
             if (_DEBUG) {
-                $logfile = fopen('../' . _OUTPUT_LOG, 'a');
-                $format = "%s -- Output to iPhone:\n %s\n\n";
-                $entry = sprintf($format, date('j M Y G:i:s'), $json);
-                fwrite($logfile, $entry);
-                fclose($logfile);
+                try {
+                    $logfile = fopen('../' . _OUTPUT_LOG, 'a');
+                    $format = "%s -- Output to iPhone:\n %s\n\n";
+                    $entry = sprintf($format, date('j M Y G:i:s'), $json);
+                    fwrite($logfile, $entry);
+                    fclose($logfile);
+                }
+
+                catch (Exception $e) {
+                    echo 'Error with logfile. Tell Colin to fix the permissions or something.';
+                }
+
             }
             echo $json;
         }
