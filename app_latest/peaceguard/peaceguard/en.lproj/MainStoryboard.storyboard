@@ -158,16 +158,23 @@
                                     <segue destination="ZNw-A8-Ehs" kind="push" id="rEn-yd-dbl"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVo-ho-VJf">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="iVo-ho-VJf" firstAttribute="top" secondItem="iio-hn-x9E" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="1bU-qt-CtV"/>
                             <constraint firstItem="INO-Mz-FTO" firstAttribute="leading" secondItem="7Ob-ph-ybA" secondAttribute="leading" constant="27" id="2dn-IP-IC3"/>
-                            <constraint firstItem="k4j-m4-Ysr" firstAttribute="leading" secondItem="INO-Mz-FTO" secondAttribute="leading" type="default" id="S0R-F7-Ryk"/>
+                            <constraint firstItem="iio-hn-x9E" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="123" id="6b4-RQ-8DV"/>
+                            <constraint firstItem="iVo-ho-VJf" firstAttribute="trailing" secondItem="INO-Mz-FTO" secondAttribute="trailing" type="default" id="FHU-Vw-oJ9"/>
+                            <constraint firstItem="iVo-ho-VJf" firstAttribute="leading" secondItem="k4j-m4-Ysr" secondAttribute="leading" type="default" id="Mne-BQ-hgQ"/>
+                            <constraint firstItem="iVo-ho-VJf" firstAttribute="leading" secondItem="INO-Mz-FTO" secondAttribute="leading" type="default" id="VwF-gj-LXF"/>
                             <constraint firstItem="INO-Mz-FTO" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="64" id="WvX-XT-4LD"/>
                             <constraint firstItem="UTS-X8-e5J" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="20" symbolic="YES" type="default" id="YS7-CI-JPB"/>
                             <constraint firstItem="iio-hn-x9E" firstAttribute="centerX" secondItem="UTS-X8-e5J" secondAttribute="centerX" type="default" id="ZBt-V4-SE4"/>
                             <constraint firstAttribute="bottom" secondItem="IDJ-dZ-zqb" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="bJq-0g-hkl"/>
-                            <constraint firstItem="iio-hn-x9E" firstAttribute="top" secondItem="7Ob-ph-ybA" secondAttribute="top" constant="150" id="bS1-6V-dfw"/>
                             <constraint firstAttribute="trailing" secondItem="G6G-NS-d9a" secondAttribute="trailing" constant="37" id="dDF-4h-02K"/>
                             <constraint firstAttribute="bottom" secondItem="k4j-m4-Ysr" secondAttribute="bottom" constant="169" id="fq6-Rh-bf0"/>
                             <constraint firstItem="G6G-NS-d9a" firstAttribute="baseline" secondItem="k4j-m4-Ysr" secondAttribute="baseline" type="default" id="krA-LY-s8i"/>
@@ -178,6 +185,7 @@
                     <navigationItem key="navigationItem" id="p1c-Ks-FPY"/>
                     <connections>
                         <outlet property="Address" destination="INO-Mz-FTO" id="RNm-HW-P58"/>
+                        <outlet property="timeDisplay" destination="iVo-ho-VJf" id="8yK-3N-aoF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27k-Ep-Wjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -904,8 +912,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9ZO-PH-oR0"/>
         <segue reference="xNs-2i-NHT"/>
         <segue reference="d9w-r3-FO2"/>
+        <segue reference="rEn-yd-dbl"/>
     </inferredMetricsTieBreakers>
 </document>

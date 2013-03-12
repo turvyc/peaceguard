@@ -34,8 +34,7 @@
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
     _myArray = [[NSMutableArray alloc] init];
-
-	// Do any additional setup after loading the view.
+    _timer = [[Timer alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,9 +43,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+//it is the function to start patrol
 - (IBAction)GenerateLocation:(id)sender {
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _start = [NSDate date];
+    [_timer startTimer];
     _thread = [[NSThread alloc] initWithTarget:self
                                                selector:@selector(route)
                                                  object:nil];
@@ -104,6 +106,9 @@
     - (IBAction)StopPatrol:(id)sender {
 //        [_thread cancel];
 //        [_thread release];
+        [_timer stopTimer];
+        NSString *timerString = [NSString stringWithFormat:@"%f",[_timer timeElapsedInSeconds]];
+        _timeDisplay.text = timerString;
         NSLog(@"stop thread");
     }
 @end
