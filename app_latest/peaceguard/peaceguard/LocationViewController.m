@@ -137,4 +137,7 @@
         _distanceDisplay.text = distanceString;
     }
 
+- (IBAction)generateReport:(id)sender {
+    [self performSegueWithIdentifier:@"generateReport" sender:nil];
+}
 @end
