@@ -10,6 +10,7 @@
 		A7D498E116ED78C7001EA2D9 /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D498E016ED78C6001EA2D9 /* OverviewController.m */; };
 		C313066616DF18C3005FB151 /* PatrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C313066516DF18C3005FB151 /* PatrolViewController.m */; };
 		C313066816DF1CEE005FB151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313066716DF1CEE005FB151 /* MapKit.framework */; };
+		C38C5EF616EF995100679A87 /* Patrol.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C5EF516EF995100679A87 /* Patrol.m */; };
 		C39E8B5D16CF370E0087FBDD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5C16CF370E0087FBDD /* Report.m */; };
 		C39E8B6016CF371D0087FBDD /* ReportDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5F16CF371D0087FBDD /* ReportDataController.m */; };
 		C39E8B6316CF37420087FBDD /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B6216CF37420087FBDD /* ReportViewController.m */; };
@@ -44,6 +45,8 @@
 		C313066416DF18C3005FB151 /* PatrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatrolViewController.h; sourceTree = "<group>"; };
 		C313066516DF18C3005FB151 /* PatrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatrolViewController.m; sourceTree = "<group>"; };
 		C313066716DF1CEE005FB151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C38C5EF416EF995100679A87 /* Patrol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patrol.h; sourceTree = "<group>"; };
+		C38C5EF516EF995100679A87 /* Patrol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patrol.m; sourceTree = "<group>"; };
 		C39E8B5B16CF370E0087FBDD /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
 		C39E8B5C16CF370E0087FBDD /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
 		C39E8B5E16CF371D0087FBDD /* ReportDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportDataController.h; sourceTree = "<group>"; };
@@ -165,6 +168,8 @@
 				C313066516DF18C3005FB151 /* PatrolViewController.m */,
 				C3AEED6716ED5380002C16EC /* LocationViewController.h */,
 				C3AEED6816ED5381002C16EC /* LocationViewController.m */,
+				C38C5EF416EF995100679A87 /* Patrol.h */,
+				C38C5EF516EF995100679A87 /* Patrol.m */,
 			);
 			path = peaceguard;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				C3AEED6916ED5381002C16EC /* LocationViewController.m in Sources */,
 				C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */,
 				A7D498E116ED78C7001EA2D9 /* OverviewController.m in Sources */,
+				C38C5EF616EF995100679A87 /* Patrol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
