@@ -47,7 +47,6 @@
 - (IBAction)GenerateLocation:(id)sender {
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    _start = [NSDate date];
     [_timer startTimer];
     _thread = [[NSThread alloc] initWithTarget:self
                                                selector:@selector(route)

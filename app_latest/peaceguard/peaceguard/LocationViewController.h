@@ -15,10 +15,8 @@
 @property (nonatomic) CLLocationDistance sum;
 @property (nonatomic) NSMutableArray *myArray;
 @property (nonatomic) NSThread *thread;
-//Duration of time for a patrol
-@property (nonatomic) NSTimeInterval *timeInterval;
-@property (nonatomic) NSDate *start;
 - (IBAction)StopPatrol:(id)sender;
+//Duration of time for a patrol
 @property (weak, nonatomic) IBOutlet UITextField *timeDisplay;
 @property (nonatomic) Timer *timer;
 @end
