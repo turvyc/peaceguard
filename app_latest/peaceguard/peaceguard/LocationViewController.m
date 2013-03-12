@@ -56,20 +56,20 @@
 - (void)route
 {
     while(YES){
-        [NSThread sleepForTimeInterval:5];
+        [NSThread sleepForTimeInterval:1];
         [locationManager startUpdatingLocation];
-        NSLog(@"test location manager");
+        //NSLog(@"test location manager");
     }
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
 //    NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
-    
+
     if (currentLocation != nil) {
         _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        //[NSThread sleepForTimeInterval:5];
+        //[NSThread sleepForTimeInterval:1];
         CLLocation *temp_location = [[CLLocation alloc] init];
         if([_myArray lastObject] != nil){
              temp_location = [_myArray lastObject];
@@ -79,7 +79,7 @@
             NSLog(@"%4.0f km from current location",meters);
             _sum += meters;
         }
-        NSLog(@"%4.0f total distance",_sum);
+        NSLog(@"%4.0f total distance",_sum/10000000);
     }
     
     // Reverse Geocoding
