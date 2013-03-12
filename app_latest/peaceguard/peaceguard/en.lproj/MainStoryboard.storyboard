@@ -205,6 +205,7 @@
                     <navigationItem key="navigationItem" id="p1c-Ks-FPY"/>
                     <connections>
                         <outlet property="Address" destination="INO-Mz-FTO" id="RNm-HW-P58"/>
+                        <outlet property="distanceDisplay" destination="6vZ-xX-eCk" id="8J7-gC-Ziy"/>
                         <outlet property="timeDisplay" destination="iVo-ho-VJf" id="8yK-3N-aoF"/>
                     </connections>
                 </viewController>

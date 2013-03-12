@@ -22,5 +22,6 @@
 //Distance of patrol
 @property (nonatomic) CLLocation *start_location;
 @property (nonatomic) CLLocation *final_location;
+@property (weak, nonatomic) IBOutlet UITextField *distanceDisplay;
 @property (nonatomic) BOOL *start;
 @end
