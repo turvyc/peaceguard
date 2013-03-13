@@ -26,4 +26,6 @@
 - (IBAction)generateReport:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *distanceDisplay;
 @property (nonatomic) BOOL *start;
+@property (nonatomic) int report_id;
+@property (nonatomic) NSString* username;
 @end
