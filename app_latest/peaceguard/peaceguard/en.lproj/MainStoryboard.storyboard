@@ -234,7 +234,7 @@
             <objects>
                 <viewController id="FZ1-jG-0HO" customClass="OverviewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7oO-7a-Vz0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-aL-Iq7">
@@ -504,7 +504,7 @@
             <objects>
                 <viewController id="oPN-sY-whv" customClass="ReportViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bmk-e2-JVe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydf-YF-tu0">
@@ -1006,8 +1006,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="C9Q-TW-nBw"/>
-        <segue reference="d9w-r3-FO2"/>
+        <segue reference="WFt-fQ-8pf"/>
+        <segue reference="ppc-ft-uEq"/>
         <segue reference="rEn-yd-dbl"/>
     </inferredMetricsTieBreakers>
 </document>
