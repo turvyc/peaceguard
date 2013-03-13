@@ -28,4 +28,5 @@
 @property (nonatomic) BOOL *start;
 @property (nonatomic) int report_id;
 @property (nonatomic) NSString* username;
+@property (nonatomic) NSString* start_time;
 @end

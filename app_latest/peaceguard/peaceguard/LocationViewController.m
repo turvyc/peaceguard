@@ -52,6 +52,11 @@
     _start = YES;
     [locationManager startUpdatingLocation];
     //[locationManager stopUpdatingLocation];
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    self.start_time = dateString;
     NSLog(@"start Patrol");
 //    _thread = [[NSThread alloc] initWithTarget:self
 //                                               selector:@selector(route)
@@ -59,14 +64,15 @@
 //    [_thread start];
 }
 
-- (void)route
-{
-    while(YES){
-        [NSThread sleepForTimeInterval:1];
-        [locationManager startUpdatingLocation];
-        //NSLog(@"test location manager");
-    }
-}
+//- (void)route
+//{
+//    while(YES){
+//        [NSThread sleepForTimeInterval:1];
+//        [locationManager startUpdatingLocation];
+//        //NSLog(@"test location manager");
+//    }
+//}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
 //    NSLog(@"didUpdateToLocation: %@", newLocation);
