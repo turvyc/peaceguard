@@ -777,9 +777,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="NND-0S-Bg4" kind="push" id="aBH-bu-nn0"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iel-A1-x7v">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -835,6 +832,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="NND-0S-Bg4" kind="push" id="spL-PT-mBK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1003,6 +1003,11 @@
         </class>
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="patrolButton:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -1025,9 +1030,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
             <relationships>
                 <relationship kind="action" name="Login:"/>
-                <relationship kind="action" name="patrolButton:"/>
-                <relationship kind="action" name="reportButton:"/>
-                <relationship kind="action" name="statisticsButton:"/>
                 <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
@@ -1064,7 +1066,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="9ZO-PH-oR0"/>
-        <segue reference="124-Le-yYz"/>
-        <segue reference="1jE-g0-gdg"/>
+        <segue reference="d9w-r3-FO2"/>
+        <segue reference="xNs-2i-NHT"/>
     </inferredMetricsTieBreakers>
 </document>
