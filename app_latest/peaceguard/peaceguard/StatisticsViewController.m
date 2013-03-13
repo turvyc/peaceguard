@@ -28,6 +28,11 @@
     NSLog(self.username);
     self.connectionManager = [[ConnectionDataController alloc] init];
     NSDictionary *statsDictionary = [self.connectionManager getStatistics:self.username andTimePeriod:@"allTime"];
+    
+    self.totalPatrolsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"patrol"];
+    self.totalDistanceField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"distance"];
+    self.numberOfIncidentsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"report"];
+    self.totalTimeField.text =  [[statsDictionary objectForKey:@"total"] objectForKey:@"time"];
     //self.totalPatrolsField.text = [statsDictionary objectForKey:@"total"];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

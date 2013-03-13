@@ -63,6 +63,7 @@
     NSString *dateString = [dateFormatter stringFromDate:currDate];
     self.start_time = dateString;
     NSLog(@"start Patrol");
+    NSLog(@"The patrol ID is %i",self.patrolID);
 //    _thread = [[NSThread alloc] initWithTarget:self
 //                                               selector:@selector(route)
 //                                                 object:nil];
@@ -136,7 +137,7 @@
 //        [_thread release];
 //        locationManager.delegate = self;
 //        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-
+        NSLog(@"The patrol ID is %i",self.patrolID);
         _start = NO;
         [NSThread sleepForTimeInterval:1];
 //        [locationManager startUpdatingLocation];
@@ -150,7 +151,7 @@
         NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
         _distanceDisplay.text = distanceString;
         self.connectionManager = [[ConnectionDataController alloc] init];
-        [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST ROUTE" distance:meters/1000];
+        [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:meters/1000];
 }
 
 - (IBAction)reportButton:(id)sender {

@@ -170,7 +170,7 @@
     NSDate *currDate = [NSDate date];
     NSInteger currentUnixTime = [currDate timeIntervalSince1970];
     
-    NSString *post = [NSString stringWithFormat:@"email=%@&time=%i&agent=iphone", email, currentUnixTime];
+    NSString *post = [NSString stringWithFormat:@"email=%@&startTime=%i&agent=iphone", email, currentUnixTime];
     NSLog(@"Data: %@",post);
     
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -179,7 +179,7 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:@"http://peaceguard.dyndns.org:1728/control/endpatrol.control.php"]];
+    [request setURL:[NSURL URLWithString:@"http://peaceguard.dyndns.org:1728/control/beginpatrol.control.php"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
