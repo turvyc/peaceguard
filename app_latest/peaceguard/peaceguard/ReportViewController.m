@@ -50,15 +50,15 @@
     
     
     //initializes text field display
-    self.incidentData = @"Vandalism";
-    self.severityData = @"Information";
+    self.incidentData = @"vandalism";
+    self.severityData = @"information";
     self.incidentLabel.text = self.incidentData;
     self.severityLabel.text = self.severityData;
     //should be initialized when pickerview pops up
     
     
-    self.incidentSelection = [[NSArray alloc] initWithObjects: @"Vandalism", @"Graffiti", @"Person", @"Property", @"Other", nil];
-    self.severitySelection = [[NSArray alloc] initWithObjects: @"Information", @"Minor", @"Serious",@"Critical", nil];
+    self.incidentSelection = [[NSArray alloc] initWithObjects: @"vandalism", @"graffiti", @"person", @"property", @"other", nil];
+    self.severitySelection = [[NSArray alloc] initWithObjects: @"information", @"minor", @"serious",@"critical", nil];
 
     
     [super viewDidLoad];

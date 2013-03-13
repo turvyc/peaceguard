@@ -23,7 +23,7 @@
 
 - (NSString  *) getPOSTData: (NSString *) email{
     
-    NSString *postData = [NSString stringWithFormat:@"email=%@&type=%@&severity=%@&location=%@&time=%ld&description=%@", email, self.theReport.type, self.theReport.severity,self.theReport.location,(long)self.theReport.time,self.theReport.description];
+    NSString *postData = [NSString stringWithFormat:@"email=%@&type=%@&severity=%@&location=%@&time=%ld&description=%@&agent=iphone", email, self.theReport.type, self.theReport.severity,self.theReport.location,(long)self.theReport.time,self.theReport.description];
     return postData;
 }
 
