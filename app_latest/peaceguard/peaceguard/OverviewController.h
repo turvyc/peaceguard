@@ -24,6 +24,7 @@
 @property(nonatomic) UIImage *imageData;
 @property(nonatomic) NSString *locationData;
 @property(nonatomic) NSString *date;
+@property(nonatomic) NSString *username;
 
 
 @end

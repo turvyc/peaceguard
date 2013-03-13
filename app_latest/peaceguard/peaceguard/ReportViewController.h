@@ -53,6 +53,7 @@
 
 @property (nonatomic) NSString *location;
 @property (nonatomic) NSString *date;
+@property(nonatomic) NSString *username;
 
 @property (weak, nonatomic) IBOutlet UITextField *description;
 //put the image in the specific place and show it to the user

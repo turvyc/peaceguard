@@ -10,5 +10,6 @@
 #import <MapKit/MapKit.h>
 
 @interface PatrolViewController : UIViewController
+@property(nonatomic) NSString *username;
 
 @end

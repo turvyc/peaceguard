@@ -8,7 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
-#import "ReportViewController.h"
+
 #import "User.h"
 #import "ConnectionDataController.h"
 #import "ReportDataController.h"
@@ -25,6 +25,7 @@
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) ConnectionDataController *connectionManager;
 @property (weak, nonatomic) IBOutlet UIButton *Login;
+
 
 - (IBAction)Login:(id)sender;
 //- (BOOL)logUsername: (NSString *) username password: (NSString *) password;

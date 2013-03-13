@@ -29,6 +29,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(self.username);
     thePickerView.hidden = YES;
     pickerViewBlocker.hidden = YES;
     
@@ -195,6 +196,7 @@
 
     OverviewController *overviewController = (OverviewController *)segue.destinationViewController;
     //sets value of variables from overview
+    overviewController.username = self.username;
     overviewController.incidentData = self.incidentData;
     overviewController.severityData = self.severityData;
     overviewController.descriptionData = self.description.text;

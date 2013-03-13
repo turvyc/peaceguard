@@ -361,12 +361,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fm-Hs-7Rl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="159"/>
+            <point key="canvasLocation" x="1362" y="159"/>
         </scene>
-        <!--Peace Guard View Controller - Main Menu-->
+        <!--Main View Controller - Main Menu-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="PeaceGuardViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -385,7 +385,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gX9-hk-2uQ" kind="push" id="WFt-fQ-8pf"/>
+                                    <action selector="statisticsButton:" destination="2" eventType="touchUpInside" id="B1L-dx-bww"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtb-OI-kXE">
@@ -401,7 +401,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oPN-sY-whv" kind="push" id="ppc-ft-uEq"/>
+                                    <action selector="reportButton:" destination="2" eventType="touchUpInside" id="ivu-bG-ayD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7j-89-a4E">
@@ -414,7 +414,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8SN-Ca-LlD" kind="push" id="L7e-Yg-Kbq"/>
+                                    <segue destination="8SN-Ca-LlD" kind="push" identifier="mainToHelp" id="L7e-Yg-Kbq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qD-Zb-sT5">
@@ -431,7 +431,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="YiY-r9-CCp" kind="push" id="S4W-gz-IPD"/>
+                                    <action selector="patrolButton:" destination="2" eventType="touchUpInside" id="0aW-kN-GLw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -449,6 +449,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main Menu" id="YUx-vu-gIV"/>
+                    <connections>
+                        <segue destination="YiY-r9-CCp" kind="push" identifier="mainToPatrol" id="uiG-pe-UcA"/>
+                        <segue destination="gX9-hk-2uQ" kind="push" identifier="mainToStatistics" id="124-Le-yYz"/>
+                        <segue destination="oPN-sY-whv" kind="push" identifier="mainToReport" id="1jE-g0-gdg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -709,7 +714,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izN-ri-bUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="159"/>
+            <point key="canvasLocation" x="906" y="451"/>
         </scene>
         <!--Patrol View Controller - Patrol Control-->
         <scene sceneID="zdJ-X0-nX1">
@@ -833,7 +838,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="-550"/>
+            <point key="canvasLocation" x="674" y="-506"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Z8i-II-Cm1">
@@ -890,7 +895,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WR-Hi-KXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="-520"/>
+            <point key="canvasLocation" x="1346" y="-512"/>
         </scene>
         <!--Statistics View Controller - Statistics-->
         <scene sceneID="TKs-4u-uYS">
@@ -978,7 +983,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuq-qa-82s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="438" y="840"/>
+            <point key="canvasLocation" x="514" y="840"/>
         </scene>
     </scenes>
     <resources>
@@ -995,6 +1000,9 @@
                 <relationship kind="outlet" name="distanceDisplay" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="timeDisplay" candidateClass="UITextField"/>
             </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -1017,6 +1025,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
             <relationships>
                 <relationship kind="action" name="Login:"/>
+                <relationship kind="action" name="patrolButton:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="action" name="statisticsButton:"/>
                 <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
                 <relationship kind="outlet" name="password" candidateClass="UITextField"/>
@@ -1052,8 +1063,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rEn-yd-dbl"/>
-        <segue reference="ppc-ft-uEq"/>
-        <segue reference="WFt-fQ-8pf"/>
+        <segue reference="9ZO-PH-oR0"/>
+        <segue reference="124-Le-yYz"/>
+        <segue reference="1jE-g0-gdg"/>
     </inferredMetricsTieBreakers>
 </document>

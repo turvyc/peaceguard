@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad
 {
+    NSLog(self.username);
     self.incidentDisplay.text = self.incidentData;
     self.severityDisplay.text = self.severityData;
     self.descriptionDisplay.text = self.descriptionData;

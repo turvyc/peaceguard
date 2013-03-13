@@ -13,5 +13,5 @@
 @property (nonatomic) int total_distance;
 @property (nonatomic) int total_time;
 @property (nonatomic) int total_report;
-@property (nonatomic) NSString *username;
+@property(nonatomic) NSString *username;
 @end

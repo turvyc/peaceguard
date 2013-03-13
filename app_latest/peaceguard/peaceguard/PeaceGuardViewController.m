@@ -11,6 +11,8 @@
 #import "User.h"
 #import "UserDataController.h"
 
+#import "MainViewController.h"
+
 @interface PeaceGuardViewController ()
 
 @end
@@ -27,8 +29,11 @@
     [textField resignFirstResponder];
     return YES;
 }
+
+
 - (IBAction)Login:(id)sender {
     //BOOL authentication = [self logUsername:self.username.text password:self.password.text];
+//    self.usernameData = self.username.text;
     self.user = [[User alloc] initWithUsername:self.username.text password:self.password.text];
     self.connectionManager = [[ConnectionDataController alloc] init];
     BOOL authentication = [self.connectionManager serverLoginWithEmail:self.username.text andPassword:self.password.text];
@@ -65,6 +70,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+        MainViewController *mainContoller = (MainViewController *)segue.destinationViewController;
+        mainContoller.usernameData = self.username.text;
+
 }
 
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A7D498E116ED78C7001EA2D9 /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D498E016ED78C6001EA2D9 /* OverviewController.m */; };
+		A7F2F73516F04357005F9E8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2F73416F04357005F9E8A /* MainViewController.m */; };
 		C313066616DF18C3005FB151 /* PatrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C313066516DF18C3005FB151 /* PatrolViewController.m */; };
 		C313066816DF1CEE005FB151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313066716DF1CEE005FB151 /* MapKit.framework */; };
 		C38C5EF616EF995100679A87 /* Patrol.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C5EF516EF995100679A87 /* Patrol.m */; };
@@ -44,6 +45,8 @@
 /* Begin PBXFileReference section */
 		A7D498DF16ED78C6001EA2D9 /* OverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewController.h; sourceTree = "<group>"; };
 		A7D498E016ED78C6001EA2D9 /* OverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewController.m; sourceTree = "<group>"; };
+		A7F2F73316F04357005F9E8A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A7F2F73416F04357005F9E8A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		C313066416DF18C3005FB151 /* PatrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatrolViewController.h; sourceTree = "<group>"; };
 		C313066516DF18C3005FB151 /* PatrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatrolViewController.m; sourceTree = "<group>"; };
 		C313066716DF1CEE005FB151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -180,6 +183,8 @@
 				C38C5EF816EFA18600679A87 /* Timer.m */,
 				C38F8EA816EFD4CA008C5F83 /* Statistics.h */,
 				C38F8EA916EFD4CA008C5F83 /* Statistics.m */,
+				A7F2F73316F04357005F9E8A /* MainViewController.h */,
+				A7F2F73416F04357005F9E8A /* MainViewController.m */,
 			);
 			path = peaceguard;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 				C38C5EF616EF995100679A87 /* Patrol.m in Sources */,
 				C38C5EF916EFA18700679A87 /* Timer.m in Sources */,
 				C38F8EAA16EFD4CA008C5F83 /* Statistics.m in Sources */,
+				A7F2F73516F04357005F9E8A /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
