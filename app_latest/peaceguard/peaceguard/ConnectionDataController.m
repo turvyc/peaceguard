@@ -114,9 +114,9 @@
 
 }
 
-- (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (NSInteger) distance {
+- (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (double) distance {
     
-    NSString *post = [NSString stringWithFormat:@"patrol=%i&duration=%i&route=%@&distance=%i&agent=iphone", patrolID, duration, route, distance];
+    NSString *post = [NSString stringWithFormat:@"patrol=%i&duration=%i&route=%@&distance=%f&agent=iphone", patrolID, duration, route, distance];
     NSLog(@"Data: %@",post);
     
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -165,7 +165,7 @@
     
 }
 
-- (void) startPatrolWithEmail: (NSString *) email{
+- (NSInteger) startPatrolWithEmail: (NSString *) email{
     
     NSDate *currDate = [NSDate date];
     NSInteger currentUnixTime = [currDate timeIntervalSince1970];

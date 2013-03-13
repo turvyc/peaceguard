@@ -14,6 +14,6 @@
 - (void) reportWithPostData: (NSString *) data;
 
 - (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (NSInteger) distance;
-- (void) startPatrolWithEmail: (NSString *) email;
+- (NSInteger) startPatrolWithEmail: (NSString *) email;
 
 @end

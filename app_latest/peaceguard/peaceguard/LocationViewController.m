@@ -49,7 +49,7 @@
 //it is the function to start patrol
 - (IBAction)GenerateLocation:(id)sender {
     self.connectionManager = [[ConnectionDataController alloc] init];
-    [self.connectionManager startPatrolWithEmail:self.username];
+    self.patrolID = [self.connectionManager startPatrolWithEmail:self.username];
     
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -136,6 +136,7 @@
 //        [_thread release];
 //        locationManager.delegate = self;
 //        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+
         _start = NO;
         [NSThread sleepForTimeInterval:1];
 //        [locationManager startUpdatingLocation];
@@ -148,6 +149,8 @@
         CLLocationDistance meters = [_final_location distanceFromLocation:_start_location];
         NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
         _distanceDisplay.text = distanceString;
+        self.connectionManager = [[ConnectionDataController alloc] init];
+        [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST ROUTE" distance:meters/1000];
 }
 
 - (IBAction)reportButton:(id)sender {

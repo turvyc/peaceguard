@@ -30,7 +30,7 @@
 @property (nonatomic) NSString* username;
 @property (nonatomic) NSString* start_time;
 @property (nonatomic, strong) ConnectionDataController *connectionManager;
-
+@property (nonatomic) NSInteger patrolID;
 
 - (IBAction)reportButton:(id)sender;
 @property(nonatomic) NSString *segueType;
