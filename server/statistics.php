@@ -34,6 +34,9 @@ catch (Exception $e) {
     exit(0);
 }
 
+// Reset the data, in case the user chooses to download the CSV
+$session->setData($sessionData);
+
 ?>
 
 <h1>Patrol Statistics</h1>
@@ -50,6 +53,9 @@ catch (Exception $e) {
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
 </form>
+
+<a href='csv/statistics.csv.php'>Download as CSV</a>
+<hr />
 
 <ul>
     <li>Number of registered volunteers: <?php echo Volunteer::getTotalNumber(); ?></li>
