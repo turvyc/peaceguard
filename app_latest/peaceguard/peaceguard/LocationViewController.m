@@ -48,6 +48,9 @@
 
 //it is the function to start patrol
 - (IBAction)GenerateLocation:(id)sender {
+    self.connectionManager = [[ConnectionDataController alloc] init];
+    [self.connectionManager startPatrolWithEmail:self.username];
+    
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [_timer startTimer];
@@ -158,6 +161,8 @@
     if(self.current_location != nil){
         report.location = self.current_location;
     }
+    report.username = self.username;
+    report.isPatrolling = @"YES";
 }
 
 @end

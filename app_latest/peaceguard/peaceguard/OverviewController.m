@@ -33,11 +33,11 @@
     NSDate *currDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
-    //NSString *dateString = [dateFormatter stringFromDate:currDate];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
     //NSInteger *dateData = [currDate timeIntervalSince1970];
     double aDate = [currDate timeIntervalSince1970];
     self.date =(NSInteger)aDate;
-    //self.dataDisplay.text = dateString;
+    self.dataDisplay.text = dateString;
     if(self.locationData != nil){
         self.locationDisplay.text = self.locationData;
     }

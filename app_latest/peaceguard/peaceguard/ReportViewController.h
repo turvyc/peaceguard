@@ -55,6 +55,8 @@
 @property (nonatomic) NSString *date;
 @property(nonatomic) NSString *username;
 
+@property (nonatomic) NSString *isPatrolling;
+
 @property (weak, nonatomic) IBOutlet UITextField *description;
 //put the image in the specific place and show it to the user
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;

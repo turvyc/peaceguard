@@ -72,7 +72,7 @@
         NSLog(@"got to report");
         ReportViewController *reportController = (ReportViewController *)segue.destinationViewController;
         reportController.username = self.usernameData;
-        
+        reportController.isPatrolling = @"NO";
         
     }
     //stats

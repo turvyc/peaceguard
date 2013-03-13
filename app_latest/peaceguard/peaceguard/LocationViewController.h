@@ -8,6 +8,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 #import "Timer.h"
+#import "ConnectionDataController.h"
 
 @interface LocationViewController : UIViewController <CLLocationManagerDelegate>
 - (IBAction)GenerateLocation:(id)sender;
@@ -28,7 +29,7 @@
 @property (nonatomic) int report_id;
 @property (nonatomic) NSString* username;
 @property (nonatomic) NSString* start_time;
-
+@property (nonatomic, strong) ConnectionDataController *connectionManager;
 
 
 - (IBAction)reportButton:(id)sender;

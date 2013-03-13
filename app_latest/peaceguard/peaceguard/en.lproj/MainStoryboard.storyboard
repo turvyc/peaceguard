@@ -768,19 +768,6 @@
                                     <action selector="statisticsButton:" destination="YiY-r9-CCp" eventType="touchUpInside" id="v69-Br-QGT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iel-A1-x7v">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Report Control">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="reportControl:" destination="YiY-r9-CCp" eventType="touchUpInside" id="wqE-1w-dCP"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="*This is a patrol control page, If you are " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOD-qt-BEI">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.69567340353260865" green="0.11111819690597395" blue="0.13569851628559812" alpha="1" colorSpace="calibratedRGB"/>
@@ -808,22 +795,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dOD-qt-BEI" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="7" id="3Pm-XV-iyE"/>
-                            <constraint firstAttribute="bottom" secondItem="3o2-6C-IGh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="4Iy-I2-XI3"/>
                             <constraint firstItem="OlE-dE-eo4" firstAttribute="leading" secondItem="dOD-qt-BEI" secondAttribute="leading" type="default" id="58i-xU-VqK"/>
-                            <constraint firstItem="Iel-A1-x7v" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="9d4-sG-2Yg"/>
-                            <constraint firstItem="xoT-Qs-AIt" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="241" id="EDi-CK-D4L"/>
+                            <constraint firstItem="NBl-6m-RN1" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="EAL-9X-vR6"/>
                             <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="O4V-0m-WzX"/>
-                            <constraint firstAttribute="bottom" secondItem="se6-0Y-KOK" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wg0-D0-9Cj"/>
-                            <constraint firstItem="NBl-6m-RN1" firstAttribute="centerX" secondItem="Iel-A1-x7v" secondAttribute="centerX" type="default" id="Z1D-o2-7IA"/>
+                            <constraint firstItem="3o2-6C-IGh" firstAttribute="centerX" secondItem="se6-0Y-KOK" secondAttribute="centerX" type="default" id="b94-lV-i7U"/>
                             <constraint firstAttribute="trailing" secondItem="xoT-Qs-AIt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="c7K-C4-18Q"/>
-                            <constraint firstAttribute="bottom" secondItem="Iel-A1-x7v" secondAttribute="bottom" constant="182" id="f5T-xa-MgP"/>
                             <constraint firstItem="OlE-dE-eo4" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="42" id="fYD-DE-0vL"/>
                             <constraint firstItem="NBl-6m-RN1" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="137" id="hcA-IL-GJ6"/>
+                            <constraint firstItem="se6-0Y-KOK" firstAttribute="bottom" secondItem="xoT-Qs-AIt" secondAttribute="bottom" type="default" id="hmP-NY-xHt"/>
                             <constraint firstItem="dOD-qt-BEI" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="20" symbolic="YES" type="default" id="jzg-ac-pmk"/>
                             <constraint firstAttribute="trailing" secondItem="GFo-DW-Hec" secondAttribute="trailing" constant="79" id="nvc-yw-otg"/>
+                            <constraint firstItem="se6-0Y-KOK" firstAttribute="leading" secondItem="NBl-6m-RN1" secondAttribute="leading" type="default" id="oDA-jv-vV8"/>
                             <constraint firstAttribute="trailing" secondItem="DVo-Sv-RDz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qYt-9e-19I"/>
-                            <constraint firstItem="se6-0Y-KOK" firstAttribute="leading" secondItem="Hj2-y8-Dce" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rqk-WT-qTD"/>
-                            <constraint firstAttribute="trailing" secondItem="3o2-6C-IGh" secondAttribute="trailing" constant="9" id="ufy-cm-lg9"/>
+                            <constraint firstItem="se6-0Y-KOK" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="198" id="r4v-LI-dDt"/>
+                            <constraint firstAttribute="bottom" secondItem="3o2-6C-IGh" secondAttribute="bottom" constant="198" id="ryK-tZ-3ld"/>
                             <constraint firstItem="OlE-dE-eo4" firstAttribute="top" secondItem="DVo-Sv-RDz" secondAttribute="top" type="default" id="yJL-Dr-RLk"/>
                         </constraints>
                     </view>
@@ -833,7 +818,6 @@
                     <connections>
                         <segue destination="NND-0S-Bg4" kind="push" identifier="patrolToLocation" id="spL-PT-mBK"/>
                         <segue destination="gX9-hk-2uQ" kind="push" identifier="patrolToStatistics" id="EIo-P2-aQg"/>
-                        <segue destination="oPN-sY-whv" kind="push" identifier="patrolToReport" id="9qU-hl-6bP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -989,14 +973,90 @@
     <resources>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="LocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="GenerateLocation:"/>
+                <relationship kind="action" name="StopPatrol:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="distanceDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="timeDisplay" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="patrolButton:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OverviewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverviewController.h"/>
+            <relationships>
+                <relationship kind="action" name="confirm:"/>
+                <relationship kind="outlet" name="dataDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="descriptionDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="severityDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PatrolViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="locationButton:"/>
+                <relationship kind="action" name="reportControl:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+            </relationships>
+        </class>
+        <class className="PeaceGuardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ImageTaker:"/>
+                <relationship kind="action" name="buttonToOverview:"/>
+                <relationship kind="action" name="doneSelection:"/>
+                <relationship kind="action" name="incidentButtonPressed:"/>
+                <relationship kind="action" name="severityButtonPressed:"/>
+                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="dateDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pickerViewBlocker" candidateClass="UIView"/>
+                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="StatisticsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatisticsViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rEn-yd-dbl"/>
-        <segue reference="EIo-P2-aQg"/>
         <segue reference="NMq-QC-cmz"/>
+        <segue reference="EIo-P2-aQg"/>
+        <segue reference="9ZO-PH-oR0"/>
     </inferredMetricsTieBreakers>
 </document>
