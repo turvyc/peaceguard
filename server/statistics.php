@@ -20,6 +20,23 @@ require_once('model/report.model.php');
 require_once('model/volunteer.model.php');
 checkLoggedIn($session);
 
+// Try to get data set by the control script
+try {
+    $sessionData = $session->getData();
+    $globalStats = $sessionData[_TOTAL];
+    $averageStats = $sessionData[_AVERAGE];
+    $timePeriod = $sessionData[_TIME_PERIOD];
+}
+
+// Nothing set, go get some statistics
+catch (Exception $e) {
+    header('location: control/patrolstats.control.php');
+    exit(0);
+}
+
+// Reset the data, in case the user chooses to download the CSV
+$session->setData($sessionData);
+
 ?>
 
 <h1>Patrol Statistics</h1>
@@ -27,45 +44,41 @@ checkLoggedIn($session);
 <form name="<?php echo _REPORT; ?>" action="control/patrolstats.control.php" method="POST">
 	<select name="<?php echo _TIME_PERIOD; ?>">
         Time Period:
-		<option value="<?php echo _LAST_DAY; ?>">Today</option>
-        <option value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
-		<option value="<?php echo _LAST_YEAR; ?>">Last Year</option>
-		<option value="<?php echo _ALL_TIME; ?>">All Time</option>
+        <option <?php echo ($timePeriod == _LAST_DAY) ? 'selected' : ''; ?> value="<?php echo _LAST_DAY; ?>">Today</option>
+        <option <?php echo ($timePeriod == _LAST_MONTH) ? 'selected' : ''; ?> value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
+		<option <?php echo ($timePeriod == _LAST_YEAR) ? 'selected' : ''; ?> value="<?php echo _LAST_YEAR; ?>">Last Year</option>
+		<option <?php echo ($timePeriod == _ALL_TIME) ? 'selected' : ''; ?> value="<?php echo _ALL_TIME; ?>">All Time</option>
 	</select>
 	
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
 </form>
 
-<?php
-try {
-    $stats = $session->getData();
-?>
+<a href='csv/statistics.csv.php'>Download as CSV</a>
+<hr />
 
 <ul>
     <li>Number of registered volunteers: <?php echo Volunteer::getTotalNumber(); ?></li>
     <li>Total:
         <ul>
-            <li>Number of patrols: <?php echo $stats[_TOTAL][_PATROL] ?></li>
-            <li>Distance patrolled: <?php echo round($stats[_TOTAL][_DISTANCE] / 1000, 1) . ' kilometers' ?></li>
-            <li>Time patrolled: <?php echo $stats[_TOTAL][_TIME] ?></li>
-            <li>Number of incident reports: <?php echo $stats[_TOTAL][_REPORT] ?></li>
+            <li>Number of patrols: <?php echo $globalStats[_PATROL] ?></li>
+            <li>Distance patrolled: <?php echo round($globalStats[_DISTANCE] / 1000, 1) . ' kilometers' ?></li>
+            <li>Time patrolled: <?php echo secondsToString($globalStats[_TIME]) ?></li>
+            <li>Number of incident reports: <?php echo $globalStats[_REPORT] ?></li>
         </ul>
     </li>
     <li>Average (per volunteer):
         <ul>
-            <li>Number of patrols: <?php echo $stats[_AVERAGE][_PATROL] ?></li>
-            <li>Distance patrolled: <?php echo $stats[_AVERAGE][_DISTANCE] ?></li>
-            <li>Time patrolled: <?php echo $stats[_AVERAGE][_TIME] ?></li>
-            <li>Number of incident reports: <?php echo $stats[_AVERAGE][_REPORT] ?></li>
+            <li>Number of patrols: <?php echo $averageStats[_PATROL] ?></li>
+            <li>Distance patrolled: <?php echo $averageStats[_DISTANCE] ?></li>
+            <li>Time patrolled: <?php echo secondsToString($averageStats[_TIME]) ?></li>
+            <li>Number of incident reports: <?php echo $averageStats[_REPORT] ?></li>
         </ul>
     </li>
 </ul>
+
 <?php
-}
 
-catch (Exception $e) {
-    echo "Please select a time period.";
-}
+include('footer.php');
 
-include('footer.php'); ?>
+?>

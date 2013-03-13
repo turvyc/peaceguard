@@ -68,11 +68,12 @@ class Session {
     // or throws an exception if either _SESSION or the data are empty or unset.
     public function getData() {
         if (! isset($_SESSION[Session::DATA]) || empty($_SESSION[Session::DATA])) {
-            throw new LogicException('No data found.');
+            throw new RuntimeException('No data found.');
         }
 
-        return $_SESSION[Session::DATA];
+        $data = $_SESSION[Session::DATA];
         unset($_SESSION[Session::DATA]);
+        return $data;
     }
 
     // Deletes the encoded JSON string stored in _SESSION[DATA]

@@ -52,14 +52,15 @@ if ($interface->getAgent() == _IPHONE) {
 
 // It's the website!
 else {
-    // Make sure the required POST keys are set
+    // Make sure the required POST keys are set, and set it to the default if not
     if (! isset($_POST[_TIME_PERIOD])) {
-        throw new LogicException('_TIME_PERIOD or _ORDER_BY not set.');
+        $_POST[_TIME_PERIOD] = _ALL_TIME;
     }
 
     $stats = Patrol::getGlobalStatistics($_POST[_TIME_PERIOD]);
     $interface->addData(_TOTAL, $stats[_TOTAL]);
     $interface->addData(_AVERAGE, $stats[_AVERAGE]);
+    $interface->addData(_TIME_PERIOD, $_POST[_TIME_PERIOD]);
 
     header('location: ../statistics.php');
 }

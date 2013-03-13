@@ -77,11 +77,11 @@ if ($interface->getAgent() == _IPHONE) {
 try {
     // Ensure that _TIME_PERIOD and _ORDER_BY are set
     if (! isset($_POST[_TIME_PERIOD])) {
-        throw new LogicException('_TIME_PERIOD is not set.');
+        $_POST[_TIME_PERIOD] = _LAST_DAY;
     }
 
     if (! isset($_POST[_ORDER_BY])) {
-        throw new LogicException('_ORDER_BY is not set.');
+        $_POST[_ORDER_BY] = _TIME;
     }
 
     // Ensure that _TIME_PERIOD and _ORDER_BY have sane values
@@ -89,11 +89,11 @@ try {
     $allowedSorts = array(_TIME, _SEVERITY, _VOLUNTEER, _TYPE, _LOCATION);
 
     if (! in_array($_POST[_TIME_PERIOD], $allowedTimePeriods)) {
-        throw new OutOfBoundsException('Illegal value for _TIME_PERIOD');
+        $_POST[_TIME_PERIOD] = _LAST_DAY;
     }
 
     if (! in_array($_POST[_ORDER_BY], $allowedSorts)) {
-        throw new OutOfBoundsException('Illegal value for _ORDER_BY');
+        $_POST[_ORDER_BY] = _TIME;
     }
 	
     // Defined in constants.model.php
@@ -108,10 +108,10 @@ try {
     $STH = $DBH->prepare($query);
     $STH->execute();
 
-    $allReportData = $STH->fetchAll();
-    $allReportData[_TIME_PERIOD] = $_POST[_TIME_PERIOD];
-    $allReportData[_ORDER_BY] = $_POST[_ORDER_BY];
-    $session->setData($allReportData);
+    // Prepare the data array and set it in the SESSION variable
+    $data = array(_REPORT => $STH->fetchAll(), _TIME_PERIOD => $_POST[_TIME_PERIOD], 
+    _ORDER_BY => $_POST[_ORDER_BY]);
+    $session->setData($data);
 
     header('location: ../reports.php');
     exit(0);
