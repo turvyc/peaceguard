@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     NSLog(self.username);
+    self.connectionManager = [[ConnectionDataController alloc] init];
+    NSDictionary *statsDictionary = [self.connectionManager getStatistics:self.username andTimePeriod:@"allTime"];
+    //self.totalPatrolsField.text = [statsDictionary objectForKey:@"total"];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

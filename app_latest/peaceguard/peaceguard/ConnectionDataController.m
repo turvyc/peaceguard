@@ -215,9 +215,60 @@
         success = NO;
         NSLog(@"NOT Successful");
     }
+    return [[jsonDictionary objectForKey:@"patrol"] integerValue];
+}
+
+
+- (NSDictionary *) getStatistics: (NSString *) email andTimePeriod: (NSString *) timePeriod{
     
+    NSString *post = [NSString stringWithFormat:@"email=%@&timePeriod=%@&agent=iphone", email, timePeriod];
+    NSLog(@"Data: %@",post);
     
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    [request setURL:[NSURL URLWithString:@"http://peaceguard.dyndns.org:1728/control/patrolstats.control.php"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    NSLog(@"Data: %@",request);
+    //End of POST
+    
+    //Receive JSON
+    NSURLResponse *response;
+    NSError *err;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    NSLog(@"Data: %@",responseData);
+    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
+    NSLog(@"Data: %@", responseString);
+    
+    //JSON processing
+    NSError *error;
+    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+    if (! error) {
+        NSLog(@"%@",jsonDictionary);
+    }else{
+        NSLog(@"%@",error.localizedDescription);
+    }
+    
+    NSLog(@"JSON: %@", jsonDictionary);
+    
+    BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
+    
+    NSString *test = @"done";
+    if(success){
+        NSLog(@"Successful!!!");
+        test = @"Succesful";
+    }
+    else{
+        success = NO;
+        test = @"failed";
+    }
+    return jsonDictionary;
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConnectionDataController.h"
 
 @interface StatisticsViewController : UIViewController
 @property (nonatomic) int num_of_patrol;
@@ -14,4 +15,11 @@
 @property (nonatomic) int total_time;
 @property (nonatomic) int total_report;
 @property(nonatomic) NSString *username;
+@property (strong, nonatomic) ConnectionDataController *connectionManager;
+@property (weak, nonatomic) IBOutlet UITextField *totalPatrolsField;
+@property (weak, nonatomic) IBOutlet UITextField *totalTimeField;
+@property (weak, nonatomic) IBOutlet UITextField *totalDistanceField;
+@property (weak, nonatomic) IBOutlet UITextField *numberOfIncidentsField;
+
+
 @end

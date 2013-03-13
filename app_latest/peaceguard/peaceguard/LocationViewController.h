@@ -34,4 +34,10 @@
 
 - (IBAction)reportButton:(id)sender;
 @property(nonatomic) NSString *segueType;
+
+
+
+
+
+
 @end
