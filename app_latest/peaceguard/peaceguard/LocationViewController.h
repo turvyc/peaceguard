@@ -23,10 +23,14 @@
 @property (nonatomic) CLLocation *start_location;
 @property (nonatomic) CLLocation *final_location;
 @property (nonatomic) NSString *current_location;
-- (IBAction)generateReport:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *distanceDisplay;
 @property (nonatomic) BOOL *start;
 @property (nonatomic) int report_id;
 @property (nonatomic) NSString* username;
 @property (nonatomic) NSString* start_time;
+
+
+
+- (IBAction)reportButton:(id)sender;
+@property(nonatomic) NSString *segueType;
 @end

@@ -31,6 +31,8 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"username-location:%@", self.username);
+
     [super viewDidLoad];
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
@@ -126,7 +128,7 @@
 }
 
 
-    - (IBAction)StopPatrol:(id)sender {
+- (IBAction)StopPatrol:(id)sender {
 //        [_thread cancel];
 //        [_thread release];
 //        locationManager.delegate = self;
@@ -143,10 +145,11 @@
         CLLocationDistance meters = [_final_location distanceFromLocation:_start_location];
         NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
         _distanceDisplay.text = distanceString;
-    }
+}
 
-- (IBAction)generateReport:(id)sender {
-    [self performSegueWithIdentifier:@"generateReport" sender:nil];
+- (IBAction)reportButton:(id)sender {
+    self.segueType = @"report";
+    [self performSegueWithIdentifier:@"locationToReport" sender:self];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -156,4 +159,5 @@
         report.location = self.current_location;
     }
 }
+
 @end

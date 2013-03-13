@@ -63,8 +63,8 @@
     //if patrol button is pressed
     if([self.segueType isEqual: @"patrol"]){
         NSLog(@"got to patrol");
-        PatrolViewController *patrolContoller = (PatrolViewController *)segue.destinationViewController;
-        patrolContoller.username = self.usernameData;
+        PatrolViewController *patrolController = (PatrolViewController *)segue.destinationViewController;
+        patrolController.username = self.usernameData;
         
     }
     //report
@@ -81,13 +81,6 @@
         StatisticsViewController *statisticsController = (StatisticsViewController *)segue.destinationViewController;
         statisticsController.username = self.usernameData;
         
-        
-    }
-    else{
-        NSLog(@"failed");
-        NSLog(@"segue:%@",segue);
-        PatrolViewController *patrolContoller = (PatrolViewController *)segue.destinationViewController;
-        patrolContoller.username = @"testusername";
         
     }
 }

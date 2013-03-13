@@ -11,5 +11,10 @@
 
 @interface PatrolViewController : UIViewController
 @property(nonatomic) NSString *username;
+- (IBAction)reportControl:(id)sender;
+- (IBAction)statisticsButton:(id)sender;
+- (IBAction)locationButton:(id)sender;
+
+@property(nonatomic) NSString *segueType;
 
 @end
