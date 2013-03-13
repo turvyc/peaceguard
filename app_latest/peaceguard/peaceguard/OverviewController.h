@@ -14,11 +14,16 @@
 @property (strong, nonatomic) IBOutlet UILabel *severityDisplay;
 @property (strong, nonatomic) IBOutlet UITextField *descriptionDisplay;
 @property (strong, nonatomic) IBOutlet UIImageView *imageDisplay;
+@property (strong, nonatomic) IBOutlet UITextField *locationDisplay;
+@property (strong, nonatomic) IBOutlet UITextField *dataDisplay;
+
 
 @property(nonatomic) NSString *incidentData;
 @property(nonatomic) NSString *severityData;
 @property(nonatomic) NSString *descriptionData;
 @property(nonatomic) UIImage *imageData;
+@property(nonatomic) NSString *locationData;
+
 
 - (IBAction)cancelPressed:(id)sender;
 
