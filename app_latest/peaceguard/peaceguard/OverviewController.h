@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ReportDataController.h"
+#import "ConnectionDataController.h"
 
 @interface OverviewController : UIViewController
 
@@ -16,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageDisplay;
 @property (strong, nonatomic) IBOutlet UITextField *locationDisplay;
 @property (strong, nonatomic) IBOutlet UITextField *dataDisplay;
+- (IBAction)confirm:(id)sender;
 
 
 @property(nonatomic) NSString *incidentData;
@@ -23,8 +26,10 @@
 @property(nonatomic) NSString *descriptionData;
 @property(nonatomic) UIImage *imageData;
 @property(nonatomic) NSString *locationData;
-@property(nonatomic) NSString *date;
+@property(nonatomic) NSInteger *date;
 @property(nonatomic) NSString *username;
 
+@property(retain, nonatomic) ConnectionDataController *connectionManager;
+@property(retain, nonatomic) ReportDataController *reportManager;
 
 @end

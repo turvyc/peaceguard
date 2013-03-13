@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad
 {
-    NSLog(self.username);
+    NSLog(@"This is the username: %@", self.username);
     self.incidentDisplay.text = self.incidentData;
     self.severityDisplay.text = self.severityData;
     self.descriptionDisplay.text = self.descriptionData;
@@ -33,9 +33,11 @@
     NSDate *currDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
-    NSString *dateString = [dateFormatter stringFromDate:currDate];
-    self.date = dateString;
-    self.dataDisplay.text = dateString;
+    //NSString *dateString = [dateFormatter stringFromDate:currDate];
+    //NSInteger *dateData = [currDate timeIntervalSince1970];
+    double aDate = [currDate timeIntervalSince1970];
+    self.date =(NSInteger)aDate;
+    //self.dataDisplay.text = dateString;
     if(self.locationData != nil){
         self.locationDisplay.text = self.locationData;
     }
@@ -51,4 +53,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)confirm:(id)sender {
+    
+    self.reportManager = [[ReportDataController alloc] init];
+    self.connectionManager = [[ConnectionDataController alloc] init];
+    
+    [self.reportManager makeReportWithType:self.incidentData severity:self.severityData location:self.locationData time:self.date andDescription:self.descriptionData];
+    NSLog(@"This is the username: %@", self.username);
+    [self.connectionManager reportWithPostData:[self.reportManager getPOSTData:self.username]];
+    
+    
+}
 @end

@@ -12,7 +12,7 @@
 
 @interface ReportDataController : NSObject
 
-@property (nonatomic, copy) Report *theReport;
+@property (nonatomic, retain) Report *theReport;
 
 - (void) makeReportWithType: (NSString *) type severity: (NSString *) severity location: (NSString *) location time: (NSInteger *) time andDescription: (NSString *) description;
 - (NSString *) getPOSTData: (NSString *) email;
