@@ -24,6 +24,7 @@ try {
     $reports = $sessionData[_REPORT];
     $timePeriod = $sessionData[_TIME_PERIOD];
     $orderBy = $sessionData[_ORDER_BY];
+    $sessionData = array();
 }
 
 // No reports are set. Go get some.
@@ -41,7 +42,7 @@ catch (Exception $e) {
 	<select name="<?php echo _TIME_PERIOD; ?>" id="<?php echo _TIME_PERIOD; ?>">
         <option <?php echo ($timePeriod == _LAST_DAY) ? 'selected' : ''; ?> value="<?php echo _LAST_DAY; ?>">Today</option>
         <option <?php echo ($timePeriod == _LAST_MONTH) ? 'selected' : ''; ?> value="<?php echo _LAST_MONTH; ?>">Last Thirty Days</option>
-		<option <?php echo ($timePeriod == _LAST_YEAR) ? 'selected' : ''; ?> value="<?php echo _LAST_YEAR; ?>">Last Year</option>
+		<option <?php echo ($timePeriod == _LAST_YEAR) ? 'selected' : ''; ?> value="<?php echo _LAST_YEAR; ?>">Last Year</option> 
         <option <?php echo ($timePeriod == _ALL_TIME) ? 'selected' : ''; ?> value="<?php echo _ALL_TIME; ?>">All Time</option>
 	</select>	
 	
@@ -56,6 +57,8 @@ catch (Exception $e) {
 	<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
     <input type="submit" value="Submit" />
 </form>
+
+<a href='csv/reports.csv.php'>Download as CSV</a>
 
 <table class="reportTable">
 	<tr>
@@ -74,6 +77,9 @@ catch (Exception $e) {
 
         $report = new Report($reports[$i]);
 
+        // Add the report to the session to simplify CSV download
+        $sessionData[] = $report;
+
         echo '<tr>';
             echo '<td>' . $report->getDate() . '</td>';
             echo '<td>' . $report->getTime() . '</td>';
@@ -91,6 +97,7 @@ catch (Exception $e) {
 
 <?php
 
+$session->setData($sessionData);
 include('footer.php');
 
 ?>
