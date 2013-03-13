@@ -26,6 +26,4 @@
 @property(nonatomic) NSString *date;
 
 
-- (IBAction)cancelPressed:(id)sender;
-
 @end
