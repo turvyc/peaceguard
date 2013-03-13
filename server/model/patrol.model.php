@@ -65,13 +65,13 @@ class Patrol {
         SUM(distance) AS totalDistance,
         SUM(duration) AS totalTime,
         AVG(distance) AS averageDistance,
-        AVG(time) AS averageTime
-        FROM Patrols NATURAL JOIN Patrolled
-        WHERE email = $email AND start_time > $since";
+        AVG(duration) AS averageTime
+        FROM Patrols NATURAL JOIN Patrolled NATURAL JOIN Users
+        WHERE email = '$email' AND start_time > $since";
 
         $query2 = "SELECT COUNT(*) AS totalReports
-        FROM Reports NATURAL JOIN Reported
-        WHERE email = $email AND time > $since";
+        FROM Reports NATURAL JOIN Reported NATURAL JOIN Users
+        WHERE email = '$email' AND time > $since";
 
         $STH = $DBH->prepare($query1);
         $STH->execute();

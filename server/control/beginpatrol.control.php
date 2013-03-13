@@ -14,11 +14,13 @@ or `git blame <file>`
 
 */
 
+require_once('../model/session.model.php');
 require_once('../model/constants.model.php');
 require_once('../model/patrol.model.php');
 require_once('../model/datainterface.model.php');
 
 try {
+    $session = new Session();
     $interface = new DataInterface($session);
 
     // Make sure we have the required info

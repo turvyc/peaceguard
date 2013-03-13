@@ -64,6 +64,7 @@ define('_ALL_TIME', 'allTime');
 define('_PATROL', 'patrol');
 define('_START_TIME', 'startTime');
 define('_DURATION', 'duration');
+define('_ROUTE', 'route');
 
 // Patrol SESSION data keys
 define('_TOTAL', 'total');
