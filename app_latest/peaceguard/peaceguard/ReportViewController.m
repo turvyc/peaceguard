@@ -36,8 +36,16 @@
     thePickerView.delegate = self;
     
     if(self.location != nil){
-        NSLog(@"location is :%@",self.location);
+        self.locationDisplay.text = self.location;
     }
+    
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    self.date = dateString;
+    self.dateDisplay.text = dateString;
+
     
     
     //initializes text field display
@@ -191,6 +199,7 @@
     overviewController.severityData = self.severityData;
     overviewController.descriptionData = self.description.text;
     overviewController.imageData = self.imageView.image;
+    overviewController.locationData = self.location;
     
 }
 

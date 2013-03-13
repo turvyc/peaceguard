@@ -29,7 +29,17 @@
     self.severityDisplay.text = self.severityData;
     self.descriptionDisplay.text = self.descriptionData;
     self.imageDisplay.image = self.imageData;
-    
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    self.date = dateString;
+    self.dataDisplay.text = dateString;
+    if(self.locationData != nil){
+        self.locationDisplay.text = self.locationData;
+    }
+//    self.dateDisplay.text = dateString;
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

@@ -23,6 +23,7 @@
 @property(nonatomic) NSString *descriptionData;
 @property(nonatomic) UIImage *imageData;
 @property(nonatomic) NSString *locationData;
+@property(nonatomic) NSString *date;
 
 
 - (IBAction)cancelPressed:(id)sender;
