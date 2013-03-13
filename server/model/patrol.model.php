@@ -114,7 +114,7 @@ class Patrol {
         SUM(distance) AS totalDistance, 
         SUM(duration) AS totalTime,
         AVG(distance) AS averageDistance,
-        AVG(duration) AS averageDuration
+        AVG(duration) AS averageTime
         FROM Patrols
         WHERE start_time > $since";
         
@@ -130,7 +130,7 @@ class Patrol {
         $averageTime = (int)$result['averageTime'];
 
         // Return the total number of reports made by all volunteers
-        $query2 = "SELECT COUNT(r_id) AS totalReports FROM Reports WHERE time > $since";
+        $query2 = "SELECT COUNT(*) AS totalReports FROM Reports WHERE time > $since";
 
         $STH = $DBH->prepare($query2);
         $STH->execute();
@@ -142,7 +142,7 @@ class Patrol {
         $averagePatrols = (int)floor($totalPatrols / $totalVolunteers);
 
         // Return the average number of incident reports made per volunteer
-        $averageReports = (int)floor($totalReports / $totalVolunteers);
+        $averageReports = (int)($totalReports / $totalVolunteers);
 
         $statistics[_TOTAL] = array(_PATROL => $totalPatrols, _DISTANCE => $totalDistance, 
         _TIME => $totalTime, _REPORT => $totalReports);
