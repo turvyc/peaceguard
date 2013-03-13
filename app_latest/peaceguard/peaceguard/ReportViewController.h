@@ -9,6 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface ReportViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *Image;
@@ -30,6 +31,8 @@
 //-Data from pickerview
 @property (strong, nonatomic) NSString *incidentData;   //change to be consistent with server - same as severity
 @property (strong, nonatomic) NSString *severityData;
+@property (weak, nonatomic) IBOutlet UITextField *locationDisplay;
+@property (weak, nonatomic) IBOutlet UITextField *dateDisplay;
 
 //temp variable for overview
 @property (strong, nonatomic) NSString *incidentOverview;
@@ -47,6 +50,8 @@
 
 
 - (BOOL) verify: (NSString*) description;
+
+@property (nonatomic) CLLocation *location;
 
 @property (weak, nonatomic) IBOutlet UITextField *description;
 //put the image in the specific place and show it to the user

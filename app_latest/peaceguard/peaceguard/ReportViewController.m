@@ -29,12 +29,15 @@
 
 - (void)viewDidLoad
 {
-    
     thePickerView.hidden = YES;
     pickerViewBlocker.hidden = YES;
     
     thePickerView.showsSelectionIndicator = TRUE;
     thePickerView.delegate = self;
+    
+    if(self.location != nil){
+        NSLog(@"location is :%@",self.location);
+    }
     
     
     //initializes text field display

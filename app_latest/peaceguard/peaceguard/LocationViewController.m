@@ -7,6 +7,7 @@
 //
 
 #import "LocationViewController.h"
+#import "ReportViewController.h"
 
 @interface LocationViewController ()
 
@@ -105,6 +106,7 @@
                                  placemark.postalCode, placemark.locality,
                                  placemark.administrativeArea,
                                  placemark.country];
+            self.current_location = _Address.text;
             [_myArray addObject:newLocation];
         } else {
             NSLog(@"%@", error.debugDescription);
@@ -139,5 +141,13 @@
 
 - (IBAction)generateReport:(id)sender {
     [self performSegueWithIdentifier:@"generateReport" sender:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    ReportViewController *report = (ReportViewController *)segue.destinationViewController;
+    if(self.current_location != nil){
+        report.location = self.current_location;
+    }
 }
 @end
