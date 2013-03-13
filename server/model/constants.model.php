@@ -63,7 +63,7 @@ define('_ALL_TIME', 'allTime');
 // Patrol POST keys
 define('_PATROL', 'patrol');
 define('_START_TIME', 'startTime');
-define('_END_TIME', 'endTime');
+define('_DURATION', 'duration');
 
 // Patrol SESSION data keys
 define('_TOTAL', 'total');

@@ -56,6 +56,8 @@ class Patrol {
 
     // Returns statistics for a specified Volunteer.
     public static function getVolunteerStatistics($email, $timePeriod) {
+        require('database.model.php');
+
         $statistics = array();
         $since = decodeTimePeriod($timePeriod);
 

@@ -47,7 +47,7 @@ class DataInterface {
             throw new LogicException('$_POST is not set!');
         }
 
-        // If AGENT is set, it will default to the Website.
+        // If AGENT is not set, it will default to the Website.
         if (! isset($_POST[_AGENT])) {
             $_POST[_AGENT] = _WEBSITE;
         }
