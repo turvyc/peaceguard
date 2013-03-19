@@ -37,7 +37,7 @@ Fields needed: FIRST_NAME, LAST_NAME, EMAIL
 				<label for="<?php echo _LAST_NAME; ?>">Last Name:</label>
 				<input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
 				<label for="<?php echo _EMAIL; ?>">Email:</label>
-				<input type="password" tabindex="3" name="<?php echo _PASSWORD; ?>" /> <br /><br />
+				<input type="password" tabindex="3" name="<?php echo _PASSWORD; ?>" /> <br /><br /><br /><br />
 				<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
 				<input type="submit" value="Submit" tabindex="4" />	
 		</fieldset>
