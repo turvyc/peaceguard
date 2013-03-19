@@ -126,3 +126,23 @@ th
 	background-color: red;
 	color: white;
 }
+
+div#adduser,#changepw
+{
+	text-align:left;
+	float: left;
+	width: 350px;
+	margin-left: 7%;
+	height: 250px;
+}
+
+form input
+{
+	float: right;
+}
+
+fieldset 
+{
+	height: 200px;
+}
+
