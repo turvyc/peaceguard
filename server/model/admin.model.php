@@ -24,11 +24,7 @@ class Admin extends User {
     }
 
     // Changes the admin's password
-    public function changeEmail($new, $repeat) {
-        if ($new != $repeat) {
-            throw new RuntimeException('Passwords do not match.');
-        }
-
+    public function changePassword($new) {
         $pw_hash = sha1($new . _SALT);
 
         try {

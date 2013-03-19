@@ -27,4 +27,18 @@ catch (LogicException $e) {
     exit(1);
 }
 
+try {
+    //Make sure the POST values are acceptable.
+    if (! isset($_POST[_PASSWORD]) || ! isset($_POST[_NEW_PASSWORD])
+    || ! isset($_POST[_REPEAT])) {
+        throw new RuntimeException('Empty fields in form.');
+    }
+
+    if ($new != $repeat) {
+        throw new RuntimeException('Passwords do not match.');
+    }
+
+    $admin = $session->getAdmin();
+
+    $admin->changePassword($_POST[_NEW_PASSWORD])
 ?>

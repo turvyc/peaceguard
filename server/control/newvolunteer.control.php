@@ -15,10 +15,10 @@ or `git blame <file>`
 
 */
 
-include('../model/constants.model.php');
-include('../model/session.model.php');
-include('../model/datainterface.model.php');
-include('../model/volunteer.model.php');
+require_once('../model/constants.model.php');
+require_once('../model/session.model.php');
+require_once('../model/datainterface.model.php');
+require_once('../model/volunteer.model.php');
 
 define('ASCII_a', 97);
 define('ASCII_z', 122);
@@ -65,7 +65,7 @@ try {
     $message = "You have been registered as a volunteer with PeaceGuard!\r\n
     Your login: $email \r\n
     Your password: $password \r\n
-    Thanks for registering!"
+    Thanks for registering!";
 
     if (! mail($email, $subject, $message)) {
         throw new RuntimeException('Error sending email.');

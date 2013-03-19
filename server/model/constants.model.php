@@ -75,6 +75,12 @@ define('_DISTANCE', 'distance');
 define('_IPHONE', 'iphone');   // For use with _AGENT key
 define('_WEBSITE', 'website');  // For use with _AGENT key
 
+// Website Admin constants
+define('_FIRST_NAME', 'firstname');
+define('_LAST_NAME', 'lastname');
+define('_NEW_PASSWORD', 'newpassword');
+define('_REPEAT', 'repeat');
+
 // Log file constants.
 define('_LOG_DIR', 'log/');
 define('_POST_LOG', _LOG_DIR . 'post.log');

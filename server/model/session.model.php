@@ -49,6 +49,12 @@ class Session {
         $this->logout();
     }
 
+    // Returns the Admin object of the currently logged in admin, or null
+    // if nobody is logged in.
+    public function getAdmin() {
+        return $this->admin;
+    }
+
     // Returns the name of the logged-in admin, or null if nobody is logged in.
     public function getFullName() {
         return $this->admin->getFullName();
