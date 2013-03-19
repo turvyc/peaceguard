@@ -29,6 +29,32 @@ class Volunteer extends User {
         parent::__construct($id);
     }
 
+    // Inserts a new Volunteer into the database
+    public static function newVolunteer($first_name, $last_name, $email, $password) {
+        try {
+            require('database.model.php');
+
+            $pw_hash = sha1($password . _SALT);
+
+            $STH = $DBH->prepare('INSERT INTO Users 
+            (email, firstName, lastName, pw_hash) VALUES (?, ?, ?, ?)');
+            $STH->execute(array($email, $first_name, $last_name, $pw_hash));
+
+            $STH = $DBH->prepare('INSERT INTO Volunteers (u_id, joined) VALUES (?, ?)');
+            $STH->execute(array($DBH->lastInsertId(), time()));
+
+            $DBH = NULL;
+        }
+
+        catch (PDOException $e) {
+            if (_DEBUG) {
+                echo $e;
+                exit(1);
+            }
+            throw $e;
+        }
+    }
+
     // Returns the total number of registered volunteers.
     public static function getTotalNumber() {
         require('database.model.php');
@@ -85,10 +111,10 @@ class Volunteer extends User {
     public function getAverageDistance() {
         return $this->totalDistance / $this->numberOfPatrols;
     }
-	
-	public function madeReport() {
-		$this->numberofReports+=1;
-	}
+
+    public function madeReport() {
+        $this->numberofReports+=1;
+    }
 
 }
 
