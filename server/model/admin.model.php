@@ -14,11 +14,44 @@ or `git blame <file>`
 */
 
 require_once('user.model.php');
+require_once('constants.model.php');
 
 class Admin extends User {
 
-    // There is actually not much to do here!
+    // Constructs a new Admin object using the database ID
+    public function __construct($id) {
+        parent::__construct($id);
+    }
 
+    // Changes the admin's password
+    public function changeEmail($new, $repeat) {
+        if ($new != $repeat) {
+            throw new RuntimeException('Passwords do not match.');
+        }
+
+        $pw_hash = sha1($new . _SALT);
+
+        try {
+            require('database.model.php');
+            $query = 'UPDATE Users SET pw_hash = ? WHERE u_id = ?';
+            $STH = $DBH->prepare($query);
+            $STH->execute(array($pw_hash, $this->id));
+        }
+
+        catch (PDOException $e) {
+            if (_DEBUG) {
+                echo $e;
+                exit(1);
+            }
+            throw $e;
+        }
+
+        if (! $STH->rowCount()) {
+            throw new RuntimeException('Database error.');
+        }
+
+        $DBH = NULL;
+    }
 }
 
 ?>

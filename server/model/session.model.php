@@ -110,6 +110,8 @@ class Session {
             throw new PDOException($e->getMessage);
         }
 
+        if ($agent == _IPHONE) { return; }
+
         // If there is a match, log the user in
         if ($row = $STH->fetch()) {
             session_regenerate_id();
