@@ -30,24 +30,35 @@ Fields needed: FIRST_NAME, LAST_NAME, EMAIL
 <div id="adduser">
 	<form>
 	 <fieldset>
-			<legend>Add Users:</legend>
-			Last Name: <input type="text"><br>
-			First Name: <input type="text"><br>
-			Email: <input type="text"><br>
-			<input type="submit" value="Submit">
+		<legend>Add Users:</legend>
+		<label for="<?php echo _FIRST_NAME; ?>">First Name</label><br />
+		<input type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br /><br />
+		<label for="<?php echo _LAST_NAME; ?>">Last Name</label><br />
+		<input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
+		<label for="<?php echo _NEW_PASSWORD; ?>">New Password</label><br />
+		<input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
+		<label for="<?php echo _REPEAT; ?>">Repeat Password</label><br />
+		<input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
+		<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
+		<input type="submit" value="Submit" tabindex="3" />	
 	 </fieldset>
 	</form>
 </div>
 
-<div id="adduser">
+<div id="changepw">
 	<form name="login" action="control/login.control.php" method="POST">
 	 <fieldset>
-			<legend>Change User's Password:</legend>
-			Email: <input type="text"><br>
-			Current Password: <input type="text"><br>
-			New Password: <input type="text"><br>
-			Retype Password: <input type="text"><br>
-			<input type="submit" value="Submit">
+		<legend>Change User's Password:</legend>	
+		<label for="<?php echo _EMAIL; ?>">E-mail</label><br />
+		<input type="text" tabindex="1" name="<?php echo _EMAIL; ?>" /> <br /><br />
+		<label for="<?php echo _PASSWORD; ?>">Current Password</label><br />
+		<input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
+		<label for="<?php echo _NEW_PASSWORD; ?>">New Password</label><br />
+		<input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
+		<label for="<?php echo _REPEAT; ?>">Repeat Password</label><br />
+		<input type="password" tabindex="2" name="<?php echo _PASSWORD; ?>" /> <br /><br />
+		<input type="hidden" name="<?php echo _AGENT; ?>" value="<?php echo _WEBSITE; ?>" />
+		<input type="submit" value="Submit" tabindex="3" />
 	 </fieldset>
 	</form>
 </div>
