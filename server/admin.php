@@ -16,7 +16,7 @@ or `git blame <file>`
 
 include('header.php');
 include('model/volunteer.model.php');
-include('model/admin.model.php');
+require_once('model/admin.model.php');
 checkLoggedIn($session);
 
 ?>
@@ -27,5 +27,29 @@ checkLoggedIn($session);
 PUT HTML FORMS HERE.
 Fields needed: FIRST_NAME, LAST_NAME, EMAIL
 -->
+<div id="adduser">
+	<form>
+	 <fieldset>
+			<legend>Add Users:</legend>
+			Last Name: <input type="text"><br>
+			First Name: <input type="text"><br>
+			Email: <input type="text"><br>
+			<input type="submit" value="Submit">
+	 </fieldset>
+	</form>
+</div>
+
+<div id="adduser">
+	<form name="login" action="control/login.control.php" method="POST">
+	 <fieldset>
+			<legend>Change User's Password:</legend>
+			Email: <input type="text"><br>
+			Current Password: <input type="text"><br>
+			New Password: <input type="text"><br>
+			Retype Password: <input type="text"><br>
+			<input type="submit" value="Submit">
+	 </fieldset>
+	</form>
+</div>
 
 <?php include('footer.php'); ?>
