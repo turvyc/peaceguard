@@ -48,12 +48,6 @@ catch (Exception $e) {
     exit(0);
 }
 
-// If we made it this far, we should be logged in. This is getting tossed in 
-// until I can write some unit tests.
-if (_DEBUG) {
-    assert($session->getFullName() != null);
-}
-
 if ($interface->getAgent() == _IPHONE) {
     $interface->addData(_SUCCESSFUL, _YES);
     $interface->output();

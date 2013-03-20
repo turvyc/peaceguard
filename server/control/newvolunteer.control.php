@@ -50,13 +50,14 @@ try {
 
     // Generate a random password
     $password = '';
-    for ($i = 0; $i < $length; $i++) {
+    for ($i = 0; $i < PASSWORD_LENGTH; $i++) {
         $password .= chr(rand(ASCII_a, ASCII_z));
     }
 
     // Store the name as all lower-case, for uniform uppercasing later on
-    $first_name = $_POST[_FIRST_NAME].lower();
-    $last_name = $_POST[_LAST_NAME].lower();
+    $first_name = strtolower($_POST[_FIRST_NAME]);
+    $last_name = strtolower($_POST[_LAST_NAME]);
+    $email = $_POST[_EMAIL];
 
     // Add the volunteer to the database, and send them a confirmation email
     Volunteer::newVolunteer($first_name, $last_name, $email, $password);
@@ -75,16 +76,25 @@ try {
 }
 
 catch (RuntimeException $e) {
+    if (_DEBUG) {
+        echo $e;
+        exit(1);
+    }
     $interface->addData(_SUCCESSFUL, _NO);
     $interface->addData(_MESSAGE, $e->getMessage());
 }
 
 catch (PDOException $e) {
+    if (_DEBUG) {
+        echo $e;
+        exit(1);
+    }
     $interface->addData(_SUCCESSFUL, _NO);
     $interface->addData(_MESSAGE, 'Database error.');
 }
 
 $interface->output();
+header('location: ../admin.php');
 exit(0);
 
 ?>
