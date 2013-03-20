@@ -790,20 +790,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GFo-DW-Hec" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="225" id="O4V-0m-WzX"/>
+                            <constraint firstAttribute="trailing" secondItem="GFo-DW-Hec" secondAttribute="trailing" constant="80" id="35c-4H-vwN"/>
+                            <constraint firstItem="se6-0Y-KOK" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="182" id="Fna-rr-81c"/>
+                            <constraint firstItem="DVo-Sv-RDz" firstAttribute="leading" secondItem="xoT-Qs-AIt" secondAttribute="leading" type="default" id="K3u-Jv-aqf"/>
+                            <constraint firstItem="se6-0Y-KOK" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="N50-Bj-1FJ"/>
                             <constraint firstItem="OlE-dE-eo4" firstAttribute="centerX" secondItem="NBl-6m-RN1" secondAttribute="centerX" type="default" id="OjW-ea-HEz"/>
                             <constraint firstItem="dOD-qt-BEI" firstAttribute="centerX" secondItem="OlE-dE-eo4" secondAttribute="centerX" type="default" id="OuP-nu-jsY"/>
-                            <constraint firstItem="OlE-dE-eo4" firstAttribute="centerX" secondItem="Hj2-y8-Dce" secondAttribute="centerX" type="default" id="UiG-Xq-OZ3"/>
-                            <constraint firstAttribute="trailing" secondItem="xoT-Qs-AIt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="c7K-C4-18Q"/>
+                            <constraint firstItem="NBl-6m-RN1" firstAttribute="centerX" secondItem="se6-0Y-KOK" secondAttribute="centerX" type="default" id="PaF-Pj-05d"/>
+                            <constraint firstItem="NBl-6m-RN1" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="137" id="PwT-SE-68f"/>
+                            <constraint firstItem="se6-0Y-KOK" firstAttribute="centerX" secondItem="3o2-6C-IGh" secondAttribute="centerX" type="default" id="QTF-LE-44k"/>
+                            <constraint firstAttribute="trailing" secondItem="DVo-Sv-RDz" secondAttribute="trailing" constant="21" id="Rr2-8D-1T3"/>
+                            <constraint firstItem="se6-0Y-KOK" firstAttribute="baseline" secondItem="GFo-DW-Hec" secondAttribute="baseline" type="default" id="a41-hN-z3i"/>
+                            <constraint firstItem="se6-0Y-KOK" firstAttribute="bottom" secondItem="GFo-DW-Hec" secondAttribute="bottom" type="default" id="eur-f3-Yu4"/>
                             <constraint firstItem="OlE-dE-eo4" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="42" id="fYD-DE-0vL"/>
-                            <constraint firstItem="NBl-6m-RN1" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="137" id="hcA-IL-GJ6"/>
-                            <constraint firstItem="3o2-6C-IGh" firstAttribute="centerX" secondItem="NBl-6m-RN1" secondAttribute="centerX" type="default" id="jpV-3c-I6D"/>
                             <constraint firstItem="dOD-qt-BEI" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="20" symbolic="YES" type="default" id="jzg-ac-pmk"/>
-                            <constraint firstAttribute="trailing" secondItem="GFo-DW-Hec" secondAttribute="trailing" constant="79" id="nvc-yw-otg"/>
-                            <constraint firstItem="se6-0Y-KOK" firstAttribute="leading" secondItem="NBl-6m-RN1" secondAttribute="leading" type="default" id="oDA-jv-vV8"/>
                             <constraint firstItem="xoT-Qs-AIt" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="241" id="p5B-TQ-Rc4"/>
-                            <constraint firstAttribute="trailing" secondItem="DVo-Sv-RDz" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qYt-9e-19I"/>
-                            <constraint firstItem="se6-0Y-KOK" firstAttribute="top" secondItem="Hj2-y8-Dce" secondAttribute="top" constant="230" id="w1U-RN-a7Z"/>
                             <constraint firstAttribute="bottom" secondItem="3o2-6C-IGh" secondAttribute="bottom" constant="135" id="wzM-5e-dhV"/>
                             <constraint firstItem="OlE-dE-eo4" firstAttribute="top" secondItem="DVo-Sv-RDz" secondAttribute="top" type="default" id="yJL-Dr-RLk"/>
                         </constraints>
@@ -850,10 +851,10 @@
             </objects>
             <point key="canvasLocation" x="-878" y="823"/>
         </scene>
-        <!--Location View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="DL2-aJ-1k2">
             <objects>
-                <viewController id="ZNw-A8-Ehs" customClass="LocationViewController" sceneMemberID="viewController">
+                <viewController id="ZNw-A8-Ehs" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SCN-iU-5g6">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -873,7 +874,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MPL-Wl-g52"/>
                     <connections>
-                        <outlet property="mapView" destination="D6C-om-qNc" id="oXb-mC-bWg"/>
+                        <outlet property="mapView" destination="D6C-om-qNc" id="4tf-Wo-LXX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WR-Hi-KXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -980,97 +981,14 @@
     <resources>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
-    <classes>
-        <class className="LocationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="GenerateLocation:"/>
-                <relationship kind="action" name="StopPatrol:"/>
-                <relationship kind="action" name="reportButton:"/>
-                <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="distanceDisplay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="timeDisplay" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="patrolButton:"/>
-                <relationship kind="action" name="reportButton:"/>
-                <relationship kind="action" name="statisticsButton:"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="OverviewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverviewController.h"/>
-            <relationships>
-                <relationship kind="action" name="confirm:"/>
-                <relationship kind="outlet" name="dataDisplay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="descriptionDisplay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="incidentDisplay" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="severityDisplay" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PatrolViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="locationButton:"/>
-                <relationship kind="action" name="reportControl:"/>
-                <relationship kind="action" name="statisticsButton:"/>
-            </relationships>
-        </class>
-        <class className="PeaceGuardViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Login:"/>
-                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="ReportViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="ImageTaker:"/>
-                <relationship kind="action" name="buttonToOverview:"/>
-                <relationship kind="action" name="doneSelection:"/>
-                <relationship kind="action" name="incidentButtonPressed:"/>
-                <relationship kind="action" name="severityButtonPressed:"/>
-                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="dateDisplay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pickerViewBlocker" candidateClass="UIView"/>
-                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
-            </relationships>
-        </class>
-        <class className="StatisticsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatisticsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="numberOfIncidentsField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="totalDistanceField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="totalPatrolsField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="totalTimeField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="EIo-P2-aQg"/>
-        <segue reference="rEn-yd-dbl"/>
         <segue reference="NMq-QC-cmz"/>
+        <segue reference="EIo-P2-aQg"/>
+        <segue reference="9ZO-PH-oR0"/>
     </inferredMetricsTieBreakers>
 </document>

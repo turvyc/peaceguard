@@ -11,7 +11,7 @@
 #import "ConnectionDataController.h"
 #import <MapKit/MapKit.h>
 
-#define METERS_PER_MILE 1609.344
+
 
 @interface LocationViewController : UIViewController <CLLocationManagerDelegate>
 - (IBAction)GenerateLocation:(id)sender;
@@ -37,7 +37,6 @@
 
 - (IBAction)reportButton:(id)sender;
 @property(nonatomic) NSString *segueType;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 
 
