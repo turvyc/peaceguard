@@ -36,6 +36,8 @@
 		C48F3A2116D1F4560015D678 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2016D1F4560015D678 /* Default@2x.png */; };
 		C48F3A2316D1F4590015D678 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2216D1F4590015D678 /* Default-568h@2x.png */; };
 		C48F3A2516D211060015D678 /* camera-icon-md.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A2416D211060015D678 /* camera-icon-md.png */; };
+		C491E68716F96B9800982997 /* CrumbPath.m in Sources */ = {isa = PBXBuildFile; fileRef = C491E68416F96B9800982997 /* CrumbPath.m */; };
+		C491E68816F96B9800982997 /* CrumbPathView.m in Sources */ = {isa = PBXBuildFile; fileRef = C491E68616F96B9800982997 /* CrumbPathView.m */; };
 		C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C638816ED48B200915D56 /* ConnectionDataController.m */; };
 		C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C638B16ED660000915D56 /* StatisticsViewController.m */; };
 		C4D244D016CEBA800017098A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244CF16CEBA800017098A /* User.m */; };
@@ -87,6 +89,10 @@
 		C48F3A2016D1F4560015D678 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C48F3A2216D1F4590015D678 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C48F3A2416D211060015D678 /* camera-icon-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-icon-md.png"; sourceTree = "<group>"; };
+		C491E68316F96B9800982997 /* CrumbPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPath.h; sourceTree = "<group>"; };
+		C491E68416F96B9800982997 /* CrumbPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPath.m; sourceTree = "<group>"; };
+		C491E68516F96B9800982997 /* CrumbPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrumbPathView.h; sourceTree = "<group>"; };
+		C491E68616F96B9800982997 /* CrumbPathView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrumbPathView.m; sourceTree = "<group>"; };
 		C49C638716ED48B200915D56 /* ConnectionDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionDataController.h; sourceTree = "<group>"; };
 		C49C638816ED48B200915D56 /* ConnectionDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionDataController.m; sourceTree = "<group>"; };
 		C49C638A16ED660000915D56 /* StatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatisticsViewController.h; sourceTree = "<group>"; };
@@ -156,6 +162,10 @@
 				A7D498E016ED78C6001EA2D9 /* OverviewController.m */,
 				C4150BB116CCA93C00876850 /* PeaceGuardAppDelegate.m */,
 				C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */,
+				C491E68316F96B9800982997 /* CrumbPath.h */,
+				C491E68416F96B9800982997 /* CrumbPath.m */,
+				C491E68516F96B9800982997 /* CrumbPathView.h */,
+				C491E68616F96B9800982997 /* CrumbPathView.m */,
 				C49C638A16ED660000915D56 /* StatisticsViewController.h */,
 				C49C638B16ED660000915D56 /* StatisticsViewController.m */,
 				C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */,
@@ -293,6 +303,8 @@
 				C38C5EF916EFA18700679A87 /* Timer.m in Sources */,
 				C38F8EAA16EFD4CA008C5F83 /* Statistics.m in Sources */,
 				A7F2F73516F04357005F9E8A /* MainViewController.m in Sources */,
+				C491E68716F96B9800982997 /* CrumbPath.m in Sources */,
+				C491E68816F96B9800982997 /* CrumbPathView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
