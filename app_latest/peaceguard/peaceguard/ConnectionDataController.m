@@ -10,10 +10,8 @@
 
 @implementation ConnectionDataController
 
-
-- (BOOL) serverLoginWithEmail:(NSString *)email andPassword:(NSString *)password{
-    
-    NSString *post = [NSString stringWithFormat:@"email=%@&password=%@&agent=iphone", email, password];
+//Sends a POST request to the server and receives a JSON
+- (NSDictionary *) sendRequestWithURL:(NSString *)url andData:(NSString *)post{
     NSLog(@"Data: %@",post);
     
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -22,7 +20,7 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    [request setURL:[NSURL URLWithString:@"http://peaceguard.dyndns.org:1728/control/login.control.php"]];
+    [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -48,6 +46,15 @@
     }
     
     NSLog(@"JSON: %@", jsonDictionary);
+    return jsonDictionary;
+    
+}
+
+//Use the users email and password to login
+- (BOOL) serverLoginWithEmail:(NSString *)email andPassword:(NSString *)password{
+    
+    NSString *post = [NSString stringWithFormat:@"email=%@&password=%@&agent=iphone", email, password];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/login.control.php" andData:post];
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
@@ -61,43 +68,11 @@
     return success;
 }
 
+//Sends a report to the server
 - (void) reportWithPostData: (NSString *) data{
     
     NSString *post = data;
-    NSLog(@"Data: %@",post);
-    
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    [request setURL:[NSURL URLWithString:@"http://peaceguard.dyndns.org:1728/control/report.control.php"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSLog(@"Data: %@",request);
-    //End of POST
-    
-    //Receive JSON
-    NSURLResponse *response;
-    NSError *err;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-    NSLog(@"Data: %@",responseData);
-    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-    NSLog(@"Data: %@", responseString);
-    
-    //JSON processing
-    NSError *error;
-    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    if (! error) {
-        NSLog(@"%@",jsonDictionary);
-    }else{
-        NSLog(@"%@",error.localizedDescription);
-    }
-    
-    NSLog(@"JSON: %@", jsonDictionary);
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/report.control.php" andData:post];
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
@@ -114,43 +89,12 @@
 
 }
 
+//Sends end of patrol information to server
 - (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (double) distance {
     
     NSString *post = [NSString stringWithFormat:@"patrol=%i&duration=%i&route=%@&distance=%f&agent=iphone", patrolID, duration, route, distance];
-    NSLog(@"Data: %@",post);
-    
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    [request setURL:[NSURL URLWithString:@"http://peaceguard.dyndns.org:1728/control/endpatrol.control.php"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSLog(@"Data: %@",request);
-    //End of POST
-    
-    //Receive JSON
-    NSURLResponse *response;
-    NSError *err;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-    NSLog(@"Data: %@",responseData);
-    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-    NSLog(@"Data: %@", responseString);
-    
-    //JSON processing
-    NSError *error;
-    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    if (! error) {
-        NSLog(@"%@",jsonDictionary);
-    }else{
-        NSLog(@"%@",error.localizedDescription);
-    }
-    
-    NSLog(@"JSON: %@", jsonDictionary);
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/endpatrol.control.php" andData:post];
+
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
@@ -165,46 +109,15 @@
     
 }
 
+//Sends the start patrol information to server and receives patrolID
 - (NSInteger) startPatrolWithEmail: (NSString *) email{
     
     NSDate *currDate = [NSDate date];
     NSInteger currentUnixTime = [currDate timeIntervalSince1970];
     
     NSString *post = [NSString stringWithFormat:@"email=%@&startTime=%i&agent=iphone", email, currentUnixTime];
-    NSLog(@"Data: %@",post);
-    
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    [request setURL:[NSURL URLWithString:@"http://peaceguard.dyndns.org:1728/control/beginpatrol.control.php"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSLog(@"Data: %@",request);
-    //End of POST
-    
-    //Receive JSON
-    NSURLResponse *response;
-    NSError *err;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-    NSLog(@"Data: %@",responseData);
-    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-    NSLog(@"Data: %@", responseString);
-    
-    //JSON processing
-    NSError *error;
-    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    if (! error) {
-        NSLog(@"%@",jsonDictionary);
-    }else{
-        NSLog(@"%@",error.localizedDescription);
-    }
-    
-    NSLog(@"JSON: %@", jsonDictionary);
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/beginpatrol.control.php" andData:post];
+
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
@@ -218,44 +131,12 @@
     return [[jsonDictionary objectForKey:@"patrol"] integerValue];
 }
 
-
+//Requests user statistics from a specified time period from the server
 - (NSDictionary *) getStatistics: (NSString *) email andTimePeriod: (NSString *) timePeriod{
     
     NSString *post = [NSString stringWithFormat:@"email=%@&timePeriod=%@&agent=iphone", email, timePeriod];
-    NSLog(@"Data: %@",post);
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/patrolstats.control.php" andData:post];
     
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    
-    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
-    [request setURL:[NSURL URLWithString:@"http://peaceguard.dyndns.org:1728/control/patrolstats.control.php"]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSLog(@"Data: %@",request);
-    //End of POST
-    
-    //Receive JSON
-    NSURLResponse *response;
-    NSError *err;
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
-    NSLog(@"Data: %@",responseData);
-    NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSASCIIStringEncoding];
-    NSLog(@"Data: %@", responseString);
-    
-    //JSON processing
-    NSError *error;
-    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
-    if (! error) {
-        NSLog(@"%@",jsonDictionary);
-    }else{
-        NSLog(@"%@",error.localizedDescription);
-    }
-    
-    NSLog(@"JSON: %@", jsonDictionary);
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     

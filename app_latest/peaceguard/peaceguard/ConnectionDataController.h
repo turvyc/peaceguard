@@ -17,4 +17,6 @@
 - (NSInteger) startPatrolWithEmail: (NSString *) email;
 - (NSDictionary *) getStatistics: (NSString *) email andTimePeriod: (NSString *) timePeriod;
 
+- (NSDictionary *) sendRequestWithURL: (NSString *) url andData: (NSString *) post;
+
 @end
