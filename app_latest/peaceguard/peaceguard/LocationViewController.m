@@ -92,9 +92,13 @@
     }
 
     if (currentLocation != nil) {
-//        _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-//        _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        NSString *latitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        NSString *longtitude= [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         //[NSThread sleepForTimeInterval:1];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:latitude forKey:@"starLatitude"];
+        [defaults setObject:longtitude forKey:@"starLongitude"];
+        [defaults synchronize];
         CLLocation *temp_location = [[CLLocation alloc] init];
         if([_myArray lastObject] != nil){
              temp_location = [_myArray lastObject];
@@ -125,8 +129,8 @@
         }
     } ];
     if(_start == YES){
-        NSLog(@"Location is %@",_Address.text);
-//        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+       // NSLog(@"Location is %@",_Address.text);
+        //        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
 //        MKCoordinateRegion adjustRegion = [_mapView regionThatFits:viewRegion];
 //        [_mapView setRegion:adjustRegion animated:YES];
 //        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];

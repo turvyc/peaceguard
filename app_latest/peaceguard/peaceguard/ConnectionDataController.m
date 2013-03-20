@@ -54,7 +54,7 @@
 - (BOOL) serverLoginWithEmail:(NSString *)email andPassword:(NSString *)password{
     
     NSString *post = [NSString stringWithFormat:@"email=%@&password=%@&agent=iphone", email, password];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/login.control.php" andData:post];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/login.control.php" andData:post];
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
