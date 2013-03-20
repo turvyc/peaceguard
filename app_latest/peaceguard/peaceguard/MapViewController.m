@@ -38,18 +38,16 @@
     double longitude = [lo doubleValue];
     zoomLocation.latitude = latitude;
     zoomLocation.longitude = longitude;
-    NSLog(@"%f",latitude);
-    NSLog(@"%f",longitude);
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
     MKCoordinateRegion adjustRegion = [_mapView regionThatFits:viewRegion];
     [_mapView setRegion:adjustRegion animated:YES];
-//
-//    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-//    point.coordinate = zoomLocation;
-//    point.title = @"where am i";
-//    point.subtitle = @"I'm here";
-//    
-//    [_mapView addAnnotation:point];
+
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = zoomLocation;
+    point.title = @"where am i";
+    point.subtitle = @"I'm here";
+    
+    [_mapView addAnnotation:point];
 }
 
 

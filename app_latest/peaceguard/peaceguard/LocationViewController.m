@@ -92,12 +92,12 @@
     }
 
     if (currentLocation != nil) {
-        NSString *latitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-        NSString *longtitude= [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+        NSString *longitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        NSString *latitude= [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         //[NSThread sleepForTimeInterval:1];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:latitude forKey:@"starLatitude"];
-        [defaults setObject:longtitude forKey:@"starLongitude"];
+        [defaults setObject:longitude forKey:@"starLongitude"];
         [defaults synchronize];
         CLLocation *temp_location = [[CLLocation alloc] init];
         if([_myArray lastObject] != nil){
