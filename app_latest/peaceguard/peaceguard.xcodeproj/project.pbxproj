@@ -157,15 +157,12 @@
 		C4150BA716CCA93C00876850 /* peaceguard */ = {
 			isa = PBXGroup;
 			children = (
+				C4F0716A16F96C2B000368B0 /* Overlay */,
 				C4150BB016CCA93C00876850 /* PeaceGuardAppDelegate.h */,
 				A7D498DF16ED78C6001EA2D9 /* OverviewController.h */,
 				A7D498E016ED78C6001EA2D9 /* OverviewController.m */,
 				C4150BB116CCA93C00876850 /* PeaceGuardAppDelegate.m */,
 				C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */,
-				C491E68316F96B9800982997 /* CrumbPath.h */,
-				C491E68416F96B9800982997 /* CrumbPath.m */,
-				C491E68516F96B9800982997 /* CrumbPathView.h */,
-				C491E68616F96B9800982997 /* CrumbPathView.m */,
 				C49C638A16ED660000915D56 /* StatisticsViewController.h */,
 				C49C638B16ED660000915D56 /* StatisticsViewController.m */,
 				C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */,
@@ -211,6 +208,17 @@
 				C4150BB716CCA93C00876850 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4F0716A16F96C2B000368B0 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				C491E68316F96B9800982997 /* CrumbPath.h */,
+				C491E68416F96B9800982997 /* CrumbPath.m */,
+				C491E68516F96B9800982997 /* CrumbPathView.h */,
+				C491E68616F96B9800982997 /* CrumbPathView.m */,
+			);
+			name = Overlay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
