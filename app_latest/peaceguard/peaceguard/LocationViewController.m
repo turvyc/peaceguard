@@ -95,6 +95,15 @@
 //        _longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
 //        _latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
         //[NSThread sleepForTimeInterval:1];
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+        MKCoordinateRegion adjustRegion = [_mapView regionThatFits:viewRegion];
+        [_mapView setRegion:adjustRegion animated:YES];
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        point.coordinate = currentLocation.coordinate;
+        point.title = @"where am i";
+        point.subtitle = @"I'm here";
+        
+        [_mapView addAnnotation:point];
         CLLocation *temp_location = [[CLLocation alloc] init];
         if([_myArray lastObject] != nil){
              temp_location = [_myArray lastObject];
