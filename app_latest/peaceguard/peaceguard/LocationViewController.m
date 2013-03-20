@@ -170,12 +170,14 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    if([self.segueType isEqualToString:@"report"]){
     ReportViewController *report = (ReportViewController *)segue.destinationViewController;
     if(self.current_location != nil){
         report.location = self.current_location;
     }
     report.username = self.username;
     report.isPatrolling = @"YES";
+    }
 }
 
 @end
