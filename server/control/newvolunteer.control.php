@@ -19,6 +19,7 @@ require_once('../model/constants.model.php');
 require_once('../model/session.model.php');
 require_once('../model/datainterface.model.php');
 require_once('../model/volunteer.model.php');
+require_once('../model/phpmailer.model.php');
 
 define('ASCII_a', 97);
 define('ASCII_z', 122);
@@ -59,20 +60,40 @@ try {
     $last_name = strtolower($_POST[_LAST_NAME]);
     $email = $_POST[_EMAIL];
 
-    // Add the volunteer to the database, and send them a confirmation email
+    // Add the volunteer to the database
     Volunteer::newVolunteer($first_name, $last_name, $email, $password);
 
-    $subject = 'PeaceGuard Volunteer Registration';
-    $message = "You have been registered as a volunteer with PeaceGuard!\r\n
-    Your login: $email \r\n
-    Your password: $password \r\n
-    Thanks for registering!";
+    // Send them an email with their username and password
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPAuth = TRUE
+    $mail->SMTPSecure = "ssl";
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 465;
 
-    if (! mail($email, $subject, $message)) {
-        throw new RuntimeException('Error sending email.');
+    $mail->Username  = 'number13.peaceguard';
+    $mail->Password  = 'ice cream you scream';
+
+    $mail->From = 'number13.peaceguard@gmail.com';
+    $mail->FromName = 'Peaceguard Webmaster';
+    $mail->AddReplyTo('cstrong@sfu.ca', 'T. Colin Strong');
+
+    $mail->Subject = 'Peaceguard Volunteer Registration'
+    $mail->MsgHTML("<p>You have been registered as a volunteer with PeaceGuard!</p>
+    <p>Your login: $email </p>
+    <p>Your password: $password </p>
+    <p>Thanks for registering!</p>");
+
+    $name = "{ucwords($first_name)} {ucwords($last_name)}";
+    $mail->AddAddress($email, $name);
+    $mail->IsHTML(TRUE);
+
+    if(! $mail->Send()) {
+        $interface->addData(_SUCCESSFUL, _NO);
+        $interface->addData(_MESSAGE, "Mailer Error: " . $mail->ErrorInfo);
+    } else {
+        $interface->addData(_SUCCESSFUL, _YES);
     }
-
-    $interface->addData(_SUCCESSFUL, _YES);
 }
 
 catch (RuntimeException $e) {

@@ -142,7 +142,7 @@ class Patrol {
         $averagePatrols = (int)floor($totalPatrols / $totalVolunteers);
 
         // Return the average number of incident reports made per volunteer
-        $averageReports = (int)($totalReports / $totalVolunteers);
+        $averageReports = round($totalReports / $totalVolunteers, 2);
 
         $statistics[_TOTAL] = array(_PATROL => $totalPatrols, _DISTANCE => $totalDistance, 
         _TIME => $totalTime, _REPORT => $totalReports);
