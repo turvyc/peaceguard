@@ -18,15 +18,10 @@ require_once('constants.model.php');
 
 class Volunteer extends User {
 
-    private $joinDate;
-    private $totalTime;
-    private $totalDistance;
-    // private $score;  Commented because we have no score algorithm as of yet
-	// private $badges; should we have an array to store badges that the volunteer has collected.
-
     // Constructs a new Volunteer object using the database ID
     public function __construct($id) {
         parent::__construct($id);
+
     }
 
     // Inserts a new Volunteer into the database
@@ -64,9 +59,9 @@ class Volunteer extends User {
         $STH = $DBH->prepare($query);
         $STH->execute();
 
-        $count = $STH->fetch();
+        $result = $STH->fetch();
         $DBH = NULL;
-        return $count['count'];
+        return $result['count'];
     }
 
     // Returns the number of currently patrolling volunteers
@@ -78,44 +73,129 @@ class Volunteer extends User {
         $STH = $DBH->prepare($query);
         $STH->execute();
 
-        $count = $STH->fetch();
+        $result = $STH->fetch();
         $DBH = NULL;
 
-        return $count['count'];
+        return $result['count'];
+    }
+
+    // Records newly-earned badges to the database
+    public function addBadges($badges) {
+        if (! count($badges)) {
+            return;
+        }
+
+        require('database.model.php');
+
+        $time = time();
+
+        // Generate the MySQL VALUES string for the query below
+        $values = '';
+        foreach ($badges as $badge) {
+            $values .= "($badge, $this->id, $time),"
+        }
+
+        $query = "INSERT INTO Earns (b_id, u_id, date)
+        VALUES $values;";
+        $STH =$DBH->prepare($query);
+        $STH->execute()
+        $DBH = NULL;
+    }
+
+    // Returns a list of the badges the Volunteer has earned
+    public function getBadges() {
+        require('database.model.php');
+        $query = "SELECT b_id, name
+        FROM Volunteers NATURAL JOIN Earns NATURAL JOIN Badges
+        WHERE u_id = $this->id";
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $badges = [];
+        while ($badge = $STH->fetch()) {
+            $badges[] = $badge;
+        }
+        return $badges;
     }
 
     public function getJoinDate() {
-        return $this->joinDate;
+        require('database.model.php');
+        $query = "SELECT joined FROM Volunteers WHERE id = $id";
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $result = $STH->fetch();
+        $DBH = NULL;
+        return $result['joined'];
     }
 
     public function getNumberOfReports() {
-        return $this->numberOfReports;
+        require('database.model.php');
+        $query = "SELECT COUNT(*) AS count
+        FROM Reported WHERE u_id = $this->id"
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $result = $STH->fetch();
+        $DBH = NULL;
+        return $result['count'];
     }
 
     public function getNumberOfPatrols() {
-        return $this->numberOfPatrols;
+        require('database.model.php');
+        $query = "SELECT COUNT(*) AS count
+        FROM Patrolled WHERE u_id = $this->id"
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $result = $STH->fetch();
+        $DBH = NULL;
+        return $result['count'];
     }
 
     public function getTotalTime() {
-        return $this->totalTime;
+        require('database.model.php');
+        $query = "SELECT SUM(duration) AS totalTime
+        FROM Patrols NATURAL JOIN Patrolled 
+        WHERE u_id = $this->id"
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $result = $STH->fetch();
+        $DBH = NULL;
+        return $result['totalTime'];
     }
 
     public function getTotalDistance() {
-        return $this->totalDistance;
+        require('database.model.php');
+        $query = "SELECT SUM(distance) AS totalDistance
+        FROM Patrols NATURAL JOIN Patrolled 
+        WHERE u_id = $this->id"
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $result = $STH->fetch();
+        $DBH = NULL;
+        return $result['totalDistance'];
     }
 
     public function getAverageTime() {
-        return $this->totalTime / $this->numberOfPatrols;
+        require('database.model.php');
+        $query = "SELECT AVG(duration) AS avgTime
+        FROM Patrols NATURAL JOIN Patrolled 
+        WHERE u_id = $this->id"
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $result = $STH->fetch();
+        $DBH = NULL;
+        return $result['avgTime'];
     }
 
     public function getAverageDistance() {
-        return $this->totalDistance / $this->numberOfPatrols;
+        require('database.model.php');
+        $query = "SELECT AVG(distance) AS avgDistance
+        FROM Patrols NATURAL JOIN Patrolled 
+        WHERE u_id = $this->id"
+        $STH = $DBH->prepare($query);
+        $STH->execute();
+        $result = $STH->fetch();
+        $DBH = NULL;
+        return $result['avgDistance'];
     }
-
-    public function madeReport() {
-        $this->numberofReports+=1;
-    }
-
 }
 
 ?>
