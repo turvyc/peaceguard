@@ -18,6 +18,7 @@ require_once('../model/constants.model.php');
 require_once('../model/patrol.model.php');
 require_once('../model/datainterface.model.php');
 require_once('../model/session.model.php');
+require_once('../model/badge.model.php');
 
 try {
     $session = new Session;
@@ -36,10 +37,12 @@ try {
     $_POST[_ROUTE], $_POST[_DISTANCE]);
 
     // Check if any new badges were earned
-    $new_badges = Badge::checkForNewBadges($_POST[_EMAIL]);
+    $volunteer = Volunteer::constructFromEmail($_POST[_EMAIL]);
+    $new_badges = Badge::checkForNewBadges($volunteer);
+    $volunteer->addBadges($new_badges);
     
-    $interface->addData(_BADGES, $new_badges);
     $interface->addData(_SUCCESSFUL, _YES);
+    $interface->addData(_BADGES, $new_badges);
 }
 
 catch (Exception $e) {

@@ -32,7 +32,7 @@ class Volunteer extends User {
         $STH = $DBH->prepare($query);
         $STH->execute(array($email));
         $result = $STH->fetch();
-        return new Volunteer($result['id']);
+        return new Volunteer((int)$result['u_id']);
     }
 
     // Inserts a new Volunteer into the database
@@ -97,19 +97,15 @@ class Volunteer extends User {
         }
 
         require('database.model.php');
-
         $time = time();
 
-        // Generate the MySQL VALUES string for the query below
-        $values = '';
         foreach ($badges as $badge) {
-            $values .= "($badge, $this->id, $time),";
+            $query = "INSERT INTO Earns (b_id, u_id, date)
+            VALUES ('$badge', $this->id, $time);";
+            $STH =$DBH->prepare($query);
+            $STH->execute();
         }
 
-        $query = "INSERT INTO Earns (b_id, u_id, date)
-        VALUES $values;";
-        $STH =$DBH->prepare($query);
-        $STH->execute();
         $DBH = NULL;
     }
 
@@ -121,7 +117,7 @@ class Volunteer extends User {
         WHERE u_id = $this->id";
         $STH = $DBH->prepare($query);
         $STH->execute();
-        $badges = [];
+        $badges = array();
         while ($badge = $STH->fetch()) {
             $badges[] = $badge;
         }
@@ -129,46 +125,46 @@ class Volunteer extends User {
     }
 
     public function getJoinDate() {
-        $query = "SELECT joined FROM Volunteers WHERE id = $id";
+        $query = "SELECT joined AS result FROM Volunteers WHERE id = $id";
         return $this->executeQuery($query);
     }
 
     public function getNumberOfReports() {
         require('database.model.php');
-        $query = "SELECT COUNT(*)
+        $query = "SELECT COUNT(*) AS result
         FROM Reported WHERE u_id = $this->id";
         return $this->executeQuery($query);
     }
 
     public function getNumberOfPatrols() {
-        $query = "SELECT COUNT(*)
+        $query = "SELECT COUNT(*) AS result
         FROM Patrolled WHERE u_id = $this->id";
         return $this->executeQuery($query);
     }
 
     public function getTotalTime() {
-        $query = "SELECT SUM(duration) 
+        $query = "SELECT SUM(duration) AS result 
         FROM Patrols NATURAL JOIN Patrolled 
         WHERE u_id = $this->id";
         return $this->executeQuery($query);
     }
 
     public function getTotalDistance() {
-        $query = "SELECT SUM(distance) 
+        $query = "SELECT SUM(distance) AS result 
         FROM Patrols NATURAL JOIN Patrolled 
         WHERE u_id = $this->id";
         return $this->executeQuery($query);
     }
 
     public function getAverageTime() {
-        $query = "SELECT AVG(duration)
+        $query = "SELECT AVG(duration) AS result
         FROM Patrols NATURAL JOIN Patrolled 
         WHERE u_id = $this->id";
         return $this->executeQuery($query);
     }
 
     public function getAverageDistance() {
-        $query = "SELECT AVG(distance) 
+        $query = "SELECT AVG(distance) AS result 
         FROM Patrols NATURAL JOIN Patrolled 
         WHERE u_id = $this->id";
         return $this->executeQuery($query);
@@ -181,7 +177,7 @@ class Volunteer extends User {
         $STH->execute();
         $result = $STH->fetch();
         $DBH = NULL;
-        return $result[0];
+        return $result['result'];
     }
 }
 

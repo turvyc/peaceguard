@@ -46,7 +46,7 @@ class Patrol {
     }
 
     // Writes the end time, route, and distance to a started patrol
-    public static function endPatrol($p_id, $duration, $distance, $route) {
+    public static function endPatrol($p_id, $duration, $route, $distance) {
         require('database.model.php');
         $query = 'UPDATE Patrols SET duration = ?, route = ?, distance = ? WHERE p_id = ?';
         $STH = $DBH->prepare($query);
