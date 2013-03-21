@@ -17,7 +17,7 @@
 - (IBAction)GenerateLocation:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *Address;
 @property (nonatomic) CLLocationDistance sum;
-@property (nonatomic) NSMutableArray *myArray;
+@property (nonatomic) NSMutableArray *location_array;
 @property (nonatomic) NSThread *thread;
 - (IBAction)StopPatrol:(id)sender;
 //Duration of time for a patrol

@@ -58,11 +58,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "peaceguard/LocationViewController.m"
-         timestampString = "385527057.367692"
+         timestampString = "385527657.40971"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88"
+         startingLineNumber = "87"
+         endingLineNumber = "87"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -84,11 +84,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "peaceguard/LocationViewController.m"
-         timestampString = "385527138.421385"
+         timestampString = "385527657.40971"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "143"
-         endingLineNumber = "143"
+         startingLineNumber = "138"
+         endingLineNumber = "138"
          landmarkName = "-StopPatrol:"
          landmarkType = "5">
       </FileBreakpoint>
