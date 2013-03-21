@@ -68,7 +68,6 @@
     _locationManager = [[CLLocationManager alloc] init];
     [_locationManager startUpdatingLocation];
     geocoder = [[CLGeocoder alloc] init];
-	// Do any additional setup after loading the view, typically from a nib.
     [self deviceLocation];
 }
 

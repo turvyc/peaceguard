@@ -57,7 +57,6 @@
     if([self.segueType isEqual: @"location"]){
         NSLog(@"got to location");
         LocationViewController *locationController = (LocationViewController *)segue.destinationViewController;
-        locationController.username = self.username;
         
     }
 
@@ -65,8 +64,6 @@
     else if([self.segueType isEqual: @"statistics"]){
         NSLog(@"got to stats");
         StatisticsViewController *statisticsController = (StatisticsViewController *)segue.destinationViewController;
-        statisticsController.username = self.username;
-        
         
     }
 }

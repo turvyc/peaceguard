@@ -57,7 +57,7 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [_timer startTimer];
     _start = YES;
-    _cache_number = 3;
+    _cache_number = 1;
     [locationManager startUpdatingLocation];
     NSDate *currDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
@@ -101,6 +101,8 @@
     ];
     //To remember the start location, create a cache number to allow GPS start
     _cache_number--;
+    //To remember the final location, it will create too much address but it's the only way
+    [_location_array addObject:newLocation];
     if (_start == YES && _cache_number == 0 ){
         if (_start_location == nil){
             _start_location = newLocation;
@@ -108,10 +110,6 @@
             NSLog(@"startLocation is %@",_Address.text);
         }
     }
-    //To remember the final location, it will create too much address but it's the only way
-    [_location_array addObject:newLocation];
-
-
 }
 
 - (IBAction)StopPatrol:(id)sender {
@@ -127,7 +125,10 @@
     
         //Use CLLocationDistance to count the distance of patrolling
         _final_location = [_location_array lastObject];
-        if (_start_location != nil && _final_location != nil){
+        if(_final_location == nil){
+            _final_location = _start_location;
+        }
+        if (_start_location != nil){
             meters = [_final_location distanceFromLocation:_start_location];
             NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
             NSLog(@"The distance is %@",distanceString);

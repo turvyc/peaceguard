@@ -25,6 +25,9 @@
 
 - (void)viewDidLoad
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    self.username = username;
     NSLog(self.username);
     self.connectionManager = [[ConnectionDataController alloc] init];
     NSDictionary *statsDictionary = [self.connectionManager getStatistics:self.username andTimePeriod:@"allTime"];
