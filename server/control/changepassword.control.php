@@ -27,18 +27,36 @@ catch (LogicException $e) {
     exit(1);
 }
 
-try {
-    //Make sure the POST values are acceptable.
-    if (! isset($_POST[_PASSWORD]) || ! isset($_POST[_NEW_PASSWORD])
-    || ! isset($_POST[_REPEAT])) {
-        throw new RuntimeException('Empty fields in form.');
+if ($interface->getAgent() == _WEBSITE) {
+
+    try {
+        //Make sure the POST values are acceptable.
+        if (! isset($_POST[_PASSWORD]) || ! isset($_POST[_NEW_PASSWORD])
+        || ! isset($_POST[_REPEAT])) {
+            throw new RuntimeException('Empty fields in form.');
+        }
+
+        if ($_POST[_NEW_PASSWORD] != $_POST[_REPEAT]) {
+            throw new RuntimeException('Passwords do not match.');
+        }
+
+        $admin = $session->getAdmin();
+
+        $admin->changePassword($_POST[_PASSWORD], $_POST[_NEW_PASSWORD]);
+
+        $interface->addData(_SUCCESSFUL, _YES);
+        $interface->addData(_MESSAGE, 'Password successfully updated.');
     }
 
-    if ($new != $repeat) {
-        throw new RuntimeException('Passwords do not match.');
+    catch (RuntimeException $e) {
+        $interface->addData(_SUCCESSFUL, _NO);
+        $interface->addData(_MESSAGE, $e->getMessage());
     }
 
-    $admin = $session->getAdmin();
+    header('location: ../admin.php');
+}
 
-    $admin->changePassword($_POST[_NEW_PASSWORD])
+$interface->output();
+exit(0);
+
 ?>
