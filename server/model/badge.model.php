@@ -32,15 +32,14 @@ class Badge {
     const KM_10 = 10000;
 
     const HR_1 = 60;
-    const HR_5 = Badges::HR_1 * 5;
-    const HR_10 = Badges::HR_1 * 10;
+    const HR_5 = 300;
+    const HR_10 = 600;
 
     // Checks to see if the Volunteer has earned any new badges, and if so, 
     // writes it to the database. The list of new badges is also returned.
-    public static function checkForNewBadges($email) {
-        $volunteer = Volunteer::constructFromEmail($email);
+    public static function checkForNewBadges($volunteer) {
         $current_badges = $volunteer->getBadges();
-        $eligible_badges = Badges::getEligibleBadges($volunteer);
+        $eligible_badges = Badge::getEligibleBadges($volunteer);
 
         $new_badges = [];
 
@@ -51,7 +50,6 @@ class Badge {
             }
         }
 
-        $volunteer->addBadges($new_badges);
         return $new_badges;
     }
 
@@ -62,27 +60,27 @@ class Badge {
         // Determine the highest distance milestone badge for which the Volunteer
         // is eligible
         $distance = $volunteer->getTotalDistance();
-        if ($distance >= KM_10) {
-            $eligible_badges[] = DISTANCE_10;
+        if ($distance >= Badge::KM_10) {
+            $eligible_badges[] = Badge::DISTANCE_10;
         }
-        else if ($distance >= KM_5) {
-            $eligible_badges[] = DISTANCE_5;
+        else if ($distance >= Badge::KM_5) {
+            $eligible_badges[] = Badge::DISTANCE_5;
         }
-        else if ($distance >= KM_1) {
-            $eligible_badges[] = DISTANCE_1;
+        else if ($distance >= Badge::KM_1) {
+            $eligible_badges[] = Badge::DISTANCE_1;
         }
 
         // Determine the highest duration milestone badge for which the Volunteer
         // is eligible
         $distance = $volunteer->getTotalTime();
-        if ($distance >= HR_10) {
-            $eligible_badges[] = TIME_10;
+        if ($distance >= Badge::HR_10) {
+            $eligible_badges[] = Badge::TIME_10;
         }
-        else if ($distance >= HR_5) {
-            $eligible_badges[] = TIME_5;
+        else if ($distance >= Badge::HR_5) {
+            $eligible_badges[] = Badge::TIME_5;
         }
-        else if ($distance >= HR_1) {
-            $eligible_badges[] = TIME_1;
+        else if ($distance >= Badge::HR_1) {
+            $eligible_badges[] = Badge::TIME_1;
         }
 
         return $eligible_badges;

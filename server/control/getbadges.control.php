@@ -33,7 +33,7 @@ try {
         throw new LogicException('EMAIL not set in POST.');
     }
 
-    $volunteer = Volunteer::constructFromEmail($email);
+    $volunteer = Volunteer::constructFromEmail($_POST[_EMAIL]);
     $badges = $volunteer->getBadges();
 
     $interface->addData(_SUCCESSFUL, _YES);
