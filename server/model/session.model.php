@@ -116,10 +116,10 @@ class Session {
             throw new PDOException($e->getMessage);
         }
 
-        if ($agent == _IPHONE) { return; }
 
         // If there is a match, log the user in
         if ($row = $STH->fetch()) {
+            if ($agent == _IPHONE) { return; }
             session_regenerate_id();
             $this->admin = new Admin((int)$row['u_id']);
             $_SESSION[Session::ADMIN] = $this->admin;

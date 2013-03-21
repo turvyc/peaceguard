@@ -35,6 +35,8 @@ try {
     Patrol::endPatrol($_POST[_PATROL], $_POST[_DURATION],
     $_POST[_ROUTE], $_POST[_DISTANCE]);
 
+    // Check if any new badges were earned
+    
     $interface->addData(_SUCCESSFUL, _YES);
 }
 

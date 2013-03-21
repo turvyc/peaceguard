@@ -35,17 +35,8 @@ class Badge {
     const HR_5 = Badges::HR_1 * 5;
     const HR_10 = Badges::HR_1 * 10;
 
-    private $volunteer; // Volunteer object, for the owner of the badges
-    private $badges;    // A list of the badges earned by the volunteer
-
-    // Constructs a new Badges object. 
-    public function __construct__($u_id) {
-        $this->volunteer = new Volunteer($u_id);
-        $this->badges = $this->volunteer->getBadges();
-    }
-
     // Checks to see if the Volunteer has earned any new badges, and if so, 
-    // writes it to the database.
+    // writes it to the database. The list of new badges is also returned.
     public static function checkForNewBadges($volunteer) {
         $current_badges = $volunteer->getBadges();
         $eligible_badges = Badges::getEligibleBadges($volunteer);
