@@ -66,7 +66,7 @@ try {
     // Send them an email with their username and password
     $mail = new PHPMailer();
     $mail->IsSMTP();
-    $mail->SMTPAuth = TRUE
+    $mail->SMTPAuth = TRUE;
     $mail->SMTPSecure = "ssl";
     $mail->Host = "smtp.gmail.com";
     $mail->Port = 465;
@@ -78,7 +78,7 @@ try {
     $mail->FromName = 'Peaceguard Webmaster';
     $mail->AddReplyTo('cstrong@sfu.ca', 'T. Colin Strong');
 
-    $mail->Subject = 'Peaceguard Volunteer Registration'
+    $mail->Subject = 'Peaceguard Volunteer Registration';
     $mail->MsgHTML("<p>You have been registered as a volunteer with PeaceGuard!</p>
     <p>Your login: $email </p>
     <p>Your password: $password </p>

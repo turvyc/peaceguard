@@ -25,7 +25,7 @@ checkLoggedIn($session);
 // Look for a message from a previous form action
 try {
     $data = $session->getData();
-    $message = $data[_MESSAGE];
+    $message = (isset($data[_MESSAGE])) ? $data[_MESSAGE] : '';
     $session->clearData();
 }
 catch (Exception $e) {
@@ -58,9 +58,7 @@ catch (Exception $e) {
 <div id="changepw">
 	<form name="admin" action="control/changepassword.control.php" method="POST">
 		<fieldset>
-				<legend>Change User's Password:</legend>	
-				<label for="<?php echo _EMAIL; ?>">Email:</label>
-				<input type="text" tabindex="5" name="<?php echo _EMAIL; ?>" /> <br /><br />
+				<legend>Change Password:</legend>	
 				<label for="<?php echo _PASSWORD; ?>">Current Password:</label>
 				<input type="password" tabindex="6" name="<?php echo _PASSWORD; ?>" /> <br /><br />
 				<label for="<?php echo _NEW_PASSWORD; ?>">New Password:</label>

@@ -15,11 +15,11 @@ or `git blame <file>`
 
 abstract class User {
 
-    private $id;            // The user's unique id number
-    private $firstName;
-    private $lastName;
-    private $email;
-    private $pw_hash;      // The user's password hash (not plaintext)
+    protected $id;            // The user's unique id number
+    protected $firstName;
+    protected $lastName;
+    protected $email;
+    protected $pw_hash;      // The user's password hash (not plaintext)
 
     public function __construct($id) {
         if (! is_int($id)) {

@@ -1132,3 +1132,88 @@
 )
 
 
+20 Mar 2013 19:23:23 -- Contents of POST:
+ Array
+(
+    [password] => 123
+    [newpassword] => 234
+    [repeat] => 234
+    [agent] => website
+)
+
+
+20 Mar 2013 19:28:00 -- Contents of POST:
+ Array
+(
+    [password] => 123
+    [newpassword] => 234
+    [repeat] => 234
+    [agent] => website
+)
+
+
+20 Mar 2013 19:28:16 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
+20 Mar 2013 19:28:24 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 234
+    [agent] => website
+)
+
+
+20 Mar 2013 19:28:29 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
+20 Mar 2013 19:28:59 -- Contents of POST:
+ Array
+(
+    [password] => 123
+    [newpassword] => 234
+    [repeat] => 234
+    [agent] => website
+)
+
+
+20 Mar 2013 19:29:25 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 123
+    [agent] => website
+)
+
+
+20 Mar 2013 19:29:28 -- Contents of POST:
+ Array
+(
+    [email] => admin
+    [password] => 234
+    [agent] => website
+)
+
+
+20 Mar 2013 19:29:36 -- Contents of POST:
+ Array
+(
+    [password] => 234
+    [newpassword] => 123
+    [repeat] => 123
+    [agent] => website
+)
+
+

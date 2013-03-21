@@ -24,14 +24,25 @@ class Admin extends User {
     }
 
     // Changes the admin's password
-    public function changePassword($new) {
-        $pw_hash = sha1($new . _SALT);
+    public function changePassword($old, $new) {
+        $old_hash = sha1($old . _SALT);
+        $new_hash = sha1($new . _SALT);
 
         try {
             require('database.model.php');
-            $query = 'UPDATE Users SET pw_hash = ? WHERE u_id = ?';
+
+            $query = 'UPDATE Users NATURAL JOIN Admins 
+            SET pw_hash = ? 
+            WHERE u_id = ? AND pw_hash = ?';
+
             $STH = $DBH->prepare($query);
-            $STH->execute(array($pw_hash, $this->id));
+            $STH->execute(array($new_hash, $this->id, $old_hash));
+
+            // If no rows were affected, they must have entered an incorrect
+            // password.
+            if (! $STH->rowCount()) {
+                throw new RuntimeException('Nothing updated. Wrong password?');
+            }
         }
 
         catch (PDOException $e) {
@@ -40,10 +51,6 @@ class Admin extends User {
                 exit(1);
             }
             throw $e;
-        }
-
-        if (! $STH->rowCount()) {
-            throw new RuntimeException('Database error.');
         }
 
         $DBH = NULL;
