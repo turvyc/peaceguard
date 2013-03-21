@@ -43,10 +43,7 @@
     [_mapView setRegion:adjustRegion animated:YES];
     NSString *incidentData = [defaults objectForKey:@"incidentData"];
     NSString *serverityData = [defaults objectForKey:@"serverityData"];
-    NSLog(incidentData);
-    NSLog(serverityData);
-    if (incidentData != nil && serverityData != nil)
-    {
+    if (incidentData != nil && serverityData != nil){
         MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
         point.coordinate = zoomLocation;
         point.title = incidentData;

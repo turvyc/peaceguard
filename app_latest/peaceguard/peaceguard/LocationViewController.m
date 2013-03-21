@@ -114,7 +114,6 @@
 
 }
 
-
 - (IBAction)StopPatrol:(id)sender {
         NSLog(@"stop Patrol");
         NSLog(@"The patrol ID is %i",self.patrolID);
