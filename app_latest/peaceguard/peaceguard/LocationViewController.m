@@ -31,7 +31,10 @@
 
 - (void)viewDidLoad
 {
-    NSLog(@"username-location:%@", self.username);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    self.username = username;
+    NSLog(@"username in the location view :%@", self.username);
     [super viewDidLoad];
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];

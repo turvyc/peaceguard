@@ -34,6 +34,7 @@
     
     self.totalPatrolsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"patrol"];
     self.totalDistanceField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"distance"];
+    NSLog(@"distance is :%@",self.totalDistanceField.text);
     self.numberOfIncidentsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"report"];
     self.totalTimeField.text =  [[statsDictionary objectForKey:@"total"] objectForKey:@"time"];
     //self.totalPatrolsField.text = [statsDictionary objectForKey:@"total"];
