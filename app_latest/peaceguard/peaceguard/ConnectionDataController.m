@@ -60,11 +60,14 @@
     
     if(success){
         NSLog(@"Successful!!!");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *username = email;
+        [defaults setObject:username forKey:@"username"];
+        [defaults synchronize];
     }
     else{
         success = NO;
     }
-    
     return success;
 }
 

@@ -152,7 +152,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([self.segueType isEqualToString:@"report"]){
         ReportViewController *report = (ReportViewController *)segue.destinationViewController;
-        report.username = self.username;
         report.isPatrolling = @"YES";
     }
 }

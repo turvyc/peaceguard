@@ -29,14 +29,15 @@
 
 - (void)viewDidLoad
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    self.username = username;
     NSLog(self.username);
     thePickerView.hidden = YES;
     pickerViewBlocker.hidden = YES;
     
     thePickerView.showsSelectionIndicator = TRUE;
     thePickerView.delegate = self;
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.location = [defaults objectForKey:@"currentLocation"];
     if(self.location != nil){
         self.locationDisplay.text = self.location;
