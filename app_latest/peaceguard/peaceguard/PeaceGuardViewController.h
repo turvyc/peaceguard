@@ -12,6 +12,7 @@
 #import "User.h"
 #import "ConnectionDataController.h"
 #import "ReportDataController.h"
+#import <CoreLocation/CoreLocation.h>
 //#import "UserDataController.h"
 
 @class UserDataController;
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 //@property(strong, nonatomic) UserDataController *userController;
 @property (strong, nonatomic) User *user;
+@property(nonatomic,retain) CLLocationManager *locationManager;
 @property (strong, nonatomic) ConnectionDataController *connectionManager;
 @property (weak, nonatomic) IBOutlet UIButton *Login;
 

@@ -32,11 +32,10 @@
 - (void)viewDidLoad
 {
     NSLog(@"username-location:%@", self.username);
-
     [super viewDidLoad];
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
-    _myArray = [[NSMutableArray alloc] init];
+    _location_array = [[NSMutableArray alloc] init];
     _timer = [[Timer alloc] init];
 }
 
@@ -46,122 +45,100 @@
     // Dispose of any resources that can be recreated.
 }
 
-//it is the function to start patrol
-- (IBAction)GenerateLocation:(id)sender {
+//Press the start patrol button and start the patrol action
+- (IBAction)GenerateLocation:(id)sender
+{
+    NSLog(@"start Patrol");
+    NSLog(@"The patrol ID is %i",self.patrolID);
+    //all initialize
     self.connectionManager = [[ConnectionDataController alloc] init];
     self.patrolID = [self.connectionManager startPatrolWithEmail:self.username];
-    
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [_timer startTimer];
     _start = YES;
+    _cache_number = 3;
     [locationManager startUpdatingLocation];
-    //[locationManager stopUpdatingLocation];
     NSDate *currDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
     NSString *dateString = [dateFormatter stringFromDate:currDate];
     self.start_time = dateString;
-    NSLog(@"start Patrol");
-    NSLog(@"The patrol ID is %i",self.patrolID);
-//    _thread = [[NSThread alloc] initWithTarget:self
-//                                               selector:@selector(route)
-//                                                 object:nil];
-//    [_thread start];
 }
 
-//- (void)route
-//{
-//    while(YES){
-//        [NSThread sleepForTimeInterval:1];
-//        [locationManager startUpdatingLocation];
-//        //NSLog(@"test location manager");
-//    }
-//}
-
+//Opening a GPS to start a patrol and gather the location,time and distance for the patrol 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-//    NSLog(@"didUpdateToLocation: %@", newLocation);
     CLLocation *currentLocation = newLocation;
-    if(_start == YES){
-        if(_start_location == nil){
-            _start_location = newLocation;
-        }
-    }else{
-        _final_location = newLocation;
-    }
-
-    if (currentLocation != nil) {
+    if (currentLocation != nil){
         NSString *longitude = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         NSString *latitude= [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
-        //[NSThread sleepForTimeInterval:1];
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:latitude forKey:@"starLatitude"];
         [defaults setObject:longitude forKey:@"starLongitude"];
         [defaults synchronize];
-        CLLocation *temp_location = [[CLLocation alloc] init];
-        if([_myArray lastObject] != nil){
-             temp_location = [_myArray lastObject];
-        }
-        if(temp_location != nil){
-            CLLocationDistance meters = [temp_location distanceFromLocation:newLocation];
-//            NSLog(@"%4.0f km from current location",meters);
-            _sum += meters;
-        }
-//        NSLog(@"%4.0f total distance",_sum/10000000);
     }
     
-    // Reverse Geocoding
-//    NSLog(@"Resolving the Address");
+    // Reverse Geocoding converts latitude and longitude to a readable location 
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-//        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-        if (error == nil && [placemarks count] > 0) {
-            placemark = [placemarks lastObject];
-            _Address.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+            if (error == nil && [placemarks count] > 0){
+                placemark = [placemarks lastObject];
+                _Address.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
                                  placemark.subThoroughfare, placemark.thoroughfare,
                                  placemark.postalCode, placemark.locality,
                                  placemark.administrativeArea,
                                  placemark.country];
-            self.current_location = _Address.text;
-            [_myArray addObject:newLocation];
-        } else {
-            NSLog(@"%@", error.debugDescription);
+                self.current_location = _Address.text;
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                NSString *current_location = _Address.text;
+                [defaults setObject:current_location forKey:@"currentLocation"];
+                [defaults synchronize];
+                [_location_array addObject:newLocation];
+            } else{
+                NSLog(@"%@", error.debugDescription);
+            }
         }
-    } ];
-    if(_start == YES){
-       // NSLog(@"Location is %@",_Address.text);
-        //        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-//        MKCoordinateRegion adjustRegion = [_mapView regionThatFits:viewRegion];
-//        [_mapView setRegion:adjustRegion animated:YES];
-//        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-//        point.coordinate = currentLocation.coordinate;
-//        point.title = @"where am i";
-//        point.subtitle = @"I'm here";
-//        [_mapView addAnnotation:point];
-    }else{
-        NSLog(@"finalLocation is %@",_Address.text);
+    ];
+    //To remember the start location, create a cache number to allow GPS start
+    _cache_number--;
+    if (_start == YES && _cache_number == 0 ){
+        if (_start_location == nil){
+            _start_location = newLocation;
+            _start = NO;
+            NSLog(@"startLocation is %@",_Address.text);
+        }
     }
+    //To remember the final location, it will create too much address but it's the only way
+    [_location_array addObject:newLocation];
+
+
 }
 
-
 - (IBAction)StopPatrol:(id)sender {
-//        [_thread cancel];
-//        [_thread release];
-//        locationManager.delegate = self;
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        NSLog(@"stop Patrol");
         NSLog(@"The patrol ID is %i",self.patrolID);
-        _start = NO;
-        [NSThread sleepForTimeInterval:1];
-//        [locationManager startUpdatingLocation];
+        CLLocationDistance meters = 0;
+
+        //Stop all the location and timer tool, also record the data
         [locationManager stopUpdatingLocation];
         [_timer stopTimer];
         NSString *timerString = [NSString stringWithFormat:@"%f",[_timer timeElapsedInSeconds]];
         _timeDisplay.text = timerString;
-        NSLog(@"stop Patrol");
-        //distance count here
-        CLLocationDistance meters = [_final_location distanceFromLocation:_start_location];
-        NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
-        _distanceDisplay.text = distanceString;
+    
+        //Use CLLocationDistance to count the distance of patrolling
+        _final_location = [_location_array lastObject];
+        if (_start_location != nil && _final_location != nil){
+            meters = [_final_location distanceFromLocation:_start_location];
+            NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
+            NSLog(@"The distance is %@",distanceString);
+            if(meters/1000 != 0.000000){
+                _distanceDisplay.text = distanceString;
+            }else{
+                _distanceDisplay.text = [NSString stringWithFormat:@"%f",0.000000];
+            }
+        }
+    
+        //After stop patrolling, application sends the duration, distance and patrol ID to the server
         self.connectionManager = [[ConnectionDataController alloc] init];
         [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:meters/1000];
 }
@@ -172,14 +149,9 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
     if([self.segueType isEqualToString:@"report"]){
-    ReportViewController *report = (ReportViewController *)segue.destinationViewController;
-    if(self.current_location != nil){
-        report.location = self.current_location;
-    }
-    report.username = self.username;
-    report.isPatrolling = @"YES";
+        ReportViewController *report = (ReportViewController *)segue.destinationViewController;
+        report.isPatrolling = @"YES";
     }
 }
 
