@@ -29,6 +29,7 @@
 @property (nonatomic) NSString *current_location;
 @property (weak, nonatomic) IBOutlet UITextField *distanceDisplay;
 @property (nonatomic) BOOL *start;
+@property (nonatomic) int cache_number;
 @property (nonatomic) int report_id;
 @property (nonatomic) NSString* username;
 @property (nonatomic) NSString* start_time;

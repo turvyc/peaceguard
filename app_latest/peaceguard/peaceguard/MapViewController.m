@@ -41,13 +41,18 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
     MKCoordinateRegion adjustRegion = [_mapView regionThatFits:viewRegion];
     [_mapView setRegion:adjustRegion animated:YES];
-
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate = zoomLocation;
-    point.title = @"where am i";
-    point.subtitle = @"I'm here";
-    
-    [_mapView addAnnotation:point];
+    NSString *incidentData = [defaults objectForKey:@"incidentData"];
+    NSString *serverityData = [defaults objectForKey:@"serverityData"];
+    NSLog(incidentData);
+    NSLog(serverityData);
+    if (incidentData != nil && serverityData != nil)
+    {
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        point.coordinate = zoomLocation;
+        point.title = incidentData;
+        point.subtitle = serverityData;
+        [_mapView addAnnotation:point];
+    }
 }
 
 

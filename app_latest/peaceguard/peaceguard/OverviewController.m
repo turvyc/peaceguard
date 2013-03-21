@@ -59,9 +59,13 @@
     self.connectionManager = [[ConnectionDataController alloc] init];
     
     [self.reportManager makeReportWithType:self.incidentData severity:self.severityData location:self.locationData time:self.date andDescription:self.descriptionData];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *incidentData = self.incidentData;
+    NSString *serverityData = self.severityData;
+    [defaults setObject:incidentData forKey:@"incidentData"];
+    [defaults setObject:serverityData forKey:@"serverityData"];
+    [defaults synchronize];
     NSLog(@"This is the username: %@", self.username);
     [self.connectionManager reportWithPostData:[self.reportManager getPOSTData:self.username]];
-    
-    
 }
 @end

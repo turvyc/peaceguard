@@ -72,7 +72,7 @@
 - (void) reportWithPostData: (NSString *) data{
     
     NSString *post = data;
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/report.control.php" andData:post];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/report.control.php" andData:post];
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
@@ -93,7 +93,7 @@
 - (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (double) distance {
     
     NSString *post = [NSString stringWithFormat:@"patrol=%i&duration=%i&route=%@&distance=%f&agent=iphone", patrolID, duration, route, distance];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/endpatrol.control.php" andData:post];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/endpatrol.control.php" andData:post];
 
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
@@ -116,7 +116,7 @@
     NSInteger currentUnixTime = [currDate timeIntervalSince1970];
     
     NSString *post = [NSString stringWithFormat:@"email=%@&startTime=%i&agent=iphone", email, currentUnixTime];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/beginpatrol.control.php" andData:post];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/beginpatrol.control.php" andData:post];
 
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
@@ -135,7 +135,7 @@
 - (NSDictionary *) getStatistics: (NSString *) email andTimePeriod: (NSString *) timePeriod{
     
     NSString *post = [NSString stringWithFormat:@"email=%@&timePeriod=%@&agent=iphone", email, timePeriod];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/control/patrolstats.control.php" andData:post];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/patrolstats.control.php" andData:post];
     
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];

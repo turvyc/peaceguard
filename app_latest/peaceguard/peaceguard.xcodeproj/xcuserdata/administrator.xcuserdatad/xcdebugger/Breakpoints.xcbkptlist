@@ -45,11 +45,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "peaceguard/ReportViewController.m"
-         timestampString = "384836933.512464"
+         timestampString = "385523858.29504"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "146"
-         endingLineNumber = "146"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "-buttonToOverview:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -58,25 +58,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "peaceguard/LocationViewController.m"
-         timestampString = "385449178.169545"
+         timestampString = "385527057.367692"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "120"
-         endingLineNumber = "120"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "peaceguard/LocationViewController.m"
-         timestampString = "385449178.169545"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "150"
-         endingLineNumber = "150"
-         landmarkName = "-StopPatrol:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -90,6 +77,19 @@
          startingLineNumber = "33"
          endingLineNumber = "33"
          landmarkName = "-viewDidAppear:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "peaceguard/LocationViewController.m"
+         timestampString = "385527138.421385"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
+         landmarkName = "-StopPatrol:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

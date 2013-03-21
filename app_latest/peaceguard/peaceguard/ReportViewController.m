@@ -36,6 +36,8 @@
     thePickerView.showsSelectionIndicator = TRUE;
     thePickerView.delegate = self;
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.location = [defaults objectForKey:@"currentLocation"];
     if(self.location != nil){
         self.locationDisplay.text = self.location;
     }
