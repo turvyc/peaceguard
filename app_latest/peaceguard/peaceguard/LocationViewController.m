@@ -115,7 +115,8 @@
     }
 }
 
-- (IBAction)StopPatrol:(id)sender {
+- (IBAction)StopPatrol:(id)sender
+{
         NSLog(@"stop Patrol");
         NSLog(@"The patrol ID is %i",self.patrolID);
         CLLocationDistance meters = 0;
@@ -147,14 +148,16 @@
         [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:meters/1000];
 }
 
-- (IBAction)reportButton:(id)sender {
+- (IBAction)reportButton:(id)sender
+{
     self.segueType = @"report";
     [self performSegueWithIdentifier:@"locationToReport" sender:self];
 }
 
-//*****************make global variable for is patrolling *********
+//make global variable for is patrolling
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
 }
 
 @end
