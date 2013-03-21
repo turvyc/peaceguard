@@ -38,8 +38,8 @@ try {
     // Check if any new badges were earned
     $new_badges = Badge::checkForNewBadges($_POST[_EMAIL]);
     
-    $interface->addData(_BADGES, $new_badges);
     $interface->addData(_SUCCESSFUL, _YES);
+    $interface->addData(_BADGES, $new_badges);
 }
 
 catch (Exception $e) {
