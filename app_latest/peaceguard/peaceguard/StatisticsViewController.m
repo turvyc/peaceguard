@@ -31,7 +31,6 @@
     NSLog(self.username);
     self.connectionManager = [[ConnectionDataController alloc] init];
     NSDictionary *statsDictionary = [self.connectionManager getStatistics:self.username andTimePeriod:@"allTime"];
-    
     self.totalPatrolsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"patrol"];
     self.totalDistanceField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"distance"];
     NSLog(@"distance is :%@",self.totalDistanceField.text);

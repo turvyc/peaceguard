@@ -93,9 +93,9 @@
 }
 
 //Sends end of patrol information to server
-- (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (double) distance {
+- (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (double) distance email: (NSString *) email{
     
-    NSString *post = [NSString stringWithFormat:@"patrol=%i&duration=%i&route=%@&distance=%f&agent=iphone", patrolID, duration, route, distance];
+    NSString *post = [NSString stringWithFormat:@"patrol=%i&duration=%i&route=%@&distance=%f&agent=iphone&email=%@", patrolID, duration, route, distance,email];
     NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/endpatrol.control.php" andData:post];
 
     
@@ -146,6 +146,27 @@
     NSString *test = @"done";
     if(success){
         NSLog(@"Successful!!!");
+        test = @"Succesful";
+    }
+    else{
+        success = NO;
+        test = @"failed";
+    }
+    return jsonDictionary;
+}
+
+//Requests user statistics from a specified time period from the server
+- (NSDictionary *) getBadge: (NSString *) email andTimePeriod: (NSString *) timePeriod{
+    
+    NSString *post = [NSString stringWithFormat:@"email=%@&timePeriod=%@&agent=iphone", email, timePeriod];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/getbadges.control.php" andData:post];
+    
+    
+    BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
+    
+    NSString *test = @"done";
+    if(success){
+        NSLog(@"Successful Badge!!!");
         test = @"Succesful";
     }
     else{
