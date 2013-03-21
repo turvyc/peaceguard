@@ -37,7 +37,8 @@ class Badge {
 
     // Checks to see if the Volunteer has earned any new badges, and if so, 
     // writes it to the database. The list of new badges is also returned.
-    public static function checkForNewBadges($volunteer) {
+    public static function checkForNewBadges($email) {
+        $volunteer = Volunteer::constructFromEmail($email);
         $current_badges = $volunteer->getBadges();
         $eligible_badges = Badges::getEligibleBadges($volunteer);
 
