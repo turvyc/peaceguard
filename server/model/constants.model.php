@@ -65,15 +65,16 @@ define('_PATROL', 'patrol');
 define('_START_TIME', 'startTime');
 define('_DURATION', 'duration');
 define('_ROUTE', 'route');
+define('_BADGES', 'badges');
 
 // Patrol SESSION data keys
 define('_TOTAL', 'total');
 define('_AVERAGE', 'average');
 define('_DISTANCE', 'distance');
 
-// The following constants are for $_POST array values.
-define('_IPHONE', 'iphone');   // For use with _AGENT key
-define('_WEBSITE', 'website');  // For use with _AGENT key
+// Agent constants
+define('_IPHONE', 'iphone');
+define('_WEBSITE', 'website');
 
 // Website Admin constants
 define('_FIRST_NAME', 'firstname');

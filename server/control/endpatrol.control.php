@@ -24,7 +24,7 @@ try {
     $interface = new DataInterface($session);
 
     // Make sure we have the required info
-    $required = array(_PATROL, _DURATION, _ROUTE, _DISTANCE);
+    $required = array(_EMAIL, _PATROL, _DURATION, _ROUTE, _DISTANCE);
     foreach ($required as $key) {
         if (! isset($_POST[$key])) {
             throw new LogicException($key . ' not set in POST.');
@@ -36,7 +36,9 @@ try {
     $_POST[_ROUTE], $_POST[_DISTANCE]);
 
     // Check if any new badges were earned
+    $new_badges = Badge::checkForNewBadges($_POST[_EMAIL]);
     
+    $interface->addData(_BADGES, $new_badges);
     $interface->addData(_SUCCESSFUL, _YES);
 }
 

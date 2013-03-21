@@ -21,7 +21,18 @@ class Volunteer extends User {
     // Constructs a new Volunteer object using the database ID
     public function __construct($id) {
         parent::__construct($id);
+    }
 
+    // Constructs a new Volunteer object using an email
+    public static function constructFromEmail($email) {
+        require('database.model.php');
+        $query = 'SELECT u_id
+        FROM Users NATURAL JOIN Volunteers
+        WHERE email = ?';
+        $STH = $DBH->prepare($query);
+        $STH->execute(array($email));
+        $result = $STH->fetch();
+        return new Volunteer($result['id']);
     }
 
     // Inserts a new Volunteer into the database
@@ -92,13 +103,13 @@ class Volunteer extends User {
         // Generate the MySQL VALUES string for the query below
         $values = '';
         foreach ($badges as $badge) {
-            $values .= "($badge, $this->id, $time),"
+            $values .= "($badge, $this->id, $time),";
         }
 
         $query = "INSERT INTO Earns (b_id, u_id, date)
         VALUES $values;";
         $STH =$DBH->prepare($query);
-        $STH->execute()
+        $STH->execute();
         $DBH = NULL;
     }
 
@@ -118,83 +129,59 @@ class Volunteer extends User {
     }
 
     public function getJoinDate() {
-        require('database.model.php');
         $query = "SELECT joined FROM Volunteers WHERE id = $id";
-        $STH = $DBH->prepare($query);
-        $STH->execute();
-        $result = $STH->fetch();
-        $DBH = NULL;
-        return $result['joined'];
+        return $this->executeQuery($query);
     }
 
     public function getNumberOfReports() {
         require('database.model.php');
-        $query = "SELECT COUNT(*) AS count
-        FROM Reported WHERE u_id = $this->id"
-        $STH = $DBH->prepare($query);
-        $STH->execute();
-        $result = $STH->fetch();
-        $DBH = NULL;
-        return $result['count'];
+        $query = "SELECT COUNT(*)
+        FROM Reported WHERE u_id = $this->id";
+        return $this->executeQuery($query);
     }
 
     public function getNumberOfPatrols() {
-        require('database.model.php');
-        $query = "SELECT COUNT(*) AS count
-        FROM Patrolled WHERE u_id = $this->id"
-        $STH = $DBH->prepare($query);
-        $STH->execute();
-        $result = $STH->fetch();
-        $DBH = NULL;
-        return $result['count'];
+        $query = "SELECT COUNT(*)
+        FROM Patrolled WHERE u_id = $this->id";
+        return $this->executeQuery($query);
     }
 
     public function getTotalTime() {
-        require('database.model.php');
-        $query = "SELECT SUM(duration) AS totalTime
+        $query = "SELECT SUM(duration) 
         FROM Patrols NATURAL JOIN Patrolled 
-        WHERE u_id = $this->id"
-        $STH = $DBH->prepare($query);
-        $STH->execute();
-        $result = $STH->fetch();
-        $DBH = NULL;
-        return $result['totalTime'];
+        WHERE u_id = $this->id";
+        return $this->executeQuery($query);
     }
 
     public function getTotalDistance() {
-        require('database.model.php');
-        $query = "SELECT SUM(distance) AS totalDistance
+        $query = "SELECT SUM(distance) 
         FROM Patrols NATURAL JOIN Patrolled 
-        WHERE u_id = $this->id"
-        $STH = $DBH->prepare($query);
-        $STH->execute();
-        $result = $STH->fetch();
-        $DBH = NULL;
-        return $result['totalDistance'];
+        WHERE u_id = $this->id";
+        return $this->executeQuery($query);
     }
 
     public function getAverageTime() {
-        require('database.model.php');
-        $query = "SELECT AVG(duration) AS avgTime
+        $query = "SELECT AVG(duration)
         FROM Patrols NATURAL JOIN Patrolled 
-        WHERE u_id = $this->id"
-        $STH = $DBH->prepare($query);
-        $STH->execute();
-        $result = $STH->fetch();
-        $DBH = NULL;
-        return $result['avgTime'];
+        WHERE u_id = $this->id";
+        return $this->executeQuery($query);
     }
 
     public function getAverageDistance() {
-        require('database.model.php');
-        $query = "SELECT AVG(distance) AS avgDistance
+        $query = "SELECT AVG(distance) 
         FROM Patrols NATURAL JOIN Patrolled 
-        WHERE u_id = $this->id"
+        WHERE u_id = $this->id";
+        return $this->executeQuery($query);
+    }
+
+    // Returns the value of the query -- usually an aggregate operation.
+    private function executeQuery($query) {
+        require('database.model.php');
         $STH = $DBH->prepare($query);
         $STH->execute();
         $result = $STH->fetch();
         $DBH = NULL;
-        return $result['avgDistance'];
+        return $result[0];
     }
 }
 
