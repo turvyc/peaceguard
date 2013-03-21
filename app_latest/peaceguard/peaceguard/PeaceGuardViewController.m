@@ -28,7 +28,7 @@
     [self.view endEditing:YES];
 }
 
-- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
@@ -68,7 +68,6 @@
     _locationManager = [[CLLocationManager alloc] init];
     [_locationManager startUpdatingLocation];
     geocoder = [[CLGeocoder alloc] init];
-	// Do any additional setup after loading the view, typically from a nib.
     [self deviceLocation];
 }
 
@@ -78,8 +77,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Get the current location and set it as a global location, so user won't lost the location
+//without the patrolling
 - (void)deviceLocation {
-    NSString *Address;
     [geocoder reverseGeocodeLocation:_locationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error == nil && [placemarks count] > 0){
             placemark = [placemarks lastObject];
@@ -98,7 +98,7 @@
     ];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
         MainViewController *mainContoller = (MainViewController *)segue.destinationViewController;
         mainContoller.usernameData = self.username.text;
 

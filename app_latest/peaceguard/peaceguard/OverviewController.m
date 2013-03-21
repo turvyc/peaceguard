@@ -25,6 +25,9 @@
 
 - (void)viewDidLoad
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    self.username = username;
     NSLog(@"This is the username: %@", self.username);
     self.incidentDisplay.text = self.incidentData;
     self.severityDisplay.text = self.severityData;

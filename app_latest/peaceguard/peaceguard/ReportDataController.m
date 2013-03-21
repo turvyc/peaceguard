@@ -27,18 +27,4 @@
     return postData;
 }
 
-//- (NSData *) getJSON: (NSString *) email{
-//    //Create the report dictionary
-//    NSArray *subKeys = [NSArray arrayWithObjects:@"type", @"severity", @"location", @"time", @"desc", nil];
-//    NSArray *subObjects = [NSArray arrayWithObjects:self.theReport.type, self.theReport.severity, self.theReport.location, self.theReport.time, self.theReport.description, nil];
-//    //Create the JSON dictionary
-//    NSArray *keys = [NSArray arrayWithObjects:@"email", @"report", nil];
-//    NSArray *objects = [NSArray arrayWithObjects:@"type", @"severity", nil];
-//
-//    NSDictionary *report = [NSDictionary dictionaryWithObjects:subObjects forKeys:subKeys];
-//    NSDictionary *dicToSerialize = [NSDictionary dictionaryWithObjects:<#(NSArray *)#> forKeys:<#(NSArray *)#>]
-//
-//}
-
-
 @end

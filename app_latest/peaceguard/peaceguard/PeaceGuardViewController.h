@@ -30,5 +30,6 @@
 
 
 - (IBAction)Login:(id)sender;
+- (void) deviceLocation;
 //- (BOOL)logUsername: (NSString *) username password: (NSString *) password;
 @end

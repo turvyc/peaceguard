@@ -30,6 +30,9 @@
 
 - (void)viewDidLoad
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    self.usernameData = username;
     NSLog(self.usernameData);
     
     [super viewDidLoad];
