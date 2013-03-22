@@ -31,6 +31,8 @@
 		C4150BB816CCA93C00876850 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB716CCA93C00876850 /* Default-568h@2x.png */; };
 		C4150BBB16CCA93C00876850 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */; };
 		C4150BBE16CCA93C00876850 /* PeaceGuardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */; };
+		C43C36C716FD024B004A9E84 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43C36C616FD024B004A9E84 /* SystemConfiguration.framework */; };
+		C43C36CA16FD0261004A9E84 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C43C36C916FD0261004A9E84 /* Reachability.m */; };
 		C48F3A1B16D1F43A0015D678 /* Icon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A1A16D1F43A0015D678 /* Icon57x57.png */; };
 		C48F3A1D16D1F43D0015D678 /* Icon114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A1C16D1F43D0015D678 /* Icon114x114.png */; };
 		C48F3A1F16D1F4460015D678 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C48F3A1E16D1F4460015D678 /* Default.png */; };
@@ -86,6 +88,9 @@
 		C4150BBA16CCA93C00876850 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeaceGuardViewController.h; sourceTree = "<group>"; };
 		C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeaceGuardViewController.m; sourceTree = "<group>"; };
+		C43C36C616FD024B004A9E84 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C43C36C816FD0261004A9E84 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C43C36C916FD0261004A9E84 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C48F3A1A16D1F43A0015D678 /* Icon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon57x57.png; sourceTree = "<group>"; };
 		C48F3A1C16D1F43D0015D678 /* Icon114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114x114.png; sourceTree = "<group>"; };
 		C48F3A1E16D1F4460015D678 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -111,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43C36C716FD024B004A9E84 /* SystemConfiguration.framework in Frameworks */,
 				C3AEED6B16ED54AD002C16EC /* CoreLocation.framework in Frameworks */,
 				C313066816DF1CEE005FB151 /* MapKit.framework in Frameworks */,
 				C4150BA216CCA93C00876850 /* UIKit.framework in Frameworks */,
@@ -125,6 +131,7 @@
 		C4150B9516CCA93C00876850 = {
 			isa = PBXGroup;
 			children = (
+				C43C36C616FD024B004A9E84 /* SystemConfiguration.framework */,
 				C3AEED6A16ED54AD002C16EC /* CoreLocation.framework */,
 				C313066716DF1CEE005FB151 /* MapKit.framework */,
 				C48F3A2416D211060015D678 /* camera-icon-md.png */,
@@ -160,6 +167,7 @@
 		C4150BA716CCA93C00876850 /* peaceguard */ = {
 			isa = PBXGroup;
 			children = (
+				C43C36CB16FD0271004A9E84 /* Reachability */,
 				C4F0716A16F96C2B000368B0 /* Overlay */,
 				C4150BB016CCA93C00876850 /* PeaceGuardAppDelegate.h */,
 				A7D498DF16ED78C6001EA2D9 /* OverviewController.h */,
@@ -213,6 +221,15 @@
 				C4150BB716CCA93C00876850 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C43C36CB16FD0271004A9E84 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				C43C36C816FD0261004A9E84 /* Reachability.h */,
+				C43C36C916FD0261004A9E84 /* Reachability.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 		C4F0716A16F96C2B000368B0 /* Overlay */ = {
@@ -319,6 +336,7 @@
 				C491E68716F96B9800982997 /* CrumbPath.m in Sources */,
 				C491E68816F96B9800982997 /* CrumbPathView.m in Sources */,
 				C392634116F971E200FA29E5 /* MapViewController.m in Sources */,
+				C43C36CA16FD0261004A9E84 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
