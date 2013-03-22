@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Reachability.h"
 
 @interface ConnectionDataController : NSObject
 
@@ -18,6 +19,7 @@
 - (NSDictionary *) getStatistics: (NSString *) email andTimePeriod: (NSString *) timePeriod;
 
 - (NSDictionary *) sendRequestWithURL: (NSString *) url andData: (NSString *) post;
-
+- (BOOL) connectionAvailable;
+//- (BOOL) serverAvailable;
 - (NSDictionary *) getBadge: (NSString *) email andTimePeriod: (NSString *) timePeriod;
 @end

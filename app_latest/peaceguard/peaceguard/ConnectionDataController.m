@@ -10,8 +10,36 @@
 
 @implementation ConnectionDataController
 
+NSString *serverAddress = @"http://peaceguard.dyndns.org:1728/peaceguard-test";
+
 //Sends a POST request to the server and receives a JSON
 - (NSDictionary *) sendRequestWithURL:(NSString *)url andData:(NSString *)post{
+    // Test if internet connection is available
+    // If not possible send error
+    if (![self connectionAvailable]) {
+        NSNumber *successful = [NSNumber numberWithBool:NO];
+        NSArray *keys = [NSArray arrayWithObjects:@"successful", @"message", nil];
+        NSArray *objects = [NSArray arrayWithObjects:successful, @"noConnection", nil];
+        //NSDictionary   *retVal = [NSDictionary dictionaryWithObject: successful forKey: @"successful"];
+        NSDictionary *retVal = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+        
+        //Let the user know
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failed"
+                                                        message:@"You are not currently connected to the internet"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+        return retVal;
+    }
+    //Test if connection to server is possible
+    //    if (![self serverAvailable]) {
+    //        NSNumber *successful = [NSNumber numberWithBool:NO];
+    //        NSDictionary   *retVal = [NSDictionary dictionaryWithObject: successful forKey: @"successful"];
+    //        return retVal;
+    //    }
+    
     NSLog(@"Data: %@",post);
     
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -54,20 +82,28 @@
 - (BOOL) serverLoginWithEmail:(NSString *)email andPassword:(NSString *)password{
     
     NSString *post = [NSString stringWithFormat:@"email=%@&password=%@&agent=iphone", email, password];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/login.control.php" andData:post];
+    NSString *url = [NSString stringWithFormat:@"%@/control/login.control.php", serverAddress];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:url andData:post];
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
     if(success){
         NSLog(@"Successful!!!");
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSString *username = email;
-        [defaults setObject:username forKey:@"username"];
-        [defaults synchronize];
+    }
+    else if ([[jsonDictionary objectForKey:@"message"] isEqualToString:@"noConnection"]){
+        success = NO;
     }
     else{
         success = NO;
+        //Let the user know the login failed
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed"
+                                                        message:@"The username or password was incorrect."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
+    
     return success;
 }
 
@@ -75,7 +111,8 @@
 - (void) reportWithPostData: (NSString *) data{
     
     NSString *post = data;
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/report.control.php" andData:post];
+    NSString *url = [NSString stringWithFormat:@"%@/control/report.control.php", serverAddress];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:url andData:post];
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
@@ -88,16 +125,17 @@
         success = NO;
         test = @"failed";
     }
-
-
+    
+    
 }
 
 //Sends end of patrol information to server
 - (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (double) distance email: (NSString *) email{
     
     NSString *post = [NSString stringWithFormat:@"patrol=%i&duration=%i&route=%@&distance=%f&agent=iphone&email=%@", patrolID, duration, route, distance,email];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/endpatrol.control.php" andData:post];
-
+    NSString *url = [NSString stringWithFormat:@"%@/control/endpatrol.control.php", serverAddress];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:url andData:post];
+    
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
@@ -119,8 +157,9 @@
     NSInteger currentUnixTime = [currDate timeIntervalSince1970];
     
     NSString *post = [NSString stringWithFormat:@"email=%@&startTime=%i&agent=iphone", email, currentUnixTime];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/beginpatrol.control.php" andData:post];
-
+    NSString *url = [NSString stringWithFormat:@"%@control/beginpatrol.control.php", serverAddress];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:url andData:post];
+    
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
     
@@ -138,7 +177,8 @@
 - (NSDictionary *) getStatistics: (NSString *) email andTimePeriod: (NSString *) timePeriod{
     
     NSString *post = [NSString stringWithFormat:@"email=%@&timePeriod=%@&agent=iphone", email, timePeriod];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/patrolstats.control.php" andData:post];
+    NSString *url = [NSString stringWithFormat:@"%@/control/patrolstats.control.php", serverAddress];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:url andData:post];
     
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
@@ -155,11 +195,12 @@
     return jsonDictionary;
 }
 
-//Requests user statistics from a specified time period from the server
+//Requests user badges from the server
 - (NSDictionary *) getBadge: (NSString *) email andTimePeriod: (NSString *) timePeriod{
     
     NSString *post = [NSString stringWithFormat:@"email=%@&timePeriod=%@&agent=iphone", email, timePeriod];
-    NSDictionary *jsonDictionary = [self sendRequestWithURL:@"http://peaceguard.dyndns.org:1728/peaceguard-test/control/getbadges.control.php" andData:post];
+    NSString *url = [NSString stringWithFormat:@"%@/control/getbadges.control.php", serverAddress];
+    NSDictionary *jsonDictionary = [self sendRequestWithURL:url andData:post];
     
     
     BOOL success = [[jsonDictionary objectForKey:@"successful"] boolValue];
@@ -175,5 +216,35 @@
     }
     return jsonDictionary;
 }
+
+//Check whether the internet connection is available
+- (BOOL) connectionAvailable{
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+    if (internetStatus != NotReachable){
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
+
+//Check whether the server is available [Not working/ Not required]
+//
+//
+//- (BOOL) serverAvailable{
+//    Reachability *reachability = [Reachability reachabilityWithHostname:serverAddress];
+//    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
+//    if (internetStatus != NotReachable){
+//        return YES;
+//    }
+//    else{
+//        return NO;
+//    }
+//
+//}
+
+
+
 
 @end

@@ -46,14 +46,6 @@
     if( authentication == YES) {
         //the login is correct
         [self performSegueWithIdentifier:@"ToMainMenu" sender:self];
-    }else{
-        //Let the user know the login failed
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed"
-                                                        message:@"The username or password was incorrect."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
     }
 }
 
