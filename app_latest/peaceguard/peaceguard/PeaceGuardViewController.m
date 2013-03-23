@@ -26,35 +26,29 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y-44);
+    [UIView commitAnimations];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    //self.view.frame = CGRectMake(0,-10,320,400);
+    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y-44);
+    [UIView commitAnimations];
     return YES;
 }
 
-//- (void)textFieldDidBeginEditing:(UITextField *)textField
-//{
-//    //self.view.center = CGPointMake(self.originalCenter.x, 216);
-//    [UIView beginAnimations:nil context:NULL];
-//    [UIView setAnimationDuration:0.25];
-//    //self.view.frame = CGRectMake(0,-10,320,400);
-//    self.view.center = CGPointMake(self.originalCenter.x, 50);
-//    [UIView commitAnimations];
-//}
-//
-//- (void)textFieldDidEndEditing:(UITextField *)textField
-//{
-//    //self.view.center = self.originalCenter;
-//    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y);
-//}
 
 - (void)keyboardDidShow:(NSNotification *)note
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
     //self.view.frame = CGRectMake(0,-10,320,400);
-    self.view.center = CGPointMake(self.originalCenter.x, 50);
+    self.view.center = CGPointMake(self.originalCenter.x, 10);
     [UIView commitAnimations];
 }
 
