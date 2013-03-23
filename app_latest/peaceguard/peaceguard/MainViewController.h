@@ -15,6 +15,9 @@
 - (IBAction)statisticsButton:(id)sender;
 - (IBAction)reportButton:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIImageView *mainBackground;
+
+
 @property(nonatomic) NSString *usernameData;
 
 @property(nonatomic) NSString *segueType;
