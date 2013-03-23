@@ -11,6 +11,8 @@
 
 @interface ConnectionDataController : NSObject
 
+
+
 - (BOOL) serverLoginWithEmail: (NSString *) email andPassword: (NSString *) password;
 - (void) reportWithPostData: (NSString *) data;
 

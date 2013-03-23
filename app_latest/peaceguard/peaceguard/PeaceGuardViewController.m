@@ -33,6 +33,39 @@
     return YES;
 }
 
+//- (void)textFieldDidBeginEditing:(UITextField *)textField
+//{
+//    //self.view.center = CGPointMake(self.originalCenter.x, 216);
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:0.25];
+//    //self.view.frame = CGRectMake(0,-10,320,400);
+//    self.view.center = CGPointMake(self.originalCenter.x, 50);
+//    [UIView commitAnimations];
+//}
+//
+//- (void)textFieldDidEndEditing:(UITextField *)textField
+//{
+//    //self.view.center = self.originalCenter;
+//    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y);
+//}
+
+- (void)keyboardDidShow:(NSNotification *)note
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    //self.view.frame = CGRectMake(0,-10,320,400);
+    self.view.center = CGPointMake(self.originalCenter.x, 50);
+    [UIView commitAnimations];
+}
+
+- (void)keyboardDidHide:(NSNotification *)note
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.25];
+    //self.view.frame = CGRectMake(0,-10,320,400);
+    self.view.center = self.originalCenter;
+    [UIView commitAnimations];
+}
 
 - (IBAction)Login:(id)sender {
     //BOOL authentication = [self logUsername:self.username.text password:self.password.text];
@@ -54,6 +87,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil]; 
+    self.originalCenter = self.view.center;
     NSURL*url=[NSURL URLWithString:@"https://vancouver.ca/police/"];
     NSURLRequest*request=[NSURLRequest requestWithURL:url];
     [_help loadRequest:request];

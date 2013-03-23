@@ -27,7 +27,7 @@
 @property(nonatomic,retain) CLLocationManager *locationManager;
 @property (strong, nonatomic) ConnectionDataController *connectionManager;
 @property (weak, nonatomic) IBOutlet UIButton *Login;
-
+@property(nonatomic) CGPoint originalCenter;
 
 - (IBAction)Login:(id)sender;
 - (void) deviceLocation;
