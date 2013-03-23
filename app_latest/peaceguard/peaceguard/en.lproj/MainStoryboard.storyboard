@@ -363,11 +363,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zf-6V-o9k">
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Oi3-C0-hkK"/>
                                     <constraint firstAttribute="height" constant="50" id="qxJ-DM-jAB"/>
-                                    <constraint firstAttribute="width" constant="100" id="ykT-bj-Y8P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="Patrol.png">
+                                <state key="normal" title="Button" image="Patrol_.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -383,7 +383,7 @@
                                     <constraint firstAttribute="height" constant="50" id="49Y-G8-C7J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="Stats.png">
+                                <state key="normal" title="Button" image="Stats_.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -396,11 +396,11 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e73-14-blt">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="112" id="UKE-xa-cD7"/>
+                                    <constraint firstAttribute="width" constant="142" id="G6m-gk-77a"/>
                                     <constraint firstAttribute="height" constant="71" id="hWO-zN-QjD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button" image="Report.png">
+                                <state key="normal" title="Button" image="Report_.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -421,17 +421,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VfJ-42-btb" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="2Xv-RK-DxW"/>
-                            <constraint firstItem="6zf-6V-o9k" firstAttribute="leading" secondItem="IGP-j3-En6" secondAttribute="leading" type="default" id="2am-8b-wze"/>
+                            <constraint firstItem="IGP-j3-En6" firstAttribute="trailing" secondItem="6zf-6V-o9k" secondAttribute="trailing" type="default" id="6yY-0c-2PB"/>
                             <constraint firstAttribute="bottom" secondItem="ChT-1S-eyr" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="7lT-8G-P9m"/>
-                            <constraint firstItem="6zf-6V-o9k" firstAttribute="trailing" secondItem="IGP-j3-En6" secondAttribute="trailing" type="default" id="9dL-eY-JZO"/>
+                            <constraint firstItem="IGP-j3-En6" firstAttribute="leading" secondItem="6zf-6V-o9k" secondAttribute="leading" type="default" id="CqN-Mc-dua"/>
                             <constraint firstAttribute="trailing" secondItem="ChT-1S-eyr" secondAttribute="trailing" constant="19" id="Drl-k4-850"/>
+                            <constraint firstItem="KeA-kn-b1E" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="LQe-P0-iIr"/>
                             <constraint firstItem="IGP-j3-En6" firstAttribute="top" secondItem="6zf-6V-o9k" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="P1U-4F-qcR"/>
-                            <constraint firstItem="6zf-6V-o9k" firstAttribute="centerX" secondItem="VfJ-42-btb" secondAttribute="centerX" type="default" id="RM4-cP-iAa"/>
                             <constraint firstItem="KeA-kn-b1E" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="SFv-F2-kzh"/>
-                            <constraint firstItem="6zf-6V-o9k" firstAttribute="centerX" secondItem="KeA-kn-b1E" secondAttribute="centerX" type="default" id="WlT-aI-ulY"/>
-                            <constraint firstItem="6zf-6V-o9k" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="eb7-TA-i0z"/>
-                            <constraint firstItem="IGP-j3-En6" firstAttribute="centerX" secondItem="e73-14-blt" secondAttribute="centerX" type="default" id="fNQ-mw-Ked"/>
+                            <constraint firstItem="KeA-kn-b1E" firstAttribute="centerX" secondItem="VfJ-42-btb" secondAttribute="centerX" type="default" id="fcf-92-oTA"/>
                             <constraint firstItem="e73-14-blt" firstAttribute="top" secondItem="IGP-j3-En6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="gnF-6B-ugo"/>
+                            <constraint firstItem="6zf-6V-o9k" firstAttribute="centerX" secondItem="VfJ-42-btb" secondAttribute="centerX" type="default" id="gt6-dg-5W1"/>
+                            <constraint firstItem="e73-14-blt" firstAttribute="centerX" secondItem="IGP-j3-En6" secondAttribute="centerX" type="default" id="hlX-iV-isf"/>
                             <constraint firstItem="KeA-kn-b1E" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="huR-99-xZR"/>
                             <constraint firstItem="KeA-kn-b1E" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="uvB-Dr-BGk"/>
                             <constraint firstItem="6zf-6V-o9k" firstAttribute="top" secondItem="3" secondAttribute="top" constant="173" id="yDT-U4-YqN"/>
@@ -977,9 +977,9 @@
     <resources>
         <image name="0.jpg" width="640" height="960"/>
         <image name="MainTopLog.png" width="152" height="172"/>
-        <image name="Patrol.png" width="409" height="112"/>
-        <image name="Report.png" width="450" height="152"/>
-        <image name="Stats.png" width="385" height="120"/>
+        <image name="Patrol_.png" width="426" height="110"/>
+        <image name="Report_.png" width="456" height="149"/>
+        <image name="Stats_.png" width="390" height="120"/>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
     <classes>
@@ -1079,8 +1079,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="124-Le-yYz"/>
         <segue reference="1jE-g0-gdg"/>
         <segue reference="9ZO-PH-oR0"/>
-        <segue reference="EIo-P2-aQg"/>
     </inferredMetricsTieBreakers>
 </document>
