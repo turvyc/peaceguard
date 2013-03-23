@@ -140,7 +140,8 @@
     else if (thePickerView.hidden == NO){
         thePickerView.hidden = YES;
         self.pickerViewBlockerTop.hidden = YES;
-        self.pickerViewBlockerBottom.hidden = YES;        self.editLabel.text = @"Edit";
+        self.pickerViewBlockerBottom.hidden = YES;
+        self.editLabel.text = @"Edit";
     }
 }
 

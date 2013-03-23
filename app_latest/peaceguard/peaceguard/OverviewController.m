@@ -40,7 +40,7 @@
     //NSInteger *dateData = [currDate timeIntervalSince1970];
     double aDate = [currDate timeIntervalSince1970];
     self.date =(NSInteger)aDate;
-    self.dataDisplay.text = dateString;
+   // self.dataDisplay.text = dateString;
     if(self.locationData != nil){
         self.locationDisplay.text = self.locationData;
     }

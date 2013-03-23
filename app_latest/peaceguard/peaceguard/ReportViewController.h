@@ -24,6 +24,7 @@
 //used to block other fields when using pickerview
 @property (strong, nonatomic) IBOutlet UIView *pickerViewBlockerTop;
 @property (strong, nonatomic) IBOutlet UIView *pickerViewBlockerBottom;
+
 //-incident/severity array
 @property (strong, nonatomic) NSArray *incidentSelection;
 @property (strong, nonatomic) NSArray *severitySelection;

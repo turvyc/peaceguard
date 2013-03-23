@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *descriptionDisplay;
 @property (strong, nonatomic) IBOutlet UIImageView *imageDisplay;
 @property (strong, nonatomic) IBOutlet UITextField *locationDisplay;
-@property (strong, nonatomic) IBOutlet UITextField *dataDisplay;
+//@property (strong, nonatomic) IBOutlet UITextField *dataDisplay;
 - (IBAction)confirm:(id)sender;
 
 
