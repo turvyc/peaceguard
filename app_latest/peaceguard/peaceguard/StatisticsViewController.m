@@ -37,9 +37,44 @@
     self.numberOfIncidentsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"report"];
     self.totalTimeField.text =  [[statsDictionary objectForKey:@"total"] objectForKey:@"time"];
     //self.totalPatrolsField.text = [statsDictionary objectForKey:@"total"];
+    
+    self.statDurationPickerview.showsSelectionIndicator = TRUE;
+    self.statDurationPickerview.delegate = self;
+    
+    self.durationData = @"last day";
+    
+    self.durationSelection = [[NSArray alloc] initWithObjects:@"last day", @"last month", @"last year", @"total", nil];
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    return [self.durationSelection count];
+    
+}
+
+//number of columns/components of picker
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return 1;
+    
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    return [self.durationSelection objectAtIndex:row];
+    
+}
+
+//returns value from pickerview
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    self.durationData = [self.durationSelection objectAtIndex:row];
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {

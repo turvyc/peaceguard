@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="F1w-vf-QLQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="F1w-vf-QLQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -533,9 +533,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Incident Type and Severity:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vJ-XS-DNj">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="17Z-zf-Wxw"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -552,6 +549,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L01-zZ-I3x">
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Uf0-v7-DQz"/>
                                     <constraint firstAttribute="width" constant="68" id="k5o-Xj-E1Z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -629,6 +627,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="R0y-7V-jV1" secondAttribute="trailing" constant="28" id="1Kx-bm-Dm8"/>
+                            <constraint firstItem="KrM-yF-Lka" firstAttribute="baseline" secondItem="6vJ-XS-DNj" secondAttribute="baseline" type="default" id="2Au-w4-BVT"/>
+                            <constraint firstItem="KrM-yF-Lka" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="14" id="4fY-Gi-6XW"/>
                             <constraint firstItem="SNn-CY-vxD" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="50" id="4hk-cL-bQC"/>
                             <constraint firstAttribute="trailing" secondItem="Sbp-6v-LTL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4nt-vx-Zqy"/>
                             <constraint firstItem="KrM-yF-Lka" firstAttribute="centerX" secondItem="L01-zZ-I3x" secondAttribute="centerX" type="default" id="4ro-an-xYW"/>
@@ -645,8 +645,8 @@
                             <constraint firstAttribute="trailing" secondItem="9lP-rE-FWC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Fqb-JN-1FH"/>
                             <constraint firstItem="R0y-7V-jV1" firstAttribute="baseline" secondItem="SNn-CY-vxD" secondAttribute="baseline" type="default" id="Fqe-zd-6rV"/>
                             <constraint firstAttribute="bottom" secondItem="Lvd-DL-gx3" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="GRI-y0-zC7"/>
+                            <constraint firstItem="L01-zZ-I3x" firstAttribute="bottom" secondItem="KrM-yF-Lka" secondAttribute="bottom" type="default" id="HAZ-oT-qpb"/>
                             <constraint firstItem="ydf-YF-tu0" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="18" id="HQ1-5w-ijy"/>
-                            <constraint firstItem="L01-zZ-I3x" firstAttribute="top" secondItem="KrM-yF-Lka" secondAttribute="top" type="default" id="IcS-nQ-E9G"/>
                             <constraint firstAttribute="trailing" secondItem="ydf-YF-tu0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M4w-8P-zGY"/>
                             <constraint firstItem="NK6-ex-h4Z" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OYX-bX-UFa"/>
                             <constraint firstItem="aRW-do-8Yr" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SBR-kU-dYu"/>
@@ -660,8 +660,6 @@
                             <constraint firstAttribute="trailing" secondItem="gwe-pF-2F1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bGB-xA-KNQ"/>
                             <constraint firstItem="Sbp-6v-LTL" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="d5T-UZ-r5A"/>
                             <constraint firstItem="9lP-rE-FWC" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dOx-ON-JVy"/>
-                            <constraint firstItem="6vJ-XS-DNj" firstAttribute="bottom" secondItem="L01-zZ-I3x" secondAttribute="bottom" type="default" id="e1e-vh-5eQ"/>
-                            <constraint firstItem="L01-zZ-I3x" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="15" id="e3F-dT-v7a"/>
                             <constraint firstItem="AKX-30-OU5" firstAttribute="centerY" secondItem="jFN-AU-Apk" secondAttribute="centerY" type="default" id="iyQ-1o-LyQ"/>
                             <constraint firstItem="fiy-ao-46v" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" type="default" id="joz-jb-jj2"/>
                             <constraint firstAttribute="bottom" secondItem="fiy-ao-46v" secondAttribute="bottom" constant="300" id="k1U-YB-Cqu"/>
@@ -670,7 +668,6 @@
                             <constraint firstItem="SNn-CY-vxD" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="p2g-vt-dMh"/>
                             <constraint firstItem="aRW-do-8Yr" firstAttribute="top" secondItem="eY7-Fz-NBb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rOo-nW-eft"/>
                             <constraint firstItem="Lvd-DL-gx3" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" type="default" id="ry7-AR-fVT"/>
-                            <constraint firstItem="6vJ-XS-DNj" firstAttribute="centerY" secondItem="L01-zZ-I3x" secondAttribute="centerY" type="default" id="uYm-mC-DNw"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -886,18 +883,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUa-DZ-fMd">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="mkc-0P-aSU"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time Duration:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOc-4W-IAv">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FUa-DZ-fMd" firstAttribute="trailing" secondItem="1tw-Rx-Ish" secondAttribute="trailing" type="default" id="27Q-zi-IbK"/>
                             <constraint firstItem="JUe-u9-uad" firstAttribute="leading" secondItem="1tw-Rx-Ish" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3ZL-tv-N9o"/>
                             <constraint firstItem="q7B-Lz-PnI" firstAttribute="top" secondItem="1tw-Rx-Ish" secondAttribute="top" constant="88" id="4gw-XR-77J"/>
                             <constraint firstItem="Ye5-mI-lZZ" firstAttribute="baseline" secondItem="hjm-BL-wcf" secondAttribute="baseline" type="default" id="6V8-I1-wDv"/>
                             <constraint firstItem="5Pa-G5-uVD" firstAttribute="leading" secondItem="o9i-md-6XL" secondAttribute="leading" type="default" id="7WY-1r-sdf"/>
+                            <constraint firstItem="FUa-DZ-fMd" firstAttribute="centerX" secondItem="q7B-Lz-PnI" secondAttribute="centerX" type="default" id="7dY-9R-dOe"/>
                             <constraint firstItem="1B0-zn-TrM" firstAttribute="leading" secondItem="1tw-Rx-Ish" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8Uj-42-rGP"/>
                             <constraint firstItem="hjm-BL-wcf" firstAttribute="top" secondItem="q7B-Lz-PnI" secondAttribute="top" type="default" id="ERz-e6-3H0"/>
                             <constraint firstAttribute="trailing" secondItem="5Pa-G5-uVD" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="GOt-ht-Ed6"/>
+                            <constraint firstItem="FUa-DZ-fMd" firstAttribute="top" secondItem="QOc-4W-IAv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Kh8-8a-Dzw"/>
                             <constraint firstItem="SMQ-nU-9kE" firstAttribute="top" secondItem="1tw-Rx-Ish" secondAttribute="top" constant="40" id="OGN-Ip-XXj"/>
-                            <constraint firstItem="q7B-Lz-PnI" firstAttribute="centerX" secondItem="1tw-Rx-Ish" secondAttribute="centerX" type="default" id="POn-aj-SuS"/>
                             <constraint firstAttribute="trailing" secondItem="o9i-md-6XL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Prc-y9-JI1"/>
                             <constraint firstItem="1B0-zn-TrM" firstAttribute="top" secondItem="1tw-Rx-Ish" secondAttribute="top" constant="44" id="PtP-O7-1Ec"/>
                             <constraint firstItem="o9i-md-6XL" firstAttribute="leading" secondItem="hjm-BL-wcf" secondAttribute="leading" type="default" id="Td9-kv-xCZ"/>
@@ -909,14 +918,18 @@
                             <constraint firstItem="SMQ-nU-9kE" firstAttribute="leading" secondItem="hjm-BL-wcf" secondAttribute="leading" type="default" id="atv-sh-dVj"/>
                             <constraint firstAttribute="trailing" secondItem="hjm-BL-wcf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="d6j-DM-h8J"/>
                             <constraint firstItem="Ye5-mI-lZZ" firstAttribute="top" secondItem="1tw-Rx-Ish" secondAttribute="top" constant="92" id="jDD-u8-INF"/>
+                            <constraint firstItem="QOc-4W-IAv" firstAttribute="leading" secondItem="1tw-Rx-Ish" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jsZ-ci-saA"/>
                             <constraint firstItem="Ye5-mI-lZZ" firstAttribute="leading" secondItem="1tw-Rx-Ish" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="kb2-4i-Vrd"/>
                             <constraint firstAttribute="trailing" secondItem="SMQ-nU-9kE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lHK-1Q-Mfp"/>
+                            <constraint firstItem="FUa-DZ-fMd" firstAttribute="leading" secondItem="1tw-Rx-Ish" secondAttribute="leading" type="default" id="uVD-p6-p1x"/>
                             <constraint firstItem="SMQ-nU-9kE" firstAttribute="baseline" secondItem="5Pa-G5-uVD" secondAttribute="baseline" type="default" id="wLw-4Z-MBX"/>
+                            <constraint firstAttribute="bottom" secondItem="FUa-DZ-fMd" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="wam-Fc-JFm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Statistics" id="bFR-Re-UWF"/>
                     <connections>
                         <outlet property="numberOfIncidentsField" destination="5Pa-G5-uVD" id="COc-5v-5Nc"/>
+                        <outlet property="statDurationPickerview" destination="FUa-DZ-fMd" id="u9Z-Tx-hfG"/>
                         <outlet property="totalDistanceField" destination="5Pa-G5-uVD" id="jhG-3F-s7O"/>
                         <outlet property="totalPatrolsField" destination="SMQ-nU-9kE" id="TH8-FV-8M5"/>
                         <outlet property="totalTimeField" destination="hjm-BL-wcf" id="0zP-B2-8Kt"/>
@@ -935,6 +948,95 @@
         <image name="Stats.png" width="385" height="120"/>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="LocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="GenerateLocation:"/>
+                <relationship kind="action" name="StopPatrol:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="distanceDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="timeDisplay" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="patrolButton:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+                <relationship kind="outlet" name="mainBackground" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OverviewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverviewController.h"/>
+            <relationships>
+                <relationship kind="action" name="confirm:"/>
+                <relationship kind="outlet" name="dataDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="descriptionDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="severityDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PatrolViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="locationButton:"/>
+                <relationship kind="action" name="reportControl:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+            </relationships>
+        </class>
+        <class className="PeaceGuardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ImageTaker:"/>
+                <relationship kind="action" name="buttonToOverview:"/>
+                <relationship kind="action" name="incidentButtonPressed:"/>
+                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="editLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pickerViewBlockerBottom" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pickerViewBlockerTop" candidateClass="UIView"/>
+                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="StatisticsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatisticsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="numberOfIncidentsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="statDurationPickerview" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="totalDistanceField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="totalPatrolsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="totalTimeField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

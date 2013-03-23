@@ -22,4 +22,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *numberOfIncidentsField;
 
 
+@property (strong, nonatomic) IBOutlet UIPickerView *statDurationPickerview;
+//durationPickerview variables
+@property (strong, nonatomic) NSArray *durationSelection;
+@property (strong, nonatomic) NSString *durationData;
+
+
 @end
