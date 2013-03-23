@@ -22,7 +22,8 @@
 //PickerView
 @property (strong, nonatomic) IBOutlet UIPickerView *thePickerView;
 //used to block other fields when using pickerview
-@property (strong, nonatomic) IBOutlet UIView *pickerViewBlocker;
+@property (strong, nonatomic) IBOutlet UIView *pickerViewBlockerTop;
+@property (strong, nonatomic) IBOutlet UIView *pickerViewBlockerBottom;
 //-incident/severity array
 @property (strong, nonatomic) NSArray *incidentSelection;
 @property (strong, nonatomic) NSArray *severitySelection;
@@ -32,7 +33,6 @@
 @property (strong, nonatomic) NSString *incidentData;   //change to be consistent with server - same as severity
 @property (strong, nonatomic) NSString *severityData;
 @property (weak, nonatomic) IBOutlet UITextField *locationDisplay;
-@property (weak, nonatomic) IBOutlet UITextField *dateDisplay;
 
 //temp variable for overview
 @property (strong, nonatomic) NSString *incidentOverview;
@@ -41,10 +41,10 @@
 @property (strong, nonatomic) UIImage *imageOverview;
 
 //-open/close pickerview for incident type/severity
-- (IBAction)incidentButtonPressed:(id)sender;
-- (IBAction)severityButtonPressed:(id)sender;
-- (IBAction)doneSelection:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *editLabel;
 
+//actually editButton
+- (IBAction)incidentButtonPressed:(id)sender;
 
 - (IBAction)buttonToOverview:(id)sender;
 

@@ -15,7 +15,7 @@
 
 @implementation ReportViewController
 
-@synthesize thePickerView, pickerViewBlocker;
+@synthesize thePickerView;
 @synthesize incidentSelection, severitySelection;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -29,12 +29,20 @@
 
 - (void)viewDidLoad
 {
+    self.editLabel.text = @"Edit";
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];
     self.username = username;
     NSLog(self.username);
+    
+    self.pickerViewBlockerTop.alpha = 0.5;
+    self.pickerViewBlockerBottom.alpha = 0.5;
+    thePickerView.alpha = 1.0;
     thePickerView.hidden = YES;
-    pickerViewBlocker.hidden = YES;
+    self.pickerViewBlockerTop.hidden = YES;
+    self.pickerViewBlockerBottom.hidden = YES;
+
     
     thePickerView.showsSelectionIndicator = TRUE;
     thePickerView.delegate = self;
@@ -48,7 +56,6 @@
     [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
     NSString *dateString = [dateFormatter stringFromDate:currDate];
     self.date = dateString;
-    self.dateDisplay.text = dateString;
 
     
     
@@ -122,27 +129,21 @@
     
 }
 
-
+//actually editButton
 - (IBAction)incidentButtonPressed:(id)sender {
     if (thePickerView.hidden == YES){
         thePickerView.hidden = NO;
-        pickerViewBlocker.hidden = NO;
+        self.pickerViewBlockerTop.hidden = NO;
+        self.pickerViewBlockerBottom.hidden = NO;
+        self.editLabel.text = @"Done";
     }
-}
-
-- (IBAction)severityButtonPressed:(id)sender {
-    if (thePickerView.hidden == YES){
-        thePickerView.hidden = NO;
-        pickerViewBlocker.hidden = NO;
-    }
-}
-
-- (IBAction)doneSelection:(id)sender {
-    if (thePickerView.hidden == NO){
+    else if (thePickerView.hidden == NO){
         thePickerView.hidden = YES;
-        pickerViewBlocker.hidden = YES;
+        self.pickerViewBlockerTop.hidden = YES;
+        self.pickerViewBlockerBottom.hidden = YES;        self.editLabel.text = @"Edit";
     }
 }
+
 
 - (IBAction)buttonToOverview:(id)sender {
     
