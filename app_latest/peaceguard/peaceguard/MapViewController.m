@@ -12,7 +12,11 @@
 
 @end
 
-@implementation MapViewController
+@implementation MapViewController {
+    CLLocationManager *locationManager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,12 +37,12 @@
     // We could normally use MKMapView's user location update delegation but this does not work in
     // the background.  Plus we want "kCLLocationAccuracyBestForNavigation" which gives us a better accuracy.
     //
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self; // Tells the location manager to send updates to this object
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self; // Tells the location manager to send updates to this object
     
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:NO];
-    
+    self.patrolControlButton.alpha = 0.60;
     
     
     //[self.view addSubview:self.mapView];
@@ -78,7 +82,7 @@
 {
     //NSLog(@"Points count: %i",self.crumbs.pointCount);
     //NSLog(@"Points: %@",MKStringFromMapPoint(*(self.crumbs.points)));
-    self.locationManager.delegate = nil;
+    locationManager.delegate = nil;
 }
 
 #pragma mark - MapKit
@@ -148,8 +152,71 @@
 
 
 - (IBAction)patrolControl:(id)sender {
-    
-    [self.locationManager startUpdatingLocation];
+    //Starting a patrol
+    if (!self.patrolling) {
+        self.patrolling = YES;
+        [locationManager startUpdatingLocation];
+        self.patrolControlLabel.text = @"Stop Patrol";
+        
+        //From locationViewController
+        NSLog(@"start Patrol");
+        NSLog(@"The patrol ID is %i",self.patrolID);
+        //all initialize
+        self.connectionManager = [[ConnectionDataController alloc] init];
+        self.patrolID = [self.connectionManager startPatrolWithEmail:self.username];
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        [_timer startTimer];
+        _start = YES;
+        _cache_number = 1;
+        [locationManager startUpdatingLocation];
+        self.connectionManager = [[ConnectionDataController alloc] init];
+        NSDate *currDate = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
+        NSString *dateString = [dateFormatter stringFromDate:currDate];
+        self.start_time = dateString;
+    }
+    //Stopping a patrol
+    else if (self.patrolling){
+        self.patrolling = NO;
+        [locationManager stopUpdatingLocation];
+        self.patrolControlLabel.text = @"Start Patrol";
+        
+        //From locationViewController
+        NSLog(@"stop Patrol");
+        NSLog(@"The patrol ID is %i",self.patrolID);
+        CLLocationDistance meters = 0;
+        
+        //Stop all the location and timer tool, also record the data
+        [locationManager stopUpdatingLocation];
+        [_timer stopTimer];
+        NSString *timerString = [NSString stringWithFormat:@"%f",[_timer timeElapsedInSeconds]];
+        _timeDisplay.text = timerString;
+        
+        //Use CLLocationDistance to count the distance of patrolling
+        _final_location = [_location_array lastObject];
+        if(_final_location == nil){
+            _final_location = _start_location;
+        }
+        if (_start_location != nil){
+            meters = [_final_location distanceFromLocation:_start_location];
+            NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
+            NSLog(@"The distance is %@",distanceString);
+            if(meters/1000 != 0.000000){
+                _distanceDisplay.text = distanceString;
+            }else{
+                _distanceDisplay.text = [NSString stringWithFormat:@"%f",0.000000];
+            }
+        }
+        
+        //After stop patrolling, application sends the duration, distance and patrol ID to the server
+        self.connectionManager = [[ConnectionDataController alloc] init];
+        [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:2000 email:self.username];
+        NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
+        NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
+        NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
+    }
     
 }
 @end
