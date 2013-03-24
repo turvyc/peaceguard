@@ -34,11 +34,19 @@ NSString *serverAddress = @"http://peaceguard.dyndns.org:1728/peaceguard-test";
         return retVal;
     }
     //Test if connection to server is possible
-    //    if (![self serverAvailable]) {
-    //        NSNumber *successful = [NSNumber numberWithBool:NO];
-    //        NSDictionary   *retVal = [NSDictionary dictionaryWithObject: successful forKey: @"successful"];
-    //        return retVal;
-    //    }
+        if (![self serverAvailable]) {
+            NSNumber *successful = [NSNumber numberWithBool:NO];
+            NSDictionary   *retVal = [NSDictionary dictionaryWithObject: successful forKey: @"successful"];
+            
+            //Let the user know
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Failed"
+                                                            message:@"Server unavailable"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            return retVal;
+        }
     
     NSLog(@"Data: %@",post);
     
@@ -232,17 +240,14 @@ NSString *serverAddress = @"http://peaceguard.dyndns.org:1728/peaceguard-test";
 //Check whether the server is available [Not working/ Not required]
 //
 //
-//- (BOOL) serverAvailable{
-//    Reachability *reachability = [Reachability reachabilityWithHostname:serverAddress];
-//    NetworkStatus internetStatus = [reachability currentReachabilityStatus];
-//    if (internetStatus != NotReachable){
-//        return YES;
-//    }
-//    else{
-//        return NO;
-//    }
-//
-//}
+- (BOOL) serverAvailable{
+    Reachability *r = [Reachability reachabilityWithHostname:@"google.com"];
+    NetworkStatus internetStatus = [r currentReachabilityStatus];
+    if(internetStatus == NotReachable) {
+        return NO;
+    }
+    return YES;
+}
 
 
 
