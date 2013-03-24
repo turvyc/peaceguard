@@ -52,7 +52,7 @@
 
 - (IBAction)patrolButton:(id)sender {
     self.segueType = @"patrol";
-    [self performSegueWithIdentifier:@"mainToPatrol" sender:self];
+    [self performSegueWithIdentifier:@"mainToMap" sender:self];
 }
 
 - (IBAction)statisticsButton:(id)sender {
@@ -70,9 +70,9 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     //if patrol button is pressed
     if([self.segueType isEqual: @"patrol"]){
-        NSLog(@"got to patrol");
-        PatrolViewController *patrolController = (PatrolViewController *)segue.destinationViewController;
-        patrolController.username = self.usernameData;
+     //   NSLog(@"got to patrol");
+     //   PatrolViewController *patrolController = (PatrolViewController *)segue.destinationViewController;
+     //   patrolController.username = self.usernameData;
         
     }
     //report

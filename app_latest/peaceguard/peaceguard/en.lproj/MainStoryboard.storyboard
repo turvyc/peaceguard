@@ -444,6 +444,7 @@
                         <segue destination="YiY-r9-CCp" kind="push" identifier="mainToPatrol" id="uiG-pe-UcA"/>
                         <segue destination="gX9-hk-2uQ" kind="push" identifier="mainToStatistics" id="124-Le-yYz"/>
                         <segue destination="oPN-sY-whv" kind="push" identifier="mainToReport" id="1jE-g0-gdg"/>
+                        <segue destination="ZNw-A8-Ehs" kind="push" identifier="mainToMap" id="hxP-o4-9AT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -800,11 +801,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Avg. Speed:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ive-2E-aOl">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkz-5y-vG5">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start Patrol">
@@ -825,11 +821,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9v-Ju-zrq">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current Patrol Stats:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npX-YC-Cu3">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -843,26 +834,21 @@
                             <constraint firstItem="apm-uh-Mcs" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BQI-vw-tWq"/>
                             <constraint firstItem="apm-uh-Mcs" firstAttribute="top" secondItem="npX-YC-Cu3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="CyU-vI-acC"/>
                             <constraint firstItem="oUf-mK-HbD" firstAttribute="leading" secondItem="lcx-pq-r4h" secondAttribute="leading" type="default" id="Khq-oN-ufJ"/>
-                            <constraint firstItem="t9v-Ju-zrq" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LFa-oV-OCZ"/>
                             <constraint firstItem="lcx-pq-r4h" firstAttribute="top" secondItem="Ckp-Ky-bdy" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NTr-M8-vfR"/>
                             <constraint firstItem="D6C-om-qNc" firstAttribute="trailing" secondItem="SCN-iU-5g6" secondAttribute="trailing" type="default" id="Na1-Or-aTH"/>
-                            <constraint firstItem="t9v-Ju-zrq" firstAttribute="top" secondItem="ive-2E-aOl" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NfK-XK-WVC"/>
                             <constraint firstItem="lcx-pq-r4h" firstAttribute="trailing" secondItem="apm-uh-Mcs" secondAttribute="trailing" type="default" id="VAa-at-1F1"/>
                             <constraint firstItem="Ckp-Ky-bdy" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VwU-pX-ydr"/>
                             <constraint firstItem="oUf-mK-HbD" firstAttribute="top" secondItem="lcx-pq-r4h" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="f1P-aL-8F9"/>
                             <constraint firstItem="D6C-om-qNc" firstAttribute="bottom" secondItem="SCN-iU-5g6" secondAttribute="bottom" type="default" id="fNF-lR-N2C"/>
                             <constraint firstItem="zkz-5y-vG5" firstAttribute="centerX" secondItem="D6C-om-qNc" secondAttribute="centerX" type="default" id="h4z-Vg-eWk"/>
-                            <constraint firstItem="ive-2E-aOl" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mxg-sx-3Cs"/>
                             <constraint firstItem="npX-YC-Cu3" firstAttribute="top" secondItem="SCN-iU-5g6" secondAttribute="top" constant="46" id="nHI-OJ-ffl"/>
                             <constraint firstAttribute="bottom" secondItem="zkz-5y-vG5" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qVF-de-6pa"/>
-                            <constraint firstItem="ive-2E-aOl" firstAttribute="top" secondItem="oUf-mK-HbD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rDh-cA-Oaq"/>
                             <constraint firstItem="npX-YC-Cu3" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tjV-Cs-XDS"/>
                             <constraint firstItem="D6C-om-qNc" firstAttribute="top" secondItem="SCN-iU-5g6" secondAttribute="top" type="default" id="wsR-ZW-fmR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MPL-Wl-g52"/>
                     <connections>
-                        <outlet property="averageSpeedDisplay" destination="t9v-Ju-zrq" id="rmg-ao-pCJ"/>
                         <outlet property="distanceDisplay" destination="oUf-mK-HbD" id="kbN-9c-XCP"/>
                         <outlet property="durationDisplay" destination="Ckp-Ky-bdy" id="wI3-K0-69N"/>
                         <outlet property="mapView" destination="D6C-om-qNc" id="4tf-Wo-LXX"/>
@@ -1085,8 +1071,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9ZO-PH-oR0"/>
         <segue reference="1jE-g0-gdg"/>
-        <segue reference="EIo-P2-aQg"/>
+        <segue reference="124-Le-yYz"/>
+        <segue reference="hxP-o4-9AT"/>
     </inferredMetricsTieBreakers>
 </document>
