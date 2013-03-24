@@ -28,6 +28,7 @@
 @property (strong, nonatomic) ConnectionDataController *connectionManager;
 @property (weak, nonatomic) IBOutlet UIButton *Login;
 @property(nonatomic) CGPoint originalCenter;
+@property (strong, nonatomic) IBOutlet UIImageView *logoImage;
 
 - (IBAction)Login:(id)sender;
 - (void) deviceLocation;

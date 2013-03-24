@@ -73,7 +73,7 @@
     if( authentication == YES) {
         //the login is correct
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:self.username forKey:@"username"];
+        [defaults setObject:self.username.text forKey:@"username"];
         [defaults synchronize];
         [self performSegueWithIdentifier:@"ToMainMenu" sender:self];
     }
