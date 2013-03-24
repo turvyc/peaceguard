@@ -30,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //Hide back button
+    [self.navigationItem setHidesBackButton:YES animated:YES];
     // Do any additional setup after loading the view.
     //Allocations
     locationManager = [[CLLocationManager alloc] init];
@@ -126,11 +128,6 @@
                 // If the crumbs MKOverlay model object determines that the current location has moved
                 // far enough from the previous location, use the returned updateRect to redraw just
                 // the changed area.
-                //
-                // note: iPhone 3G will locate you using the triangulation of the cell towers.
-                // so you may experience spikes in location data (in small time intervals)
-                // due to 3G tower triangulation.
-                //
                 MKMapRect updateRect = [self.crumbs addCoordinate:newLocation.coordinate];
                 //NSLog(@"Points: %@",MKStringFromMapPoint(*(self.crumbs.points)));
                 if (!MKMapRectIsNull(updateRect))
@@ -232,6 +229,9 @@
         //NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
         //NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
         //NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
+        
+        //Dismiss the view and show the user statistics
+        [self.navigationController popViewControllerAnimated:YES];
     }
         
 
