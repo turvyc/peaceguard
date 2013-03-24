@@ -30,6 +30,9 @@
 @property (nonatomic, strong) CrumbPathView *crumbView;
 @property (strong, nonatomic) IBOutlet UILabel *timeDisplay; //To remove
 
+- (IBAction)makeReport:(id)sender;
+
+
 @property (nonatomic) CLLocationDistance sum;
 @property (nonatomic) NSMutableArray *location_array;
 @property (nonatomic) NSThread *thread;

@@ -245,4 +245,7 @@
     self.durationDisplay.text = timerString;
     self.distanceDisplay.text = [NSString stringWithFormat:@"%.01f Meters",self.crumbs.getCrumbPathDistance] ;
 }
+- (IBAction)makeReport:(id)sender {
+    [self performSegueWithIdentifier:@"mapToReport" sender:self];
+}
 @end

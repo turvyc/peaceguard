@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(strong, nonatomic) ReportViewController *reportController;
 
+@property(nonatomic) BOOL *hasReviewed;
+
 //PickerView
 @property (strong, nonatomic) IBOutlet UIPickerView *thePickerView;
 //used to block other fields when using pickerview
@@ -41,13 +43,21 @@
 @property (strong, nonatomic) NSString *descriptionOverview;
 @property (strong, nonatomic) UIImage *imageOverview;
 
-//-open/close pickerview for incident type/severity
+
+@property (strong, nonatomic) IBOutlet UILabel *reviewWarning;
+//now editButton
+- (IBAction)incidentButtonPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *editButton;
 @property (strong, nonatomic) IBOutlet UILabel *editLabel;
 
-//actually editButton
-- (IBAction)incidentButtonPressed:(id)sender;
 
+//now review/submit
 - (IBAction)buttonToOverview:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *reviewSubmitLabel;
+
+
+- (IBAction)reportEditPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *reportEditLabel;
 
 
 - (BOOL) verify: (NSString*) description;

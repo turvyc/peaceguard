@@ -38,6 +38,14 @@
 {
     self.editLabel.text = @"Edit";
     
+    self.hasReviewed = NO;
+    self.reviewSubmitLabel.text = @"Review";
+    self.reportEditLabel.text = @"Cancel";
+    self.reviewWarning.hidden = YES;
+    self.editButton.hidden = NO;
+    self.editLabel.hidden = NO;
+
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];
     self.username = username;
@@ -155,15 +163,49 @@
     }
 }
 
-
+//*** PickerView code ends ***
 - (IBAction)buttonToOverview:(id)sender {
-    
-    [self performSegueWithIdentifier:@"toOverview" sender:self];
-    
+    if(self.hasReviewed == NO){ //first time pressing report/submit button
+        self.hasReviewed = YES;
+        self.reviewWarning.hidden = NO;
+
+        self.editButton.hidden = YES;
+        self.editLabel.hidden = YES;
+        
+        self.reviewSubmitLabel.text = @"Submit";
+        self.description.enabled = FALSE;
+        self.reportEditLabel.text = @"Edit";
+    }
+    else if(self.hasReviewed == YES){
+        self.hasReviewed = NO;
+        self.reviewWarning.hidden = YES;
+        
+        self.editButton.hidden = NO;
+        self.editLabel.hidden = NO;
+        
+        self.reviewSubmitLabel.text = @"Review";
+        self.description.enabled = TRUE;
+        self.reportEditLabel.text = @"Cancel";
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }    
 }
 
-//*** PickerView code ends ***
-
+- (IBAction)reportEditPressed:(id)sender {
+    if(self.hasReviewed == NO){ //just entered details
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else if(self.hasReviewed == YES){
+        self.hasReviewed = NO;
+        self.reviewWarning.hidden = YES;
+        
+        self.editButton.hidden = NO;
+        self.editLabel.hidden = NO;
+        
+        self.reviewSubmitLabel.text = @"Review";
+        self.description.enabled = TRUE;
+        self.reportEditLabel.text = @"Cancel";
+    }
+}
 
 - (BOOL) verify:(NSString *)description {
     if([description isEqualToString:@"Description"]) {
@@ -206,18 +248,18 @@
 
 }
 
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
-    OverviewController *overviewController = (OverviewController *)segue.destinationViewController;
-    //sets value of variables from overview
-    overviewController.incidentData = self.incidentData;
-    overviewController.severityData = self.severityData;
-    overviewController.descriptionData = self.description.text;
-    overviewController.imageData = self.imageView.image;
-    overviewController.locationData = self.location;
-    
-}
+//
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//
+//    OverviewController *overviewController = (OverviewController *)segue.destinationViewController;
+//    //sets value of variables from overview
+//    overviewController.incidentData = self.incidentData;
+//    overviewController.severityData = self.severityData;
+//    overviewController.descriptionData = self.description.text;
+//    overviewController.imageData = self.imageView.image;
+//    overviewController.locationData = self.location;
+//    
+//}
 
 
 @end
