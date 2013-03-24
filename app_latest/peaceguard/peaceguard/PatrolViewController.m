@@ -52,20 +52,20 @@
     [self performSegueWithIdentifier:@"patrolToLocation" sender:self];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    //if patrol button is pressed
-    if([self.segueType isEqual: @"location"]){
-        NSLog(@"got to location");
-        LocationViewController *locationController = (LocationViewController *)segue.destinationViewController;
-        
-    }
-
-    //stats
-    else if([self.segueType isEqual: @"statistics"]){
-        NSLog(@"got to stats");
-        StatisticsViewController *statisticsController = (StatisticsViewController *)segue.destinationViewController;
-        
-    }
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    //if patrol button is pressed
+//    if([self.segueType isEqual: @"location"]){
+//        NSLog(@"got to location");
+//        LocationViewController *locationController = (LocationViewController *)segue.destinationViewController;
+//        
+//    }
+//
+//    //stats
+//    else if([self.segueType isEqual: @"statistics"]){
+//        NSLog(@"got to stats");
+//        StatisticsViewController *statisticsController = (StatisticsViewController *)segue.destinationViewController;
+//        
+//    }
+//}
 @end
 
