@@ -76,6 +76,9 @@
 // Gets distance covered by the crumbs
 //
 - (double) getCrumbPathDistance;
+// Return a JSON of the path
+//
+- (NSString *) getCrumbPathJSON;
 
 - (void)lockForReading;
 

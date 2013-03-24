@@ -156,4 +156,22 @@
     return total;
 }
 
+- (NSString *) getCrumbPathJSON{
+    NSError *error;
+    NSMutableArray *pointsArray = [NSMutableArray arrayWithCapacity:pointCount];
+    NSMutableArray *thePoint = [NSMutableArray arrayWithCapacity:2];
+    for (int i=0; i<pointCount; i++){
+        NSNumber *tempX = [[NSNumber alloc] initWithDouble:points[i].x];
+        NSNumber *tempY = [[NSNumber alloc] initWithDouble:points[i].y];
+        [thePoint addObject:tempX];
+        [thePoint addObject:tempY];
+        [pointsArray addObject:thePoint];
+    }
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:pointsArray
+                                                       options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"JSON: %@", jsonString);
+    return jsonString;
+}
+
 @end

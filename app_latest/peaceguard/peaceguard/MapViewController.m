@@ -227,7 +227,7 @@
         
         //After stop patrolling, application sends the duration, distance and patrol ID to the server
         self.connectionManager = [[ConnectionDataController alloc] init];
-        [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:self.crumbs.getCrumbPathDistance email:self.username];
+        [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:self.crumbs.getCrumbPathJSON distance:self.crumbs.getCrumbPathDistance email:self.username];
         //Badges are handled here if necessary
         //NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
         //NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
@@ -241,7 +241,7 @@
     //NSString *timerString = [NSString stringWithFormat:@"%f",[self.timer timeElapsedInSeconds]];
     self.displayedTime++;
     NSString *timerString = [NSString stringWithFormat:@"%i Seconds",self.displayedTime];
-    NSLog(@"Timer string: %@", timerString);
+    //NSLog(@"Timer string: %@", timerString);
     self.durationDisplay.text = timerString;
     self.distanceDisplay.text = [NSString stringWithFormat:@"%.01f Meters",self.crumbs.getCrumbPathDistance] ;
 }
