@@ -26,6 +26,6 @@
 //durationPickerview variables
 @property (strong, nonatomic) NSArray *durationSelection;
 @property (strong, nonatomic) NSString *durationData;
-
+- (void) updateStatsFor: (NSString *)timePeriod;
 
 @end

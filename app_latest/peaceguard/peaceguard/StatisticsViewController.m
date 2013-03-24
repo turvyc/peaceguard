@@ -25,32 +25,28 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];
     self.username = username;
-    NSLog(self.username);
-    self.connectionManager = [[ConnectionDataController alloc] init];
-    NSDictionary *statsDictionary = [self.connectionManager getStatistics:self.username andTimePeriod:@"allTime"];
-    self.totalPatrolsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"patrol"];
-    self.totalDistanceField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"distance"];
-    NSLog(@"distance is :%@",self.totalDistanceField.text);
-    self.numberOfIncidentsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"report"];
-    self.totalTimeField.text =  [[statsDictionary objectForKey:@"total"] objectForKey:@"time"];
-    //self.totalPatrolsField.text = [statsDictionary objectForKey:@"total"];
     
+    //Setup Picker View
     self.statDurationPickerview.showsSelectionIndicator = TRUE;
     self.statDurationPickerview.delegate = self;
-    
     self.durationData = @"last day";
-    
     self.durationSelection = [[NSArray alloc] initWithObjects:@"last day", @"last month", @"last year", @"total", nil];
+    
+//    NSLog(self.username);
+    [self updateStatsFor:@"lastDay"];
+    //self.totalPatrolsField.text = [statsDictionary objectForKey:@"total"];
+
     
 #pragma mark BackgroundCode
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"0.jpg"]];
 #pragma mark -
     
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
@@ -77,6 +73,20 @@
     
     self.durationData = [self.durationSelection objectAtIndex:row];
     
+    NSString *timePeriod;
+    if([self.durationData isEqualToString:@"last day"]){
+        timePeriod = @"lastDay";
+    }
+    else if ([self.durationData isEqualToString:@"last month"]){
+        timePeriod = @"lastMonth";
+    }
+    else if ([self.durationData isEqualToString:@"last year"]){
+        timePeriod = @"yearToDate";
+    }
+    else if ([self.durationData isEqualToString:@"total"]){
+        timePeriod = @"allTime";
+    }
+    [self updateStatsFor:timePeriod];
 }
 
 
@@ -84,6 +94,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+        
+- (void) updateStatsFor: (NSString *)timePeriod{
+    self.connectionManager = [[ConnectionDataController alloc] init];
+    NSDictionary *statsDictionary = [self.connectionManager getStatistics:self.username andTimePeriod:timePeriod];
+    self.totalPatrolsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"patrol"];
+    self.totalDistanceField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"distance"];
+    NSLog(@"distance is :%@",self.totalDistanceField.text);
+    self.numberOfIncidentsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"report"];
+    self.totalTimeField.text =  [[statsDictionary objectForKey:@"total"] objectForKey:@"time"];
 }
 
 @end
