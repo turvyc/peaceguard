@@ -157,7 +157,7 @@ NSString *serverAddress = @"http://peaceguard.dyndns.org:1728/peaceguard-test";
     NSInteger currentUnixTime = [currDate timeIntervalSince1970];
     
     NSString *post = [NSString stringWithFormat:@"email=%@&startTime=%i&agent=iphone", email, currentUnixTime];
-    NSString *url = [NSString stringWithFormat:@"%@control/beginpatrol.control.php", serverAddress];
+    NSString *url = [NSString stringWithFormat:@"%@/control/beginpatrol.control.php", serverAddress];
     NSDictionary *jsonDictionary = [self sendRequestWithURL:url andData:post];
     
     

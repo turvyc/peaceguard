@@ -44,7 +44,15 @@
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:NO];
     self.patrolControlButton.alpha = 0.60;
     
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    self.username = username;
+    NSLog(@"username in the location view :%@", self.username);
+    [super viewDidLoad];
+    locationManager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    _location_array = [[NSMutableArray alloc] init];
+    _timer = [[Timer alloc] init];
     //[self.view addSubview:self.mapView];
 }
 
@@ -214,8 +222,8 @@
         self.connectionManager = [[ConnectionDataController alloc] init];
         [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:2000 email:self.username];
         NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
-        NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
-        NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
+        //NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
+        //NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
     }
     
 }

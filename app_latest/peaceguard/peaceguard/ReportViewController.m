@@ -41,7 +41,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];
     self.username = username;
-    NSLog(self.username);
+//    NSLog(self.username);
     
     self.pickerViewBlockerTop.alpha = 0.5;
     self.pickerViewBlockerBottom.alpha = 0.5;
