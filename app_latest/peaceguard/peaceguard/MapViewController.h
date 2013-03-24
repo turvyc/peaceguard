@@ -29,7 +29,7 @@
 //@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CrumbPath *crumbs;
 @property (nonatomic, strong) CrumbPathView *crumbView;
-@property (strong, nonatomic) IBOutlet UILabel *timeDisplay;
+@property (strong, nonatomic) IBOutlet UILabel *timeDisplay; //To remove
 
 @property (nonatomic) CLLocationDistance sum;
 @property (nonatomic) NSMutableArray *location_array;
@@ -42,10 +42,13 @@
 @property (nonatomic, strong) ConnectionDataController *connectionManager;
 @property (nonatomic) NSInteger patrolID;
 @property (nonatomic) Timer *timer;
+@property (nonatomic, strong) NSTimer *clock;
 //Distance of patrol
 @property (nonatomic) CLLocation *start_location;
 @property (nonatomic) CLLocation *final_location;
 @property (nonatomic) NSString *current_location;
+
+@property (nonatomic) NSInteger displayedTime;
 
 //From .m
 //CLLocationManager *locationManager;
@@ -54,5 +57,6 @@
 //@property (nonatomic, strong) CLGeocoder *geocoder;
 //@property (nonatomic, strong) CLPlacemark *placemark;
 
+-(void) updateLabels;
 
 @end

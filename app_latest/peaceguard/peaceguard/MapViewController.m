@@ -30,14 +30,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
+    //Allocations
+    locationManager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    _location_array = [[NSMutableArray alloc] init];
+    _timer = [[Timer alloc] init];
+    locationManager = [[CLLocationManager alloc] init];
+	
+    //User currently not patrolling
     self.patrolling = NO;
     
-    // Note: we are using Core Location directly to get the user location updates.
-    // We could normally use MKMapView's user location update delegation but this does not work in
-    // the background.  Plus we want "kCLLocationAccuracyBestForNavigation" which gives us a better accuracy.
-    //
-    locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self; // Tells the location manager to send updates to this object
     
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -48,11 +51,8 @@
     NSString *username = [defaults objectForKey:@"username"];
     self.username = username;
     NSLog(@"username in the location view :%@", self.username);
-    [super viewDidLoad];
-    locationManager = [[CLLocationManager alloc] init];
-    geocoder = [[CLGeocoder alloc] init];
-    _location_array = [[NSMutableArray alloc] init];
-    _timer = [[Timer alloc] init];
+    //[super viewDidLoad];
+
     //[self.view addSubview:self.mapView];
 }
 
@@ -174,7 +174,13 @@
         self.patrolID = [self.connectionManager startPatrolWithEmail:self.username];
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        [_timer startTimer];
+        //Start keeping time and updating the label
+        self.displayedTime = 0;
+        [self.timer startTimer];
+        NSTimer *runningTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                          target:self selector:@selector(updateLabels)
+                                                        userInfo:Nil repeats:YES];
+        self.clock = runningTimer;
         _start = YES;
         _cache_number = 1;
         [locationManager startUpdatingLocation];
@@ -190,41 +196,53 @@
         self.patrolling = NO;
         [locationManager stopUpdatingLocation];
         self.patrolControlLabel.text = @"Start Patrol";
-        
+        //Stop clock
+        [self.clock invalidate];
         //From locationViewController
         NSLog(@"stop Patrol");
         NSLog(@"The patrol ID is %i",self.patrolID);
-        CLLocationDistance meters = 0;
+//        CLLocationDistance meters = 0;
         
         //Stop all the location and timer tool, also record the data
         [locationManager stopUpdatingLocation];
-        [_timer stopTimer];
-        NSString *timerString = [NSString stringWithFormat:@"%f",[_timer timeElapsedInSeconds]];
-        _timeDisplay.text = timerString;
+        [self.timer stopTimer];
+        //NSString *timerString = [NSString stringWithFormat:@"%i",(int)[self.timer timeElapsedInSeconds]];
+        //self.durationDisplay.text = timerString;
         
         //Use CLLocationDistance to count the distance of patrolling
-        _final_location = [_location_array lastObject];
-        if(_final_location == nil){
-            _final_location = _start_location;
-        }
-        if (_start_location != nil){
-            meters = [_final_location distanceFromLocation:_start_location];
-            NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
-            NSLog(@"The distance is %@",distanceString);
-            if(meters/1000 != 0.000000){
-                _distanceDisplay.text = distanceString;
-            }else{
-                _distanceDisplay.text = [NSString stringWithFormat:@"%f",0.000000];
-            }
-        }
+//        _final_location = [_location_array lastObject];
+//        if(_final_location == nil){
+//            _final_location = _start_location;
+//        }
+//        if (_start_location != nil){
+//            meters = [_final_location distanceFromLocation:_start_location];
+//            NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
+//            NSLog(@"The distance is %@",distanceString);
+//            if(meters/1000 != 0.000000){
+//                _distanceDisplay.text = distanceString;
+//            }else{
+//                _distanceDisplay.text = [NSString stringWithFormat:@"%f",0.000000];
+//            }
+//        }
         
         //After stop patrolling, application sends the duration, distance and patrol ID to the server
         self.connectionManager = [[ConnectionDataController alloc] init];
-        [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:2000 email:self.username];
-        NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
+        [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:self.crumbs.getCrumbPathDistance email:self.username];
+        //Badges are handled here if necessary
+        //NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
         //NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
         //NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
     }
-    
+        
+
+}
+
+-(void) updateLabels{
+    //NSString *timerString = [NSString stringWithFormat:@"%f",[self.timer timeElapsedInSeconds]];
+    self.displayedTime++;
+    NSString *timerString = [NSString stringWithFormat:@"%i Seconds",self.displayedTime];
+    NSLog(@"Timer string: %@", timerString);
+    self.durationDisplay.text = timerString;
+    self.distanceDisplay.text = [NSString stringWithFormat:@"%.01f Meters",self.crumbs.getCrumbPathDistance] ;
 }
 @end
