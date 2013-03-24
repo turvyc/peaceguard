@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="F1w-vf-QLQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="F1w-vf-QLQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -235,7 +235,7 @@
             <objects>
                 <viewController id="FZ1-jG-0HO" customClass="OverviewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7oO-7a-Vz0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-aL-Iq7">
@@ -441,8 +441,8 @@
                     <connections>
                         <outlet property="mainBackground" destination="KeA-kn-b1E" id="oU6-5a-7HC"/>
                         <segue destination="gX9-hk-2uQ" kind="push" identifier="mainToStatistics" id="124-Le-yYz"/>
-                        <segue destination="oPN-sY-whv" kind="push" identifier="mainToReport" id="1jE-g0-gdg"/>
                         <segue destination="ZNw-A8-Ehs" kind="push" identifier="mainToMap" id="hxP-o4-9AT"/>
+                        <segue destination="oPN-sY-whv" kind="modal" identifier="mainToReport" id="45I-TL-KhN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -483,7 +483,7 @@
             <objects>
                 <viewController id="oPN-sY-whv" customClass="ReportViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bmk-e2-JVe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydf-YF-tu0">
@@ -866,6 +866,7 @@
                         <outlet property="patrolControlButton" destination="zkz-5y-vG5" id="hLB-4t-oyc"/>
                         <outlet property="patrolControlLabel" destination="ipB-mx-7yb" id="Y1Q-sW-UUq"/>
                         <outlet property="timeDisplay" destination="Ckp-Ky-bdy" id="yfn-t1-Mel"/>
+                        <segue destination="oPN-sY-whv" kind="modal" identifier="mapToReport" id="iPv-cr-Y6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7WR-Hi-KXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -988,9 +989,107 @@
         <image name="Stats_.png" width="390" height="120"/>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="LocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="GenerateLocation:"/>
+                <relationship kind="action" name="StopPatrol:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="distanceDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="timeDisplay" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="patrolButton:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+                <relationship kind="outlet" name="mainBackground" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="patrolControl:"/>
+                <relationship kind="outlet" name="averageSpeedDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="distanceDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="durationDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="patrolControlButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="patrolControlLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OverviewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverviewController.h"/>
+            <relationships>
+                <relationship kind="action" name="confirm:"/>
+                <relationship kind="outlet" name="descriptionDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="severityDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PatrolViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="locationButton:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+            </relationships>
+        </class>
+        <class className="PeaceGuardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="logoImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ImageTaker:"/>
+                <relationship kind="action" name="buttonToOverview:"/>
+                <relationship kind="action" name="incidentButtonPressed:"/>
+                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="editLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pickerViewBlockerBottom" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pickerViewBlockerTop" candidateClass="UIView"/>
+                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="StatisticsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatisticsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="numberOfIncidentsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="statDurationPickerview" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="totalDistanceField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="totalPatrolsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="totalTimeField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="iPv-cr-Y6k"/>
+    </inferredMetricsTieBreakers>
 </document>

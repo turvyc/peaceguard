@@ -20,7 +20,6 @@
 @property (nonatomic) BOOL patrolling;
 @property (strong, nonatomic) IBOutlet UILabel *durationDisplay;
 @property (strong, nonatomic) IBOutlet UILabel *distanceDisplay;
-@property (strong, nonatomic) IBOutlet UILabel *averageSpeedDisplay;
 - (IBAction)patrolControl:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *patrolControlLabel;
 @property (strong, nonatomic) IBOutlet UIButton *patrolControlButton;
