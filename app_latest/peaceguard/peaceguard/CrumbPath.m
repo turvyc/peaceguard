@@ -148,4 +148,12 @@
     return updateRect;
 }
 
+- (double) getCrumbPathDistance{
+    double total = 0;
+    for (int i=0; i<pointCount-1; i++) {
+        total += MKMetersBetweenMapPoints(points[i], points[i+1]);
+    }
+    return total;
+}
+
 @end

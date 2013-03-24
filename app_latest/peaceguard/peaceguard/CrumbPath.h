@@ -73,6 +73,10 @@
 //
 - (MKMapRect)addCoordinate:(CLLocationCoordinate2D)coord;
 
+// Gets distance covered by the crumbs
+//
+- (double) getCrumbPathDistance;
+
 - (void)lockForReading;
 
 // The following properties must only be accessed when holding the read lock
