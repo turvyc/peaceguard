@@ -45,6 +45,10 @@
         self.locationDisplay.text = self.locationData;
     }
 //    self.dateDisplay.text = dateString;
+    
+#pragma mark BackgroundCode
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"0.jpg"]];
+#pragma mark -
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

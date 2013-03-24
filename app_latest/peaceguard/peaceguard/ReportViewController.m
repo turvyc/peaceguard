@@ -77,6 +77,9 @@
     self.incidentSelection = [[NSArray alloc] initWithObjects: @"vandalism", @"graffiti", @"person", @"property", @"other", nil];
     self.severitySelection = [[NSArray alloc] initWithObjects: @"information", @"minor", @"serious",@"critical", nil];
 
+#pragma mark BackgroundCode
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"0.jpg"]];
+#pragma mark -
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
