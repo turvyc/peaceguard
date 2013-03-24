@@ -137,6 +137,8 @@ NSString *serverAddress = @"http://peaceguard.dyndns.org:1728/peaceguard-test";
     
 }
 
+
+
 //Sends end of patrol information to server
 - (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (double) distance email: (NSString *) email{
     
@@ -238,7 +240,6 @@ NSString *serverAddress = @"http://peaceguard.dyndns.org:1728/peaceguard-test";
 }
 
 //Check whether the server is available [Not working/ Not required]
-//
 //
 - (BOOL) serverAvailable{
     Reachability *r = [Reachability reachabilityWithHostname:@"google.com"];

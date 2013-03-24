@@ -64,8 +64,14 @@
     
     self.reportManager = [[ReportDataController alloc] init];
     self.connectionManager = [[ConnectionDataController alloc] init];
-    
-    [self.reportManager makeReportWithType:self.incidentData severity:self.severityData location:self.locationData time:self.date andDescription:self.descriptionData];
+    //If there is an image create a report with image
+    if(!(CGSizeEqualToSize(self.imageDisplay.image.size, CGSizeZero))){
+        [self.reportManager makeReportWithType:self.incidentData severity:self.severityData location:self.locationData time:self.date image:UIImagePNGRepresentation(self.imageData) andDescription:self.descriptionData];
+    }
+    //Otherwise create a report with no image
+    else{
+        [self.reportManager makeReportWithType:self.incidentData severity:self.severityData location:self.locationData time:self.date andDescription:self.descriptionData];
+    }
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *incidentData = self.incidentData;
     NSString *serverityData = self.severityData;

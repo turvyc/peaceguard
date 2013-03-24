@@ -15,7 +15,7 @@
 
 - (BOOL) serverLoginWithEmail: (NSString *) email andPassword: (NSString *) password;
 - (void) reportWithPostData: (NSString *) data;
-
+- (void) reportWithImageAndPostData: (NSString *) data;
 - (void) endAndSendPatrolID: (NSInteger) patrolID duration: (NSInteger) duration route: (NSString *) route distance: (double) distance email: (NSString *) email;
 - (NSInteger) startPatrolWithEmail: (NSString *) email;
 - (NSDictionary *) getStatistics: (NSString *) email andTimePeriod: (NSString *) timePeriod;
