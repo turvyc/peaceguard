@@ -19,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *durationDisplay;
 @property (strong, nonatomic) IBOutlet UILabel *distanceDisplay;
 @property (strong, nonatomic) IBOutlet UILabel *averageSpeedDisplay;
+- (IBAction)patrolControl:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *patrolControlButton;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;

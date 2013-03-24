@@ -39,9 +39,9 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:NO];
     
-    [self.locationManager startUpdatingLocation];
     
-    [self.view addSubview:self.mapView];
+    
+    //[self.view addSubview:self.mapView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -147,4 +147,9 @@
 }
 
 
+- (IBAction)patrolControl:(id)sender {
+    
+    [self.locationManager startUpdatingLocation];
+    
+}
 @end
