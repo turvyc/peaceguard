@@ -107,7 +107,7 @@
             <objects>
                 <viewController id="NND-0S-Bg4" customClass="LocationViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" horizontalHuggingPriority="255" id="7Ob-ph-ybA">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4j-m4-Ysr">
@@ -163,9 +163,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ZNw-A8-Ehs" kind="push" id="rEn-yd-dbl"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVo-ho-VJf">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -227,7 +224,6 @@
                         <outlet property="Address" destination="INO-Mz-FTO" id="RNm-HW-P58"/>
                         <outlet property="distanceDisplay" destination="6vZ-xX-eCk" id="2th-9h-yHM"/>
                         <outlet property="timeDisplay" destination="iVo-ho-VJf" id="8yK-3N-aoF"/>
-                        <segue destination="oPN-sY-whv" kind="push" identifier="locationToReport" id="NMq-QC-cmz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27k-Ep-Wjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -441,7 +437,6 @@
                     <navigationItem key="navigationItem" title="Main Menu" id="YUx-vu-gIV"/>
                     <connections>
                         <outlet property="mainBackground" destination="KeA-kn-b1E" id="oU6-5a-7HC"/>
-                        <segue destination="YiY-r9-CCp" kind="push" identifier="mainToPatrol" id="uiG-pe-UcA"/>
                         <segue destination="gX9-hk-2uQ" kind="push" identifier="mainToStatistics" id="124-Le-yYz"/>
                         <segue destination="oPN-sY-whv" kind="push" identifier="mainToReport" id="1jE-g0-gdg"/>
                         <segue destination="ZNw-A8-Ehs" kind="push" identifier="mainToMap" id="hxP-o4-9AT"/>
@@ -678,7 +673,7 @@
             <objects>
                 <viewController id="YiY-r9-CCp" customClass="PatrolViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hj2-y8-Dce">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFo-DW-Hec">
@@ -708,9 +703,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ZNw-A8-Ehs" kind="push" id="9ZO-PH-oR0"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3o2-6C-IGh">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -773,10 +765,6 @@
                     <navigationItem key="navigationItem" title="Patrol Control" id="DZw-QL-Cdx">
                         <barButtonItem key="rightBarButtonItem" title="Report" id="pQi-Pl-Pf9"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="NND-0S-Bg4" kind="push" identifier="patrolToLocation" id="spL-PT-mBK"/>
-                        <segue destination="gX9-hk-2uQ" kind="push" identifier="patrolToStatistics" id="EIo-P2-aQg"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOz-zU-lhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1070,9 +1058,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="1jE-g0-gdg"/>
-        <segue reference="124-Le-yYz"/>
-        <segue reference="hxP-o4-9AT"/>
-    </inferredMetricsTieBreakers>
 </document>
