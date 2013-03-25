@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="F1w-vf-QLQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="F1w-vf-QLQ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -476,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oje-E6-tEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-83" y="865"/>
+            <point key="canvasLocation" x="514" y="1473"/>
         </scene>
         <!--Report View Controller - Report-->
         <scene sceneID="bWo-rE-05o">
@@ -845,9 +845,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Distance:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcx-pq-r4h">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="92" id="zRL-UX-p9H"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -867,13 +864,16 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 Seconds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckp-Ky-bdy">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="eDW-Ss-VWk"/>
+                                    <constraint firstAttribute="width" constant="280" id="xgE-7d-22a"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0 Meters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUf-mK-HbD">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="Irf-K0-QVy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -901,6 +901,45 @@
                                     <action selector="makeReport:" destination="ZNw-A8-Ehs" eventType="touchUpInside" id="AMi-oy-ZnX"/>
                                 </connections>
                             </button>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eef-G0-ixX">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJH-c1-r29">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="176" id="C0e-Qp-VGw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Return to Main Menu">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="postPatrolButton:" destination="ZNw-A8-Ehs" eventType="touchUpInside" id="o42-2r-7GC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Finished Patrol!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y6-Mb-llC">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No new badge earned" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vty-3G-UJm">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="vty-3G-UJm" firstAttribute="centerX" secondItem="5Y6-Mb-llC" secondAttribute="centerX" type="default" id="Kdi-eb-Ltz"/>
+                                    <constraint firstItem="dJH-c1-r29" firstAttribute="centerX" secondItem="eef-G0-ixX" secondAttribute="centerX" type="default" id="Uib-4H-gVa"/>
+                                    <constraint firstItem="vty-3G-UJm" firstAttribute="centerX" secondItem="dJH-c1-r29" secondAttribute="centerX" type="default" id="amL-E6-frp"/>
+                                    <constraint firstAttribute="bottom" secondItem="dJH-c1-r29" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="erk-4m-B3d"/>
+                                    <constraint firstItem="5Y6-Mb-llC" firstAttribute="top" secondItem="eef-G0-ixX" secondAttribute="top" constant="20" symbolic="YES" type="default" id="uLM-lB-Vq9"/>
+                                    <constraint firstItem="vty-3G-UJm" firstAttribute="top" secondItem="eef-G0-ixX" secondAttribute="top" constant="83" id="zok-tL-UrK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -915,10 +954,13 @@
                             <constraint firstItem="D6C-om-qNc" firstAttribute="trailing" secondItem="SCN-iU-5g6" secondAttribute="trailing" type="default" id="Na1-Or-aTH"/>
                             <constraint firstItem="npX-YC-Cu3" firstAttribute="top" secondItem="hA2-ez-95d" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ofo-OO-Q1A"/>
                             <constraint firstAttribute="trailing" secondItem="zkz-5y-vG5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="OzP-gt-75H"/>
+                            <constraint firstItem="eef-G0-ixX" firstAttribute="top" secondItem="SCN-iU-5g6" secondAttribute="top" constant="104" id="W7k-GS-So5"/>
                             <constraint firstAttribute="bottom" secondItem="ipB-mx-7yb" secondAttribute="bottom" constant="32" id="ZSJ-jz-jIv"/>
                             <constraint firstItem="ipB-mx-7yb" firstAttribute="centerX" secondItem="zkz-5y-vG5" secondAttribute="centerX" type="default" id="ZbV-yV-STl"/>
                             <constraint firstItem="Ckp-Ky-bdy" firstAttribute="leading" secondItem="apm-uh-Mcs" secondAttribute="leading" type="default" id="a0O-Fj-8DV"/>
+                            <constraint firstItem="eef-G0-ixX" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" type="default" id="axb-DG-WSD"/>
                             <constraint firstItem="lcx-pq-r4h" firstAttribute="trailing" secondItem="apm-uh-Mcs" secondAttribute="trailing" type="default" id="cct-wV-qFd"/>
+                            <constraint firstAttribute="bottom" secondItem="eef-G0-ixX" secondAttribute="bottom" constant="105" id="ctt-JT-7Rz"/>
                             <constraint firstItem="oUf-mK-HbD" firstAttribute="top" secondItem="lcx-pq-r4h" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="f1P-aL-8F9"/>
                             <constraint firstItem="D6C-om-qNc" firstAttribute="bottom" secondItem="SCN-iU-5g6" secondAttribute="bottom" type="default" id="fNF-lR-N2C"/>
                             <constraint firstItem="apm-uh-Mcs" firstAttribute="leading" secondItem="npX-YC-Cu3" secondAttribute="leading" type="default" id="jJe-sf-c30"/>
@@ -926,6 +968,7 @@
                             <constraint firstItem="hA2-ez-95d" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ogl-LO-xkD"/>
                             <constraint firstAttribute="bottom" secondItem="zkz-5y-vG5" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qVF-de-6pa"/>
                             <constraint firstItem="lcx-pq-r4h" firstAttribute="leading" secondItem="SCN-iU-5g6" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rnz-uA-BGQ"/>
+                            <constraint firstItem="eef-G0-ixX" firstAttribute="trailing" secondItem="SCN-iU-5g6" secondAttribute="trailing" type="default" id="wsP-Ea-Ebz"/>
                             <constraint firstItem="D6C-om-qNc" firstAttribute="top" secondItem="SCN-iU-5g6" secondAttribute="top" type="default" id="wsR-ZW-fmR"/>
                         </constraints>
                     </view>
@@ -936,6 +979,10 @@
                         <outlet property="mapView" destination="D6C-om-qNc" id="4tf-Wo-LXX"/>
                         <outlet property="patrolControlButton" destination="zkz-5y-vG5" id="hLB-4t-oyc"/>
                         <outlet property="patrolControlLabel" destination="ipB-mx-7yb" id="Y1Q-sW-UUq"/>
+                        <outlet property="postPatrolDisplay" destination="eef-G0-ixX" id="Mr0-3S-5bd"/>
+                        <outlet property="postPatrolMessage" destination="vty-3G-UJm" id="1zS-1R-HTJ"/>
+                        <outlet property="reportButton" destination="hA2-ez-95d" id="t6O-88-nO4"/>
+                        <outlet property="startStopButton" destination="zkz-5y-vG5" id="2HW-6q-B1U"/>
                         <outlet property="timeDisplay" destination="Ckp-Ky-bdy" id="yfn-t1-Mel"/>
                         <segue destination="oPN-sY-whv" kind="modal" identifier="mapToReport" id="iPv-cr-Y6k"/>
                     </connections>
@@ -1045,11 +1092,27 @@
                         <outlet property="totalDistanceField" destination="o9i-md-6XL" id="HjU-e3-wT2"/>
                         <outlet property="totalPatrolsField" destination="SMQ-nU-9kE" id="TH8-FV-8M5"/>
                         <outlet property="totalTimeField" destination="hjm-BL-wcf" id="0zP-B2-8Kt"/>
+                        <segue destination="Q4b-SX-CZ8" kind="modal" id="26B-zb-HPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuq-qa-82s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="514" y="840"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QMv-Jr-hag">
+            <objects>
+                <viewController id="Q4b-SX-CZ8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3GS-z7-87p">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Pa-T9-P5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="840"/>
         </scene>
     </scenes>
     <resources>
@@ -1060,6 +1123,111 @@
         <image name="Stats_.png" width="390" height="120"/>
         <image name="camera-icon-md.png" width="300" height="300"/>
     </resources>
+    <classes>
+        <class className="LocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="GenerateLocation:"/>
+                <relationship kind="action" name="StopPatrol:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="outlet" name="Address" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="distanceDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="timeDisplay" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="patrolButton:"/>
+                <relationship kind="action" name="reportButton:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+                <relationship kind="outlet" name="mainBackground" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="makeReport:"/>
+                <relationship kind="action" name="patrolControl:"/>
+                <relationship kind="action" name="postPatrolButton:"/>
+                <relationship kind="outlet" name="distanceDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="durationDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="patrolControlButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="patrolControlLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postPatrolDisplay" candidateClass="UIView"/>
+                <relationship kind="outlet" name="postPatrolMessage" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reportButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="startStopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="timeDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OverviewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OverviewController.h"/>
+            <relationships>
+                <relationship kind="action" name="confirm:"/>
+                <relationship kind="outlet" name="descriptionDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageDisplay" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentDisplay" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="severityDisplay" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PatrolViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PatrolViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="locationButton:"/>
+                <relationship kind="action" name="statisticsButton:"/>
+            </relationships>
+        </class>
+        <class className="PeaceGuardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PeaceGuardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Login:"/>
+                <relationship kind="outlet" name="Login" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="help" candidateClass="UIWebView"/>
+                <relationship kind="outlet" name="logoImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="username" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ReportViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReportViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="ImageTaker:"/>
+                <relationship kind="action" name="buttonToOverview:"/>
+                <relationship kind="action" name="incidentButtonPressed:"/>
+                <relationship kind="action" name="reportEditPressed:"/>
+                <relationship kind="outlet" name="Image" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="description" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="editLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="incidentLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationDisplay" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pickerViewBlockerBottom" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pickerViewBlockerTop" candidateClass="UIView"/>
+                <relationship kind="outlet" name="reportEditLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reviewSubmitLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reviewWarning" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="severityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thePickerView" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="StatisticsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StatisticsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="numberOfIncidentsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="statDurationPickerview" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="totalDistanceField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="totalPatrolsField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="totalTimeField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

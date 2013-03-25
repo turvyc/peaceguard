@@ -31,6 +31,10 @@
 {
     [super viewDidLoad];
 
+    self.postPatrolDisplay.hidden = YES;
+    self.reportButton.enabled = YES;
+    self.startStopButton.enabled = YES;
+    
     // Do any additional setup after loading the view.
     //Allocations
     locationManager = [[CLLocationManager alloc] init];
@@ -232,7 +236,19 @@
         //NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
         
         //Dismiss the view and show the user statistics
-        [self.navigationController popViewControllerAnimated:YES];
+        self.startStopButton.enabled = NO;
+        self.reportButton.enabled = NO;
+        self.postPatrolDisplay.hidden = NO;
+        
+        
+        //************Badges earned*********************
+//        if (new bagdes){
+//            self.postPatrolMessage.text = @"New bagdge(s) earned";
+//        }
+//        else if(no new badges){
+//            self.postPatrolMessage.text = @"No new badge earned";
+//        }
+
     }
         
 
@@ -248,5 +264,13 @@
 }
 - (IBAction)makeReport:(id)sender {
     [self performSegueWithIdentifier:@"mapToReport" sender:self];
+}
+- (IBAction)postPatrolButton:(id)sender {
+    
+    self.startStopButton.enabled = YES;
+    self.reportButton.enabled = YES;
+    self.postPatrolDisplay.hidden = YES;
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

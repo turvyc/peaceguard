@@ -32,6 +32,13 @@
 
 - (IBAction)makeReport:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *reportButton;
+@property (strong, nonatomic) IBOutlet UIButton *startStopButton;
+
+
+@property (strong, nonatomic) IBOutlet UIView *postPatrolDisplay;
+- (IBAction)postPatrolButton:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *postPatrolMessage;
 
 @property (nonatomic) CLLocationDistance sum;
 @property (nonatomic) NSMutableArray *location_array;
