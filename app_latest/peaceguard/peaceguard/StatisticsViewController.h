@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *totalDistanceField;
 @property (weak, nonatomic) IBOutlet UITextField *numberOfIncidentsField;
 
+- (IBAction)statToBadge:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIPickerView *statDurationPickerview;
 //durationPickerview variables

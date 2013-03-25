@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-
+#import <math.h>
 @interface MapViewController ()
 
 @end
@@ -257,7 +257,7 @@
 -(void) updateLabels{
     //NSString *timerString = [NSString stringWithFormat:@"%f",[self.timer timeElapsedInSeconds]];
     self.displayedTime++;
-    NSString *timerString = [NSString stringWithFormat:@"%i Seconds",self.displayedTime];
+    NSString *timerString = [NSString stringWithFormat:@"%i Minutes %i Seconds",(self.displayedTime)/60, (int)(fmod(((double)self.displayedTime), 60))];
     //NSLog(@"Timer string: %@", timerString);
     self.durationDisplay.text = timerString;
     self.distanceDisplay.text = [NSString stringWithFormat:@"%.01f Meters",self.crumbs.getCrumbPathDistance] ;

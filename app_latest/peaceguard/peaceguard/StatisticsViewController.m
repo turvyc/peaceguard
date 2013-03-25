@@ -107,4 +107,7 @@
     self.totalTimeField.text = [NSString stringWithFormat:@"%.01fmin",timeString];
 }
 
+- (IBAction)statToBadge:(id)sender {
+    [self performSegueWithIdentifier:@"statToBadge" sender:self];
+}
 @end

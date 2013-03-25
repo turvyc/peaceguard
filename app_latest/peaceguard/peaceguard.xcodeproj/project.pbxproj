@@ -114,6 +114,13 @@
 		C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C49C638B16ED660000915D56 /* StatisticsViewController.m */; };
 		C4D244D016CEBA800017098A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244CF16CEBA800017098A /* User.m */; };
 		C4D244D316CEC5210017098A /* UserDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D244D216CEC5210017098A /* UserDataController.m */; };
+		C4EB1E4C1700046A0080176A /* 10hr.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EB1E461700046A0080176A /* 10hr.png */; };
+		C4EB1E4D1700046A0080176A /* 10km.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EB1E471700046A0080176A /* 10km.png */; };
+		C4EB1E4E1700046A0080176A /* 1hr.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EB1E481700046A0080176A /* 1hr.png */; };
+		C4EB1E4F1700046A0080176A /* 1km.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EB1E491700046A0080176A /* 1km.png */; };
+		C4EB1E501700046A0080176A /* 5hr.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EB1E4A1700046A0080176A /* 5hr.png */; };
+		C4EB1E511700046A0080176A /* 5km.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EB1E4B1700046A0080176A /* 5km.png */; };
+		C4EB1E551700052F0080176A /* BadgesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EB1E541700052F0080176A /* BadgesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -247,6 +254,14 @@
 		C4D244CF16CEBA800017098A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C4D244D116CEC5210017098A /* UserDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDataController.h; sourceTree = "<group>"; };
 		C4D244D216CEC5210017098A /* UserDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDataController.m; sourceTree = "<group>"; };
+		C4EB1E461700046A0080176A /* 10hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10hr.png; sourceTree = "<group>"; };
+		C4EB1E471700046A0080176A /* 10km.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10km.png; sourceTree = "<group>"; };
+		C4EB1E481700046A0080176A /* 1hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1hr.png; sourceTree = "<group>"; };
+		C4EB1E491700046A0080176A /* 1km.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1km.png; sourceTree = "<group>"; };
+		C4EB1E4A1700046A0080176A /* 5hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5hr.png; sourceTree = "<group>"; };
+		C4EB1E4B1700046A0080176A /* 5km.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5km.png; sourceTree = "<group>"; };
+		C4EB1E531700052F0080176A /* BadgesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgesViewController.h; sourceTree = "<group>"; };
+		C4EB1E541700052F0080176A /* BadgesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +413,8 @@
 		C4150BA716CCA93C00876850 /* peaceguard */ = {
 			isa = PBXGroup;
 			children = (
+				C4EB1E52170004E50080176A /* Statistics */,
+				C4EB1E451700046A0080176A /* Badges */,
 				A7019A2516FE82BB008CE64D /* SystemImages */,
 				A70199A916FD4647008CE64D /* MainMenuBackgroundPoints */,
 				A70199E016FD4647008CE64D /* ButtonTexts */,
@@ -408,8 +425,6 @@
 				A7D498E016ED78C6001EA2D9 /* OverviewController.m */,
 				C4150BB116CCA93C00876850 /* PeaceGuardAppDelegate.m */,
 				C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */,
-				C49C638A16ED660000915D56 /* StatisticsViewController.h */,
-				C49C638B16ED660000915D56 /* StatisticsViewController.m */,
 				C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */,
 				C49C638716ED48B200915D56 /* ConnectionDataController.h */,
 				C49C638816ED48B200915D56 /* ConnectionDataController.m */,
@@ -433,8 +448,6 @@
 				C38C5EF516EF995100679A87 /* Patrol.m */,
 				C38C5EF716EFA18600679A87 /* Timer.h */,
 				C38C5EF816EFA18600679A87 /* Timer.m */,
-				C38F8EA816EFD4CA008C5F83 /* Statistics.h */,
-				C38F8EA916EFD4CA008C5F83 /* Statistics.m */,
 				A7F2F73316F04357005F9E8A /* MainViewController.h */,
 				A7F2F73416F04357005F9E8A /* MainViewController.m */,
 				C392633F16F971E200FA29E5 /* MapViewController.h */,
@@ -464,6 +477,33 @@
 				C43C36C916FD0261004A9E84 /* Reachability.m */,
 			);
 			name = Reachability;
+			sourceTree = "<group>";
+		};
+		C4EB1E451700046A0080176A /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				C4EB1E461700046A0080176A /* 10hr.png */,
+				C4EB1E471700046A0080176A /* 10km.png */,
+				C4EB1E481700046A0080176A /* 1hr.png */,
+				C4EB1E491700046A0080176A /* 1km.png */,
+				C4EB1E4A1700046A0080176A /* 5hr.png */,
+				C4EB1E4B1700046A0080176A /* 5km.png */,
+			);
+			name = Badges;
+			path = app_images/Badges;
+			sourceTree = SOURCE_ROOT;
+		};
+		C4EB1E52170004E50080176A /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				C38F8EA816EFD4CA008C5F83 /* Statistics.h */,
+				C38F8EA916EFD4CA008C5F83 /* Statistics.m */,
+				C49C638A16ED660000915D56 /* StatisticsViewController.h */,
+				C49C638B16ED660000915D56 /* StatisticsViewController.m */,
+				C4EB1E531700052F0080176A /* BadgesViewController.h */,
+				C4EB1E541700052F0080176A /* BadgesViewController.m */,
+			);
+			name = Statistics;
 			sourceTree = "<group>";
 		};
 		C4F0716A16F96C2B000368B0 /* Overlay */ = {
@@ -609,6 +649,12 @@
 				A7019A3116FE82F6008CE64D /* Icon114.png in Resources */,
 				A7019A3316FE8CC8008CE64D /* LaunchImageSmall.png in Resources */,
 				A7019A3516FE9FC1008CE64D /* MainTopLogo.png in Resources */,
+				C4EB1E4C1700046A0080176A /* 10hr.png in Resources */,
+				C4EB1E4D1700046A0080176A /* 10km.png in Resources */,
+				C4EB1E4E1700046A0080176A /* 1hr.png in Resources */,
+				C4EB1E4F1700046A0080176A /* 1km.png in Resources */,
+				C4EB1E501700046A0080176A /* 5hr.png in Resources */,
+				C4EB1E511700046A0080176A /* 5km.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +686,7 @@
 				C491E68816F96B9800982997 /* CrumbPathView.m in Sources */,
 				C392634116F971E200FA29E5 /* MapViewController.m in Sources */,
 				C43C36CA16FD0261004A9E84 /* Reachability.m in Sources */,
+				C4EB1E551700052F0080176A /* BadgesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
