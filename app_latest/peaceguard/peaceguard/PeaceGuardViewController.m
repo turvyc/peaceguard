@@ -122,11 +122,5 @@
     ];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-        MainViewController *mainContoller = (MainViewController *)segue.destinationViewController;
-        mainContoller.usernameData = self.username.text;
-
-}
-
 
 @end

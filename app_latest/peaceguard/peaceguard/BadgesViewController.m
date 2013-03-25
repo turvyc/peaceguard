@@ -25,6 +25,10 @@
 
 - (void)viewDidLoad
 {
+#pragma mark BackgroundCode
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"0.jpg"]];
+#pragma mark -
+    
     //Load the username
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];

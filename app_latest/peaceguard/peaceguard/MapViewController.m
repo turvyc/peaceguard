@@ -62,26 +62,6 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-//    CLLocationCoordinate2D zoomLocation;
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSString *la = [defaults objectForKey:@"starLatitude"];
-//    NSString *lo = [defaults objectForKey:@"starLongitude"];
-//    double latitude = [la doubleValue];
-//    double longitude = [lo doubleValue];
-//    zoomLocation.latitude = latitude;
-//    zoomLocation.longitude = longitude;
-//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-//    MKCoordinateRegion adjustRegion = [_mapView regionThatFits:viewRegion];
-//    [_mapView setRegion:adjustRegion animated:YES];
-//    NSString *incidentData = [defaults objectForKey:@"incidentData"];
-//    NSString *serverityData = [defaults objectForKey:@"serverityData"];
-//    if (incidentData != nil && serverityData != nil){
-//        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-//        point.coordinate = zoomLocation;
-//        point.title = incidentData;
-//        point.subtitle = serverityData;
-//        [_mapView addAnnotation:point];
-//    }
 }
 
 
@@ -208,24 +188,7 @@
         //Stop all the location and timer tool, also record the data
         [locationManager stopUpdatingLocation];
         [self.timer stopTimer];
-        //NSString *timerString = [NSString stringWithFormat:@"%i",(int)[self.timer timeElapsedInSeconds]];
-        //self.durationDisplay.text = timerString;
-        
-        //Use CLLocationDistance to count the distance of patrolling
-//        _final_location = [_location_array lastObject];
-//        if(_final_location == nil){
-//            _final_location = _start_location;
-//        }
-//        if (_start_location != nil){
-//            meters = [_final_location distanceFromLocation:_start_location];
-//            NSString *distanceString = [NSString stringWithFormat:@"%f",meters/1000];
-//            NSLog(@"The distance is %@",distanceString);
-//            if(meters/1000 != 0.000000){
-//                _distanceDisplay.text = distanceString;
-//            }else{
-//                _distanceDisplay.text = [NSString stringWithFormat:@"%f",0.000000];
-//            }
-//        }
+
         
         //After stop patrolling, application sends the duration, distance and patrol ID to the server
         self.connectionManager = [[ConnectionDataController alloc] init];

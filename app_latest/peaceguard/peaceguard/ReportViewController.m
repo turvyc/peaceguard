@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad
 {
+    
     self.editLabel.text = @"Edit";
     
     self.hasReviewed = NO;
@@ -275,19 +276,6 @@
     _imageView.image = image;
 
 }
-
-//
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//
-//    OverviewController *overviewController = (OverviewController *)segue.destinationViewController;
-//    //sets value of variables from overview
-//    overviewController.incidentData = self.incidentData;
-//    overviewController.severityData = self.severityData;
-//    overviewController.descriptionData = self.description.text;
-//    overviewController.imageData = self.imageView.image;
-//    overviewController.locationData = self.location;
-//    
-//}
 
 
 @end
