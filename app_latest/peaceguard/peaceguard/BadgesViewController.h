@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConnectionDataController.h"
 
 @interface BadgesViewController : UIViewController
 
@@ -18,6 +19,13 @@
 @property (strong, nonatomic) IBOutlet UIView *fiveKM;
 @property (strong, nonatomic) IBOutlet UIView *tenKM;
 
+//Badge storage
+@property (strong, nonatomic) NSDictionary *badgesDictionary;
+
+//Connection to the server
+@property (strong, nonatomic) ConnectionDataController *connectionManager;
+
+//Navigation control
 - (IBAction)returnToStats:(id)sender;
 
 @end

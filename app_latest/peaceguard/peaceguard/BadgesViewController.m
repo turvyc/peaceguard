@@ -25,6 +25,18 @@
 
 - (void)viewDidLoad
 {
+    //Load the username
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *username = [defaults objectForKey:@"username"];
+    
+    //Get user badges from the server
+    self.connectionManager = [[ConnectionDataController alloc] init];
+    self.badgesDictionary = [self.connectionManager getBadge:username andTimePeriod:@"allTime"];
+    NSLog(@"Count: %i", [[self.badgesDictionary objectForKey: @"badges"] count]);
+    
+    //NSArray *badgesArray = [[self.badgesDictionary objectForKey: @"badges"] allValues];
+    //NSString * combinedStuff = [badgesArray componentsJoinedByString:@""];
+    //NSLog(@"My dictionary is %@", aDictionary);
     //if badge is aquired make alpha for respective blocker = 0
     
     
