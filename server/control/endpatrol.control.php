@@ -39,6 +39,7 @@ try {
     // Check if any new badges were earned
     $volunteer = Volunteer::constructFromEmail($_POST[_EMAIL]);
     $new_badges = Badge::checkForNewBadges($volunteer);
+print_r($new_badges);
     $volunteer->addBadges($new_badges);
     
     $interface->addData(_SUCCESSFUL, _YES);

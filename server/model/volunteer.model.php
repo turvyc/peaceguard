@@ -112,14 +112,14 @@ class Volunteer extends User {
     // Returns a list of the badges the Volunteer has earned
     public function getBadges() {
         require('database.model.php');
-        $query = "SELECT b_id, name
+        $query = "SELECT b_id
         FROM Volunteers NATURAL JOIN Earns NATURAL JOIN Badges
         WHERE u_id = $this->id";
         $STH = $DBH->prepare($query);
         $STH->execute();
         $badges = array();
         while ($badge = $STH->fetch()) {
-            $badges[] = $badge;
+            $badges[] = $badge['b_id'];
         }
         return $badges;
     }
