@@ -16,12 +16,12 @@
 
 @implementation ReportDataController
 
-- (void) makeReportWithType:(NSString *)type severity:(NSString *)severity location:(NSString *)location time:(NSInteger *)time andDescription:(NSString *)description{
+- (void) makeReportWithType:(NSString *)type severity:(NSString *)severity location:(NSString *)location time:(NSInteger)time andDescription:(NSString *)description{
     self.theReport = [[Report alloc] initWithType:type severity:severity location:location time:time andDescription:description];
     
 }
 
-- (void) makeReportWithType: (NSString *) type severity: (NSString *) severity location: (NSString *) location time: (NSInteger *) time image: (NSData *) image andDescription: (NSString *) description{
+- (void) makeReportWithType: (NSString *) type severity: (NSString *) severity location: (NSString *) location time: (NSInteger) time image: (NSData *) image andDescription: (NSString *) description{
     self.theReport = [[Report alloc] initWithType:type severity:severity location:location time:time image:image andDescription:description];
     
 }

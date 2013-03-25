@@ -30,35 +30,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    //View setup
     self.postPatrolDisplay.hidden = YES;
     self.reportButton.enabled = YES;
     self.startStopButton.enabled = YES;
-    
+    self.patrolControlButton.alpha = 0.60;
     // Do any additional setup after loading the view.
-    //Allocations
+    //Location setup
     locationManager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
-    _location_array = [[NSMutableArray alloc] init];
-    _timer = [[Timer alloc] init];
-    locationManager = [[CLLocationManager alloc] init];
-	
-    //User currently not patrolling
-    self.patrolling = NO;
-    
+    self.location_array = [[NSMutableArray alloc] init];
     locationManager.delegate = self; // Tells the location manager to send updates to this object
-    
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [self.mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:NO];
-    self.patrolControlButton.alpha = 0.60;
-    
+    //Timer setup
+    self.timer = [[Timer alloc] init];
+    //User currently not patrolling
+    self.patrolling = NO;
+    //Prevent user from moving map
+    self.mapView.userInteractionEnabled = NO;
+    //Get the username for future use
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];
     self.username = username;
-    NSLog(@"username in the location view :%@", self.username);
-    //[super viewDidLoad];
-
-    //[self.view addSubview:self.mapView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -73,8 +67,6 @@
 
 - (void)dealloc
 {
-    //NSLog(@"Points count: %i",self.crumbs.pointCount);
-    //NSLog(@"Points: %@",MKStringFromMapPoint(*(self.crumbs.points)));
     locationManager.delegate = nil;
 }
 
@@ -142,6 +134,8 @@
 - (IBAction)patrolControl:(id)sender {
     //Starting a patrol
     if (!self.patrolling) {
+        //Prevent phone from turning off automatically
+        [UIApplication sharedApplication].idleTimerDisabled = YES;
         //Hide back button
         [self.navigationItem setHidesBackButton:YES animated:YES];
         self.patrolling = YES;
@@ -163,27 +157,36 @@
                                                           target:self selector:@selector(updateLabels)
                                                         userInfo:Nil repeats:YES];
         self.clock = runningTimer;
-        _start = YES;
-        _cache_number = 1;
+        //_start = YES;
+        //_cache_number = 1;
         [locationManager startUpdatingLocation];
-        self.connectionManager = [[ConnectionDataController alloc] init];
-        NSDate *currDate = [NSDate date];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
-        NSString *dateString = [dateFormatter stringFromDate:currDate];
-        self.start_time = dateString;
+        //self.connectionManager = [[ConnectionDataController alloc] init];
+        //NSDate *currDate = [NSDate date];
+        //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        //[dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
+        //NSString *dateString = [dateFormatter stringFromDate:currDate];
+        //self.start_time = dateString;
     }
     //Stopping a patrol
     else if (self.patrolling){
+        //Allow the phone to be disabled automatically
+        [UIApplication sharedApplication].idleTimerDisabled = NO;
+        
+        //End the patrol
         self.patrolling = NO;
+        
+        //Stop updating breadcrumbs
         [locationManager stopUpdatingLocation];
+        
+        //Reset the button text
         self.patrolControlLabel.text = @"Start Patrol";
+        
         //Stop clock
         [self.clock invalidate];
+        
         //From locationViewController
         NSLog(@"stop Patrol");
         NSLog(@"The patrol ID is %i",self.patrolID);
-//        CLLocationDistance meters = 0;
         
         //Stop all the location and timer tool, also record the data
         [locationManager stopUpdatingLocation];

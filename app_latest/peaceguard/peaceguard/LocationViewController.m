@@ -147,9 +147,9 @@
         //After stop patrolling, application sends the duration, distance and patrol ID to the server
         self.connectionManager = [[ConnectionDataController alloc] init];
         [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:@"TEST_ROUTE" distance:2000 email:self.username];
-        NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
-        NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
-        NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
+        //NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
+        //NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
+        //NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
 }
 
 - (IBAction)reportButton:(id)sender

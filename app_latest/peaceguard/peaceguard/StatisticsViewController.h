@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ConnectionDataController.h"
 
-@interface StatisticsViewController : UIViewController
+@interface StatisticsViewController : UIViewController <UIPickerViewDelegate>
 @property (nonatomic) int num_of_patrol;
 @property (nonatomic) int total_distance;
 @property (nonatomic) int total_time;

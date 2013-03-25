@@ -13,7 +13,7 @@
 #import "ReportDataController.h"
 #import "ConnectionDataController.h"
 
-@interface ReportViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ReportViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *Image;
 //open the camera and take the picture
 - (IBAction)ImageTaker:(id)sender;

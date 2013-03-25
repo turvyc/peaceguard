@@ -72,15 +72,11 @@
 		A7019A2B16FE82BB008CE64D /* Icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7019A2716FE82BB008CE64D /* Icon57.png */; };
 		A7019A2C16FE82BB008CE64D /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A7019A2816FE82BB008CE64D /* LaunchImage.png */; };
 		A7019A2D16FE82BB008CE64D /* LogoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A7019A2916FE82BB008CE64D /* LogoImage.png */; };
-		A7019A2F16FE82F0008CE64D /* Icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7019A2E16FE82F0008CE64D /* Icon57.png */; };
-		A7019A3116FE82F6008CE64D /* Icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = A7019A3016FE82F6008CE64D /* Icon114.png */; };
 		A7019A3316FE8CC8008CE64D /* LaunchImageSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = A7019A3216FE8CC8008CE64D /* LaunchImageSmall.png */; };
 		A7019A3516FE9FC1008CE64D /* MainTopLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = A7019A3416FE9FC1008CE64D /* MainTopLogo.png */; };
-		A7D498E116ED78C7001EA2D9 /* OverviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D498E016ED78C6001EA2D9 /* OverviewController.m */; };
 		A7F2F73516F04357005F9E8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2F73416F04357005F9E8A /* MainViewController.m */; };
 		C313066616DF18C3005FB151 /* PatrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C313066516DF18C3005FB151 /* PatrolViewController.m */; };
 		C313066816DF1CEE005FB151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313066716DF1CEE005FB151 /* MapKit.framework */; };
-		C38C5EF616EF995100679A87 /* Patrol.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C5EF516EF995100679A87 /* Patrol.m */; };
 		C38C5EF916EFA18700679A87 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C5EF816EFA18600679A87 /* Timer.m */; };
 		C38F8EAA16EFD4CA008C5F83 /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = C38F8EA916EFD4CA008C5F83 /* Statistics.m */; };
 		C392634116F971E200FA29E5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C392634016F971E200FA29E5 /* MapViewController.m */; };
@@ -95,9 +91,6 @@
 		C4150BAC16CCA93C00876850 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C4150BAA16CCA93C00876850 /* InfoPlist.strings */; };
 		C4150BAE16CCA93C00876850 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4150BAD16CCA93C00876850 /* main.m */; };
 		C4150BB216CCA93C00876850 /* PeaceGuardAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4150BB116CCA93C00876850 /* PeaceGuardAppDelegate.m */; };
-		C4150BB416CCA93C00876850 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB316CCA93C00876850 /* Default.png */; };
-		C4150BB616CCA93C00876850 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB516CCA93C00876850 /* Default@2x.png */; };
-		C4150BB816CCA93C00876850 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB716CCA93C00876850 /* Default-568h@2x.png */; };
 		C4150BBB16CCA93C00876850 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */; };
 		C4150BBE16CCA93C00876850 /* PeaceGuardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4150BBD16CCA93C00876850 /* PeaceGuardViewController.m */; };
 		C43C36C716FD024B004A9E84 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43C36C616FD024B004A9E84 /* SystemConfiguration.framework */; };
@@ -189,19 +182,13 @@
 		A7019A2716FE82BB008CE64D /* Icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon57.png; sourceTree = "<group>"; };
 		A7019A2816FE82BB008CE64D /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		A7019A2916FE82BB008CE64D /* LogoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogoImage.png; sourceTree = "<group>"; };
-		A7019A2E16FE82F0008CE64D /* Icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon57.png; sourceTree = "<group>"; };
-		A7019A3016FE82F6008CE64D /* Icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon114.png; sourceTree = "<group>"; };
 		A7019A3216FE8CC8008CE64D /* LaunchImageSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImageSmall.png; sourceTree = "<group>"; };
 		A7019A3416FE9FC1008CE64D /* MainTopLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainTopLogo.png; sourceTree = "<group>"; };
-		A7D498DF16ED78C6001EA2D9 /* OverviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverviewController.h; sourceTree = "<group>"; };
-		A7D498E016ED78C6001EA2D9 /* OverviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverviewController.m; sourceTree = "<group>"; };
 		A7F2F73316F04357005F9E8A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		A7F2F73416F04357005F9E8A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		C313066416DF18C3005FB151 /* PatrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatrolViewController.h; sourceTree = "<group>"; };
 		C313066516DF18C3005FB151 /* PatrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatrolViewController.m; sourceTree = "<group>"; };
 		C313066716DF1CEE005FB151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		C38C5EF416EF995100679A87 /* Patrol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patrol.h; sourceTree = "<group>"; };
-		C38C5EF516EF995100679A87 /* Patrol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patrol.m; sourceTree = "<group>"; };
 		C38C5EF716EFA18600679A87 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		C38C5EF816EFA18600679A87 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		C38F8EA816EFD4CA008C5F83 /* Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistics.h; sourceTree = "<group>"; };
@@ -375,8 +362,6 @@
 		C4150B9516CCA93C00876850 = {
 			isa = PBXGroup;
 			children = (
-				A7019A3016FE82F6008CE64D /* Icon114.png */,
-				A7019A2E16FE82F0008CE64D /* Icon57.png */,
 				C43C36C616FD024B004A9E84 /* SystemConfiguration.framework */,
 				C3AEED6A16ED54AD002C16EC /* CoreLocation.framework */,
 				C313066716DF1CEE005FB151 /* MapKit.framework */,
@@ -421,8 +406,6 @@
 				C43C36CB16FD0271004A9E84 /* Reachability */,
 				C4F0716A16F96C2B000368B0 /* Overlay */,
 				C4150BB016CCA93C00876850 /* PeaceGuardAppDelegate.h */,
-				A7D498DF16ED78C6001EA2D9 /* OverviewController.h */,
-				A7D498E016ED78C6001EA2D9 /* OverviewController.m */,
 				C4150BB116CCA93C00876850 /* PeaceGuardAppDelegate.m */,
 				C4150BB916CCA93C00876850 /* MainStoryboard.storyboard */,
 				C4150BBC16CCA93C00876850 /* PeaceGuardViewController.h */,
@@ -444,8 +427,6 @@
 				C313066516DF18C3005FB151 /* PatrolViewController.m */,
 				C3AEED6716ED5380002C16EC /* LocationViewController.h */,
 				C3AEED6816ED5381002C16EC /* LocationViewController.m */,
-				C38C5EF416EF995100679A87 /* Patrol.h */,
-				C38C5EF516EF995100679A87 /* Patrol.m */,
 				C38C5EF716EFA18600679A87 /* Timer.h */,
 				C38C5EF816EFA18600679A87 /* Timer.m */,
 				A7F2F73316F04357005F9E8A /* MainViewController.h */,
@@ -570,9 +551,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4150BAC16CCA93C00876850 /* InfoPlist.strings in Resources */,
-				C4150BB416CCA93C00876850 /* Default.png in Resources */,
-				C4150BB616CCA93C00876850 /* Default@2x.png in Resources */,
-				C4150BB816CCA93C00876850 /* Default-568h@2x.png in Resources */,
 				C4150BBB16CCA93C00876850 /* MainStoryboard.storyboard in Resources */,
 				C48F3A1B16D1F43A0015D678 /* Icon57x57.png in Resources */,
 				C48F3A1D16D1F43D0015D678 /* Icon114x114.png in Resources */,
@@ -645,8 +623,6 @@
 				A7019A2B16FE82BB008CE64D /* Icon57.png in Resources */,
 				A7019A2C16FE82BB008CE64D /* LaunchImage.png in Resources */,
 				A7019A2D16FE82BB008CE64D /* LogoImage.png in Resources */,
-				A7019A2F16FE82F0008CE64D /* Icon57.png in Resources */,
-				A7019A3116FE82F6008CE64D /* Icon114.png in Resources */,
 				A7019A3316FE8CC8008CE64D /* LaunchImageSmall.png in Resources */,
 				A7019A3516FE9FC1008CE64D /* MainTopLogo.png in Resources */,
 				C4EB1E4C1700046A0080176A /* 10hr.png in Resources */,
@@ -677,8 +653,6 @@
 				C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */,
 				C3AEED6916ED5381002C16EC /* LocationViewController.m in Sources */,
 				C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */,
-				A7D498E116ED78C7001EA2D9 /* OverviewController.m in Sources */,
-				C38C5EF616EF995100679A87 /* Patrol.m in Sources */,
 				C38C5EF916EFA18700679A87 /* Timer.m in Sources */,
 				C38F8EAA16EFD4CA008C5F83 /* Statistics.m in Sources */,
 				A7F2F73516F04357005F9E8A /* MainViewController.m in Sources */,
