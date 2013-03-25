@@ -8,10 +8,7 @@
 
 
 #import "PeaceGuardViewController.h"
-#import "User.h"
-#import "UserDataController.h"
 
-#import "MainViewController.h"
 
 @interface PeaceGuardViewController (){
     CLGeocoder *geocoder;
@@ -36,7 +33,6 @@
     [textField resignFirstResponder];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
-    //self.view.frame = CGRectMake(0,-10,320,400);
     self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y-44);
     [UIView commitAnimations];
     return YES;
@@ -47,7 +43,6 @@
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
-    //self.view.frame = CGRectMake(0,-10,320,400);
     self.view.center = CGPointMake(self.originalCenter.x, 10);
     [UIView commitAnimations];
 }
@@ -56,20 +51,19 @@
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
-    //self.view.frame = CGRectMake(0,-10,320,400);
     self.view.center = self.originalCenter;
     [UIView commitAnimations];
 }
 
 - (IBAction)Login:(id)sender {
-    //BOOL authentication = [self logUsername:self.username.text password:self.password.text];
-    //self.usernameData = self.username.text;
+    //Allocate user based on username and password provided and server connections
     self.user = [[User alloc] initWithUsername:self.username.text password:self.password.text];
     self.connectionManager = [[ConnectionDataController alloc] init];
+    //Check if username and password is valid on server
     BOOL authentication = [self.connectionManager serverLoginWithEmail:self.username.text andPassword:self.password.text];
-    //self.username.text = @"";
+    //Clear password from text field
     self.password.text = @"";
-    
+    //If the username and password is valid, set as default and allow user to login
     if( authentication == YES) {
         //the login is correct
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
