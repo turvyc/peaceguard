@@ -100,10 +100,11 @@
     self.connectionManager = [[ConnectionDataController alloc] init];
     NSDictionary *statsDictionary = [self.connectionManager getStatistics:self.username andTimePeriod:timePeriod];
     self.totalPatrolsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"patrol"];
-    self.totalDistanceField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"distance"];
+    self.totalDistanceField.text = [NSString stringWithFormat:@"%@m",[[statsDictionary objectForKey:@"total"] objectForKey:@"distance"]];
     NSLog(@"distance is :%@",self.totalDistanceField.text);
     self.numberOfIncidentsField.text = [[statsDictionary objectForKey:@"total"] objectForKey:@"report"];
-    self.totalTimeField.text =  [[statsDictionary objectForKey:@"total"] objectForKey:@"time"];
+    double timeString = [[[statsDictionary objectForKey:@"total"] objectForKey:@"time"] doubleValue]/60;
+    self.totalTimeField.text = [NSString stringWithFormat:@"%.01fmin",timeString];
 }
 
 @end
