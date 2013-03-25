@@ -22,6 +22,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    //put the screen back in its original location
     [self.view endEditing:YES];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
@@ -30,6 +31,7 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    //put the screen back in its original location
     [textField resignFirstResponder];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
@@ -41,6 +43,7 @@
 
 - (void)keyboardDidShow:(NSNotification *)note
 {
+    //Move to the screen up to not block the login text fields
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
     self.view.center = CGPointMake(self.originalCenter.x, 10);
@@ -49,9 +52,10 @@
 
 - (void)keyboardDidHide:(NSNotification *)note
 {
+    //put the screen back in its original location
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.25];
-    self.view.center = self.originalCenter;
+    self.view.center = CGPointMake(self.originalCenter.x, self.originalCenter.y-44);
     [UIView commitAnimations];
 }
 
@@ -95,8 +99,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-//Get the current location and set it as a global location, so user won't lost the location
-//without the patrolling
+//Get the current location and set it as a global variable for later use
 - (void)deviceLocation {
     [geocoder reverseGeocodeLocation:_locationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
         if (error == nil && [placemarks count] > 0){
