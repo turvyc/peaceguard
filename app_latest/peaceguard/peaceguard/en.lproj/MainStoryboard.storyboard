@@ -391,28 +391,14 @@
                                 <color key="textColor" red="1" green="0.014178788058748393" blue="0.046421335681205211" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m33-UV-3xT">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1s9-cU-wUE">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="216" id="BcQ-MD-y26"/>
-                                </constraints>
-                            </pickerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BjK-Gk-QPe">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cC9-dw-ftN" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2Nb-ey-q1b"/>
                             <constraint firstItem="gUm-3p-Eno" firstAttribute="leading" secondItem="5j5-Kz-3Ag" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="2qa-Bb-FeP"/>
                             <constraint firstItem="Uph-sI-m4b" firstAttribute="top" secondItem="KrM-yF-Lka" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5Qm-wX-Ny7"/>
-                            <constraint firstItem="m33-UV-3xT" firstAttribute="trailing" secondItem="Bmk-e2-JVe" secondAttribute="trailing" type="default" id="5is-Ox-k7i"/>
                             <constraint firstAttribute="bottom" secondItem="ZdT-tJ-8sg" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="6QV-ej-bOF"/>
                             <constraint firstItem="Uph-sI-m4b" firstAttribute="leading" secondItem="U0Z-z7-49S" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="6aM-fT-YVi"/>
-                            <constraint firstAttribute="trailing" secondItem="BjK-Gk-QPe" secondAttribute="trailing" constant="5" id="8MW-lz-fRt"/>
-                            <constraint firstAttribute="bottom" secondItem="m33-UV-3xT" secondAttribute="bottom" constant="283" id="9N8-qk-DRH"/>
                             <constraint firstItem="ZdT-tJ-8sg" firstAttribute="leading" secondItem="IYe-Kz-fk0" secondAttribute="leading" type="default" id="9wB-e5-y99"/>
                             <constraint firstItem="U0Z-z7-49S" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="AT9-2b-uFH"/>
                             <constraint firstItem="6vJ-XS-DNj" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="AYg-4H-wrT"/>
@@ -426,13 +412,9 @@
                             <constraint firstItem="yU6-ID-PHI" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Iw6-FL-cQU"/>
                             <constraint firstItem="5j5-Kz-3Ag" firstAttribute="top" secondItem="VWk-BG-iSv" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JTQ-D3-Vec"/>
                             <constraint firstItem="qDn-q8-8rF" firstAttribute="centerY" secondItem="xDQ-Bz-m2H" secondAttribute="centerY" type="default" id="JwC-st-KRM"/>
-                            <constraint firstItem="1s9-cU-wUE" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" type="default" id="LBP-Di-eeg"/>
-                            <constraint firstItem="m33-UV-3xT" firstAttribute="top" secondItem="Uph-sI-m4b" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LSo-96-djD"/>
                             <constraint firstAttribute="trailing" secondItem="ydf-YF-tu0" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M4w-8P-zGY"/>
                             <constraint firstItem="He3-2h-LhX" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Mj0-Fe-gBS"/>
-                            <constraint firstAttribute="bottom" secondItem="BjK-Gk-QPe" secondAttribute="bottom" constant="-17" id="Nxk-mt-7uX"/>
                             <constraint firstItem="IYe-Kz-fk0" firstAttribute="baseline" secondItem="qDn-q8-8rF" secondAttribute="baseline" type="default" id="Ou3-4w-YU8"/>
-                            <constraint firstItem="BjK-Gk-QPe" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="-5" id="QGQ-vs-oPm"/>
                             <constraint firstItem="xDQ-Bz-m2H" firstAttribute="top" secondItem="cC9-dw-ftN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RV2-Vn-vIA"/>
                             <constraint firstItem="yU6-ID-PHI" firstAttribute="top" secondItem="iK9-Af-iLZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="W30-Mq-0Me"/>
                             <constraint firstItem="5j5-Kz-3Ag" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="WFR-vq-Of8"/>
@@ -450,12 +432,8 @@
                             <constraint firstItem="aif-1d-RSV" firstAttribute="top" secondItem="U0Z-z7-49S" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hra-Sd-KWr"/>
                             <constraint firstItem="Uph-sI-m4b" firstAttribute="top" secondItem="L01-zZ-I3x" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="mIf-S4-k2K"/>
                             <constraint firstItem="xDQ-Bz-m2H" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mKG-pW-zf3"/>
-                            <constraint firstItem="1s9-cU-wUE" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="175" id="mTv-5H-iFP"/>
                             <constraint firstItem="cC9-dw-ftN" firstAttribute="top" secondItem="He3-2h-LhX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nIO-mE-yMt"/>
-                            <constraint firstItem="BjK-Gk-QPe" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="379" id="ntJ-3b-mzw"/>
                             <constraint firstItem="xDQ-Bz-m2H" firstAttribute="trailing" secondItem="qDn-q8-8rF" secondAttribute="trailing" type="default" id="tvh-AP-gH8"/>
-                            <constraint firstItem="1s9-cU-wUE" firstAttribute="trailing" secondItem="Bmk-e2-JVe" secondAttribute="trailing" type="default" id="uoR-Jf-l9X"/>
-                            <constraint firstItem="m33-UV-3xT" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" type="default" id="xMA-cX-ZbS"/>
                             <constraint firstItem="qDn-q8-8rF" firstAttribute="leading" secondItem="Bmk-e2-JVe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xyi-DF-M5L"/>
                             <constraint firstItem="6vJ-XS-DNj" firstAttribute="top" secondItem="Bmk-e2-JVe" secondAttribute="top" constant="20" symbolic="YES" type="default" id="zKz-su-DtW"/>
                         </constraints>
@@ -471,13 +449,10 @@
                         <outlet property="imageView" destination="He3-2h-LhX" id="20b-yO-uU3"/>
                         <outlet property="incidentLabel" destination="U0Z-z7-49S" id="uDl-cN-aNs"/>
                         <outlet property="locationDisplay" destination="VWk-BG-iSv" id="Igc-x4-zW9"/>
-                        <outlet property="pickerViewBlockerBottom" destination="BjK-Gk-QPe" id="0WU-QA-czQ"/>
-                        <outlet property="pickerViewBlockerTop" destination="m33-UV-3xT" id="Ifk-Gj-5Yp"/>
                         <outlet property="reportEditLabel" destination="qDn-q8-8rF" id="oWm-HQ-vjm"/>
                         <outlet property="reviewSubmitLabel" destination="IYe-Kz-fk0" id="nan-cJ-UmY"/>
                         <outlet property="reviewWarning" destination="cC9-dw-ftN" id="myk-OC-icJ"/>
                         <outlet property="severityLabel" destination="Uph-sI-m4b" id="EWR-GZ-qoY"/>
-                        <outlet property="thePickerView" destination="1s9-cU-wUE" id="dkh-Ni-dX8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="izN-ri-bUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
