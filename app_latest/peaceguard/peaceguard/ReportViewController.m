@@ -44,7 +44,7 @@
     self.reviewWarning.hidden = YES;
     self.editButton.hidden = NO;
     self.editLabel.hidden = NO;
-
+    self.Image.hidden = NO;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];
@@ -165,10 +165,17 @@
 
 //*** PickerView code ends ***
 - (IBAction)buttonToOverview:(id)sender {
+    //get and set current time
+    NSDate *currDate = [NSDate date];
+    double theDate = [currDate timeIntervalSince1970];
+    NSInteger *theTime =(NSInteger)theDate;
+    //Set description
+    self.descriptionOverview = self.description.text;
+    
     if(self.hasReviewed == NO){ //first time pressing report/submit button
         self.hasReviewed = YES;
         self.reviewWarning.hidden = NO;
-
+        self.Image.hidden = YES;
         self.editButton.hidden = YES;
         self.editLabel.hidden = YES;
         
@@ -179,13 +186,34 @@
     else if(self.hasReviewed == YES){
         self.hasReviewed = NO;
         self.reviewWarning.hidden = YES;
-        
+        self.Image.hidden = NO;
         self.editButton.hidden = NO;
         self.editLabel.hidden = NO;
         
         self.reviewSubmitLabel.text = @"Review";
         self.description.enabled = TRUE;
         self.reportEditLabel.text = @"Cancel";
+        //Send report to server
+        self.reportManager = [[ReportDataController alloc] init];
+        self.connectionManager = [[ConnectionDataController alloc] init];
+        //If there is an image create a report with image
+        if(!(CGSizeEqualToSize(self.imageView.image.size, CGSizeZero))){
+            [self.reportManager makeReportWithType:self.incidentData severity:self.severityData location:self.location time:theTime image:UIImagePNGRepresentation(self.imageOverview) andDescription:self.descriptionOverview];
+        }
+        //Otherwise create a report with no image
+        else{
+            [self.reportManager makeReportWithType:self.incidentData severity:self.severityData location:self.location time:theTime andDescription:self.descriptionOverview];
+        }
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *incidentData = self.incidentData;
+        NSString *serverityData = self.severityData;
+        [defaults setObject:incidentData forKey:@"incidentData"];
+        [defaults setObject:serverityData forKey:@"serverityData"];
+        [defaults synchronize];
+        NSLog(@"This is the username: %@", self.username);
+        [self.connectionManager reportWithPostData:[self.reportManager getPOSTData:self.username]];
+        
+        //Return to previous page
         [self dismissViewControllerAnimated:YES completion:nil];
     }    
 }
@@ -197,7 +225,7 @@
     else if(self.hasReviewed == YES){
         self.hasReviewed = NO;
         self.reviewWarning.hidden = YES;
-        
+        self.Image.hidden = NO;
         self.editButton.hidden = NO;
         self.editLabel.hidden = NO;
         

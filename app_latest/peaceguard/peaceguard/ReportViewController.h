@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <CoreLocation/CoreLocation.h>
+#import "ReportDataController.h"
+#import "ConnectionDataController.h"
 
 @interface ReportViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *Image;
@@ -19,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property(strong, nonatomic) ReportViewController *reportController;
 
-@property(nonatomic) BOOL *hasReviewed;
+@property(nonatomic) BOOL hasReviewed;
 
 //PickerView
 @property (strong, nonatomic) IBOutlet UIPickerView *thePickerView;
@@ -50,6 +52,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
 @property (strong, nonatomic) IBOutlet UILabel *editLabel;
 
+@property(retain, nonatomic) ConnectionDataController *connectionManager;
+@property(retain, nonatomic) ReportDataController *reportManager;
 
 //now review/submit
 - (IBAction)buttonToOverview:(id)sender;

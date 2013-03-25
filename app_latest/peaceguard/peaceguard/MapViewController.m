@@ -30,8 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Hide back button
-    [self.navigationItem setHidesBackButton:YES animated:YES];
+
     // Do any additional setup after loading the view.
     //Allocations
     locationManager = [[CLLocationManager alloc] init];
@@ -159,6 +158,8 @@
 - (IBAction)patrolControl:(id)sender {
     //Starting a patrol
     if (!self.patrolling) {
+        //Hide back button
+        [self.navigationItem setHidesBackButton:YES animated:YES];
         self.patrolling = YES;
         [locationManager startUpdatingLocation];
         self.patrolControlLabel.text = @"Stop Patrol";
