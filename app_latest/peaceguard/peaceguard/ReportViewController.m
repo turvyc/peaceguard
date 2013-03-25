@@ -273,7 +273,7 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    [image drawInRect:CGRectMake(0, 0, 280, 163)];
+    [image drawInRect:CGRectMake(0, 0, 280, 150)];
     _imageView.image = image;
 
 }
