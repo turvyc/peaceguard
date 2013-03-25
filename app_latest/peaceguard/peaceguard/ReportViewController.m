@@ -168,7 +168,7 @@
     //get and set current time
     NSDate *currDate = [NSDate date];
     double theDate = [currDate timeIntervalSince1970];
-    NSInteger *theTime =(NSInteger)theDate;
+    NSInteger theTime =(NSInteger)theDate;
     //Set description
     self.descriptionOverview = self.description.text;
     
