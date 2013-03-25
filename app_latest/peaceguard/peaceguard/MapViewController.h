@@ -58,7 +58,10 @@
 @property (nonatomic) NSString *current_location;
 
 @property (nonatomic) NSInteger displayedTime;
-
+@property (nonatomic) NSInteger badgeCount;
+@property (nonatomic, weak) NSString *postPatrolString;
+//Badge storage
+@property (strong, nonatomic) NSDictionary *badgesDictionary;
 //From .m
 //CLLocationManager *locationManager;
 //CLGeocoder *geocoder;

@@ -53,9 +53,17 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];
     self.username = username;
+    //Get badge count
+    //Get user badges from the server
+    self.connectionManager = [[ConnectionDataController alloc] init];
+    self.badgesDictionary = [self.connectionManager getBadge:username andTimePeriod:@"allTime"];
+    self.badgeCount = [[self.badgesDictionary objectForKey: @"badges"] count];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    
+    //Prevent phone from turning off automatically
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
 }
 
 
@@ -134,8 +142,10 @@
 - (IBAction)patrolControl:(id)sender {
     //Starting a patrol
     if (!self.patrolling) {
+        
         //Prevent phone from turning off automatically
         [UIApplication sharedApplication].idleTimerDisabled = YES;
+        
         //Hide back button
         [self.navigationItem setHidesBackButton:YES animated:YES];
         self.patrolling = YES;
@@ -145,11 +155,13 @@
         //From locationViewController
         NSLog(@"start Patrol");
         NSLog(@"The patrol ID is %i",self.patrolID);
+        
         //all initialize
         self.connectionManager = [[ConnectionDataController alloc] init];
         self.patrolID = [self.connectionManager startPatrolWithEmail:self.username];
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
         //Start keeping time and updating the label
         self.displayedTime = 0;
         [self.timer startTimer];
@@ -157,15 +169,8 @@
                                                           target:self selector:@selector(updateLabels)
                                                         userInfo:Nil repeats:YES];
         self.clock = runningTimer;
-        //_start = YES;
-        //_cache_number = 1;
+
         [locationManager startUpdatingLocation];
-        //self.connectionManager = [[ConnectionDataController alloc] init];
-        //NSDate *currDate = [NSDate date];
-        //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-        //[dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
-        //NSString *dateString = [dateFormatter stringFromDate:currDate];
-        //self.start_time = dateString;
     }
     //Stopping a patrol
     else if (self.patrolling){
@@ -197,34 +202,25 @@
         self.connectionManager = [[ConnectionDataController alloc] init];
         [self.connectionManager endAndSendPatrolID:self.patrolID duration:(NSInteger)[self.timer timeElapsedInSeconds] route:self.crumbs.getCrumbPathJSON distance:self.crumbs.getCrumbPathDistance email:self.username];
         //Badges are handled here if necessary
-        //NSDictionary *badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
-        //NSString *b_id = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"b_id"];
-        //NSString *name = [[badgesDictionary objectForKey:@"badges"] objectForKey:@"name"];
+        self.connectionManager = [[ConnectionDataController alloc] init];
+        self.badgesDictionary = [self.connectionManager getBadge:self.username andTimePeriod:@"allTime"];
+        self.badgeCount = [[self.badgesDictionary objectForKey: @"badges"] count]-self.badgeCount;
         
+        if(self.badgeCount>0){
+            self.postPatrolString = [NSString stringWithFormat:@"You earned %i badges!", self.badgeCount];
+            self.postPatrolMessage.text = self.postPatrolString;
+        }
         //Dismiss the view and show the user statistics
         self.startStopButton.enabled = NO;
         self.reportButton.enabled = NO;
         self.postPatrolDisplay.hidden = NO;
-        
-        
-        //************Badges earned*********************
-//        if (new bagdes){
-//            self.postPatrolMessage.text = @"New bagdge(s) earned";
-//        }
-//        else if(no new badges){
-//            self.postPatrolMessage.text = @"No new badge earned";
-//        }
 
     }
-        
-
 }
 
 -(void) updateLabels{
-    //NSString *timerString = [NSString stringWithFormat:@"%f",[self.timer timeElapsedInSeconds]];
     self.displayedTime++;
     NSString *timerString = [NSString stringWithFormat:@"%i Minutes %i Seconds",(self.displayedTime)/60, (int)(fmod(((double)self.displayedTime), 60))];
-    //NSLog(@"Timer string: %@", timerString);
     self.durationDisplay.text = timerString;
     self.distanceDisplay.text = [NSString stringWithFormat:@"%.01f Meters",self.crumbs.getCrumbPathDistance] ;
 }

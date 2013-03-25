@@ -84,7 +84,7 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil]; 
     self.originalCenter = self.view.center;
-    NSURL*url=[NSURL URLWithString:@"https://vancouver.ca/police/"];
+    NSURL*url=[NSURL URLWithString:@"http://www.sfu.ca/~zhongl/cmpt275/cmpt275tutorial.html"];
     NSURLRequest*request=[NSURLRequest requestWithURL:url];
     [_help loadRequest:request];
     _locationManager = [[CLLocationManager alloc] init];
