@@ -1,9 +1,9 @@
 //
 //  Timer.m
-//  peaceguard
 //
-//  Created by JonasYao on 2013-03-12.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Jonas Yao
+//
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 #import "Timer.h"

@@ -45,6 +45,13 @@
  
  */
 
+//  Code modified
+//
+//  Contributor(s): Ashley Lesperance
+//
+//  Copyright (c) 2013 Number 13 Developer's Group
+//
+
 #import <MapKit/MapKit.h>
 #import <pthread.h>
 

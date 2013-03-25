@@ -3,7 +3,7 @@
 //
 //  Contributor(s): Ashley Lesperance
 //
-//  Copyright (c) 2013 Number 123 Developer's Group
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 
@@ -17,7 +17,6 @@
 @property (nonatomic, copy) User *currentUser;
 
 //Method declarations
-- (BOOL)authenticateUser:(User *)theUser;
 - (void)logUsername: (NSString *) username andPassword: (NSString *) password;
 
 @end

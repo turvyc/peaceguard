@@ -1,9 +1,9 @@
 //
 //  BadgesViewController.m
-//  peaceguard
 //
-//  Created by Lesperance Ashley on 2013-03-24.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Ashley Lesperance, Robert Sanchez
+//
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 #import "BadgesViewController.h"
@@ -47,7 +47,7 @@
             self.fiveKM.hidden = YES;
         }
         if ([badgesArray[i] isEqualToString:@"dist_10"]) {
-            self.tenHour.hidden = YES;
+            self.tenKM.hidden = YES;
         }
         if ([badgesArray[i] isEqualToString:@"time_1"]) {
             self.oneHour.hidden = YES;

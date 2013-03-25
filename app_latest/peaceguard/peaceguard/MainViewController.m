@@ -1,9 +1,9 @@
 //
 //  MainViewController.m
-//  peaceguard
 //
-//  Created by Robert Sanchez on 2013-03-12.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Robert Sanchez
+//
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 #import "MainViewController.h"

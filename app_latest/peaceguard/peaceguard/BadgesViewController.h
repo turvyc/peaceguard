@@ -1,9 +1,9 @@
 //
 //  BadgesViewController.h
-//  peaceguard
 //
-//  Created by Lesperance Ashley on 2013-03-24.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Ashley Lesperance, Robert Sanchez
+//
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 #import <UIKit/UIKit.h>

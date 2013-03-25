@@ -1,9 +1,9 @@
 //
 //  ConnectionDataController.h
-//  peaceguard
 //
-//  Created by Lesperance Ashley on 2013-03-02.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Ashley Lesperance, Jonas Yao
+//
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 #import <Foundation/Foundation.h>

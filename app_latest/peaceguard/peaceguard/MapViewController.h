@@ -1,9 +1,9 @@
 //
 //  MapViewController.h
-//  peaceguard
 //
-//  Created by JonasYao on 2013-03-19.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Ashley Lesperance, Jonas Yao, Robert Sanchez
+//
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 #import <UIKit/UIKit.h>
@@ -62,12 +62,7 @@
 @property (nonatomic, weak) NSString *postPatrolString;
 //Badge storage
 @property (strong, nonatomic) NSDictionary *badgesDictionary;
-//From .m
-//CLLocationManager *locationManager;
-//CLGeocoder *geocoder;
-//CLPlacemark *placemark;
-//@property (nonatomic, strong) CLGeocoder *geocoder;
-//@property (nonatomic, strong) CLPlacemark *placemark;
+
 
 -(void) updateLabels;
 

@@ -77,7 +77,6 @@
 		A7F2F73516F04357005F9E8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7F2F73416F04357005F9E8A /* MainViewController.m */; };
 		C313066816DF1CEE005FB151 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313066716DF1CEE005FB151 /* MapKit.framework */; };
 		C38C5EF916EFA18700679A87 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C5EF816EFA18600679A87 /* Timer.m */; };
-		C38F8EAA16EFD4CA008C5F83 /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = C38F8EA916EFD4CA008C5F83 /* Statistics.m */; };
 		C392634116F971E200FA29E5 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C392634016F971E200FA29E5 /* MapViewController.m */; };
 		C39E8B5D16CF370E0087FBDD /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5C16CF370E0087FBDD /* Report.m */; };
 		C39E8B6016CF371D0087FBDD /* ReportDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C39E8B5F16CF371D0087FBDD /* ReportDataController.m */; };
@@ -187,8 +186,6 @@
 		C313066716DF1CEE005FB151 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C38C5EF716EFA18600679A87 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		C38C5EF816EFA18600679A87 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
-		C38F8EA816EFD4CA008C5F83 /* Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistics.h; sourceTree = "<group>"; };
-		C38F8EA916EFD4CA008C5F83 /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 		C392633F16F971E200FA29E5 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		C392634016F971E200FA29E5 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		C39E8B5B16CF370E0087FBDD /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
@@ -507,8 +504,6 @@
 		C4EB1E52170004E50080176A /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
-				C38F8EA816EFD4CA008C5F83 /* Statistics.h */,
-				C38F8EA916EFD4CA008C5F83 /* Statistics.m */,
 				C49C638A16ED660000915D56 /* StatisticsViewController.h */,
 				C49C638B16ED660000915D56 /* StatisticsViewController.m */,
 				C4EB1E531700052F0080176A /* BadgesViewController.h */,
@@ -682,7 +677,6 @@
 				C49C638916ED48B200915D56 /* ConnectionDataController.m in Sources */,
 				C49C638C16ED660000915D56 /* StatisticsViewController.m in Sources */,
 				C38C5EF916EFA18700679A87 /* Timer.m in Sources */,
-				C38F8EAA16EFD4CA008C5F83 /* Statistics.m in Sources */,
 				A7F2F73516F04357005F9E8A /* MainViewController.m in Sources */,
 				C491E68716F96B9800982997 /* CrumbPath.m in Sources */,
 				C491E68816F96B9800982997 /* CrumbPathView.m in Sources */,

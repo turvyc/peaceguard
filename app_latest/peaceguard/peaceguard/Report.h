@@ -1,9 +1,9 @@
 //
 //  Report.h
 //
-//  Contributor(s): Ashley Lesperance, Jonas Yao
+//  Contributor(s): Ashley Lesperance
 //
-//  Copyright (c) 2013 Number 123 Developer's Group
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 

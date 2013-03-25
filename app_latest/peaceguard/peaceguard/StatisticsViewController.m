@@ -1,9 +1,9 @@
 //
 //  StatisticsViewController.m
-//  peaceguard
 //
-//  Created by Lesperance Ashley on 2013-03-10.
-//  Copyright (c) 2013 Ashley Lesperance. All rights reserved.
+//  Contributor(s): Ashley Lesperance, Jonas Yao, Robert Sanchez
+//
+//  Copyright (c) 2013 Number 13 Developer's Group
 //
 
 #import "StatisticsViewController.h"
